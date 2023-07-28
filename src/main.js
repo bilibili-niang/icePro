@@ -1,7 +1,6 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 import '@/assets/common.less'
-import '@/assets/reset.less'
 import route from './router/index'
 import icepro from '../index'
 
