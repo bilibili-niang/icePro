@@ -2,7 +2,6 @@
 按钮-colors-所有
 </preview>
 <template>
-  copiedText:{{ copiedText }}
   <div class="ice-row">
     <ice-text>
       使用
@@ -27,23 +26,21 @@
 import colors from "../../../assets/colors/colors.json"
 import '@/assets/variables.less'
 import { reactive, ref } from 'vue'
-import { findColor } from '@/hooks/tools.js'
+import { copyText, findColor } from '@/hooks/tools.js'
 
 const allColor = reactive(colors)
 const computedColor = (obj) => {
   return findColor(obj.pinyin).color
 }
-let copiedText = ref('')
-const copyText = (str) => {
-  navigator.clipboard.writeText(str)
-      .then(() => {
-        copiedText.value = '已复制到剪贴板'
-      })
-      .catch(() => {
-        copiedText.value = '复制失败'
-      })
 
+
+
+const initTest = () => {
+  // console.log(app.config.globalProperties)
+  // console.log(iceMessage)
 }
+
+initTest()
 </script>
 
 <style scoped lang="less">

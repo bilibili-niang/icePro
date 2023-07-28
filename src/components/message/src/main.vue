@@ -1,25 +1,26 @@
 <template>
   <teleport>
-    <div class="ice-message ice-column">
-      msg:{{ msg }}
+    <div class="ice-message">
+      <slot></slot>
     </div>
   </teleport>
 </template>
 
 <script setup>
-const props = defineProps({
-  msg: {
-    type: String,
-    required: true
-  },
-
-})
-
-
-</script>
+import { provide } from 'vue'</script>
 <script>
+import { provide } from 'vue'
+
 export default {
-  name: "ice-message"
+  name: "ice-message",
+  mounted () {
+    provide('showPopup', this.showPopup)
+  },
+  methods: {
+    showPopup () {
+      // 弹窗逻辑
+    },
+  },
 }
 </script>
 

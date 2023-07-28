@@ -38,7 +38,7 @@ const items = [
     href: '/doc/button',
     children: [
       {
-        text: '多彩按钮',
+        text: 'colors',
         href: '/doc/button/colors'
       }
     ]

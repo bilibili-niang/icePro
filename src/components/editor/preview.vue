@@ -4,14 +4,13 @@
       <h4>
         {{ component.__sourceCodeTitle }}
       </h4>
-      <iceButton type="simple" @click="hideCode" v-if="codeVisible">隐藏代码</iceButton>
-      <iceButton type="simple" @click="showCode" v-else>查看代码</iceButton>
+      <iceButton type="simple" @click="hideCode" color="wanshoujuhuang" v-if="codeVisible">隐藏代码</iceButton>
+      <iceButton type="simple" @click="showCode" color="wanshoujuhuang" v-else>查看代码</iceButton>
     </div>
     <split></split>
     <div class="pre-component">
       <component :is="component"/>
     </div>
-
     <div class="pre-code ice-column" v-if="codeVisible">
       <pre class="language-html" v-html="html"/>
     </div>
