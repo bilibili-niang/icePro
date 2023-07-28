@@ -1,0 +1,200 @@
+// 变量
+@import './variables.less';
+// 动画
+@import "./animate.less";
+
+h4,
+p {
+  font-family: '宋体' !important;
+  font-weight: 650 !important;
+}
+
+.noselect {
+  user-select: none;
+}
+
+// 动画持续时间 small
+.btn-time-s {
+  transition: .5s;
+}
+
+html {
+  font-size: 20px;
+}
+
+
+h4 {
+  margin-top: @m-small;
+  font-size: 1.4rem;
+  margin-bottom: .3rem;
+  color: @fontColor;
+}
+
+p {
+  font-size: 1rem;
+  color: @fontColor;
+  margin: @m-normal;
+}
+
+.ice-column {
+  display: flex;
+  flex-direction: column;
+  margin: @m-small;
+}
+
+.ice-row {
+  display: flex;
+  flex-direction: row;
+  margin: @m-small;
+}
+
+.item-row {
+  display: flex;
+  flex-direction: row;
+  margin: @m-small;
+}
+
+.item-column {
+  display: flex;
+  flex-direction: column;
+  margin: @m-small;
+}
+
+.border-normal {
+  border: @fonColor-dark-bleak 1px solid;
+  border-radius: @radio-n;
+  padding: @p-normal;
+}
+
+// hover
+.hoverTest {
+  background-color: antiquewhite;
+  .btn-time-s();
+
+  &:hover {
+    background-color: aquamarine;
+  }
+}
+
+//border
+.border-t {
+  border-top: @themeColor 1px solid;
+}
+
+.border-b {
+  border-bottom: @themeColor 1px solid;
+}
+
+.border-l {
+  border-left: @themeColor 1px solid;
+}
+
+.border-r {
+  border-right: @themeColor 1px solid;
+}
+
+// border-radio
+.radio-none {
+  border-radius: 0;
+}
+
+.radio-s {
+  border-radius: .3rem;
+}
+
+.radio-m {
+  border-radius: .5rem;
+}
+
+.radio-l {
+  border-radius: .8rem;
+}
+
+
+// 布局宽度/高度
+// 宽度100%
+.w100percent {
+  width: 100%;
+}
+
+// 允许换行
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flexFull {
+  flex: 1;
+}
+
+.flex-align-center {
+  display: flex;
+  align-items: center;
+}
+
+.wideContainer {
+  padding-left: @padding-layout-large-su;
+  padding-right: @padding-layout-large-su;
+}
+
+.container {
+  padding-left: @padding-layout-normal;
+  padding-right: @padding-layout-normal;
+}
+
+.image-n {
+  display: flex;
+  width: 5rem;
+  height: 5rem;
+}
+
+.image-s {
+  display: flex;
+  width: 3rem;
+  height: 3rem;
+}
+
+.round {
+  border-radius: 50%;
+}
+
+//padding 尺寸
+.p-small {
+  padding: @p-small;
+}
+
+.p-normal {
+  padding: @p-normal;
+}
+
+.p-large {
+  padding: @p-large;
+}
+
+.p-bottom-n {
+  padding-bottom: @p-normal;
+}
+
+.p-bottom-l {
+  padding-bottom: @p-large;
+}
+
+// ul布局
+.list-column {
+  display: flex;
+  flex-direction: column;
+
+  .list-item {
+    display: flex;
+    flex-direction: row;
+    padding: @p-normal;
+    margin-left: @m-normal;
+    margin-right: @m-normal;
+    width: 100%;
+
+  }
+}
+
+// 文字不换行
+.text-nowrap {
+  white-space: nowrap;
+}

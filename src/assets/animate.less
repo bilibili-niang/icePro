@@ -1,0 +1,110 @@
+@import "./variables.less";
+
+// border动画
+.hover-border-bottom {
+  border-bottom: @themeColorNone 1px solid;
+  transition: @time-n;
+
+  &:hover {
+    border-bottom: @themeColor 1px solid;
+  }
+}
+
+
+// button hover
+// fill button common style
+.fillCommon {
+  position: relative;
+  border: @themeColor 1px solid;
+  color: @themeColor;
+
+  &:before {
+    content: '';
+    display: flex;
+    position: absolute;
+    border-radius: @radio-l;
+    transition: @time-n;
+    background: @themeColor;
+    z-index: -1;
+    opacity: 0;
+  }
+
+  &:hover {
+    border: @fontColor-none 1px solid;
+    background: transparent;
+    box-shadow: none;
+    right: inherit;
+    top: inherit;
+
+    &:before {
+      opacity: 1;
+    }
+  }
+}
+
+// fill to left
+.fill {
+  .fillCommon();
+
+  &:before {
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+  }
+
+  &:hover {
+    color: @themeColorReversal !important;
+
+    &:before {
+      width: 100%;
+      opacity: 1;
+    }
+  }
+}
+
+// fill to left
+.fill-l {
+  .fillCommon();
+
+  &:before {
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 100%;
+  }
+
+  &:hover {
+    color: @themeColorReversal !important;;
+
+    &:before {
+      width: 100%;
+      opacity: 1;
+    }
+  }
+}
+
+// 多彩按钮
+.colors {
+  .btm {
+    max-width: 150px;
+    width: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: @padding;
+    border-radius: @radio-l;
+    margin: @m-normal;
+    user-select: none;
+  }
+
+  .btn-colors {
+    color: var(--color);
+    border-color: var(--color);
+
+    &:hover {
+      color: var(--hover-color);
+      border-color: var(--hover-color);
+    }
+  }
+}
