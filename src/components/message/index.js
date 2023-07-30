@@ -1,6 +1,4 @@
-import iceMessage from './src/main.js'
+import iceMessage from './src/message.js'
 
-export default {
-    iceMessage
+export default iceMessage
 
-}

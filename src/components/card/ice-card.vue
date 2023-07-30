@@ -19,7 +19,7 @@
 
 <script setup>
 import { reactive } from 'vue'
-import { findColor } from '@/hooks/tools.js'
+import { findColor } from '../../hooks/tools.js'
 
 const props = defineProps({
   type: {

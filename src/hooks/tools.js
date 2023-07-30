@@ -1,5 +1,5 @@
 import { useRouter } from 'vue-router'
-import colors from "@/assets/colors/colors.json"
+import colors from "../assets/colors/colors.json"
 
 const goHref = function (href, params) {
     const router = useRouter()

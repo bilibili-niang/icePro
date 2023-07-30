@@ -13,7 +13,7 @@
 
 <script setup>
 import { defineProps } from 'vue'
-import { findColor } from '@/hooks/tools.js'
+import { findColor } from '../../hooks/tools.js'
 
 const props = defineProps({
   nowrap: {

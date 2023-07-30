@@ -11,7 +11,7 @@
 
 <script setup>
 import { useRouter } from 'vue-router'
-import { findColor } from '@/hooks/tools.js'
+import { findColor } from '../../hooks/tools.js'
 import { reactive } from 'vue'
 
 const props = defineProps({

@@ -14,7 +14,7 @@
 
 <script setup>
 import { defineProps } from 'vue'
-import { findColor } from '@/hooks/tools'
+import { findColor } from '../../../hooks/tools'
 
 const emit = defineEmits(['click'])
 const props = defineProps({
@@ -58,15 +58,17 @@ export default {
 @import "../../../assets/animate.less";
 
 .btn {
-  width: auto;
   border: @borderColor 1px solid;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   padding: @padding;
   border-radius: @radio-l;
   margin: @m-normal;
   user-select: none;
+  flex-grow: 0;
+  width: fit-content;
+}
+
+.btn > * {
+  flex-grow: 0;
 }
 
 // primary类型按钮
@@ -139,8 +141,6 @@ export default {
 // hover button style
 // default style
 .btn-hover {
-  max-width: 150px;
-  width: 4rem;
   display: flex;
   justify-content: center;
   align-items: center;

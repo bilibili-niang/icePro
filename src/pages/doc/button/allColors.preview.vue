@@ -25,7 +25,7 @@
 <script setup>
 import colors from "../../../assets/colors/colors.json"
 import '@/assets/variables.less'
-import { reactive, ref } from 'vue'
+import { reactive } from 'vue'
 import { copyText, findColor } from '@/hooks/tools.js'
 
 const allColor = reactive(colors)
@@ -34,19 +34,8 @@ const computedColor = (obj) => {
 }
 
 
-
-const initTest = () => {
-  // console.log(app.config.globalProperties)
-  // console.log(iceMessage)
-}
-
-initTest()
 </script>
 
 <style scoped lang="less">
-.colorBlock {
-  .item {
-    padding: 1.3rem;
-  }
-}
+
 </style>

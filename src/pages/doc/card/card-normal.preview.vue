@@ -5,7 +5,11 @@ card-normal
   <ice-text>
     最基础的内容展现,使用具名插槽
   </ice-text>
-
+  <div class="btns">
+    <ice-button @click="triggerMessage">
+      alert
+    </ice-button>
+  </div>
   <show>
     <ice-card>
       <template v-slot:header>
@@ -26,5 +30,20 @@ card-normal
 </template>
 
 <script setup>
+import { iceMessage } from '../../../../index.js'
+import { reactive } from 'vue'
+
+let msg = reactive({
+  close () {
+  },
+  destroy () {
+  }
+})
+const triggerMessage = () => {
+  msg = iceMessage('复制成功')
+  console.log('弹窗对象:')
+  console.log(msg)
+}
+
 </script>
 <style lang='less' scoped></style>

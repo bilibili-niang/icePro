@@ -5,8 +5,8 @@ import iceTag from './src/components/tools/ice-tag.vue'
 import iceLink from './src/components/text/ice-link.vue'
 import show from './src/components/tools/show.vue'
 import iceTitle from './src/components/text/ice-title.vue'
-import iceCard from '@/components/card/ice-card.vue'
-import iceMessage from '@/components/message/index'
+import iceCard from './src/components/card/ice-card.vue'
+import iceMessage from './src/components/message/index'
 
 const components = [
     iceButton,
@@ -16,7 +16,7 @@ const components = [
     iceLink,
     show,
     iceTitle,
-    iceCard,
+    iceCard
 ]
 
 export {
@@ -28,10 +28,10 @@ export {
     show,
     iceTitle,
     iceCard,
+    iceMessage
 }
 
 function registerUi (app) {
-    app.config.globalProperties.$message = iceMessage
     components.map(item => {
         app.component(item.name, item)
 
