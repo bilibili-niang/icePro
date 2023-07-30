@@ -56,6 +56,7 @@ const Message = function (options = {}) {
     appendTo.appendChild(container)
     return {
         close: () => {
+            console.log('调用了emit的close--->')
             close(id, userOnClose),
                 ( ( vm.component.proxy ).visible = false )
         },
@@ -93,15 +94,17 @@ list.forEach((type) => {
 })
 
 export function close (id, userOnClose) {
-    console.log('触发了,message.js 的close function')
-    console.log('当前所有的弹窗组件:')
+    console.log('instances--->')
     console.log(instances)
     const idx = instances.findIndex(({ vm }) => id === vm.component.props.id)
     if (idx === - 1) return
     const { vm } = instances[idx]
     if (!vm) return
     userOnClose?.(vm)
-    const removedHeight = vm.el.offsetHeight
+    console.log('vm--->')
+    console.log(vm.props.offset)
+    // const removedHeight = vm.el.offsetHeight
+    const removedHeight = vm.props.offset
     instances.splice(idx, 1)
     const len = instances.length
     if (len < 1) return
@@ -109,8 +112,9 @@ export function close (id, userOnClose) {
     for (let i = idx; i < len; i ++) {
         console.log('instances[i].vm.el--->')
         console.log(instances[i].vm.el)
-        const pos = parseInt(instances[i].vm.el.style.top, 10) - removedHeight - 16
-        instances[i].vm.component.props.offset = pos
+        // const pos = parseInt(instances[i].vm.el.style.top, 10) - removedHeight - 16
+        const pos = parseInt(instances[i].vm.props.offset, 10) - removedHeight - 16
+        instances[i].vm.props.offset = pos
     }
 }
 
