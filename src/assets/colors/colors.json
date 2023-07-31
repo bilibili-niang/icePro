@@ -3680,5 +3680,26 @@
     "pinyin": "shenhui",
     "RGBA": "rgba(129,119,110,1)",
     "bleak": "rgba(129,119,110,.5)"
+  },
+  {
+    "hex": "#C21F30FF",
+    "name": "危险",
+    "pinyin": "danger",
+    "RGBA": "rgba(194, 31, 48, 1)",
+    "bleak": "rgba(194, 31, 48, .5)"
+  },
+  {
+    "hex": "#12aa9c",
+    "name": "成功",
+    "pinyin": "success",
+    "RGBA": "rgba(18, 170, 156, 1)",
+    "bleak": "rgba(18, 170, 156, .5)"
+  },
+  {
+    "hex": "#93b5cf",
+    "name": "准备",
+    "pinyin": "ready",
+    "RGBA": "rgba(22, 97, 171, 1)",
+    "bleak": "rgba(22, 97, 171, .5)"
   }
 ]

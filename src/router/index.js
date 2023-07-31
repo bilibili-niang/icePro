@@ -34,10 +34,10 @@ const routes = [
                 path: 'text',
                 component: () => import('../pages/doc/text/index.vue'),
             },
-            /*{
+            {
                 path: 'message',
                 component: () => import('../pages/doc/message/index.vue'),
-            }*/
+            }
         ],
     },
 

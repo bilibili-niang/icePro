@@ -31,17 +31,12 @@ card-normal
 
 <script setup>
 import { iceMessage } from '../../../../index.js'
-import { reactive } from 'vue'
+import { reactive, ref } from 'vue'
 
-let msg = reactive({
-  close () {
-  },
-  destroy () {
-  }
-})
+let msg = reactive({})
+let num = ref(0)
 const triggerMessage = () => {
-  msg = iceMessage('复制成功')
-  console.log('弹窗对象:')
+  msg = iceMessage(`复制成功`)
   console.log(msg)
 }
 

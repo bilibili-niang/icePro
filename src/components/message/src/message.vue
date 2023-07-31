@@ -1,31 +1,17 @@
 <template>
-  <transition
-      :duration="300"
-      leave-active-class="animate__zoomOut"
-      enter-active-class="animate__zoomIn"
-      @before-leave="onClose"
-      @after-leave="$emit('destroy')"
-  >
-    <div class="ice-message-lim border-normal"
-         v-if="visible"
-         :style="customStyle"
+  <transition :duration="300" leave-active-class="animate__zoomOut" enter-active-class="animate__zoomIn"
+              @before-leave="onClose" @after-leave="$emit('destroy')">
+    <div class="ice-message-lim border-normal" v-if="visible" :style="customStyle"
+         :class="[
+        type
+    ]"
     >
-      <ice-text>
-        {{ message }}
+      <ice-text :color="type">
+        {{ message }}|{{ type }}
       </ice-text>
-      <ice-button v-if="showClose" @click="close()">close</ice-button>
+      <ice-button v-if="showClose" :color="type" @click="close()">close</ice-button>
     </div>
   </transition>
-  props:{{ props }}
-  <br>
-  offset:{{ offset }}
-  <br>
-  emits:{{ emits }}
-  <br>
-  提交销毁:
-  <ice-button @click='destroy'>
-    destroy
-  </ice-button>
 </template>
 
 
@@ -39,8 +25,7 @@ let stopTimer = undefined
 const props = defineProps({
   duration: {
     type: Number,
-    default: 2000,
-    // default: 1000000,
+    default: 2000
   },
   id: {
     type: String,
@@ -60,7 +45,6 @@ const props = defineProps({
   },
   type: {
     type: String,
-    values: 'messageTypes',
     default: "info",
   },
   message: {
@@ -143,11 +127,61 @@ export default {
 @import "../../../assets/variables.less";
 
 .ice-message-lim {
-  position: fixed;
+  margin-top: @m-normal;
   right: 10px;
   color: @themeColor;
   display: flex;
   flex-direction: row;
   align-items: center;
+}
+
+.animate__zoomIn {
+  animation: animate__zoomIn 300ms;
+}
+
+.info {
+  border-color: @themeColor;
+}
+
+.danger {
+  border-color: @dangerColor;
+}
+
+@keyframes animate__zoomIn {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+
+  50% {
+    transform: scale(1.1);
+    opacity: 0.5;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.animate__zoomOut {
+  animation: animate__zoomOut 300ms forwards;
+}
+
+@keyframes animate__zoomOut {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(0.9);
+    opacity: 0.5;
+  }
+
+  100% {
+    transform: scale(0);
+    opacity: 0;
+  }
 }
 </style>

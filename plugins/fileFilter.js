@@ -13,6 +13,15 @@ const vitePluginVue = {
         const filename = id.split("?")[0]
         const file = fs.readFileSync(filename).toString()
         const parsed = baseParse(file).children.find((n, index) => n.tag === "preview")
+        let styleCode = baseParse(file).children.find((n, index) => n.tag === "style") || null
+        let script = baseParse(file).children.find((n, index) => n.tag === "script") || null
+
+        if (styleCode) {
+            styleCode = styleCode.loc.source
+        }
+        if (script) {
+            script = script.loc.source
+        }
         const content = baseParse(file).children.find((n, index) => n.tag === "template")
         let sourceCode = content.children.find((n, index) => n.tag === "show")
         const title = parsed.children[0].content
@@ -23,6 +32,8 @@ const vitePluginVue = {
         return `export default function (Component) {
                         Component.__sourceCode = ${ JSON.stringify(sourceCode.loc.source) };
                         Component.__sourceCodeTitle = ${ JSON.stringify(title) };
+                        Component.__styleCode = ${ JSON.stringify(styleCode || null) };
+                        Component.__script = ${ JSON.stringify(script || null) };
                         return Component;
                     }`.trim()
     }

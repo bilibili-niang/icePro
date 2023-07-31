@@ -13,6 +13,8 @@
     </div>
     <div class="pre-code ice-column" v-if="codeVisible">
       <pre class="language-html" v-html="html"/>
+      <pre class="language-css" v-html="css" v-if="component.__styleCode"/>
+      <pre class="language-javascript" v-html="script" v-if="component.__script"/>
     </div>
   </div>
 </template>
@@ -33,6 +35,21 @@ const html = computed(() => {
       props.component.__sourceCode,
       Prism.languages.html,
       "html"
+  )
+})
+const css = computed(() => {
+  return Prism.highlight(
+      props.component.__styleCode,
+      Prism.languages.css,
+      "css"
+  )
+})
+
+const script = computed(() => {
+  return Prism.highlight(
+      props.component.__script,
+      Prism.languages.javascript,
+      "javascript"
   )
 })
 
@@ -57,6 +74,7 @@ const hideCode = () => ( codeVisible.value = false )
     border-top: 1px dashed @border-color;
     transition-duration: .5s;
     overflow-y: hidden;
+    font-size: @fontSize-n;
 
     > pre {
       line-height: 1;

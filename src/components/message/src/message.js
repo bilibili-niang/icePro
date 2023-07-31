@@ -31,6 +31,14 @@ const Message = function (options = {}) {
     let appendTo = document.body
     // msg item
     const container = document.createElement("div")
+    let containerFa = null
+    if (document.querySelector('.ice-message-container')) {
+        containerFa = document.querySelector('.ice-message-container')
+    } else {
+        containerFa = document.createElement("div")
+        containerFa.className = "ice-message-container"
+    }
+
     // 如果传入了元素,那么在元素内部插入,反之不执行
     if (options.appendTo instanceof HTMLElement) {
         appendTo = options.appendTo
@@ -52,8 +60,9 @@ const Message = function (options = {}) {
     }
     render(vm, container)
     instances.push({ vm })
-
-    appendTo.appendChild(container)
+    containerFa.appendChild(container)
+    // 父容器添加进body
+    appendTo.appendChild(containerFa)
     return {
         close: () => {
             console.log('调用了emit的close--->')
@@ -94,15 +103,11 @@ list.forEach((type) => {
 })
 
 export function close (id, userOnClose) {
-    console.log('instances--->')
-    console.log(instances)
-    const idx = instances.findIndex(({ vm }) => id === vm.component.props.id)
+    /*const idx = instances.findIndex(({ vm }) => id === vm.component.props.id)
     if (idx === - 1) return
     const { vm } = instances[idx]
     if (!vm) return
     userOnClose?.(vm)
-    console.log('vm--->')
-    console.log(vm.props.offset)
     // const removedHeight = vm.el.offsetHeight
     const removedHeight = vm.props.offset
     instances.splice(idx, 1)
@@ -115,7 +120,17 @@ export function close (id, userOnClose) {
         // const pos = parseInt(instances[i].vm.el.style.top, 10) - removedHeight - 16
         const pos = parseInt(instances[i].vm.props.offset, 10) - removedHeight - 16
         instances[i].vm.props.offset = pos
-    }
+    }*/
+    setTimeout(function () {
+        const divs = document.querySelector('.ice-message-container').children
+        for (let i = divs.length - 1; i >= 0; i --) {
+            const div = divs[i]
+            if (div.textContent.trim() === '') {
+                div.remove()
+            }
+        }
+    }, 500)
+
 }
 
 // 绑定一个关闭方法
