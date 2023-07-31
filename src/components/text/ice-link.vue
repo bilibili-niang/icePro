@@ -1,7 +1,7 @@
 <template>
   <div class="ice-link" :class="[
       size?size:'',
-      color?'hoverCOlor':''
+      color?'hoverColor':''
   ]"
        :style="{ '--hover-color': findColor(color).color,'--color': findColor(color).hover }"
        @click="go">
@@ -40,10 +40,6 @@ const go = () => {
     })
   }
 }
-
-let color = reactive({})
-// 这里传入的是 pinyin,返回的是对象
-color = findColor(props.color)
 </script>
 
 <style scoped lang="less">

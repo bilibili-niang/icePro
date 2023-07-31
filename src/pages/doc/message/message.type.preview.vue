@@ -1,5 +1,5 @@
 <preview>
-消息弹窗-message-type
+message-type
 </preview>
 <template>
   <div class="ice-column">
