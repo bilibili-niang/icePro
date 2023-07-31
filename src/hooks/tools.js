@@ -34,12 +34,12 @@ const findColor = function (pinyin) {
  * Time: 15:01
  */
 const copyText = function (str) {
-    navigator.clipboard.writeText(str)
+    return navigator.clipboard.writeText(str)
         .then(() => {
-            return '已复制到剪贴板'
+            return true
         })
         .catch(() => {
-            return '复制失败'
+            return false
         })
 }
 export {

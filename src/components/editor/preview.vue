@@ -1,9 +1,9 @@
 <template>
   <div class="pre border-normal ice-column pre-component">
     <div class="title flex-align-center">
-      <h4>
+      <ice-title>
         {{ component.__sourceCodeTitle }}
-      </h4>
+      </ice-title>
       <iceButton type="simple" @click="hideCode" color="wanshoujuhuang" v-if="codeVisible">隐藏代码</iceButton>
       <iceButton type="simple" @click="showCode" color="wanshoujuhuang" v-else>查看代码</iceButton>
     </div>

@@ -11,8 +11,8 @@
   </div>
   <show class="colorBlock">
     <template v-for="(item,index) in allColor" :key="index">
-      <div class="ice-column colorBlockItem" @click="copyText(item.pinyin)">
-        <div class="item" :style="{background:computedColor(item)}">
+      <div class="ice-column colorBlockItem" @click="copy(item.pinyin)">
+        <div class="item" :style="{background:findColor(item.pinyin).color}">
           {{ item.name }}
           {{ item.pinyin }}
         </div>
@@ -27,15 +27,27 @@ import colors from "../../../assets/colors/colors.json"
 import '@/assets/variables.less'
 import { reactive } from 'vue'
 import { copyText, findColor } from '@/hooks/tools.js'
+import { iceMessage } from '../../../../index.js'
 
 const allColor = reactive(colors)
-const computedColor = (obj) => {
-  return findColor(obj.pinyin).color
+const copy = async (str) => {
+  const res = await copyText(str)
+  if (res) {
+    iceMessage(`复制成功`)
+  } else {
+    iceMessage({
+      message: `复制失败`,
+      type: 'danger'
+    })
+  }
 }
-
-
 </script>
 
 <style scoped lang="less">
-
+.colorBlockItem {
+  .item {
+    padding: @p-normal;
+    margin: @m-small;
+  }
+}
 </style>

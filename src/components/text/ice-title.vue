@@ -33,13 +33,13 @@ export default {
 .ice-title {
   color: @themeColor;
   display: flex;
+}
 
-  // size
-  .n {
-    flex-direction: row;
-    font-size: @fontSize-n;
-    margin-left: @m-normal;
-    padding: @p-normal;
-  }
+// size
+.normal {
+  flex-direction: row;
+  font-size: @fontSize-n;
+  margin-left: @m-normal;
+  padding: @p-normal;
 }
 </style>

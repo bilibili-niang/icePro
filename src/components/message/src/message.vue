@@ -7,7 +7,7 @@
     ]"
     >
       <ice-text :color="type">
-        {{ message }}|{{ type }}
+        {{ message }}
       </ice-text>
       <ice-button v-if="showClose" :color="type" @click="close()">close</ice-button>
     </div>

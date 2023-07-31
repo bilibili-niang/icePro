@@ -34,7 +34,6 @@ import { iceMessage } from '../../../../index.js'
 import { reactive, ref } from 'vue'
 
 let msg = reactive({})
-let num = ref(0)
 const triggerMessage = () => {
   msg = iceMessage(`复制成功`)
   console.log(msg)

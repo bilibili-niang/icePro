@@ -1,12 +1,12 @@
 <preview>
-message-type
+message-color
 </preview>
 <template>
   <div class="ice-column">
     <ice-text>
       使用
-      <ice-tag> type</ice-tag>
-      控制弹窗的类型
+      <ice-tag>color</ice-tag>
+      控制弹窗的color
     </ice-text>
   </div>
   <show>
