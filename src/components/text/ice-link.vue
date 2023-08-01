@@ -1,7 +1,7 @@
 <template>
   <div class="ice-link" :class="[
       size?size:'',
-      color?'hoverColor':''
+      color?'defaultColor':''
   ]"
        :style="{ '--hover-color': findColor(color).color,'--color': findColor(color).hover }"
        @click="go">
@@ -27,7 +27,7 @@ const props = defineProps({
   },
   color: {
     type: String,
-    default: ''
+    default: 'defaultColor'
   }
 })
 const router = useRouter()
@@ -47,10 +47,18 @@ const go = () => {
 .ice-link {
   font-size: @fontSize-n;
   border-bottom: @themeColor 1px solid;
+  width: fit-content;
 
   &:hover {
     cursor: pointer
   }
 }
 
+.defaultColor {
+  color: @themeColor;
+
+  &:hover {
+  @themeColor-bleak;
+  }
+}
 </style>

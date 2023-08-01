@@ -3,13 +3,14 @@
               @before-leave="onClose" @after-leave="$emit('destroy')">
     <div class="ice-message-lim border-normal" v-if="visible" :style="customStyle"
          :class="[
-        type
+        type,
+        color
     ]"
     >
-      <ice-text :color="type">
+      <ice-text :color="color">
         {{ message }}
       </ice-text>
-      <ice-button v-if="showClose" :color="type" @click="close()">close</ice-button>
+      <ice-button v-if="showClose" :color="type||color" @click="close()">close</ice-button>
     </div>
   </transition>
 </template>
@@ -58,6 +59,10 @@ const props = defineProps({
   center: {
     type: Boolean,
     default: false,
+  },
+  color: {
+    type: String,
+    default: "",
   }
 })
 

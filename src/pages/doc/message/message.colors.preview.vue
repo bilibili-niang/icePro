@@ -9,7 +9,7 @@ message-normal
   </ice-text>
   <show>
     <ice-button @click="alertMessage">
-      copy
+      xiangrikuihuang
     </ice-button>
   </show>
 </template>
@@ -19,7 +19,7 @@ import { iceMessage } from '../../../../index.js'
 const alertMessage = () => {
   iceMessage({
     message: `复制成功`,
-    // color:
+    color: 'xiangrikuihuang'
   })
 }
 
