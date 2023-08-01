@@ -1,5 +1,5 @@
 <preview>
-按钮-colors-所有
+colors
 </preview>
 <template>
   <div class="ice-row">

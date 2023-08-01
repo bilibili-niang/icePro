@@ -115,17 +115,6 @@ export default {
   }
 }
 
-// 朴素
-.simple {
-  color: @fontColor-bleak;
-  border: @fontColor-bleak 1px solid;
-
-  &:hover {
-    color: @fontColor;
-    border: @fontColor 1px solid;
-  }
-}
-
 // ready
 .ready {
   color: @startColor-bleak;

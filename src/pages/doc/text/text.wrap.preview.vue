@@ -5,7 +5,7 @@ text-nowrap
   <ice-text>
     默认换行,
     <ice-tag>nowrap</ice-tag>
-    传入换行
+    禁止换行
   </ice-text>
 
   <show>
@@ -27,13 +27,9 @@ text-nowrap
     </div>
   </show>
 </template>
-
-<script setup>
-</script>
 <style lang='less' scoped>
 .lim {
   width: 600px;
   overflow: hidden;
 }
-
 </style>

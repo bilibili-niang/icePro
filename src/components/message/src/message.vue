@@ -1,13 +1,13 @@
 <template>
   <transition :duration="300" leave-active-class="animate__zoomOut" enter-active-class="animate__zoomIn"
               @before-leave="onClose" @after-leave="$emit('destroy')">
-    <div class="ice-message-lim border-normal" v-if="visible" :style="customStyle"
+    <div class="ice-message-lim border-normal" v-if="visible"
          :class="[
-        type,
-        color
+        color?'message-colors':type?type:''
     ]"
+         :style="{ '--hover-color': findColor(color).color,'--color': findColor(color).hover }"
     >
-      <ice-text :color="color">
+      <ice-text :color="color?color:type?type:''">
         {{ message }}
       </ice-text>
       <ice-button v-if="showClose" :type="type" :color="color" @click="close()">close</ice-button>
@@ -20,6 +20,7 @@
 import { computed, onMounted, onUnmounted, ref } from 'vue'
 import IceButton from '@/components/button/normal/iceButton.vue'
 import IceText from '@/components/text/ice-text.vue'
+import { findColor } from '@/hooks/tools.js'
 
 const visible = ref(false)
 let stopTimer = undefined
@@ -150,6 +151,10 @@ export default {
 
 .danger {
   border-color: @dangerColor;
+}
+
+.colors {
+  border-color: red !important;
 }
 
 @keyframes animate__zoomIn {

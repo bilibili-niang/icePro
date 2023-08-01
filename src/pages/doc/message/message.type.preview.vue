@@ -5,8 +5,8 @@ message-color
   <div class="ice-column">
     <ice-text>
       使用
-      <ice-tag>color</ice-tag>
-      控制弹窗的color
+      <ice-tag>type</ice-tag>
+      控制弹窗的类型(语义化)
     </ice-text>
   </div>
   <show>

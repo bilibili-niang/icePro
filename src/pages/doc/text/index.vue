@@ -10,7 +10,7 @@
 import Preview from '@/components/editor/preview.vue'
 import textPreview from './text.preview.vue'
 import textColorsPreview from './text-colors.preview.vue'
-import textWrapPreview from './text-wrap.preview.vue'
+import textWrapPreview from './text.wrap.preview.vue'
 import textSizePreview from './text-size.preview.vue'
 import textUnderlinePreview from './text-underline.preview.vue'
 </script>

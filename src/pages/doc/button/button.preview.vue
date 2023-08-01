@@ -1,4 +1,4 @@
-<preview>按钮-基础</preview>
+<preview>按钮-type</preview>
 <template>
   <ice-text>
     使用
@@ -10,12 +10,7 @@
     <ice-button type="danger">danger</ice-button>
     <ice-button type="info">info</ice-button>
     <ice-button type="success">success</ice-button>
-    <ice-button type="simple">simple</ice-button>
     <iceButton type="ready">ready</iceButton>
   </show>
 </template>
 
-<script setup>
-
-</script>
-<style lang='less' scoped></style>
