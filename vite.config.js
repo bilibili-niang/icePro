@@ -29,8 +29,8 @@ export default defineConfig({
     },
     // 打包
     build: {
-
         outDir: "docs",
+        base:'/docs/',
         /* lib: {
              entry: path.resolve(__dirname, "index.js"), // 打包的入口文件
              name: "icepro", // 包名
