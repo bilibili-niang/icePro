@@ -3,7 +3,8 @@
       nowrap?'text-nowrap':'',
       color?'hoverColor':'',
       size?'size-'+size:'size-n',
-      underLine?'underLine':''
+      underLine?'underLine':'',
+      noselect?'noselect':''
   ]"
        :style="{ '--hover-color': findColor(color).color,'--color': findColor(color).hover }"
   >
@@ -29,6 +30,10 @@ const props = defineProps({
     default: ''
   },
   underLine: {
+    type: Boolean,
+    default: false
+  },
+  noselect: {
     type: Boolean,
     default: false
   }
@@ -74,7 +79,7 @@ export default {
 .hoverColor {
   color: var(--color);
   border-color: var(--color);
-  text-decoration-color: var(--color)!important;
+  text-decoration-color: var(--color) !important;
 
   &:hover {
     color: var(--hover-color);

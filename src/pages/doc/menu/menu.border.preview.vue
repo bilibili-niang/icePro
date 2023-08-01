@@ -1,17 +1,19 @@
+<preview>
+menu-border
+</preview>
 <template>
-  <div class="ice-row">
-    <ice-link href="/">
-      <img src="@/assets/png/icon.jpg" class="image-s round p-normal" alt="">
-    </ice-link>
+  <div class="ice-column">
+    <ice-text>
+      支持<ice-tag>border</ice-tag>的传入,是否显示border
+    </ice-text>
   </div>
-  <ice-menu :list="items" :router="router" nofold></ice-menu>
+  <show>
+    <ice-menu :list="items" border></ice-menu>
+  </show>
 </template>
-
 <script setup>
-import IceLink from '@/components/text/ice-link.vue'
 import IceMenu from '@/components/menu/ice-menu.vue'
-import { useRoute } from 'vue-router'
-import { ref } from 'vue'
+import IceTag from '@/components/tools/ice-tag.vue'
 
 const items = [
   {
@@ -41,10 +43,12 @@ const items = [
   },
   {
     text: '反馈',
-    children: [{
-      text: 'message 消息弹窗',
-      href: '/doc/message'
-    }]
+    children: [
+      {
+        text: 'message 消息弹窗',
+        href: '/doc/message'
+      }
+    ]
   },
   {
     text: '菜单容器',
@@ -56,24 +60,4 @@ const items = [
     ]
   }
 ]
-let router = ref(useRoute().path)
 </script>
-
-<script>
-export default {
-  name: "docLeft"
-}
-</script>
-
-<style scoped lang="less">
-@import "@/assets/variables.less";
-
-.active {
-  color: @themeColor;
-  border-bottom: @themeColor 1px solid;
-}
-
-.list-item-child {
-  padding-left: 1rem;
-}
-</style>

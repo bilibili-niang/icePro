@@ -1,19 +1,25 @@
 <template>
-  <div class="ice-menu" :class="[{'vertical-menu': vertical}, {'horizontal-menu': !vertical}]">
+  <div class="ice-menu" :class="[
+    border?'ice-menu-border':'',
+    color?'colors':'',
+  ]"
+       :style="{ '--hover-color': findColor(color).color,'--color': findColor(color).hover }">
     <ul class="list-ul">
       <li v-for="item in menuList" :key="item.text" :style="{ color: color }">
         <!--有子菜单-->
         <div v-if="item.children" class="ice-menu-child" :class="[
-            item.isOpen?'showLi':'hideLi'
+            item.isOpen?'showLi':'hideLi',
+            nofold?'showLi':'hideLi'
         ]">
-          <ice-title noselect @click="toggleSubMenu(item)">
+          <ice-title noselect @click="toggleSubMenu(item)" :color="color">
             {{ item.text }}
           </ice-title>
           <ul class='list-children-ul'>
             <li v-for="(it, itIndex) in item.children" :key="itIndex">
-              <ice-link :href="it.href">
+              <ice-link :href="it.href" :color="color" v-if="it.href">
                 {{ it.text }}
               </ice-link>
+              <ice-text v-else noselect>{{ it.text }}</ice-text>
             </li>
           </ul>
         </div>
@@ -27,28 +33,43 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { defineProps, ref } from 'vue'
 import IceTitle from '@/components/text/ice-title.vue'
 import IceLink from '@/components/text/ice-link.vue'
+import { findColor } from '@/hooks/tools.js'
 
 const props = defineProps({
   list: {
     type: Array,
     required: true,
   },
-  vertical: {
-    type: Boolean,
-    default: false,
-  },
   color: {
     type: String,
-    default: 'black',
+    default: 'defaultColor',
   },
+  // 当前比对的字符串
+  router: {
+    type: String,
+    required: ''
+  },
+  // 菜单是否显示border
+  border: {
+    type: Boolean,
+    default: false
+  },
+  // 是否折叠,默认折叠面板
+  nofold: {
+    type: Boolean,
+    default: false
+  }
 })
 
 const menuList = ref(props.list)
 
 const toggleSubMenu = (item) => {
+  if (props.nofold) {
+    return
+  }
   item.isOpen = !item.isOpen
 }
 </script>
@@ -60,21 +81,16 @@ export default {
 <style lang="less" scoped>
 @import "../../assets/variables.less";
 
-.ice-menu {
+.ice-menu-border {
   border: @themeColor 1px solid;
+}
+
+.ice-menu {
   border-radius: @radio-n;
   padding: @p-normal;
   display: flex;
   flex-direction: column;
-
-  li {
-    .ice-link {
-      &:hover {
-        background-color: @themeColor-bleak;
-        color: @themeColorReversal;
-      }
-    }
-  }
+  margin: @m-small;
 
   .ice-menu-child {
     display: flex;
@@ -83,7 +99,6 @@ export default {
 
     ul {
       transition: .5S;
-      //height: 0px;
 
       li {
         transition: .5S;
@@ -104,21 +119,8 @@ export default {
     }
   }
 
-  /*.hideLi {
-    ul {
-      height: 0;
-
-      li {
-        height: 0;
-        overflow-y: hidden;
-      }
-    }
-  }*/
-
   .showLi {
     ul {
-      //height: 100px !important;
-
       li {
         height: 1.5rem !important;
         overflow-y: hidden;
@@ -127,26 +129,20 @@ export default {
       }
     }
   }
+}
 
-  /*.list-ul {
-    .list-children-ul {
-      transition: .5s;
-      margin-left: @m-normal;
+.defaultColor {
+  color: @themeColor;
+  border-color: @themeColor !important;
+}
 
-      li {
-        display: flex;
-        flex-direction: row;
-        margin-top: @m-normal;
-        margin-left: @m-large;
-        font-size: @fontSize-s;
+.colors {
+  border: var(--color) 1px solid;
+  color: var(--color);
 
-        &:before {
-          content: '';
-          display: flex;
-          width: 1rem;
-        }
-      }
-    }
-  }*/
+  &:hover {
+    color: var(--hover-color);
+    border-color: var(--hover-color);
+  }
 }
 </style>
