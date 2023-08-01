@@ -1,5 +1,7 @@
 <template>
-  <div class='ice-title' :class="size" :title="title">
+  <div class='ice-title' :class="[size,
+  noselect?'noselect':''
+  ]" :title="title">
     <h4 class="slot" :class="type">
       <slot/>
     </h4>
@@ -19,6 +21,10 @@ defineProps({
   title: {
     type: String,
     default: ''
+  },
+  noselect: {
+    type: Boolean,
+    default: false
   }
 })
 </script>
