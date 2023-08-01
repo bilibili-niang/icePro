@@ -10,7 +10,7 @@
       <ice-text :color="color">
         {{ message }}
       </ice-text>
-      <ice-button v-if="showClose" :color="type||color" @click="close()">close</ice-button>
+      <ice-button v-if="showClose" :type="type" :color="color" @click="close()">close</ice-button>
     </div>
   </transition>
 </template>
