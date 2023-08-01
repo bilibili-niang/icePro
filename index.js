@@ -7,6 +7,7 @@ import show from './src/components/tools/show.vue'
 import iceTitle from './src/components/text/ice-title.vue'
 import iceCard from './src/components/card/ice-card.vue'
 import iceMessage from './src/components/message/index'
+import iceMenu from './src/components/menu/ice-menu.vue'
 
 const components = [
     iceButton,
@@ -16,7 +17,8 @@ const components = [
     iceLink,
     show,
     iceTitle,
-    iceCard
+    iceCard,
+    iceMenu
 ]
 
 export {
@@ -28,13 +30,13 @@ export {
     show,
     iceTitle,
     iceCard,
-    iceMessage
+    iceMessage,
+    iceMenu
 }
 
 function registerUi (app) {
     components.map(item => {
         app.component(item.name, item)
-
     })
 }
 

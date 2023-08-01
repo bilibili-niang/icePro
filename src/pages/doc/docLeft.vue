@@ -80,8 +80,17 @@ const items = [
     children: [{
       text: 'message 消息弹窗',
       href: '/doc/message'
-    },]
+    }]
   },
+  {
+    text: '菜单容器',
+    children: [
+      {
+        text: '导航菜单',
+        href: '/doc/menu'
+      }
+    ]
+  }
 ]
 const router = useRoute()
 </script>

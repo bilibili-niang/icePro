@@ -37,6 +37,10 @@ const routes = [
             {
                 path: 'message',
                 component: () => import('../pages/doc/message/index.vue'),
+            },
+            {
+                path: 'menu',
+                component: () => import('../pages/doc/menu/index.vue'),
             }
         ],
     },

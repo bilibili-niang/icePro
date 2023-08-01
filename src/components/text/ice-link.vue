@@ -48,6 +48,9 @@ const go = () => {
   font-size: @fontSize-n;
   border-bottom: @themeColor 1px solid;
   width: fit-content;
+  white-space: nowrap;
+  display: inline-block;
+  transition: @time-n;
 
   &:hover {
     cursor: pointer
