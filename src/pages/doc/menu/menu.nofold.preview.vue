@@ -4,7 +4,9 @@ menu-nofold
 <template>
   <div class="ice-column">
     <ice-text>
-      支持<ice-tag>nofold</ice-tag>的传入,是否折叠,默认折叠
+      支持
+      <ice-tag>nofold</ice-tag>
+      的传入,是否折叠,默认折叠
     </ice-text>
   </div>
   <show>
@@ -56,6 +58,15 @@ const items = [
       {
         text: '导航菜单',
         href: '/doc/menu'
+      }
+    ]
+  },
+  {
+    text: '表单',
+    children: [
+      {
+        text:'输入框',
+        href:'doc/input'
       }
     ]
   }

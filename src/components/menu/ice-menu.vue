@@ -11,7 +11,7 @@
             item.isOpen?'showLi':'hideLi',
             nofold?'showLi':'hideLi'
         ]">
-          <ice-title noselect @click="toggleSubMenu(item)" :color="color">
+          <ice-title noselect @click="toggleSubMenu(item)" :color="color" size="l">
             {{ item.text }}
           </ice-title>
           <ul class='list-children-ul'>

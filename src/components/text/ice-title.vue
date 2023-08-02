@@ -1,8 +1,6 @@
 <template>
-  <div class='ice-title' :class="[size,
-  noselect?'noselect':''
-  ]" :title="title">
-    <h4 class="slot" :class="type">
+  <div class='ice-title' :class="[noselect?'noselect':'']" :title="title">
+    <h4 class="slot" :class="[type,size]">
       <slot/>
     </h4>
   </div>
@@ -42,10 +40,18 @@ export default {
 }
 
 // size
-.normal {
+.n {
   flex-direction: row;
   font-size: @fontSize-n;
   margin-left: @m-normal;
   padding: @p-normal;
+}
+
+// size
+.l {
+  font-size: @fontSize-l;
+  margin-top: @m-large;
+  margin-bottom: @m-large;
+  font-weight: @fontWeight-l-su;
 }
 </style>

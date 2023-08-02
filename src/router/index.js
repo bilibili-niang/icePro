@@ -41,6 +41,10 @@ const routes = [
             {
                 path: 'menu',
                 component: () => import('../pages/doc/menu/index.vue'),
+            },
+            {
+                path: 'input',
+                component: () => import('../pages/doc/input/index.vue'),
             }
         ],
     },

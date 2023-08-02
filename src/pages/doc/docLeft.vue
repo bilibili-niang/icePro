@@ -47,11 +47,29 @@ const items = [
     }]
   },
   {
+    text:'布局容器',
+    children: [
+      {
+        text:'基础',
+        href: 'doc/container'
+      }
+    ]
+  },
+  {
     text: '菜单容器',
     children: [
       {
         text: '导航菜单',
         href: '/doc/menu'
+      }
+    ]
+  },
+  {
+    text: '输入组件',
+    children: [
+      {
+        text: 'input 输入框',
+        href: '/doc/input'
       }
     ]
   }
