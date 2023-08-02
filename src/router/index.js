@@ -10,6 +10,7 @@ const routes = [
     {
         path: "/doc",
         component: () => import('../pages/Doc.vue'),
+        redirect: '/doc/button',
         children: [
             {
                 path: "button",
@@ -45,6 +46,10 @@ const routes = [
             {
                 path: 'input',
                 component: () => import('../pages/doc/input/index.vue'),
+            },
+            {
+                path: 'container',
+                component: () => import('../pages/doc/container/index.vue'),
             }
         ],
     },

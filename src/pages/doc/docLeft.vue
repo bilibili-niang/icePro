@@ -51,7 +51,7 @@ const items = [
     children: [
       {
         text:'基础',
-        href: 'doc/container'
+        href: '/doc/container'
       }
     ]
   },

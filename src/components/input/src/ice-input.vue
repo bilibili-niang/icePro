@@ -133,6 +133,7 @@ export default {
     transition-duration: @time-n;
     font-size: @fontSize-n;
     color: @themeColor;
+    padding-left: @p-normal;
   }
 
   .nowait {
@@ -140,6 +141,7 @@ export default {
     font-size: @fontSize-s;
     top: -10%;
     background: @themeColorReversal;
+    padding-left: @p-small;
   }
 
   input {

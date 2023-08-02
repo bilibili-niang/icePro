@@ -1,7 +1,7 @@
 <template>
   <div class="pre border-normal ice-column pre-component">
     <div class="title flex-align-center">
-      <ice-title>
+      <ice-title noselect>
         {{ component.__sourceCodeTitle }}
       </ice-title>
       <iceButton type="simple" @click="hideCode" color="wanshoujuhuang" v-if="codeVisible">隐藏代码</iceButton>

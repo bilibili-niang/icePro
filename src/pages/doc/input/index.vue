@@ -1,5 +1,6 @@
 <template>
   <Preview :component="inputPreview"/>
+
 </template>
 
 <script setup>

@@ -3,17 +3,14 @@
   <div class="ice-card" :class="size,color? color: ''"
        :style="{'--hover-color': themeColor.hoverColor,'--color': themeColor.color}">
     <div class="slot" :class="type">
-      <div class="header">
-        <ice-title>
-          <slot name="header"></slot>
-        </ice-title>
+      <div class="header ice-row flex-sb">
+        <slot name="header"></slot>
       </div>
       <split></split>
       <div class="body">
         <slot name="body"></slot>
       </div>
     </div>
-
   </div>
 </template>
 

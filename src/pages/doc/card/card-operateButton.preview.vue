@@ -1,12 +1,9 @@
 <preview>
-card-normal
+card-operate
 </preview>
 <template>
   <ice-text noselect>
-    最基础的内容展现,使用具名插槽
-    <ice-tag>header</ice-tag>
-    和
-    <ice-tag>body</ice-tag>
+    提供了一般的操作按钮
   </ice-text>
   <show>
     <ice-card>
@@ -14,6 +11,7 @@ card-normal
         <ice-title>
           水调歌头-崔与之
         </ice-title>
+        <ice-button>read</ice-button>
       </template>
       <template v-slot:body>
         <ice-text>"万里云间戍，立马剑门关。",</ice-text>
