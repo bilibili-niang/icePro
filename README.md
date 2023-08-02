@@ -1,15 +1,14 @@
-> Based on Vue 3, Vite UI. It's a UI that I wrote for fun, but it's not something serious.
+基于 Vue 3 和 Vite，这是一个我为了好玩而编写的ui框架
 
-Currently still in development, the goal is to create a UI framework that I can use for my own projects, even though it's just for fun.
+目前仍在开发中，目标是创建一个我可以在自己的项目中使用的 UI 框架
 
-`usage`:  
-use it in you `main.js`:
-
+使用方法： 在你的 main.js 文件中导入样式：
+```javascript
 import common.less
+```
+然后在你的`main.js`组件中使用：
 
-and
-
-```vue
+```javascript
 import { createApp } from 'vue'
 import App from './App.vue'
 import 'icepro/assets/common.less'
@@ -18,9 +17,6 @@ import icepro from 'icepro'
 const app = createApp(App)
 
 app
-    .use(icepro)
-    .mount('#app')
+.use(icepro)
+.mount('#app')
 ```
-
-
-
