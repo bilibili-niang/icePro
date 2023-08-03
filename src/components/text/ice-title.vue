@@ -1,5 +1,7 @@
 <template>
-  <div class='ice-title' :class="[noselect?'noselect':'']" :title="title">
+  <div class='ice-title' :class="[noselect?'noselect':'',color?'hoverColor':'defaultColor']" :title="title"
+       :style="{ '--hover-color': findColor(color).color,'--color': findColor(color).hover }"
+  >
     <h4 class="slot" :class="[type,size]">
       <slot/>
     </h4>
@@ -7,6 +9,8 @@
 </template>
 
 <script setup>
+import { findColor } from '@/hooks/tools.js'
+
 defineProps({
   type: {
     type: String,
@@ -23,6 +27,10 @@ defineProps({
   noselect: {
     type: Boolean,
     default: false
+  },
+  color: {
+    type: String,
+    default: 'defaultColor'
   }
 })
 </script>
@@ -53,5 +61,30 @@ export default {
   margin-top: @m-large;
   margin-bottom: @m-large;
   font-weight: @fontWeight-l-su;
+}
+
+.defaultColor {
+  h4 {
+    transition-duration: @time-n;
+    color: @themeColor;
+
+    &:hover {
+      color: @themeColor-bleak;
+    }
+  }
+}
+
+// 传入color
+.hoverColor {
+  h4 {
+    color: var(--color);
+    border-color: var(--color);
+    transition-duration: @time-n;
+
+    &:hover {
+      color: var(--hover-color);
+      border-color: var(--hover-color);
+    }
+  }
 }
 </style>

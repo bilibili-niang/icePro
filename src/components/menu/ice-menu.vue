@@ -16,10 +16,10 @@
           </ice-title>
           <ul class='list-children-ul'>
             <li v-for="(it, itIndex) in item.children" :key="itIndex">
-              <ice-link :href="it.href" :color="color" v-if="it.href">
+              <ice-link :href="it.href" :color="color" v-if="it.href" :class="{activeLink:router===it.href}">
                 {{ it.text }}
               </ice-link>
-              <ice-text v-else noselect>{{ it.text }}</ice-text>
+              <ice-text v-else noselect :color="color">{{ it.text }}</ice-text>
             </li>
           </ul>
         </div>

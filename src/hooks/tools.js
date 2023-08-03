@@ -1,15 +1,5 @@
-import { useRouter } from 'vue-router'
 import colors from "../assets/colors/colors.json"
 
-const goHref = function (href, params) {
-    const router = useRouter()
-    router.push({
-        path: href,
-        query: {
-            params
-        }
-    })
-}
 const colorsMap = colors
 colorsMap.forEach(item => {
     colorsMap[item.pinyin] = {
@@ -43,7 +33,6 @@ const copyText = function (str) {
         })
 }
 export {
-    goHref,
     findColor,
     copyText
 }

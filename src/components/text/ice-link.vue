@@ -1,7 +1,7 @@
 <template>
   <div class="ice-link" :class="[
       size?size:'',
-      color?'defaultColor':''
+      color?'hoverColor':'defaultColor'
   ]"
        :style="{ '--hover-color': findColor(color).color,'--color': findColor(color).hover }"
        @click="go">
@@ -62,6 +62,18 @@ const go = () => {
 
   &:hover {
   @themeColor-bleak;
+  }
+}
+
+// 传入color
+.hoverColor {
+  color: var(--color);
+  border-color: var(--color);
+  transition-duration: @time-n;
+
+  &:hover {
+    color: var(--hover-color);
+    border-color: var(--hover-color);
   }
 }
 </style>

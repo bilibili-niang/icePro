@@ -1,14 +1,9 @@
 <template>
-  <div>
-    container
-  </div>
+  <Preview :component="containerNormalPreview"/>
 </template>
 
-<script>
-export default {
-  name: "index"
-}
-</script>
+<script setup>
+import containerNormalPreview from '@/pages/doc/container/container.normal.preview.vue'</script>
 
 <style scoped>
 
