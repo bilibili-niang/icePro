@@ -19,6 +19,11 @@ const props = defineProps({
   }
 })
 </script>
+<script>
+export default {
+  name: 'IceColumn'
+}
+</script>
 <style lang='less' scoped>
 .ice-column {
   display: flex;

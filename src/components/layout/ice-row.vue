@@ -1,5 +1,6 @@
 <template>
   <div class='ice-row'>
+    <slot name="default"/>
     <div class="left">
       <slot name="left"/>
     </div>
@@ -11,6 +12,11 @@
 
 <script setup>
 
+</script>
+<script>
+export default {
+  name: 'IceRow'
+}
 </script>
 <style lang='less' scoped>
 .ice-row {

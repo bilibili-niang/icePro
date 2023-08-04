@@ -3,7 +3,9 @@
     <div class='btn btn-time-s  text-nowrap' :class="[
         type?type:'',
         color?'btn-colors':'',
-        fill?fill:''
+        fill?fill:'',
+        round?'round':'defaultRound',
+        block?'block':''
         ]"
          :title="title?title:''"
          :style="{ '--hover-color': findColor(color).color,'--color': findColor(color).hover }">
@@ -41,6 +43,14 @@ const props = defineProps({
   fill: {
     type: String,
     default: ''
+  },
+  round: {
+    type: Boolean,
+    default: false
+  },
+  block: {
+    type: Boolean,
+    default: false
   }
 })
 
@@ -134,7 +144,6 @@ export default {
   justify-content: center;
   align-items: center;
   padding: @padding;
-  border-radius: @radio-l;
   margin: @m-normal;
   user-select: none;
 }
@@ -233,5 +242,20 @@ export default {
       box-shadow: inset @hoverBlurLength @hoverLength-n @hoverLength-n @fontColor;
     }
   }
+}
+
+// round
+// 默认圆角
+.defaultRound {
+  border-radius: @radio-l;
+}
+
+.round {
+  border-radius: 1.3rem;
+}
+
+// block
+.block {
+  border-radius: 0;
 }
 </style>

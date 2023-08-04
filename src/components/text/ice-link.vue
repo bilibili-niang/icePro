@@ -51,6 +51,7 @@ const go = () => {
   white-space: nowrap;
   display: inline-block;
   transition: @time-n;
+  margin: @m-normal;
 
   &:hover {
     cursor: pointer

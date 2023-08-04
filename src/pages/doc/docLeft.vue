@@ -91,7 +91,6 @@ let nowPath = ref('')
 nowPath.value = route.path
 watch(() => route.path,
     (newVal) => {
-      console.log(newVal)
       nowPath.value = newVal
     })
 </script>

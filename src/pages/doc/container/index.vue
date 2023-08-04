@@ -1,9 +1,14 @@
 <template>
-  <Preview :component="containerNormalPreview"/>
+  <Preview :component="containerRowPreview"/>
+  <Preview :component="containerColumnPreview"/>
 </template>
 
 <script setup>
-import containerNormalPreview from '@/pages/doc/container/container.normal.preview.vue'</script>
+import containerRowPreview from '@/pages/doc/container/container.row.preview.vue'
+import Preview from '@/components/editor/preview.vue'
+import containerColumnPreview from '@/pages/doc/container/container.column.preview.vue'
+
+</script>
 
 <style scoped>
 
