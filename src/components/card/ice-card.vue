@@ -1,22 +1,59 @@
 <template>
   <!--变量-->
-  <div class="ice-card" :class="size,color? color: ''"
+  <div class="ice-card" :class="[size,color? color: '']"
+       v-if="header"
        :style="{'--hover-color': themeColor.hoverColor,'--color': themeColor.color}">
     <div class="slot" :class="type">
       <div class="header ice-row flex-sb">
         <slot name="header"></slot>
       </div>
-      <split></split>
-      <div class="body">
+      <div class="body" v-if="body">
+        <split></split>
         <slot name="body"></slot>
+      </div>
+      <div class="bottom" v-if="bottom">
+        <split></split>
+        <div class="ice-column content">
+          {{ showBottom }}
+          <ice-button @click="showBottom=!showBottom">show</ice-button>
+          <div class="bottomLim show" ref="bottomContent">
+            <slot name="bottom"></slot>
+          </div>
+        </div>
       </div>
     </div>
   </div>
+  <ice-button @click="showDom">dom</ice-button>
 </template>
 
 <script setup>
-import { reactive } from 'vue'
-import { findColor } from '../../hooks/tools.js'
+import { onMounted, reactive, ref, useSlots, watch } from 'vue'
+import { findColor } from '@/hooks/tools.js'
+
+const { header, body, bottom } = useSlots()
+let showBottom = ref(false)
+
+const bottomContent = ref('')
+let bottomHeight = ref('')
+
+onMounted(() => {
+  bottomHeight.value = bottomContent.value.scrollHeight
+})
+
+// 监听
+const showDom = () => {
+  console.log("bottomContent.value:")
+  console.log(bottomContent)
+  console.log(bottomContent.value.scrollHeight)
+}
+watch(() => showBottom,
+    (newVal, oldVal) => {
+      if (!newVal) {
+        bottomContent.value.style.height = 0
+      } else {
+        bottomContent.value.style.height = bottomHeight.value
+      }
+    })
 
 const props = defineProps({
   type: {
@@ -67,6 +104,27 @@ export default {
     color: @themeColor;
     font-weight: @fontWeight-n;
   }
+
+  .bottom {
+    width: 100%;
+
+    .content {
+      width: 100%;
+
+      .show {
+        display: flex;
+        height: auto;
+        transition-duration: @time-n;
+        overflow: hidden;
+      }
+
+      .hide {
+        display: flex;
+        height: 0;
+        overflow-y: hidden;
+      }
+    }
+  }
 }
 
 // size
@@ -75,4 +133,5 @@ export default {
   margin: @m-normal;
   border-radius: @radio-n;
 }
+
 </style>
