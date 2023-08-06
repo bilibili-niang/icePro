@@ -1,6 +1,6 @@
 <template>
-<!--  <Preview :component="cardNormal"/>-->
-<!--  <Preview :component="cardOperateButton"/>-->
+  <Preview :component="cardNormal"/>
+  <Preview :component="cardOperateButton"/>
   <Preview :component="cardBottomButton"/>
 </template>
 

@@ -3,7 +3,9 @@ card-normal
 </preview>
 <template>
   <ice-text noselect>
-    使用具名插槽来配置底部需要显示的内容
+    使用具名插槽
+    <ice-tag>bottom</ice-tag>
+    来配置底部需要显示的内容
   </ice-text>
   <show>
     <ice-card>
@@ -23,7 +25,17 @@ card-normal
         <ice-text>"烽火平安夜，归梦到家山。"</ice-text>
       </template>
       <template v-slot:bottom>
-        底部的内容
+        <div class="ice-column">
+          <ice-title>
+            渭城曲 朝代：唐朝|作者：王维
+          </ice-title>
+          <ice-text>
+            渭城朝雨浥轻尘， 客舍青青柳色新。
+          </ice-text>
+          <ice-text>
+            劝君更尽一杯酒， 西出阳关无故人。
+          </ice-text>
+        </div>
       </template>
     </ice-card>
   </show>

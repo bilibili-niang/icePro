@@ -14,7 +14,6 @@
       <div class="bottom" v-if="bottom">
         <split></split>
         <div class="ice-column content">
-          {{ showBottom }}
           <ice-button @click="showBottom=!showBottom">show</ice-button>
           <div class="bottomLim show" ref="bottomContent">
             <slot name="bottom"></slot>
@@ -23,7 +22,6 @@
       </div>
     </div>
   </div>
-  <ice-button @click="showDom">dom</ice-button>
 </template>
 
 <script setup>
@@ -36,22 +34,14 @@ let showBottom = ref(false)
 const bottomContent = ref('')
 let bottomHeight = ref('')
 
-onMounted(() => {
-  bottomHeight.value = bottomContent.value.scrollHeight
-})
-
-// 监听
-const showDom = () => {
-  console.log("bottomContent.value:")
-  console.log(bottomContent)
-  console.log(bottomContent.value.scrollHeight)
-}
-watch(() => showBottom,
-    (newVal, oldVal) => {
+watch(showBottom,
+    (newVal) => {
       if (!newVal) {
         bottomContent.value.style.height = 0
+        bottomContent.value.style.opacity = 0
       } else {
-        bottomContent.value.style.height = bottomHeight.value
+        bottomContent.value.style.height = bottomHeight.value * 1.3 + 'px'
+        bottomContent.value.style.opacity = 1
       }
     })
 
@@ -78,6 +68,22 @@ if (props.color) {
     hoverColor: `rgba(${ colorObj.RGB[0] },${ colorObj.RGB[1] },${ colorObj.RGB[2] },0.5)`
   }
 }
+
+const init = () => {
+  bottomHeight.value = bottomContent.value.scrollHeight
+  if (showBottom.value) {
+    bottomContent.value.style.height = bottomHeight.value * 1.3 + 'px'
+  } else {
+    bottomContent.value.style.height = 0
+    bottomContent.value.style.opacity = 0
+  }
+}
+
+onMounted(() => {
+  if (bottom) {
+    init()
+  }
+})
 
 </script>
 <script>
