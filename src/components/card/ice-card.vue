@@ -14,7 +14,12 @@
       <div class="bottom" v-if="bottom">
         <split></split>
         <div class="ice-column content">
-          <ice-button @click="showBottom=!showBottom">show</ice-button>
+          <div class="operates ice-row">
+            <ice-tag round size="large" @click="showBottom=!showBottom" :class="[
+              showBottom?'down':'up'
+          ]">^
+            </ice-tag>
+          </div>
           <div class="bottomLim show" ref="bottomContent">
             <slot name="bottom"></slot>
           </div>
@@ -140,4 +145,14 @@ export default {
   border-radius: @radio-n;
 }
 
+// 箭头翻转
+.down {
+  transform: rotate(180deg);
+  transition: transform 0.3s;
+}
+
+.up {
+  transform: rotate(0deg);
+  transition: transform 0.3s;
+}
 </style>

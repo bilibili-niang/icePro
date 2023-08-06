@@ -1,5 +1,8 @@
 <template>
-  <div class="ice-tag noselect" :class="type">
+  <div class="ice-tag noselect" :class="[type,
+  round?'round':'defaultRound',
+  size?`size-${size}`:'size-default'
+  ]">
     <slot></slot>
   </div>
 </template>
@@ -9,6 +12,13 @@ defineProps({
   type: {
     type: String,
     default: 'normal'
+  },
+  round: {
+    type: Boolean,
+    default: false
+  },
+  size: {
+    type: String
   }
 })
 </script>
@@ -22,18 +32,35 @@ export default {
 @import '../../assets/variables.less';
 
 .ice-tag {
-  margin: @p-small @m-normal;
-  border-radius: @radio-n;
   color: @themeColor;
   border-color: @themeColor;
   display: flex;
   background-color: @fonColor-dark-bleak;
-  //max-width: 5rem;
   justify-content: center;
 }
 
 .normal {
   font-size: @fontSize-n;
-  padding: @p-normal;
+}
+
+.defaultRound {
+  border-radius: @radio-n;
+}
+
+// round
+.round {
+  border-radius: 50%;
+  aspect-ratio: 1;
+}
+
+// size
+.size-default {
+  margin: @m-small @m-normal;
+  padding: @p-small @p-normal;
+}
+
+.size-large {
+  margin: @m-normal @m-large;
+  padding: @p-large-su;
 }
 </style>
