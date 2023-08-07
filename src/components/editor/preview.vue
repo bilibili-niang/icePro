@@ -1,28 +1,33 @@
 <template>
-  <div class="pre border-normal ice-column pre-component">
-    <div class="title flex-align-center">
+  <ice-card>
+    <template v-slot:header>
       <ice-title noselect>
         {{ component.__sourceCodeTitle }}
       </ice-title>
-      <iceButton type="simple" @click="hideCode" color="wanshoujuhuang" v-if="codeVisible">隐藏代码</iceButton>
-      <iceButton type="simple" @click="showCode" color="wanshoujuhuang" v-else>查看代码</iceButton>
-    </div>
-    <split></split>
-    <div class="pre-component">
-      <component :is="component"/>
-    </div>
-    <div class="pre-code ice-column" v-if="codeVisible">
-      <pre class="language-html" v-html="html"/>
-      <pre class="language-css" v-html="css" v-if="component.__styleCode"/>
-      <pre class="language-javascript" v-html="script" v-if="component.__script"/>
-    </div>
-  </div>
+      <!--      <iceButton type="simple" @click="hideCode" color="wanshoujuhuang" v-if="codeVisible">隐藏代码</iceButton>-->
+      <!--      <iceButton type="simple" @click="showCode" color="wanshoujuhuang" v-else>查看代码</iceButton>-->
+    </template>
+    <template v-slot:body>
+      <div class="pre-component">
+        <component :is="component"/>
+      </div>
+    </template>
+    <template v-slot:bottom>
+      <div class="pre-code ice-column w100percent">
+        <pre class="language-html" v-html="html"/>
+        <pre class="language-css" v-html="css" v-if="component.__styleCode"/>
+        <pre class="language-javascript" v-html="script" v-if="component.__script"/>
+      </div>
+    </template>
+  </ice-card>
 </template>
 
 <script setup>
 import "prismjs"
 import "prismjs/themes/prism.css"
 import { computed, ref } from "vue"
+import IceCard from '@/components/card/ice-card.vue'
+import IceTitle from '@/components/text/ice-title.vue'
 
 const Prism = window.Prism
 

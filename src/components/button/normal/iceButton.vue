@@ -1,11 +1,12 @@
 <template>
   <div class="colors" @click="clickCallBack">
-    <div class='btn btn-time-s  text-nowrap' :class="[
+    <div class='btn btn-time-s  text-nowrap ice-row' :class="[
         type?type:'',
         color?'btn-colors':'',
         fill?fill:'',
         round?'round':'defaultRound',
-        block?'block':''
+        block?'block':'',
+        size?`size-${size}`:'size-default'
         ]"
          :title="title?title:''"
          :style="{ '--hover-color': findColor(color).color,'--color': findColor(color).hover }">
@@ -29,8 +30,7 @@ const props = defineProps({
     default: false
   },
   size: {
-    type: String,
-    default: 'normal'
+    type: String
   },
   color: {
     type: String,
@@ -69,9 +69,7 @@ export default {
 
 .btn {
   border: @borderColor 1px solid;
-  padding: @padding;
   border-radius: @radio-l;
-  margin: @m-normal;
   user-select: none;
   flex-grow: 0;
   width: fit-content;
@@ -135,7 +133,6 @@ export default {
     border: @startColor 1px solid;
   }
 }
-
 
 // hover button style
 // default style
@@ -257,5 +254,21 @@ export default {
 // block
 .block {
   border-radius: 0;
+}
+
+// size
+.size-small {
+  padding: @p-small;
+  margin: @m-small;
+}
+
+.size-normal {
+  padding: @p-normal;
+  margin: @m-normal;
+}
+
+.size-large {
+  padding: @p-large;
+  margin: @m-normal;
 }
 </style>

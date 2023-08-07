@@ -14,12 +14,14 @@
       <div class="bottom" v-if="bottom">
         <split></split>
         <div class="ice-column content">
-          <div class="operates ice-row">
-            <ice-tag round size="large" @click="showBottom=!showBottom" :class="[
+          <ice-button size="large" @click="showBottom=!showBottom">
+            展开
+            <ice-tag round class="tag" :class="[
               showBottom?'down':'up'
           ]">^
             </ice-tag>
-          </div>
+          </ice-button>
+
           <div class="bottomLim show" ref="bottomContent">
             <slot name="bottom"></slot>
           </div>
@@ -77,7 +79,7 @@ if (props.color) {
 const init = () => {
   bottomHeight.value = bottomContent.value.scrollHeight
   if (showBottom.value) {
-    bottomContent.value.style.height = bottomHeight.value * 1.3 + 'px'
+    bottomContent.value.style.height = bottomHeight.value * 1 + 'px'
   } else {
     bottomContent.value.style.height = 0
     bottomContent.value.style.opacity = 0
@@ -99,6 +101,7 @@ export default {
 
 <style scoped lang="less">
 @import "../../assets/variables.less";
+@import "../../assets/common.less";
 
 .ice-card {
   border: @themeColor 1px solid;
