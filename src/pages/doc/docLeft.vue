@@ -48,15 +48,26 @@ const items = [
       {
         text: 'text 文字',
         href: '/doc/text'
+      },
+      {
+        text: 'tag',
+        href: '/doc/tag'
       }
     ]
   },
   {
     text: '反馈',
-    children: [{
+    children: [
+        {
       text: 'message 消息弹窗',
       href: '/doc/message'
-    }]
+    },
+      {
+      text: 'drawer 抽屉',
+      href: '/doc/drawer'
+    },
+
+    ]
   },
   {
     text: '布局容器',
@@ -123,7 +134,6 @@ export default {
 
 .cls-1, .cls-2 {
   font-size: 700px;
-  font-family: "Ink Free";
 }
 
 .cls-1 {

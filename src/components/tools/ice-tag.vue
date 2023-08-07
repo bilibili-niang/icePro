@@ -1,13 +1,18 @@
 <template>
   <div class="ice-tag noselect" :class="[type,
   round?'round':'defaultRound',
-  size?`size-${size}`:'size-default'
-  ]">
+  color?'btn-colors':'',
+  size?`size-${size}`:'size-normal'
+  ]"
+       :style="{ '--hover-color': findColor(color).color,'--color': findColor(color).hover }"
+  >
     <slot></slot>
   </div>
 </template>
 
 <script setup>
+import { findColor } from '@/hooks/tools.js'
+
 defineProps({
   type: {
     type: String,
@@ -16,6 +21,10 @@ defineProps({
   round: {
     type: Boolean,
     default: false
+  },
+  color: {
+    type: String,
+    default: ''
   },
   size: {
     type: String
@@ -35,8 +44,9 @@ export default {
   color: @themeColor;
   border-color: @themeColor;
   display: flex;
-  background-color: @fonColor-dark-bleak;
   justify-content: center;
+  height: fit-content;
+  background-color: @themeBackgroundColor;
 }
 
 .normal {
@@ -53,14 +63,36 @@ export default {
   aspect-ratio: 1;
 }
 
-// size
-.size-default {
+// size\
+.size-small {
+  margin: @m-small;
+  padding: @p-small;
+  transition-duration: @time-s;
+}
+
+.size-normal {
   margin: @m-small @m-normal;
   padding: @p-small @p-normal;
+  font-size: @fontSize-n;
+  font-weight: @fontWeight-n;
+  transition-duration: @time-n;
 }
 
 .size-large {
+  font-size: @fontSize-l;
+  font-weight: @fontWeight-l;
   margin: @m-normal @m-large;
-  padding: @p-large-su;
+  padding: @p-normal @p-large-su;
+  transition-duration: @time-l;
+}
+
+.btn-colors {
+  color: var(--color);
+  border-color: var(--color);
+
+  &:hover {
+    color: var(--hover-color);
+    border-color: var(--hover-color);
+  }
 }
 </style>

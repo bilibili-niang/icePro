@@ -6,7 +6,7 @@
 <script setup>
 import Preview from '@/components/editor/preview.vue'
 import splitPreview from './split.preview.vue'
-import tagPreview from './tag.preview.vue'</script>
+import tagPreview from '../tag/tag.preview.vue'</script>
 <style scoped>
 
 </style>

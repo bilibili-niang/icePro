@@ -194,4 +194,16 @@ export default {
     opacity: 0;
   }
 }
+
+// message
+.message-colors {
+  color: var(--hover-color);
+  border-color: var(--hover-color);
+
+  /*&:hover {
+    color: var(--hover-color);
+    border-color: var(--hover-color);
+  }*/
+}
+
 </style>

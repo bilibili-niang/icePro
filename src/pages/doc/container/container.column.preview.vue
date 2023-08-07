@@ -14,10 +14,3 @@ layout-row
   </show>
 </template>
 
-<script setup>
-
-</script>
-
-<style scoped>
-
-</style>

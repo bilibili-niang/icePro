@@ -11,6 +11,7 @@ import iceMenu from './src/components/menu/ice-menu.vue'
 import iceInput from './src/components/input/index'
 import iceRow from './src/components/layout/ice-row.vue'
 import iceColumn from './src/components/layout/ice-column.vue'
+import iceDrawer from '@/components/drawer/index.js'
 
 const components = [
     iceButton,
@@ -24,7 +25,8 @@ const components = [
     iceMenu,
     iceInput,
     iceRow,
-    iceColumn
+    iceColumn,
+    iceDrawer
 ]
 
 export {
@@ -40,7 +42,8 @@ export {
     iceMenu,
     iceInput,
     iceRow,
-    iceColumn
+    iceColumn,
+    iceDrawer
 }
 
 function registerUi (app) {

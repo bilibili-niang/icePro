@@ -19,6 +19,3 @@
     <ice-button hover type="shadow-inner-lt-rb">hover</ice-button>
   </show>
 </template>
-<script setup>
-
-</script>

@@ -215,6 +215,18 @@ p {
 }
 
 // avtice样式
-.activeLink{
-  color: @themeColorActive!important;
+.activeLink {
+  color: @themeColorActive !important;
+}
+
+body, #app {
+  transition-duration: @time-n;
+}
+
+// drawer
+.showDrawer {
+  //filter: grayscale(80%);
+  #app {
+    filter: blur(.5rem);
+  }
 }

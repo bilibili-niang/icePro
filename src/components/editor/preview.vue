@@ -4,8 +4,6 @@
       <ice-title noselect>
         {{ component.__sourceCodeTitle }}
       </ice-title>
-      <!--      <iceButton type="simple" @click="hideCode" color="wanshoujuhuang" v-if="codeVisible">隐藏代码</iceButton>-->
-      <!--      <iceButton type="simple" @click="showCode" color="wanshoujuhuang" v-else>查看代码</iceButton>-->
     </template>
     <template v-slot:body>
       <div class="pre-component">

@@ -1,12 +1,13 @@
 <template>
-  <div class="colors" @click="clickCallBack">
+  <div class="ice-button" @click="clickCallBack">
     <div class='btn btn-time-s  text-nowrap ice-row' :class="[
-        type?type:'',
+        type?color?'btn-colors':type:'',
         color?'btn-colors':'',
         fill?fill:'',
         round?'round':'defaultRound',
         block?'block':'',
-        size?`size-${size}`:'size-default'
+        size?`size-${size}`:'size-default',
+        disable?'disable':''
         ]"
          :title="title?title:''"
          :style="{ '--hover-color': findColor(color).color,'--color': findColor(color).hover }">
@@ -51,10 +52,17 @@ const props = defineProps({
   block: {
     type: Boolean,
     default: false
+  },
+  disable: {
+    type: Boolean,
+    default: false
   }
 })
 
 const clickCallBack = (evt) => {
+  if (props.disable) {
+    return
+  }
   emit('click', evt)
 }
 </script>
@@ -68,11 +76,12 @@ export default {
 @import "../../../assets/animate.less";
 
 .btn {
-  border: @borderColor 1px solid;
   border-radius: @radio-l;
   user-select: none;
   flex-grow: 0;
   width: fit-content;
+  border-width: 1px;
+  border-style: solid;
 }
 
 .btn > * {
@@ -81,7 +90,7 @@ export default {
 
 // primary类型按钮
 .primary {
-  border-color: @fonColor-dark;
+  border: @fonColor-dark 1px solid;
   color: @fonColor-dark;
 
   &:hover {
@@ -262,7 +271,7 @@ export default {
   margin: @m-small;
 }
 
-.size-normal {
+.size-default {
   padding: @p-normal;
   margin: @m-normal;
 }
@@ -270,5 +279,27 @@ export default {
 .size-large {
   padding: @p-large;
   margin: @m-normal;
+}
+
+// colors
+.btn-colors {
+  border: var(--color) 1px solid;
+  color: var(--color);
+  border-color: var(--color);
+
+  &:hover {
+    border: var(--hover-color) 1px solid;
+    color: var(--hover-color);
+    border-color: var(--hover-color);
+  }
+}
+
+// disable
+.disable {
+  display: flex;
+  width: fit-content;
+  cursor: not-allowed;
+  z-index: 2;
+  filter: grayscale(80%);
 }
 </style>

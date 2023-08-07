@@ -9,10 +9,10 @@ colors
       传参
     </ice-text>
   </div>
-  <show class="colorBlock">
+  <show class="colorBlock ice-row">
     <template v-for="(item,index) in allColor" :key="index">
       <div class="ice-column colorBlockItem" @click="copy(item.pinyin)">
-        <div class="item" :style="{background:findColor(item.pinyin).color}">
+        <div class="item radio-m" :style="{background:findColor(item.pinyin).color}">
           {{ item.name }}
           {{ item.pinyin }}
         </div>
@@ -33,7 +33,10 @@ const allColor = reactive(colors)
 const copy = async (str) => {
   const res = await copyText(str)
   if (res) {
-    iceMessage(`复制成功`)
+    iceMessage({
+      message: `复制成功`,
+      color: str
+    })
   } else {
     iceMessage({
       message: `复制失败`,
@@ -45,9 +48,15 @@ const copy = async (str) => {
 
 <style scoped lang="less">
 .colorBlockItem {
+  width: 15%;
+  padding: @p-normal;
+  margin: @m-small;
+
   .item {
     padding: @p-normal;
-    margin: @m-small;
+    display: flex;
+    height: 3rem;
+    width: 100%;
   }
 }
 </style>

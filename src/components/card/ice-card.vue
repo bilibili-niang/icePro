@@ -16,10 +16,10 @@
         <div class="ice-column content">
           <ice-button size="large" @click="showBottom=!showBottom">
             展开
-            <ice-tag round class="tag" :class="[
+            <div class="tag" :class="[
               showBottom?'down':'up'
           ]">^
-            </ice-tag>
+            </div>
           </ice-button>
 
           <div class="bottomLim show" ref="bottomContent">

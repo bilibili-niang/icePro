@@ -40,6 +40,10 @@ const routes = [
                 component: () => import('../pages/doc/message/index.vue'),
             },
             {
+                path: 'drawer',
+                component: () => import('../pages/doc/drawer/index.vue'),
+            },
+            {
                 path: 'menu',
                 component: () => import('../pages/doc/menu/index.vue'),
             },
@@ -50,6 +54,9 @@ const routes = [
             {
                 path: 'container',
                 component: () => import('../pages/doc/container/index.vue'),
+            },{
+                path: 'tag',
+                component: () => import('../pages/doc/tag/index.vue'),
             }
         ],
     },
