@@ -36,7 +36,7 @@
 import { defineProps, ref } from 'vue'
 import IceTitle from '@/components/text/ice-title.vue'
 import IceLink from '@/components/text/ice-link.vue'
-import { findColor } from '@/hooks/tools.js'
+import { findColor } from '../../hooks/tools.js'
 
 const props = defineProps({
   list: {
