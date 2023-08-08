@@ -1,5 +1,6 @@
 <template>
-  <div class='ice-text' :class="[
+  <div class='ice-text'
+       :class="[
       nowrap?'text-nowrap':'',
       color?'hoverColor':'',
       size?'size-'+size:'size-n',
@@ -13,7 +14,7 @@
 </template>
 
 <script setup>
-import { defineProps } from 'vue'
+import { defineEmits, defineProps } from 'vue'
 import { findColor } from '../../hooks/tools.js'
 
 const props = defineProps({
@@ -38,6 +39,14 @@ const props = defineProps({
     default: false
   }
 })
+
+const emit = defineEmits(['click'])
+const clickCallBack = (evt) => {
+  if (props.disable) {
+    return
+  }
+  emit('click', evt)
+}
 </script>
 <script>
 export default {

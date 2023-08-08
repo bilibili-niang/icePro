@@ -39,7 +39,6 @@ let showBottom = ref(false)
 
 const bottomContent = ref('')
 let bottomHeight = ref('')
-
 watch(showBottom,
     (newVal) => {
       if (!newVal) {

@@ -26,7 +26,7 @@ colors
 import colors from "../../../assets/colors/colors.json"
 import '@/assets/variables.less'
 import { reactive } from 'vue'
-import { copyText, findColor } from '../../hooks/tools.js'
+import { copyText, findColor } from '../../../hooks/tools.js'
 import { iceMessage } from '../../../../index.js'
 
 const allColor = reactive(colors)

@@ -20,7 +20,7 @@
 
 <script setup>
 import { defineProps, nextTick } from 'vue'
-import { inputEmit, inputProps, useInput } from '@/components/input/src/ice-input.js'
+import { inputEmit, inputProps, useInput } from './ice-input.js'
 
 const props = defineProps(inputProps)
 const emits = defineEmits(inputEmit)

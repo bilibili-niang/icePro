@@ -1,2 +1,2 @@
-import iceDrawer from '@/components/drawer/src/ice-drawer.vue'
+import iceDrawer from './src/ice-drawer.vue'
 export default iceDrawer
