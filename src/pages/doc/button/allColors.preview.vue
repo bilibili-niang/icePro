@@ -12,7 +12,7 @@ colors
   <show class="colorBlock ice-row">
     <template v-for="(item,index) in allColor" :key="index">
       <div class="ice-column colorBlockItem" @click="copy(item.pinyin)">
-        <div class="item radio-m" :style="{background:findColor(item.pinyin).color}">
+        <div class="item radio-m noselect" :style="{background:findColor(item.pinyin).color}">
           {{ item.name }}
           {{ item.pinyin }}
         </div>

@@ -14,14 +14,13 @@
       <div class="bottom" v-if="bottom">
         <split></split>
         <div class="ice-column content">
-          <ice-button size="large" @click="showBottom=!showBottom">
+          <ice-button @click="showBottom=!showBottom">
             展开
             <div class="tag" :class="[
               showBottom?'down':'up'
           ]">^
             </div>
           </ice-button>
-
           <div class="bottomLim show" ref="bottomContent">
             <slot name="bottom"></slot>
           </div>
@@ -47,7 +46,7 @@ watch(showBottom,
         bottomContent.value.style.height = 0
         bottomContent.value.style.opacity = 0
       } else {
-        bottomContent.value.style.height = bottomHeight.value * 1.3 + 'px'
+        bottomContent.value.style.height = bottomHeight.value * 1 + 'px'
         bottomContent.value.style.opacity = 1
       }
     })
@@ -157,5 +156,9 @@ export default {
 .up {
   transform: rotate(0deg);
   transition: transform 0.3s;
+}
+
+.bottomLim {
+  border-radius: 1.5rem;
 }
 </style>

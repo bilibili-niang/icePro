@@ -12,6 +12,8 @@ import iceInput from './src/components/input/index'
 import iceRow from './src/components/layout/ice-row.vue'
 import iceColumn from './src/components/layout/ice-column.vue'
 import iceDrawer from '@/components/drawer/index.js'
+import iceSelector   from '@/components/selector/index.js'
+import iceSelectorGroup  from '@/components/selector-group/index.js'
 
 const components = [
     iceButton,
@@ -26,7 +28,9 @@ const components = [
     iceInput,
     iceRow,
     iceColumn,
-    iceDrawer
+    iceDrawer,
+    iceSelector,
+    iceSelectorGroup
 ]
 
 export {
@@ -43,7 +47,9 @@ export {
     iceInput,
     iceRow,
     iceColumn,
-    iceDrawer
+    iceDrawer,
+    iceSelector,
+    iceSelectorGroup
 }
 
 function registerUi (app) {

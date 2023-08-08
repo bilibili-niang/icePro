@@ -269,16 +269,19 @@ export default {
 .size-small {
   padding: @p-small;
   margin: @m-small;
+  font-size: @fontSize-s;
 }
 
 .size-default {
   padding: @p-normal;
   margin: @m-normal;
+  font-size: @fontSize-n;
 }
 
 .size-large {
   padding: @p-large;
   margin: @m-normal;
+  font-size: @fontSize-l;
 }
 
 // colors

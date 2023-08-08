@@ -25,3 +25,6 @@
     <ice-button color="honglan">虹蓝</ice-button>
   </show>
 </template>
+<script setup>
+import IceLink from '@/components/text/ice-link.vue'
+</script>

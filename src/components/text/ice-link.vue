@@ -6,6 +6,7 @@
        :style="{ '--hover-color': findColor(color).color,'--color': findColor(color).hover }"
        @click="go">
     <slot></slot>
+    |{{ color }}
   </div>
 </template>
 
@@ -39,6 +40,7 @@ const go = () => {
     })
   }
 }
+console.log(findColor(props.color))
 </script>
 
 <style scoped lang="less">
@@ -59,10 +61,10 @@ const go = () => {
 }
 
 .defaultColor {
-  color: @themeColor;
+  color: @themeColor-bleak;
 
   &:hover {
-  @themeColor-bleak;
+  @themeColor;
   }
 }
 
