@@ -7,6 +7,6 @@ import icepro from '../index'
 const app = createApp(App)
 
 app
-    .use(icepro)
     .use(route)
+    .use(icepro)
     .mount('#app')
