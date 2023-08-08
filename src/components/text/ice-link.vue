@@ -6,7 +6,6 @@
        :style="{ '--hover-color': findColor(color).color,'--color': findColor(color).hover }"
        @click="go">
     <slot></slot>
-    |{{ color }}
   </div>
 </template>
 
@@ -64,7 +63,7 @@ console.log(findColor(props.color))
   color: @themeColor-bleak;
 
   &:hover {
-  @themeColor;
+    color: @themeColor;
   }
 }
 

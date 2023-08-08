@@ -45,7 +45,7 @@ const props = defineProps({
   },
   color: {
     type: String,
-    default: 'defaultColor',
+    default: '',
   },
   // 当前比对的字符串
   router: {
