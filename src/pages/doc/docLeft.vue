@@ -1,10 +1,11 @@
 <template>
-  <div class="ice-row">
+  <div class="ice-column">
     <ice-link href="/">
       <div class="svg">
         <img src="@/assets/png/logo.png" class="round" alt="">
       </div>
     </ice-link>
+    <ice-link href="https://github.com/bilibili-niang/icePro" target="_blank">github地址</ice-link>
   </div>
   <ice-menu :list="items" :router="nowPath" nofold></ice-menu>
 </template>
@@ -48,14 +49,14 @@ const items = [
   {
     text: '反馈',
     children: [
-        {
-      text: 'message 消息弹窗',
-      href: '/doc/message'
-    },
       {
-      text: 'drawer 抽屉',
-      href: '/doc/drawer'
-    },
+        text: 'message 消息弹窗',
+        href: '/doc/message'
+      },
+      {
+        text: 'drawer 抽屉',
+        href: '/doc/drawer'
+      },
 
     ]
   },
@@ -115,11 +116,16 @@ export default {
 }
 
 .svg {
-  display: flex;
   width: 3rem;
   height: 3rem;
   border-radius: 50%;
   margin: 2rem;
+
+  img {
+    display: flex;
+    width: 100%;
+    height: 100%;
+  }
 }
 
 .cls-1, .cls-2 {

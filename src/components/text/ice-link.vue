@@ -1,12 +1,13 @@
 <template>
-  <div class="ice-link" :class="[
+  <a class="ice-link" :class="[
       size?size:'',
       color?'hoverColor':'defaultColor'
   ]"
-       :style="{ '--hover-color': findColor(color).color,'--color': findColor(color).hover }"
-       @click="go">
-    <slot></slot>
-  </div>
+     :href="href"
+     :target="target?target:'_self'"
+     :style="{ '--hover-color': findColor(color).color,'--color': findColor(color).hover }">
+    <slot/>
+  </a>
 </template>
 
 <script setup>
@@ -27,19 +28,24 @@ const props = defineProps({
   },
   color: {
     type: String,
-    default: 'defaultColor'
+    default: ''
+  },
+  target: {
+    type: String,
+    default: '_self'
   }
 })
 const router = useRouter()
 const go = () => {
   if (props.href) {
-    router.push({
+    const url = router.push({
       path: props.href,
       query: props.params ? props.params : ''
     })
+    // 设置在新页面打开
+    window.open(url, '_blank')
   }
 }
-console.log(findColor(props.color))
 </script>
 
 <style scoped lang="less">
