@@ -48,6 +48,11 @@ const go = () => {
 }
 </script>
 
+<script>
+export default {
+  name:'ice-link'
+}
+</script>
 <style scoped lang="less">
 @import '../../assets/variables.less';
 

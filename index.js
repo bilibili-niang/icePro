@@ -12,10 +12,10 @@ import iceInput from './src/components/input/index'
 import iceRow from './src/components/layout/ice-row.vue'
 import iceColumn from './src/components/layout/ice-column.vue'
 import iceDrawer from './src/components/drawer/index.js'
-import iceSelector   from './src/components/selector/index.js'
-import iceSelectorGroup  from './src/components/selector-group/index.js'
+import iceSelector from './src/components/selector/index.js'
+import iceSelectorGroup from './src/components/selector-group/index.js'
 
-const components = [
+const components = {
     iceButton,
     iceText,
     split,
@@ -31,7 +31,7 @@ const components = [
     iceDrawer,
     iceSelector,
     iceSelectorGroup
-]
+}
 
 export {
     iceButton,
@@ -52,10 +52,20 @@ export {
     iceSelectorGroup
 }
 
-function registerUi (app) {
-    components.map(item => {
-        app.component(item.name, item)
-    })
+function install (app) {
+    const keys = Object.keys(components)
+    for (let i=0;i<keys.length;i++) {
+        app.component(components[keys[i]].name, components[keys[i]])
+    }
 }
 
-export default registerUi
+const icepro = {
+    version: '1.0.8'
+}
+
+// 导出组件
+icepro.install = install
+// icepro.components = components
+
+export default icepro
+

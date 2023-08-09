@@ -31,21 +31,21 @@ export default defineConfig({
     build: {
         outDir: "docs",
         base:'/docs/',
-        /* lib: {
-             entry: path.resolve(__dirname, "index.js"), // 打包的入口文件
-             name: "icepro", // 包名
-             // formats: ['es', 'umd'], // 打包模式，默认是es和umd都打
-             fileName: (format) => `icepro.${ format }.js`,
-         },*/
-        rollupOptions: {
-            // 确保外部化处理那些你不想打包进库的依赖
-            // external: ["vue"],
-            /*output: {
-                // 在 UMD 构建模式下为这些外部化的依赖提供一个全局变量
-                globals: {
-                    vue: "vue",
-                },
-            },*/
+        //压缩
+        minify: false,
+        //忽略打包vue文件
+        external: ["vue"],
+        output: {
+            globals: {
+                vue: "Vue",
+            },
+            dir: "dist",
+        },
+        lib: {
+            entry: "./index.js",
+            name: "icepro",
+            fileName: "icepro",
+            formats: ["es", "umd", "cjs"],
         }
     }
 })
