@@ -93,7 +93,7 @@ onMounted(() => {
 </script>
 <script>
 export default {
-  name: "ice-card"
+  name: "iceCard"
 }
 </script>
 

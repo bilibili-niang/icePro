@@ -1,4 +1,4 @@
-import iceButton from './src/components/button/normal/iceButton.vue'
+import iceButton from './src/components/button/src/iceButton.vue'
 import iceText from './src/components/text/ice-text.vue'
 import split from './src/components/tools/split.vue'
 import iceTag from './src/components/tools/ice-tag.vue'
@@ -14,6 +14,8 @@ import iceColumn from './src/components/layout/ice-column.vue'
 import iceDrawer from './src/components/drawer/index.js'
 import iceSelector from './src/components/selector/index.js'
 import iceSelectorGroup from './src/components/selector-group/index.js'
+// import './src/assets/common.less'
+
 
 const components = {
     iceButton,
@@ -54,7 +56,7 @@ export {
 
 function install (app) {
     const keys = Object.keys(components)
-    for (let i=0;i<keys.length;i++) {
+    for (let i = 0; i < keys.length; i ++) {
         app.component(components[keys[i]].name, components[keys[i]])
     }
 }

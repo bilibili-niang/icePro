@@ -21,7 +21,7 @@
 </template>
 
 <script setup>
-import IceButton from '@/components/button/normal/iceButton.vue'
+import IceButton from '@/components/button/src/iceButton.vue'
 import IceText from '@/components/text/ice-text.vue'
 import Split from '@/components/tools/split.vue'</script>
 

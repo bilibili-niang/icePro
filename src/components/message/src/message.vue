@@ -20,7 +20,7 @@
 import { computed, onMounted, onUnmounted, ref } from 'vue'
 import { findColor } from '../../../hooks/tools.js'
 import IceText from '../../text/ice-text.vue'
-import IceButton from '../../button/normal/iceButton.vue'
+import IceButton from '../../button/src/iceButton.vue'
 
 const visible = ref(false)
 let stopTimer = undefined
