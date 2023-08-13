@@ -46,7 +46,6 @@ export default {
   display: flex;
   justify-content: center;
   height: fit-content;
-  background-color: @themeBackgroundColor;
 }
 
 .normal {

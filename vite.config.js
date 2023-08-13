@@ -1,8 +1,8 @@
 import { defineConfig } from 'vite'
-import path from "path"
 import vue from '@vitejs/plugin-vue'
 import vitePluginVue from './plugins/fileFilter.js'
 import mdPlugin from "vite-plugin-markdown"
+import path from 'path'
 
 export default defineConfig({
     plugins: [
@@ -30,22 +30,27 @@ export default defineConfig({
     // 打包
     build: {
         outDir: "docs",
-        base:'/docs/',
+        base: '/docs/',
         //压缩
         minify: false,
-        //忽略打包vue文件
-        external: ["vue"],
-        output: {
-            globals: {
-                vue: "Vue",
-            },
-            dir: "dist",
-        },
         lib: {
             entry: "./index.js",
-            name: "icepro",
+            name: "index",
             fileName: "icepro",
             formats: ["es", "umd", "cjs"],
         }
-    }
+    },
+    rollupOptions: {
+        // 排除 Vue 依赖
+        exclude: ['vue'],
+        inlineDynamicImports: true,
+        resolve: {
+            dedupe: ['vue']
+        },
+        output: {
+            globals: {
+                vue: 'vue'
+            }
+        }
+    },
 })

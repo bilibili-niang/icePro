@@ -1,4 +1,4 @@
-import iceButton from './src/components/button/src/iceButton.vue'
+import iceButton from './src/components/button'
 import iceText from './src/components/text/ice-text.vue'
 import split from './src/components/tools/split.vue'
 import iceTag from './src/components/tools/ice-tag.vue'
@@ -14,8 +14,7 @@ import iceColumn from './src/components/layout/ice-column.vue'
 import iceDrawer from './src/components/drawer/index.js'
 import iceSelector from './src/components/selector/index.js'
 import iceSelectorGroup from './src/components/selector-group/index.js'
-// import './src/assets/common.less'
-
+import './src/assets/common.less'
 
 const components = {
     iceButton,
@@ -67,7 +66,6 @@ const icepro = {
 
 // 导出组件
 icepro.install = install
-// icepro.components = components
 
 export default icepro
 

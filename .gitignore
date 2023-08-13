@@ -40,6 +40,7 @@ build/Release
 
 # Dependency directories
 node_modules/
+docs/
 jspm_packages/
 .vscode
 
@@ -140,3 +141,4 @@ dist
 *.njsproj
 *.sln
 *.sw?
+

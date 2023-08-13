@@ -31,7 +31,7 @@
 </template>
 
 <script setup>
-import { onMounted, reactive, ref, useSlots, watch } from 'vue'
+import { defineProps, onMounted, reactive, ref, useSlots, watch } from 'vue'
 import { findColor } from '../../hooks/tools.js'
 
 const { header, body, bottom } = useSlots()

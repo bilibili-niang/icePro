@@ -62,27 +62,14 @@ const hideCode = () => ( codeVisible.value = false )
 
 </script>
 <style lang="less" scoped>
-@border-color: #d9d9d9;
 
-.pre {
-  border: 1px solid @border-color;
-  margin: 16px 0 32px;
+pre {
   width: 100%;
+  padding: 0 !important;
+  margin: 0 !important;
 
   .title {
     justify-content: space-between;
-  }
-
-  .pre-code {
-    border-top: 1px dashed @border-color;
-    transition-duration: .5s;
-    overflow-y: hidden;
-    font-size: @fontSize-n;
-
-    > pre {
-      line-height: 1;
-      margin: 0;
-    }
   }
 
   .hideCode {
@@ -97,4 +84,5 @@ const hideCode = () => ( codeVisible.value = false )
 *::selection {
   color: red !important;
 }
+
 </style>

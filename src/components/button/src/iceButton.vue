@@ -11,7 +11,7 @@
         ]"
          :title="title?title:''"
          :style="{ '--hover-color': findColor(color).color,'--color': findColor(color).hover }">
-      <slot/>
+      <slot></slot>
     </div>
   </div>
 </template>
