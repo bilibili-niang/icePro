@@ -1,4 +1,4 @@
-import iceButton from './src/components/button'
+import iceButton from './src/components/button/src/iceButton.vue'
 import iceText from './src/components/text/ice-text.vue'
 import split from './src/components/tools/split.vue'
 import iceTag from './src/components/tools/ice-tag.vue'

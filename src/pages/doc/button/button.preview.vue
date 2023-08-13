@@ -13,4 +13,3 @@
     <iceButton type="ready">ready</iceButton>
   </show>
 </template>
-

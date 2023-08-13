@@ -5,8 +5,8 @@ import route from './router/index'
 import icepro from '../index'
 
 const app = createApp(App)
+icepro.install(app)
 
 app
     .use(route)
-    .use(icepro)
     .mount('#app')

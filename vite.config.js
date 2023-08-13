@@ -27,30 +27,31 @@ export default defineConfig({
             },
         }
     },
-    // 打包
     build: {
+        //打包后文件目录
         outDir: "docs",
-        base: '/docs/',
         //压缩
         minify: false,
-        lib: {
-            entry: "./index.js",
-            name: "index",
-            fileName: "icepro",
-            formats: ["es", "umd", "cjs"],
-        }
-    },
-    rollupOptions: {
-        // 排除 Vue 依赖
-        exclude: ['vue'],
-        inlineDynamicImports: true,
-        resolve: {
-            dedupe: ['vue']
-        },
-        output: {
-            globals: {
-                vue: 'vue'
+        // 打包
+        rollupOptions: {
+            outDir: "docs",
+            base: '/docs/',
+            //压缩
+            minify: false,
+            // 排除 Vue 依赖
+            external: ['vue'],
+            inlineDynamicImports: true,
+            output: {
+                globals: {
+                    vue: 'vue'
+                }
+            },
+            lib: {
+                entry: "./index.js",
+                name: "icepro",
+                fileName: "icepro",
+                formats: ["es", "umd", "cjs"],
             }
-        }
-    },
+        },
+    }
 })
