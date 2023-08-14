@@ -1,5 +1,5 @@
 <template>
-  <div class='ice-column' :class="{center: center}" :style="{width: width}">
+  <div class='ice-column' :class="{center: center}">
     <slot></slot>
     <slot name="top"/>
     <slot name="bottom"/>
@@ -7,7 +7,8 @@
 </template>
 
 <script setup>
-import  {defineProps} from 'vue'
+import { defineProps } from 'vue'
+
 const props = defineProps({
   center: {
     type: Boolean,
@@ -15,7 +16,7 @@ const props = defineProps({
   },
   width: {
     type: String,
-    default: '5rem'
+    default: '100%'
   }
 })
 </script>
@@ -29,6 +30,7 @@ export default {
   display: flex;
   flex-direction: column;
   height: 100%;
+  width: 100% !important;
 }
 
 .center {

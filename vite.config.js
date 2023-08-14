@@ -12,10 +12,18 @@ export default defineConfig({
         }),
         vitePluginVue
     ],
+    output: {
+        globals: {
+            vue: 'Vue'
+        }
+    },
     resolve: {
         alias: {
             '@': path.resolve('src'),
         },
+        dedupe: [
+            'vue'
+        ],
         extensions: [".mjs", ".js", ".ts", ".jsx", ".tsx", ".json", ".vue"],
     },
     css: {
@@ -28,10 +36,18 @@ export default defineConfig({
         }
     },
     build: {
+        lib: {
+            entry: "./index.js",
+            name: "icepro",
+            fileName: "icepro",
+            formats: ["es", "umd", "cjs"],
+        },
         //打包后文件目录
         outDir: "docs",
         //压缩
         minify: false,
+        external: ['vue'],
+        externals: ['vue'],
         // 打包
         rollupOptions: {
             outDir: "docs",
@@ -43,15 +59,9 @@ export default defineConfig({
             inlineDynamicImports: true,
             output: {
                 globals: {
-                    vue: 'vue'
+                    vue: 'Vue'
                 }
-            },
-            lib: {
-                entry: "./index.js",
-                name: "icepro",
-                fileName: "icepro",
-                formats: ["es", "umd", "cjs"],
             }
-        },
+        }
     }
 })

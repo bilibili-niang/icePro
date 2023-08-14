@@ -1,7 +1,7 @@
 <template>
   <div class="ice-tag noselect" :class="[type,
   round?'round':'defaultRound',
-  color?'btn-colors':'',
+  color?'btn-colors':'default-color',
   size?`size-${size}`:'size-normal'
   ]"
        :style="{ '--hover-color': findColor(color).color,'--color': findColor(color).hover }"
@@ -83,6 +83,16 @@ export default {
   margin: @m-normal @m-large;
   padding: @p-normal @p-large-su;
   transition-duration: @time-l;
+}
+
+.default-color {
+  color: @themeColor;
+  background: @themeColor;
+
+  &:hover {
+    color: @themeColor-bleak;
+    border-color: @themeColor-bleak;
+  }
 }
 
 .btn-colors {

@@ -2,12 +2,12 @@
   <div class="ice-button" @click="clickCallBack">
     <div class='btn btn-time-s  text-nowrap ice-row' :class="[
         type?color?'btn-colors':type:'',
-        color?'btn-colors':'',
+        color?'btn-colors':'default-color',
         fill?fill:'',
         round?'round':'defaultRound',
         block?'block':'',
         size?`size-${size}`:'size-default',
-        disable?'disable':''
+        disable?'disable':'pointer'
         ]"
          :title="title?title:''"
          :style="{ '--hover-color': findColor(color).color,'--color': findColor(color).hover }">
@@ -282,6 +282,17 @@ export default {
   padding: @p-large;
   margin: @m-normal;
   font-size: @fontSize-l;
+}
+
+// 默认color
+.default-color {
+  border: @themeColor 1px solid;
+  color: @themeColor;
+
+  &:hover {
+    border: @themeColor-bleak 1px solid;
+    color: @themeColor-bleak;
+  }
 }
 
 // colors
