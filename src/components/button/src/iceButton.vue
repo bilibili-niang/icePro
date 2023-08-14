@@ -2,7 +2,7 @@
   <div class="ice-button" @click="clickCallBack">
     <div class='btn btn-time-s  text-nowrap ice-row' :class="[
         type?color?'btn-colors':type:'',
-        color?'btn-colors':'default-color',
+        color?'btn-colors':'',
         fill?fill:'',
         round?'round':'defaultRound',
         block?'block':'',
@@ -90,8 +90,8 @@ export default {
 
 // primary类型按钮
 .primary {
-  border: @fonColor-dark 1px solid;
-  color: @fonColor-dark;
+  border: @themeColor-bleak 1px solid;
+  color: @themeColor-bleak;
 
   &:hover {
     color: @themeColor;

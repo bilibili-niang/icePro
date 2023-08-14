@@ -85,13 +85,14 @@ export default {
   transition-duration: @time-l;
 }
 
+// 没有传入color时的颜色
 .default-color {
   color: @themeColor;
-  background: @themeColor;
+  //background: @themeColor-bleak-bleak;
 
   &:hover {
     color: @themeColor-bleak;
-    border-color: @themeColor-bleak;
+    //background: @themeColorNone;
   }
 }
 
