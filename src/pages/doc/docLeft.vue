@@ -66,6 +66,10 @@ const items = [
       {
         text: '基础',
         href: '/doc/container'
+      },
+      {
+        text: '收缩栏',
+        href: '/doc/shrinkBar'
       }
     ]
   },

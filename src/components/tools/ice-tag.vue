@@ -41,20 +41,30 @@ export default {
 @import '../../assets/variables.less';
 
 .ice-tag {
-  color: @themeColor;
-  border-color: @themeColor;
   display: flex;
   justify-content: center;
   width: fit-content;
   height: fit-content;
-}
+  font-weight: bold;
+  z-index: 3;
+  position: relative;
+  min-width: 1.75rem;
 
-.normal {
-  font-size: @fontSize-n;
+  &:before {
+    position: absolute;
+    content: '';
+    display: flex;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition-duration: @time-s;
+  }
 }
 
 .defaultRound {
-  border-radius: @radio-n;
+  border-radius: @radio-l;
 }
 
 // round
@@ -66,21 +76,19 @@ export default {
 // size\
 .size-small {
   margin: @m-small;
-  padding: @p-small;
+  padding: 0;
   transition-duration: @time-s;
 }
 
 .size-normal {
-  margin: @m-small @m-normal;
-  padding: @p-small @p-normal;
-  font-size: @fontSize-n;
-  font-weight: @fontWeight-n;
+  margin: 0 @m-small;
+  padding: @p-small;
+  font-size: @fontSize-s;
   transition-duration: @time-n;
 }
 
 .size-large {
   font-size: @fontSize-l;
-  font-weight: @fontWeight-l;
   margin: @m-normal @m-large;
   padding: @p-normal @p-large-su;
   transition-duration: @time-l;
@@ -89,11 +97,23 @@ export default {
 // 没有传入color时的颜色
 .default-color {
   color: @themeColor;
-  //background: @themeColor-bleak-bleak;
+  border-color: @themeColor;
+
+
+  &:before {
+    opacity: .1;
+    background: @themeColor;
+    transition-duration: @time-s;
+  }
 
   &:hover {
     color: @themeColor-bleak;
-    //background: @themeColorNone;
+    border-color: @themeColor-bleak;
+
+    &:before {
+      opacity: .3;
+      background: @themeColor;
+    }
   }
 }
 
@@ -101,9 +121,19 @@ export default {
   color: var(--color);
   border-color: var(--color);
 
+  &:before {
+    background: var(--color);
+    opacity: .2;
+  }
+
   &:hover {
     color: var(--hover-color);
     border-color: var(--hover-color);
+
+    &:before {
+      opacity: .4;
+      background: var(--color);
+    }
   }
 }
 </style>

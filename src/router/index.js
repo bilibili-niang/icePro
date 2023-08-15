@@ -1,11 +1,15 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import index from '@/pages/index.vue'
+
+/*const moduleContext = require.context()
+console.log('moduleContext-->')
+console.log(moduleContext)*/
+
 
 const routes = [
     {
         path: '/',
         name: 'index',
-        component: index
+        component: () => import('../pages/index.vue')
     },
     {
         path: "/doc",
@@ -54,16 +58,18 @@ const routes = [
             {
                 path: 'container',
                 component: () => import('../pages/doc/container/index.vue'),
-            },{
+            }, {
                 path: 'tag',
                 component: () => import('../pages/doc/tag/index.vue'),
-            },{
+            }, {
                 path: 'avatar',
                 component: () => import('../pages/doc/avatar/index.vue'),
+            }, {
+                path: 'shrinkBar',
+                component: () => import('../pages/doc/shrinkBar/index.vue'),
             }
         ],
     },
-
 ]
 
 const router = createRouter({

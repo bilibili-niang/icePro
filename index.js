@@ -15,6 +15,7 @@ import iceDrawer from './src/components/drawer/index.js'
 import iceSelector from './src/components/selector/index.js'
 import iceSelectorGroup from './src/components/selector-group/index.js'
 import avatar from './src/components/avatar/src/iceAvatar.vue'
+import shrinkBar from './src/components/layout/shrinkBar.vue'
 
 import './src/assets/common.less'
 
@@ -34,7 +35,8 @@ const components = {
     iceDrawer,
     iceSelector,
     iceSelectorGroup,
-    avatar
+    avatar,
+    shrinkBar
 }
 
 export {
@@ -54,7 +56,8 @@ export {
     iceDrawer,
     iceSelector,
     iceSelectorGroup,
-    avatar
+    avatar,
+    shrinkBar
 }
 
 function install (app) {

@@ -4,9 +4,7 @@ tag-color
 <template>
   <div class="ice-column">
     <ice-text>
-      使用
-      <iceTag>color</iceTag>
-      来控制为颜色类型
+      暂时没想好用什么字段来改变
     </ice-text>
   </div>
   <show class="ice-column">

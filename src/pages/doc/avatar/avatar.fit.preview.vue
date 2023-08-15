@@ -8,7 +8,7 @@
   <show>
     <div class="ice-row">
       <div v-for="fit in fits" :key="fit" class="ice-column">
-        <ice-avatar :src="imgUrl" :size="120" :fit="fit" block></ice-avatar>
+        <ice-avatar :src="imgUrl" size="120" :fit="fit" block></ice-avatar>
         <ice-text>
           {{ fit }}
         </ice-text>

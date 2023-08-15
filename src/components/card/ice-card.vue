@@ -158,6 +158,6 @@ export default {
 }
 
 .bottomLim {
-  border-radius: 1.5rem;
+  border-radius: .3rem;
 }
 </style>

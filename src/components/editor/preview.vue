@@ -56,17 +56,19 @@ const script = computed(() => {
   )
 })
 
-const codeVisible = ref(false)
-const showCode = () => ( codeVisible.value = true )
-const hideCode = () => ( codeVisible.value = false )
-
 </script>
 <style lang="less" scoped>
+
+pre::-webkit-scrollbar {
+  display: none;
+}
 
 pre {
   width: 100%;
   padding: 0 !important;
   margin: 0 !important;
+  font-size: .9rem;
+  font-weight: bold;
 
   .title {
     justify-content: space-between;
