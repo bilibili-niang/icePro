@@ -14,6 +14,8 @@ import iceColumn from './src/components/layout/ice-column.vue'
 import iceDrawer from './src/components/drawer/index.js'
 import iceSelector from './src/components/selector/index.js'
 import iceSelectorGroup from './src/components/selector-group/index.js'
+import avatar from './src/components/avatar/src/iceAvatar.vue'
+
 import './src/assets/common.less'
 
 const components = {
@@ -31,7 +33,8 @@ const components = {
     iceColumn,
     iceDrawer,
     iceSelector,
-    iceSelectorGroup
+    iceSelectorGroup,
+    avatar
 }
 
 export {
@@ -50,7 +53,8 @@ export {
     iceColumn,
     iceDrawer,
     iceSelector,
-    iceSelectorGroup
+    iceSelectorGroup,
+    avatar
 }
 
 function install (app) {

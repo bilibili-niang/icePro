@@ -70,6 +70,15 @@ const items = [
     ]
   },
   {
+    text: '头像',
+    children: [
+      {
+        text: 'avatar',
+        href: '/doc/avatar'
+      }
+    ]
+  },
+  {
     text: '菜单容器',
     children: [
       {

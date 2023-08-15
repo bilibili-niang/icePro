@@ -45,6 +45,7 @@ export default {
   border-color: @themeColor;
   display: flex;
   justify-content: center;
+  width: fit-content;
   height: fit-content;
 }
 

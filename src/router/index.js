@@ -57,6 +57,9 @@ const routes = [
             },{
                 path: 'tag',
                 component: () => import('../pages/doc/tag/index.vue'),
+            },{
+                path: 'avatar',
+                component: () => import('../pages/doc/avatar/index.vue'),
             }
         ],
     },
