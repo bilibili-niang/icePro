@@ -1,5 +1,6 @@
 <template>
   <div :class="['shrinkBar',
+  'ice-column',
   hover?'shrinkBarShow':'',
   clickShow?'shrinkBarShow':''
   ]"
@@ -9,6 +10,7 @@
   >
     <ice-button @click="getTip">{{ clickShow ? '取消固定' : '固定' }}</ice-button>
 
+    <slot name="body"></slot>
 
   </div>
 </template>
@@ -27,7 +29,9 @@ const getTip = () => {
     window.document.body.style.paddingLeft = 0
   }
 }
-
+if (window.document.body.style.paddingLeft !== 0) {
+  clickShow.value = true
+}
 </script>
 <script>
 export default {
@@ -44,16 +48,20 @@ export default {
   display: flex;
   min-height: 100vh;
   min-width: 15rem;
-  background: @themeColor-bleak-bleak;
   transition-duration: .7s;
+  opacity: 0;
 
 }
 
 .shrinkBarShow {
   left: 0rem;
+  background: @themeColorReversal;
+  opacity: 1;
 }
 
 .shrinkBarShow2 {
+  background: @themeColorReversal;
+  opacity: 1;
   left: 0rem !important;
 }
 </style>
