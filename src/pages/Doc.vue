@@ -1,6 +1,7 @@
 <template>
   <div class="ice-row wideContainer">
     <div class="ice-column border-r">
+      <ice-button @click="changeMode">切换模式</ice-button>
       <docLeft></docLeft>
     </div>
     <div class="ice-column flexFull">
@@ -10,9 +11,22 @@
 </template>
 
 <script setup>
+import DocLeft from '@/pages/doc/docLeft.vue'
 
+const changeMode = () => {
+  const dark = localStorage.getItem('mode') || null
+  if (dark == 'true') {
+    document.querySelector('html').classList.add('dark')
+    document.querySelector('html').classList.remove('light')
+  } else {
+    document.querySelector('html').classList.add('light')
+    document.querySelector('html').classList.remove('dark')
+    localStorage.setItem('mode', 'true')
+  }
+}
+changeMode()
+</script>
 
-import DocLeft from '@/pages/doc/docLeft.vue'</script>
 
 <style scoped lang="less">
 .flexFull {

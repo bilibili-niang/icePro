@@ -13,6 +13,10 @@
   </show>
 </template>
 <script setup>
-import imgUrl from "/src/assets/png/default.png"</script>
+import { ref } from 'vue'
+
+const imgUrl = ref('http://blog.icestone.work/default.png')
+
+</script>
 
 

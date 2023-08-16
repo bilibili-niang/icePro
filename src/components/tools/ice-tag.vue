@@ -12,8 +12,9 @@
 
 <script setup>
 import { findColor } from '../../hooks/tools.js'
+import { useRouter } from 'vue-router'
 
-defineProps({
+const props = defineProps({
   type: {
     type: String,
     default: 'normal'
@@ -28,8 +29,24 @@ defineProps({
   },
   size: {
     type: String
+  },
+  href: {
+    type: String,
+    default: ''
   }
 })
+
+const router = useRouter()
+const jump = () => {
+  if (props.href) {
+    const url = router.push({
+      path: props.href
+    })
+    // 设置在新页面打开
+    window.open(url, '_blank')
+  }
+}
+
 </script>
 <script>
 export default {
@@ -43,12 +60,11 @@ export default {
 .ice-tag {
   display: flex;
   justify-content: center;
-  width: fit-content;
   height: fit-content;
   font-weight: bold;
   z-index: 3;
   position: relative;
-  min-width: 1.75rem;
+  width: fit-content;
 
   &:before {
     position: absolute;

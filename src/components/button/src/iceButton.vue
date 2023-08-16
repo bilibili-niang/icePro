@@ -145,13 +145,15 @@ export default {
 
 // hover button style
 // default style
-.btn-hover {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: @padding;
-  margin: @m-normal;
-  user-select: none;
+.light {
+  .btn-hover {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: @padding;
+    margin: @m-normal;
+    user-select: none;
+  }
 }
 
 // primary hover style
@@ -295,16 +297,28 @@ export default {
   }
 }
 
-// colors
-.btn-colors {
+.btn-colors(@color:var(--hover-color)) {
   border: var(--color) 1px solid;
   color: var(--color);
   border-color: var(--color);
 
   &:hover {
     border: var(--hover-color) 1px solid;
-    color: var(--hover-color);
+    color: @color;
     border-color: var(--hover-color);
+  }
+}
+
+// colors
+.light {
+  .btn-colors {
+    .btn-colors();
+  }
+}
+
+.dark {
+  .btn-colors {
+    .btn-colors(white)
   }
 }
 

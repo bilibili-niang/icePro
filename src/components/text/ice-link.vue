@@ -11,7 +11,6 @@
 </template>
 
 <script setup>
-import { useRouter } from 'vue-router'
 import { findColor } from '../../hooks/tools.js'
 
 const props = defineProps({
@@ -35,17 +34,8 @@ const props = defineProps({
     default: '_self'
   }
 })
-const router = useRouter()
-const go = () => {
-  if (props.href) {
-    const url = router.push({
-      path: props.href,
-      query: props.params ? props.params : ''
-    })
-    // 设置在新页面打开
-    window.open(url, '_blank')
-  }
-}
+
+
 </script>
 
 <script>

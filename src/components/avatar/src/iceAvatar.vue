@@ -19,9 +19,9 @@
 </template>
 <script setup>
 import { defineProps } from 'vue'
+// import defaultPng from "../../../../src/assets/png/default.png"
 
-import defaultPng from "/src/assets/png/default.png"
-
+const defaultPng = 'http://blog.icestone.work/default.png'
 const handleError = (e) => {
   e.target.src = defaultPng
 }
