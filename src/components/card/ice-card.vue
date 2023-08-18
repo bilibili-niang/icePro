@@ -104,6 +104,9 @@ export default {
 .ice-card {
   border: @themeColor 1px solid;
   width: 100%;
+  padding: @p-normal;
+  margin: @m-normal;
+  border-radius: @radio-n;
 
   .header {
     line-height: @lineHeight-n;
@@ -137,13 +140,6 @@ export default {
       }
     }
   }
-}
-
-// size
-.n {
-  padding: @p-normal;
-  margin: @m-normal;
-  border-radius: @radio-n;
 }
 
 // 箭头翻转
