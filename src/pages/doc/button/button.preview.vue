@@ -8,7 +8,6 @@
   <show>
     <ice-button>primary</ice-button>
     <ice-button type="danger">danger</ice-button>
-    <ice-button type="info">info</ice-button>
     <ice-button type="success">success</ice-button>
     <iceButton type="ready">ready</iceButton>
   </show>

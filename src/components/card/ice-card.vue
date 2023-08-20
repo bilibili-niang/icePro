@@ -102,6 +102,7 @@ export default {
 @import "../../assets/common.less";
 
 .ice-card {
+  box-sizing: border-box;
   border: @themeColor 1px solid;
   width: 100%;
   padding: @p-normal;

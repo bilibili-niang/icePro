@@ -110,17 +110,6 @@ export default {
   }
 }
 
-// info类型按钮
-.info {
-  color: @infoColor-bleak;
-  border-color: @infoColor-bleak;
-
-  &:hover {
-    color: @infoColor;
-    border-color: @infoColor
-  }
-}
-
 // success类型按钮
 .success {
   color: @successColor-bleak;

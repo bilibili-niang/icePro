@@ -1,8 +1,8 @@
 // 颜色参考 http://zhongguose.com/#qianshibai
 // less变量
 
-@btn-skyblue: @fontColor;
-@btn-skyblue-bleak: @fontColor-bleak;
+@btn-skyblue: var(--color);
+@btn-skyblue-bleak: var(--color-bleak);
 @btn-skyblue-none: rgba(69, 159, 251, 0);
 // 主题颜色
 @themeColor: @btn-skyblue;
@@ -19,11 +19,6 @@
 // danger
 @dangerColor: rgba(194, 31, 48, 1);
 @dangerColor-bleak: rgba(194, 31, 48, .5);
-
-// info
-// 水牛灰
-@infoColor: rgba(47, 47, 53, 1);
-@infoColor-bleak: rgba(47, 47, 53, .5);
 
 // success
 // 美蝶绿
@@ -74,7 +69,20 @@
 
 // 字体颜色
 // 主题字体颜色,锌灰
-@fontColor: rgba(122, 115, 116, 1, .7);
+html.light {
+  --color: rgba(122, 115, 116, 1, .7);
+  --color-bleak: rgba(122, 115, 116, 1, .4);
+  --bac: rgba(218, 212, 203, 1);
+}
+
+// 深色模式
+html.dark {
+  --color: rgba(218, 212, 203, 1);
+  --color-bleak: rgba(218, 212, 203, .6);
+  --bac: rgba(54, 52, 51, 1);
+}
+
+@fontColor: var(--color);
 @fontColor-bleak: rgba(45, 46, 54, .5);
 @fontColor-bleak-bleak: rgba(45, 46, 54, .1);
 @fontColor-none: rgba(45, 46, 54, 0);
@@ -101,4 +109,8 @@
 @time-n: .3s;
 @time-l: .5s;
 
+
+// light/dark
+@bac: var(--bac);
+@bac-dark: var(--bac);
 

@@ -14,8 +14,8 @@
 import DocLeft from '@/pages/doc/docLeft.vue'
 
 const changeMode = () => {
-  const dark = localStorage.getItem('mode') || null
-  if (dark == 'true') {
+  const dark = Boolean(localStorage.getItem('mode') == 'false' ? false : true || null)
+  if (dark) {
     document.querySelector('html').classList.add('dark')
     document.querySelector('html').classList.remove('light')
   } else {
@@ -23,6 +23,7 @@ const changeMode = () => {
     document.querySelector('html').classList.remove('dark')
     localStorage.setItem('mode', 'true')
   }
+  localStorage.setItem('mode', ( !dark ).toString())
 }
 changeMode()
 </script>

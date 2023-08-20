@@ -66,6 +66,7 @@ export default {
   position: relative;
   width: fit-content;
   border: none;
+  white-space: nowrap;
   overflow: hidden;
 
   &:before {
