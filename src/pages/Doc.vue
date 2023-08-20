@@ -25,7 +25,6 @@ const changeMode = () => {
   }
   localStorage.setItem('mode', ( !dark ).toString())
 }
-changeMode()
 </script>
 
 

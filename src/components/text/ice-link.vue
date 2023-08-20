@@ -1,17 +1,18 @@
 <template>
-  <a class="ice-link" :class="[
+  <div class="ice-link" :class="[
       size?size:'',
       color?'hoverColor':'defaultColor'
   ]"
-     :href="href"
-     :target="target?target:'_self'"
-     :style="{ '--hover-color': findColor(color).color,'--color': findColor(color).hover }">
+       @click="jump"
+       :target="target?target:'_self'"
+       :style="{ '--hover-color': findColor(color).color,'--color': findColor(color).hover }">
     <slot/>
-  </a>
+  </div>
 </template>
 
 <script setup>
 import { findColor } from '../../hooks/tools.js'
+import { useRouter } from 'vue-router'
 
 const props = defineProps({
   size: {
@@ -34,13 +35,23 @@ const props = defineProps({
     default: '_self'
   }
 })
+const router = useRouter()
 
+const jump = () => {
+  if (props.href) {
+    router.push({
+      path: props.href
+    })
+  } else {
+    return
+  }
+}
 
 </script>
 
 <script>
 export default {
-  name:'ice-link'
+  name: 'ice-link'
 }
 </script>
 <style scoped lang="less">
