@@ -1,13 +1,13 @@
 <template>
-  <div class="ice-link" :class="[
+  <a class="ice-link" :class="[
       size?size:'',
       color?'hoverColor':'defaultColor'
   ]"
-       @click="jump"
-       :target="target?target:'_self'"
-       :style="{ '--hover-color': findColor(color).color,'--color': findColor(color).hover }">
+     :href="disabled ? null : href"
+     :target="target?target:'_self'"
+     :style="{ '--hover-color': findColor(color).color,'--color': findColor(color).hover }">
     <slot/>
-  </div>
+  </a>
 </template>
 
 <script setup>
@@ -33,15 +33,22 @@ const props = defineProps({
   target: {
     type: String,
     default: '_self'
+  },
+  disabled: {
+    type: Boolean,
+    default: false
   }
 })
-const router = useRouter()
-
 const jump = () => {
   if (props.href) {
-    router.push({
-      path: props.href
-    })
+    if (props.href.indexOf('http') != - 1) {
+      window.open(props.href)
+    } else {
+      const router = useRouter()
+      router.push({
+        path: props.href
+      })
+    }
   } else {
     return
   }

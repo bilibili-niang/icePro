@@ -25,6 +25,11 @@
         </template>
       </ice-card>
     </div>
+    <split dashed></split>
+    <ice-text>
+      我的博客:
+    </ice-text>
+    <ice-link href="http://blog.icestone.work/#/">blog</ice-link>
   </div>
 </template>
 
