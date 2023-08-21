@@ -115,5 +115,14 @@ export function close (id, userOnClose) {
 
 }
 
+// 绑定一个关闭方法
+export function closeAll () {
+    for (let i = instances.length - 1; i >= 0; i --) {
+        const instance = instances[i].vm.component
+        instance.proxy.close()
+    }
+}
+
+Message.closeAll = closeAll
 
 export default Message

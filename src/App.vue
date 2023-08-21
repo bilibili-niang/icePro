@@ -5,7 +5,7 @@
 <script setup>
 const mode = localStorage.getItem('mode')
 
-if (mode) {
+if (mode=='true') {
   document.querySelector('html').classList.add('light')
   document.querySelector('html').classList.remove('dark')
 } else {

@@ -1,6 +1,8 @@
 <template>
   <!--变量-->
-  <div class="ice-card" :class="[size,color? color: '']"
+  <div class="ice-card" :class="[size,color? color: '',
+  border?'border':'noborder'
+  ]"
        v-if="header"
        :style="{'--hover-color': themeColor.hoverColor,'--color': themeColor.color}">
     <div class="slot" :class="type">
@@ -12,7 +14,7 @@
         <slot name="body"></slot>
       </div>
       <div class="bottom" v-if="bottom">
-        <split></split>
+        <split dashed></split>
         <div class="ice-column content">
           <ice-button @click="showBottom=!showBottom">
             展开
@@ -62,6 +64,10 @@ const props = defineProps({
   color: {
     type: String,
     default: ''
+  },
+  border: {
+    type: Boolean,
+    default: true
   }
 })
 
@@ -101,9 +107,14 @@ export default {
 @import "../../assets/variables.less";
 @import "../../assets/common.less";
 
+.border {
+  border-style: solid;
+  border-width: 1px;
+}
+
 .ice-card {
   box-sizing: border-box;
-  border: @themeColor 1px solid;
+  border-color: @themeColor;
   width: 100%;
   padding: @p-normal;
   margin: @m-normal;

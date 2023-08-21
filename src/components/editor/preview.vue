@@ -23,7 +23,7 @@
 <script setup>
 import "prismjs"
 import "prismjs/themes/prism.css"
-import { computed, ref } from "vue"
+import { computed } from "vue"
 import IceCard from '@/components/card/ice-card.vue'
 import IceTitle from '@/components/text/ice-title.vue'
 

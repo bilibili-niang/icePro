@@ -67,6 +67,7 @@ const props = defineProps({
   }
 })
 
+console.log(props)
 const emits = defineEmits(["destroy", "close"])
 
 function startTimer () {
