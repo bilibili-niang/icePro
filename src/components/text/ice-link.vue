@@ -1,6 +1,6 @@
 <template>
   <a class="ice-link" :class="[
-      size?size:'',
+      size?'size-'+size:'size-n',
       color?'hoverColor':'defaultColor'
   ]"
      :href="disabled ? null : href"
@@ -17,7 +17,7 @@ import { useRouter } from 'vue-router'
 const props = defineProps({
   size: {
     type: String,
-    default: 'normal'
+    default: ''
   },
   href: {
     type: String,
@@ -71,6 +71,7 @@ export default {
   white-space: nowrap;
   display: inline-block;
   transition: @time-n;
+  height: fit-content;
   margin: @m-normal;
 
   &:hover {
@@ -96,5 +97,26 @@ export default {
     color: var(--hover-color);
     border-color: var(--hover-color);
   }
+}
+
+.size-n {
+  font-size: @fontSize-n;
+  font-weight: @fontWeight-n;
+  padding: @p-normal @p-large;
+  transition: @time-n;
+}
+
+.size-s {
+  font-size: @fontSize-s;
+  font-weight: @fontWeight-s;
+  padding: @p-small @p-normal;
+  transition: @time-s;
+}
+
+.size-l {
+  font-size: @fontSize-l;
+  font-weight: @fontWeight-l;
+  padding: @p-normal @p-large;
+  transition: @time-l;
 }
 </style>

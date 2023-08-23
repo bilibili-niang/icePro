@@ -35,7 +35,7 @@ export default defineConfig({
             },
         }
     },
-    build: {
+    /*build: {
         lib: {
             entry: "./index.js",
             name: "icepro",
@@ -45,7 +45,7 @@ export default defineConfig({
         //打包后文件目录
         outDir: "docs",
         //压缩
-        minify: false,
+        minify: true,
         external: ['vue'],
         externals: ['vue'],
         // 打包
@@ -63,5 +63,5 @@ export default defineConfig({
                 }
             }
         }
-    }
+    }*/
 })

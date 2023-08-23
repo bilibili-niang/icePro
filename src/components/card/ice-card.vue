@@ -10,7 +10,7 @@
         <slot name="header"></slot>
       </div>
       <div class="body" v-if="body">
-        <split></split>
+        <split dashed></split>
         <slot name="body"></slot>
       </div>
       <div class="bottom" v-if="bottom">

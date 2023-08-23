@@ -6,7 +6,7 @@
         fill?fill:'',
         round?'round':'defaultRound',
         block?'block':'',
-        size?`size-${size}`:'size-default',
+        size?`size-${size}`:'size-n',
         disable?'disable':'pointer'
         ]"
          :title="title?title:''"
@@ -257,19 +257,19 @@ export default {
 }
 
 // size
-.size-small {
+.size-s {
   padding: @p-small;
   margin: @m-small;
   font-size: @fontSize-s;
 }
 
-.size-default {
+.size-n {
   padding: @p-normal;
   margin: @m-normal;
   font-size: @fontSize-n;
 }
 
-.size-large {
+.size-l {
   padding: @p-large;
   margin: @m-normal;
   font-size: @fontSize-l;

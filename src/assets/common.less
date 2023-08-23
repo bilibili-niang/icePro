@@ -153,15 +153,6 @@ p {
   align-items: center;
 }
 
-.wideContainer {
-  padding-left: 5%;
-  padding-right: 5%;
-}
-
-.container {
-  padding-left: @padding-layout-normal;
-  padding-right: @padding-layout-normal;
-}
 
 .image-n {
   display: flex;
@@ -263,4 +254,32 @@ body, #app {
 
 .noborder {
   border: none;
+}
+
+.container{
+  margin: 0 auto;
+}
+
+.wideContainer{
+  margin: 0 auto;
+}
+// 自适应
+@media (max-width: 1200px) {
+  .wideContainer {
+    max-width: 95vw
+  }
+
+  .container {
+    max-width: 95vw
+  }
+}
+
+@media (min-width: 1200px) {
+  .wideContainer {
+    max-width: 70vw;
+  }
+
+  .container {
+    max-width: 70vw;
+  }
 }
