@@ -1,5 +1,5 @@
 <template>
-  <ice-card>
+  <ice-card :border="false">
     <template v-slot:header>
       <ice-title noselect>
         {{ component.__sourceCodeTitle }}
@@ -87,4 +87,26 @@ pre {
   color: red !important;
 }
 
+/deep/ .ice-title {
+  h4 {
+    &:before {
+      content: '>';
+      font-weight: lighter;
+      margin-right: 0;
+      opacity: 0;
+      transition: .5s;
+      width: 0;
+    }
+  }
+
+  &:hover {
+    h4 {
+      &:before {
+        margin-right: 1rem;
+        opacity: 1;
+        width: fit-content;
+      }
+    }
+  }
+}
 </style>

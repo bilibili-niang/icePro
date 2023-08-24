@@ -1,4 +1,4 @@
-import{r as c,o as u,c as i,a as f,b as t,w as n,d as o,h as a,F as _,_ as k,A as S,B,n as M,u as p,q as g}from"./index-f38a0360.js";import{P as x}from"./preview-32692264.js";function b(e){return e.__sourceCode=`<show>\r
+import{r as c,o as u,c as i,a as f,b as t,w as n,d as o,h as a,F as _,_ as k,A as S,B,n as M,u as p,q as g}from"./index-d84a2405.js";import{P as x}from"./preview-f5aef03e.js";function b(e){return e.__sourceCode=`<show>\r
     <ice-menu :list="items"></ice-menu>\r
   </show>`,e.__sourceCodeTitle=" menu-normal ",e.__styleCode=null,e.__script=`<script setup>\r
 import IceMenu from '@/components/menu/ice-menu.vue'\r

@@ -1,4 +1,4 @@
-import{P as x}from"./preview-32692264.js";import{_ as m,r,o as u,c as d,b as t,w as e,d as c,F as s,a as B}from"./index-f38a0360.js";function p(n){return n.__sourceCode=`<show>\r
+import{P as x}from"./preview-f5aef03e.js";import{_ as m,r,o as u,c as d,b as t,w as e,d as c,F as s,a as B}from"./index-d84a2405.js";function p(n){return n.__sourceCode=`<show>\r
     <ice-card>\r
       <template v-slot:header>\r
         <ice-title>\r

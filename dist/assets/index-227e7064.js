@@ -1,4 +1,4 @@
-import{P as _}from"./preview-32692264.js";import{t as z}from"./tag.preview-044767cf.js";import{_ as m,r as n,o as i,c as r,a as h,b as c,w as t,d as o,F as u}from"./index-f38a0360.js";function f(e){return e.__sourceCode=`<show class="ice-column">\r
+import{P as _}from"./preview-f5aef03e.js";import{t as z}from"./tag.preview-78ddf6b3.js";import{_ as m,r as n,o as i,c as r,a as h,b as c,w as t,d as o,F as u}from"./index-d84a2405.js";function f(e){return e.__sourceCode=`<show class="ice-column">\r
     <ice-tag size="small">small</ice-tag>\r
     <ice-tag size="normal">default</ice-tag>\r
     <ice-tag size="large">large</ice-tag>\r

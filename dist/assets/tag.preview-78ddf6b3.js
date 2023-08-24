@@ -1,4 +1,4 @@
-import{_ as i,r as l,o as d,c as f,a as g,b as e,w as t,d as a,F as h}from"./index-f38a0360.js";function n(c){return c.__sourceCode=`<show class="ice-column">\r
+import{_ as i,r as l,o as d,c as f,a as g,b as e,w as t,d as a,F as h}from"./index-d84a2405.js";function n(c){return c.__sourceCode=`<show class="ice-column">\r
     <ice-tag>default</ice-tag>\r
     <ice-tag color="pipahuang">default</ice-tag>\r
     <ice-tag color="wanshoujuhuang">default</ice-tag>\r

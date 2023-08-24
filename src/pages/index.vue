@@ -1,5 +1,5 @@
 <template>
-  <div class='container'>
+  <div class='container' v-if="false">
     <div class="ice-column flex-align-center">
       <ice-card>
         <template v-slot:header>
@@ -31,12 +31,42 @@
     </ice-text>
     <ice-link href="http://blog.icestone.work/#/">blog</ice-link>
   </div>
+
+  <div class="demo"></div>
 </template>
 
 <script setup>
 import imgUrl from "/src/assets/png/logo.png"
-import IceLink from '@/components/text/ice-link.vue'</script>
+import IceLink from '@/components/text/ice-link.vue'
+</script>
 
 <style lang='less' scoped>
+.bac {
+  background-color: black;
+}
 
+.demo {
+  display: flex;
+  width: 500px;
+  height: 500px;
+  margin-top: 100px;
+  border-radius: 5px;
+  margin: 0 auto;
+  margin-top: 100px;
+  position: relative;
+  background-color: rgba(0, 0, 0, .1);
+
+  &::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    width: 0;
+    height: 0;
+    content: ' ';
+    border-left: 50px solid black;
+
+  }
+
+}
 </style>

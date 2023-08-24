@@ -1,7 +1,8 @@
 <template>
   <a class="ice-link" :class="[
       size?'size-'+size:'size-n',
-      color?'hoverColor':'defaultColor'
+      color?'hoverColor':'defaultColor',
+      border?'border':'no-border'
   ]"
      :href="disabled ? null : href"
      :target="target?target:'_self'"
@@ -37,6 +38,10 @@ const props = defineProps({
   disabled: {
     type: Boolean,
     default: false
+  },
+  border: {
+    type: Boolean,
+    default: true
   }
 })
 const jump = () => {
@@ -66,7 +71,7 @@ export default {
 
 .ice-link {
   font-size: @fontSize-n;
-  border-bottom: @themeColor 1px solid;
+  border-color: @themeColor;
   width: fit-content;
   white-space: nowrap;
   display: inline-block;
@@ -79,6 +84,13 @@ export default {
   }
 }
 
+.border{
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+}
+.no-border{
+  border-style: none;
+}
 .defaultColor {
   color: @themeColor-bleak;
 

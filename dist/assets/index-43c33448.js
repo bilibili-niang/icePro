@@ -1,4 +1,4 @@
-import{P as d}from"./preview-32692264.js";import{_ as f,r,o as i,c as a,b as e,w as s,d as t,F as _,a as h}from"./index-f38a0360.js";function x(n){return n.__sourceCode=`<show class="ice-row">\r
+import{P as d}from"./preview-f5aef03e.js";import{_ as f,r,o as i,c as a,b as e,w as s,d as t,F as _,a as h}from"./index-d84a2405.js";function x(n){return n.__sourceCode=`<show class="ice-row">\r
     <ice-text>晴空一鹤排云上</ice-text>\r
   </show>`,n.__sourceCodeTitle=" text-normal ",n.__styleCode="<style lang='less' scoped></style>",n.__script=`<script setup>\r
 <\/script>`,n}const m={};function k(n,u){const c=r("ice-text"),o=r("show");return i(),a(_,null,[e(c,null,{default:s(()=>[t(" 最基础的 ")]),_:1}),e(o,{class:"ice-row"},{default:s(()=>[e(c,null,{default:s(()=>[t("晴空一鹤排云上")]),_:1})]),_:1})],64)}typeof x=="function"&&x(m);const P=f(m,[["render",k]]);function p(n){return n.__sourceCode=`<show>\r

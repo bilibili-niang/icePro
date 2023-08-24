@@ -1,4 +1,4 @@
-import{P as b}from"./preview-32692264.js";import{_ as h,r as c,o as i,c as s,b as e,w as n,d as o,F as a,a as p,I as y}from"./index-f38a0360.js";function w(t){return t.__sourceCode=`<show>\r
+import{P as b}from"./preview-f5aef03e.js";import{_ as h,r as c,o as i,c as s,b as e,w as n,d as o,F as a,a as p,I as y}from"./index-d84a2405.js";function w(t){return t.__sourceCode=`<show>\r
     <ice-button>primary</ice-button>\r
     <ice-button type="danger">danger</ice-button>\r
     <ice-button type="success">success</ice-button>\r

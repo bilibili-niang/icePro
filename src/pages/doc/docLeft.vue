@@ -43,6 +43,10 @@ const items = [
       {
         text: 'tag',
         href: '/doc/tag'
+      },
+      {
+        text: 'link',
+        href: '/doc/link'
       }
     ]
   },

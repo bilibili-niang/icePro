@@ -1,4 +1,4 @@
-import{r,o as p,c as d,a as x,b as n,w as s,d as t,F as m,M as c,I as z}from"./index-f38a0360.js";import{P as h}from"./preview-32692264.js";function b(e){return e.__sourceCode=`<show>\r
+import{r,o as p,c as d,a as x,b as n,w as s,d as t,F as m,M as c,I as z}from"./index-d84a2405.js";import{P as h}from"./preview-f5aef03e.js";function b(e){return e.__sourceCode=`<show>\r
     <ice-button @click="alertMessage">\r
       copy\r
     </ice-button>\r

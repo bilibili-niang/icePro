@@ -67,6 +67,9 @@ const routes = [
             }, {
                 path: 'shrinkBar',
                 component: () => import('../pages/doc/shrinkBar/index.vue'),
+            }, {
+                path: 'link',
+                component: () => import('../pages/doc/link/index.vue'),
             }
         ],
     },

@@ -1,4 +1,4 @@
-import{P as h}from"./preview-32692264.js";import{k as C,r as n,o as r,c,a as p,b as t,w as l,d as a,F as m,l as B,m as T,n as b,u as M,q as I,t as d,_ as j,s as N,M as u,v as V}from"./index-f38a0360.js";function y(e){return e.__sourceCode=`<show class="colorBlock ice-row">\r
+import{P as h}from"./preview-f5aef03e.js";import{k as C,r as n,o as r,c,a as p,b as t,w as l,d as a,F as m,l as B,m as T,n as b,u as M,q as I,t as d,_ as j,s as N,M as u,v as V}from"./index-d84a2405.js";function y(e){return e.__sourceCode=`<show class="colorBlock ice-row">\r
     <template v-for="(item,index) in allColor" :key="index">\r
       <div class="ice-column colorBlockItem" @click="copy(item.pinyin)">\r
         <div class="item radio-m noselect" :style="{background:findColor(item.pinyin).color}">\r

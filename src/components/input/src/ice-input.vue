@@ -127,7 +127,7 @@ export default {
   // 占位元素
   .wait {
     position: absolute;
-    top: 40%;
+    top: 30%;
     left: .3rem;
     z-index: -1;
     transition-duration: @time-n;
@@ -139,8 +139,8 @@ export default {
   .nowait {
     color: @themeColor-bleak;
     font-size: @fontSize-s;
-    top: -10%;
-    background: @themeColorReversal;
+    top: -25%;
+    background: @bac;
     padding-left: @p-small;
   }
 
