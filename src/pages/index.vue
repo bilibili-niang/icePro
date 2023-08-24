@@ -1,7 +1,7 @@
 <template>
-  <div class='container'>
+  <div class='container index'>
     <div class="ice-column flex-align-center">
-      <ice-card>
+      <ice-card :border="false">
         <template v-slot:header>
           <ice-title>
             icepro
@@ -19,8 +19,9 @@
             基于我的定制化需求才开发的一个ui库
           </ice-text>
           <ice-text>
-            <ice-tag color="ganlanlv">简单</ice-tag>
+            <ice-tag color="danshuhong">简单</ice-tag>
             <ice-tag color="meiguihui">易用</ice-tag>
+            <ice-tag color="honglan">定制化</ice-tag>
           </ice-text>
         </template>
       </ice-card>
@@ -37,7 +38,7 @@
         <ice-text>
           我的github:
         </ice-text>
-        <ice-link href="https://github.com/bilibili-niang">bilibili-niang</ice-link>
+        <ice-link href="https://github.com/bilibili-niang" title="关注我,带你看更多的18禁">bilibili-niang</ice-link>
       </ice-column>
     </ice-row>
   </div>
@@ -50,5 +51,8 @@ import IceLink from '@/components/text/ice-link.vue'
 import IceColumn from '@/components/layout/ice-column.vue'</script>
 
 <style lang='less' scoped>
+.index {
+  padding-top: 10%;
+}
 
 </style>
