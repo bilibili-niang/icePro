@@ -8,11 +8,25 @@
 html.light {
   background-color: @bac;
   //transition: .5s;
+  div.pre-code {
+    background-color: @fontColor-bleak-bleak !important;
+  }
+
+  pre {
+    background-color: @fontColor-bleak-bleak !important;
+  }
 }
 
 html.dark {
   background-color: @bac-dark;
   //transition: .5s;
+  div.pre-code {
+    background-color: @bac-dark-bleak !important;
+  }
+
+  pre {
+    background-color: @bac-dark-bleak !important;
+  }
 }
 
 h4,
@@ -256,13 +270,14 @@ body, #app {
   border: none;
 }
 
-.container{
+.container {
   margin: 0 auto;
 }
 
-.wideContainer{
+.wideContainer {
   margin: 0 auto;
 }
+
 // 自适应
 @media (max-width: 1200px) {
   .wideContainer {

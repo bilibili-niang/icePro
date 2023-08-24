@@ -64,6 +64,8 @@ pre::-webkit-scrollbar {
 }
 
 pre {
+  border-radius: @radio-l;
+  text-shadow: none;
   width: 100%;
   padding: 0 !important;
   margin: 0 !important;

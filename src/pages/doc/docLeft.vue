@@ -1,9 +1,7 @@
 <template>
-  <div class="ice-column">
-    <ice-link href="/">
-      <div class="svg">
-        <img src="@/assets/png/logo.png" class="round" alt="">
-      </div>
+  <div class="ice-column docLeft">
+    <ice-link href="/" title="回到首页">
+      <ice-avatar src="@/assets/png/logo.png"></ice-avatar>
     </ice-link>
     <ice-link href="https://github.com/bilibili-niang/icePro" target="_blank">github地址</ice-link>
   </div>
@@ -132,28 +130,4 @@ export default {
   padding-left: 1rem;
 }
 
-.svg {
-  width: 3rem;
-  height: 3rem;
-  border-radius: 50%;
-  margin: 2rem;
-
-  img {
-    display: flex;
-    width: 100%;
-    height: 100%;
-  }
-}
-
-.cls-1, .cls-2 {
-  font-size: 700px;
-}
-
-.cls-1 {
-  fill: #767575;
-}
-
-.cls-2 {
-  fill: #fff;
-}
 </style>

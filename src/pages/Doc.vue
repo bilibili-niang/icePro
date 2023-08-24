@@ -47,6 +47,7 @@ const clearColor = () => {
 <style scoped lang="less">
 .flexFull {
   padding-left: 1rem;
+  padding-bottom: 200px;
 }
 
 .fade-enter-active,
