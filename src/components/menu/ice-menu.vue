@@ -102,18 +102,18 @@ export default {
 
       li {
         transition: .5S;
-        height: 0rem;
+        height: 0;
         overflow-y: hidden;
         opacity: 0;
         padding: 0;
         display: flex;
         flex-direction: row;
-        margin-top: 0rem;
+        margin-top: 0;
 
         &:before {
           content: '';
           display: flex;
-          width: 1.5rem;
+          width:.5rem;
         }
       }
     }

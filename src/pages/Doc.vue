@@ -1,6 +1,6 @@
 <template>
   <div class="ice-row wideContainer">
-    <div class="ice-column border-r">
+    <div class="ice-column border-r leftContent">
       <ice-button @click="changeMode">切换模式</ice-button>
       <ice-row v-if="false">
         <input type="color" v-model="colorVal">
@@ -43,20 +43,17 @@ const clearColor = () => {
 }
 </script>
 
-
 <style scoped lang="less">
 .flexFull {
   padding-left: 1rem;
   padding-bottom: 200px;
 }
 
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.5s;
-}
+.wideContainer {
 
-.fade-enter,
-.fade-leave-to {
-  opacity: 0;
+  .leftContent {
+    //position: fixed;
+    //top: 0;
+  }
 }
 </style>
