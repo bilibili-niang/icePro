@@ -6,6 +6,13 @@
     <ice-link href="https://github.com/bilibili-niang/icePro" target="_blank">github地址</ice-link>
   </div>
   <ice-menu :list="items" :router="nowPath" nofold></ice-menu>
+  <!--  <template v-for="(item,index) in items">
+      <ice-button :border="false">
+        {{ item.text }}
+      </ice-button>
+    </template>-->
+
+
 </template>
 
 <script setup>

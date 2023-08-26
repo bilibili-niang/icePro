@@ -7,7 +7,8 @@
         round?'round':'defaultRound',
         block?'block':'',
         size?`size-${size}`:'size-n',
-        disable?'disable':'pointer'
+        disable?'disable':'pointer',
+        border?'border':''
         ]"
          :title="title?title:''"
          :style="{ '--hover-color': findColor(color).color,'--color': findColor(color).hover }">
@@ -56,6 +57,10 @@ const props = defineProps({
   disable: {
     type: Boolean,
     default: false
+  },
+  border: {
+    type: Boolean,
+    default: true
   }
 })
 
@@ -71,7 +76,7 @@ export default {
   name: "iceButton",
 }
 </script>
-<style lang="less">
+<style lang="less" scoped>
 @import '../../../assets/variables.less';
 @import "../../../assets/animate.less";
 
@@ -80,6 +85,9 @@ export default {
   user-select: none;
   flex-grow: 0;
   width: fit-content;
+}
+
+.border {
   border-width: 1px;
   border-style: solid;
 }
@@ -90,7 +98,7 @@ export default {
 
 // primary类型按钮
 .primary {
-  border: @themeColor-bleak 1px solid;
+  border-color: @themeColor-bleak;
   color: @themeColor-bleak;
 
   &:hover {
@@ -124,11 +132,11 @@ export default {
 // ready
 .ready {
   color: @startColor-bleak;
-  border: @startColor-bleak 1px solid;
+  border-color: @startColor-bleak;
 
   &:hover {
     color: @startColor;
-    border: @startColor 1px solid;
+    border-color: @startColor;
   }
 }
 
@@ -149,12 +157,12 @@ export default {
 .hoverLim {
   .primary {
     color: @fontColor;
-    border: @fontColor 1px solid;
+    border-color: @fontColor;
 
     &:hover {
       background-color: @themeColor;
       color: @fontColor-light;
-      border: @fontColor-light 1px solid;
+      border-color: @fontColor-light;
     }
   }
 }
@@ -162,38 +170,38 @@ export default {
 // button hover simple
 //shadow to right and button
 .shadow-r-b {
-  border: @fontColor 1px solid;
+  border-color: @fontColor;
 
   &:hover {
-    border: @fontColor-none 1px solid;
+    border-color: @fontColor-none;
     box-shadow: @hoverBlurLength @hoverLength-n @hoverLength-n @fontColor;
   }
 }
 
 .shadow-r-t {
-  border: @fontColor 1px solid;
+  border-color: @fontColor;
 
   &:hover {
-    border: @fontColor-none 1px solid;
+    border-color: @fontColor-none;
     box-shadow: @hoverBlurLength -@hoverLength-n @hoverLength-n @fontColor;
   }
 }
 
 .shadow-inner {
-  border: @fontColor 1px solid;
+  border-color: @fontColor;
 
   &:hover {
-    border: @fontColor-none 1px solid;
+    border-color: @fontColor-none;
     box-shadow: inset @hoverBlurLength @hoverLength-n @hoverLength-n @fontColor;
   }
 }
 
 .shadow-lt-rb {
-  border: @fontColor 1px solid;
+  border-color: @fontColor;
   box-shadow: -@hoverLength-n -@hoverLength-n @hoverLength-n @fontColor;
 
   &:hover {
-    border: @fontColor-none 1px solid;
+    border-color: @fontColor-none;
     box-shadow: @hoverBlurLength @hoverLength-n @hoverLength-n @fontColor;
   }
 }
@@ -202,7 +210,7 @@ export default {
 .shadow-inner-lt-rb {
   position: relative;
   transition: @time-n;
-  border: @fontColor 1px solid;
+  border-color: @fontColor;
 
   &:after, &:before {
     transition: @time-n;
@@ -227,7 +235,7 @@ export default {
   }
 
   &:hover {
-    border: @fontColor-none 1px solid;
+    border-color: @fontColor-none;
 
     &:after {
       opacity: 0;
@@ -277,37 +285,47 @@ export default {
 
 // 默认color
 .default-color {
-  border: @themeColor 1px solid;
+  border-color: @themeColor;
   color: @themeColor;
 
   &:hover {
-    border: @themeColor-bleak 1px solid;
+    border-color: @themeColor-bleak;
     color: @themeColor-bleak;
   }
 }
 
-.btn-colors(@color:var(--hover-color)) {
-  border: var(--color) 1px solid;
-  color: var(--color);
+.btn-colors() {
   border-color: var(--color);
+  color: var(--color);
 
   &:hover {
-    border: var(--hover-color) 1px solid;
-    color: @color;
     border-color: var(--hover-color);
+    color: var(--hover-color);
   }
 }
 
 // colors
 .light {
   .btn-colors {
-    .btn-colors();
+    border-color: var(--color);
+    color: var(--color);
+
+    &:hover {
+      border-color: var(--hover-color);
+      color: var(--hover-color);
+    }
   }
 }
 
 .dark {
   .btn-colors {
-    .btn-colors(white)
+    border-color: var(--color);
+    color: var(--color);
+
+    &:hover {
+      border-color: var(--hover-color);
+      color: var(--hover-color);
+    }
   }
 }
 

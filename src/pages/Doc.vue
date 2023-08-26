@@ -1,7 +1,12 @@
 <template>
   <div class="ice-row wideContainer">
-    <div class="ice-column border-r leftContent">
-      <ice-button @click="changeMode">切换模式</ice-button>
+    <div class="ice-column border-r leftContent"
+         :class="[
+        fixed?'positionFix':''
+    ]">
+      <ice-button @click="changePosition" class="fixedBtn">{{ fixed ? '展开' : '收起' }}
+      </ice-button>
+      <ice-button @click="changeMode">{{ dark ? 'light' : 'dark' }}</ice-button>
       <ice-row v-if="false">
         <input type="color" v-model="colorVal">
         <text :style="{'color':colorVal}">
@@ -22,9 +27,10 @@
 import DocLeft from '@/pages/doc/docLeft.vue'
 import { ref } from 'vue'
 
+const dark = ref(false)
 const changeMode = () => {
-  const dark = Boolean(localStorage.getItem('mode') == 'false' ? false : true || null)
-  if (dark) {
+  dark.value = Boolean(localStorage.getItem('mode') == 'false' ? false : true || null)
+  if (dark.value) {
     document.querySelector('html').classList.add('dark')
     document.querySelector('html').classList.remove('light')
   } else {
@@ -32,8 +38,13 @@ const changeMode = () => {
     document.querySelector('html').classList.remove('dark')
     localStorage.setItem('mode', 'true')
   }
-  localStorage.setItem('mode', ( !dark ).toString())
+  localStorage.setItem('mode', ( !dark.value ).toString())
 }
+const fixed = ref(false)
+const changePosition = () => {
+  fixed.value = !fixed.value
+}
+
 const colorVal = ref('#422929')
 const setColor = () => {
   localStorage.setItem('color', colorVal.value)
@@ -52,8 +63,25 @@ const clearColor = () => {
 .wideContainer {
 
   .leftContent {
-    //position: fixed;
-    //top: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding-top: 2rem;
+    transition: .5s;
+    z-index: 9999;
+    background: @bac;
   }
 }
+
+.positionFix {
+  position: fixed;
+  left: -100% !important;
+}
+
+.fixedBtn {
+  position: fixed;
+  top: 10px;
+  left: 0;
+}
+
 </style>
