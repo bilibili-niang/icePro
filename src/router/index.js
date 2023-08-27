@@ -70,6 +70,9 @@ const routes = [
             }, {
                 path: 'link',
                 component: () => import('../pages/doc/link/index.vue'),
+            }, {
+                path: 'selector',
+                component: () => import('../pages/doc/selector/index.vue'),
             }
         ],
     },

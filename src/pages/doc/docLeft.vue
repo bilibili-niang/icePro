@@ -5,19 +5,33 @@
     </ice-link>
     <ice-link href="https://github.com/bilibili-niang/icePro" target="_blank">github地址</ice-link>
   </div>
-  <ice-menu :list="items" :router="nowPath" nofold></ice-menu>
-  <!--  <template v-for="(item,index) in items">
-      <ice-button :border="false">
+  <ul class="list-ul listContainer">
+    <li v-for="item in items" :key="item.text">
+      <!--有子菜单-->
+      <div v-if="item.children" class="ice-menu-child">
+        <ice-title noselect>
+          {{ item.text }}
+        </ice-title>
+        <ul class='list-children-ul'>
+          <li v-for="(it, itIndex) in item.children" :key="itIndex">
+            <ice-link :href="it.href" :border="false" v-if="it.href" :class="{activeLink:nowPath===it.href}">
+              {{ it.text }}
+            </ice-link>
+            <ice-text v-else noselect>{{ it.text }}</ice-text>
+          </li>
+        </ul>
+      </div>
+      <!--无子菜单-->
+      <div v-else>
         {{ item.text }}
-      </ice-button>
-    </template>-->
-
+      </div>
+    </li>
+  </ul>
 
 </template>
 
 <script setup>
 import IceLink from '@/components/text/ice-link.vue'
-import IceMenu from '@/components/menu/ice-menu.vue'
 import { useRoute } from 'vue-router'
 import { ref, watch } from 'vue'
 
@@ -56,6 +70,19 @@ const items = [
     ]
   },
   {
+    text: '布局容器',
+    children: [
+      {
+        text: '基础',
+        href: '/doc/container'
+      },
+      {
+        text: '收缩栏',
+        href: '/doc/shrinkBar'
+      }
+    ]
+  },
+  {
     text: '反馈',
     children: [
       {
@@ -67,19 +94,6 @@ const items = [
         href: '/doc/drawer'
       },
 
-    ]
-  },
-  {
-    text: '布局容器',
-    children: [
-      {
-        text: '基础',
-        href: '/doc/container'
-      },
-      {
-        text: '收缩栏',
-        href: '/doc/shrinkBar'
-      }
     ]
   },
   {
@@ -106,6 +120,15 @@ const items = [
       {
         text: 'input 输入框',
         href: '/doc/input'
+      }
+    ]
+  },
+  {
+    text: '选择器',
+    children: [
+      {
+        text: 'selector 选择器',
+        href: '/doc/selector'
       }
     ]
   }
@@ -137,4 +160,11 @@ export default {
   padding-left: 1rem;
 }
 
+.activeLink {
+  color: darkred;
+}
+
+.listContainer {
+  height: fit-content;
+}
 </style>

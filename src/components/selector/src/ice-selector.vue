@@ -1,19 +1,29 @@
 <template>
-<div class="ice-selector">
+  <div class="ice-selector">
+    <ice-text class="inputVal">{{ placeholder }}</ice-text>
+    <iceSelect :value="val"></iceSelect>
 
-
-</div>
+  </div>
 </template>
 
 <script setup>
 
-const props=defineProps({
-  lable:{
-    type:String,
-    default:''
+import IceSelect from '@/components/select/iceSelect.vue'
+import { ref } from 'vue'
+
+const props = defineProps({
+  lable: {
+    type: String,
+    default: ''
+  },
+  // 预输入文字
+  placeholder: {
+    type: String,
+    default: ''
   }
 })
 
+const val = ref('')
 </script>
 
 <script>
@@ -22,6 +32,8 @@ export default {
 }
 </script>
 
-<style scoped>
-
+<style scoped lang="less">
+.inputVal {
+  border: #7a7374 1px solid;
+}
 </style>

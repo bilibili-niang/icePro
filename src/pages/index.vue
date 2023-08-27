@@ -51,12 +51,14 @@ import IceLink from '@/components/text/ice-link.vue'
 import IceColumn from '@/components/layout/ice-column.vue'</script>
 
 <style lang='less' scoped>
-.index {
-  padding-top: 10%;
-}
-
 // 小屏
 @media (max-width: 1200px) {
+  .index {
+    padding-top: 10%;
+  }
+}
+
+@media (min-width: 1200px) {
   .index {
     padding-top: 40%;
   }

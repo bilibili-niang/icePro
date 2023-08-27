@@ -63,9 +63,9 @@ const clearColor = () => {
 .wideContainer {
 
   .leftContent {
-    position: fixed;
-    top: 0;
-    left: 0;
+    //position: fixed;
+    //top: 0;
+    //left: 0;
     padding-top: 2rem;
     transition: .5s;
     z-index: 9999;
