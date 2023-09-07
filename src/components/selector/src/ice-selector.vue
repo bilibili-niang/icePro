@@ -8,7 +8,7 @@
 
 <script setup>
 
-import IceSelect from '@/components/select/iceSelect.vue'
+import IceSelect from '../../select/iceSelect.vue'
 import { ref } from 'vue'
 
 const props = defineProps({

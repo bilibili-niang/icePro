@@ -1,7 +1,7 @@
 <template>
   <div class="ice-column docLeft">
     <ice-link href="/" title="回到首页">
-      <ice-avatar src="@/assets/png/logo.png"></ice-avatar>
+      <ice-avatar src="../src/assets/png/logo.png"></ice-avatar>
     </ice-link>
     <ice-link href="https://github.com/bilibili-niang/icePro" target="_blank">github地址</ice-link>
   </div>

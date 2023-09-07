@@ -243,9 +243,6 @@ p {
   color: @themeColorActive !important;
 }
 
-body, #app {
-  //transition-duration: @time-n;
-}
 
 // drawer
 .showDrawer {
@@ -296,5 +293,20 @@ body, #app {
 
   .container {
     max-width: 70vw;
+  }
+}
+
+// 滚动条样式
+.scrollStyle {
+  &::-webkit-scrollbar {
+    height: 20px;
+    width: 5px;
+    background: @bac;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    //-webkit-box-shadow: inset 0 0 5px @themeActiveColor;
+    background: @fontColor;
   }
 }

@@ -6,14 +6,17 @@ colors
     <ice-text>
       使用
       <iceTag>color</iceTag>
-      传参
+      传参,传入的应是下面的拼音
     </ice-text>
   </div>
   <show class="colorBlock ice-row">
     <template v-for="(item,index) in allColor" :key="index">
       <div class="ice-column colorBlockItem" @click="copy(item.pinyin)">
         <div class="item radio-m noselect" :style="{background:findColor(item.pinyin).color}">
-          {{ item.name }}
+        </div>
+        <div :style="{
+          'color':findColor(item.pinyin).color
+        }">
           {{ item.pinyin }}
         </div>
       </div>

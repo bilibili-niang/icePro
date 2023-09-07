@@ -54,13 +54,14 @@ import IceColumn from '@/components/layout/ice-column.vue'</script>
 // 小屏
 @media (max-width: 1200px) {
   .index {
-    padding-top: 10%;
+    padding-top: 40%;
   }
 }
 
+//大屏
 @media (min-width: 1200px) {
   .index {
-    padding-top: 40%;
+    //padding-top: 40%;
   }
 }
 </style>

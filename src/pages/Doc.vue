@@ -1,11 +1,11 @@
 <template>
   <div class="ice-row wideContainer">
-    <div class="ice-column border-r leftContent"
+    <div class="ice-column leftContent scrollStyle"
          :class="[
         fixed?'positionFix':''
     ]">
-      <ice-button @click="changePosition" class="fixedBtn">{{ fixed ? '展开' : '收起' }}
-      </ice-button>
+      <!--      <ice-button @click="changePosition" class="fixedBtn">{{ fixed ? '展开' : '收起' }}
+            </ice-button>-->
       <ice-button @click="changeMode">{{ dark ? 'light' : 'dark' }}</ice-button>
       <ice-row v-if="false">
         <input type="color" v-model="colorVal">
@@ -17,7 +17,7 @@
       </ice-row>
       <docLeft></docLeft>
     </div>
-    <div class="ice-column flexFull">
+    <div class="ice-column flexFull scrollStyle">
       <router-view></router-view>
     </div>
   </div>
@@ -58,18 +58,22 @@ const clearColor = () => {
 .flexFull {
   padding-left: 1rem;
   padding-bottom: 200px;
+  height: 100vh;
+  overflow-y: auto;
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 .wideContainer {
-
   .leftContent {
-    //position: fixed;
-    //top: 0;
-    //left: 0;
-    padding-top: 2rem;
+    padding-top: @padding;
     transition: .5s;
     z-index: 9999;
     background: @bac;
+    height: 100vh;
+    overflow-y: auto;
+    box-sizing: border-box;
+    overflow-x: hidden;
   }
 }
 
