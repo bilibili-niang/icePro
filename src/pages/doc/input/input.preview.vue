@@ -8,14 +8,24 @@ input-normal
     </ice-text>
   </div>
   <show>
-    <ice-input class="input" v-model="text" placeholder="请输入文字"></ice-input>
-    <ice-input class="input" v-model="text2" placeholder="请输入文字"></ice-input>
+    <div class="ice-column">
+      <div class="ice-row">
+        <ice-input class="input" v-model="text" placeholder="请输入文字"></ice-input>
+        <ice-text>
+          我的名字:{{ text }}
+        </ice-text>
+      </div>
+      <br/>
+      <div class="ice-row">
+        <ice-input class="input" v-model="text2" placeholder="请输入文字"></ice-input>
+      </div>
+    </div>
   </show>
 </template>
 <script setup>
 import { ref } from 'vue'
 
-let text = ref('')
+let text = ref('坤坤菜菜子')
 let text2 = ref('一个真正的鳗')
 </script>
 <style scoped lang="less">

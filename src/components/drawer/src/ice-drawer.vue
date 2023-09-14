@@ -18,7 +18,7 @@
   </Teleport>
 </template>
 <script setup>
-import { computed, defineEmits, ref, watch } from 'vue'
+import { computed, defineEmits, ref, watch , defineProps} from 'vue'
 
 const emits = defineEmits(['update:modelValue'])
 const props = defineProps({

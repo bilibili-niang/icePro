@@ -14,7 +14,7 @@
 <script setup>
 import { findColor } from '../../hooks/tools.js'
 import { useRouter } from 'vue-router'
-
+import { defineProps} from 'vue'
 const props = defineProps({
   size: {
     type: String,

@@ -9,7 +9,7 @@
 <script setup>
 
 import IceSelect from '../../select/iceSelect.vue'
-import { ref } from 'vue'
+import { ref, defineProps } from 'vue'
 
 const props = defineProps({
   lable: {

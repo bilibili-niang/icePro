@@ -12,6 +12,7 @@
 
 <script setup>
 import { findColor } from '../../hooks/tools.js'
+import { defineProps } from 'vue'
 
 const props = defineProps({
   type: {
