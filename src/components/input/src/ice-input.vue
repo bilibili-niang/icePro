@@ -129,7 +129,7 @@ export default {
     position: absolute;
     top: 30%;
     left: .3rem;
-    z-index: -1;
+    z-index: 3;
     transition-duration: @time-n;
     font-size: @fontSize-n;
     color: @themeColor;

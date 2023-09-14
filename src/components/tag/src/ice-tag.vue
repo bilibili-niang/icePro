@@ -62,7 +62,7 @@ export default {
   justify-content: center;
   height: fit-content;
   font-weight: bold;
-  z-index: 3;
+  z-index: 1;
   position: relative;
   width: fit-content;
   border: none;
