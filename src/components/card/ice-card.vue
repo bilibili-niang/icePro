@@ -17,7 +17,7 @@
         <split dashed></split>
         <div class="ice-column content">
           <ice-button @click="showBottom=!showBottom">
-            展开
+            {{ showBottom ? '收起' : '展开' }}
             <div class="tag" :class="[
               showBottom?'down':'up'
           ]">^

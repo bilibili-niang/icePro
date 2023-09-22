@@ -14,9 +14,10 @@
         </ice-title>
         <ul class='list-children-ul'>
           <li v-for="(it, itIndex) in item.children" :key="itIndex">
-            <ice-link :href="it.href" :border="false" v-if="it.href" :class="{activeLink:nowPath===it.href}">
+            <ice-button :href="it.href" :border="false" v-if="it.href" :class="{activeLink:nowPath===it.href}"
+                        @click="goHref(it.href)">
               {{ it.text }}
-            </ice-link>
+            </ice-button>
             <ice-text v-else noselect>{{ it.text }}</ice-text>
           </li>
         </ul>
@@ -34,6 +35,8 @@
 import IceLink from '@/components/text/ice-link.vue'
 import { useRoute } from 'vue-router'
 import { ref, watch } from 'vue'
+import IceButton from '@/components/button/src/iceButton.vue'
+import { useRouter } from 'vue-router'
 
 const items = [
   {
@@ -133,6 +136,16 @@ const items = [
     ]
   }
 ]
+
+
+const routers = useRouter()
+/**
+ * 路由跳转
+ */
+const goHref = (href) => {
+  routers.push(href)
+}
+
 const route = useRoute()
 let nowPath = ref('')
 nowPath.value = route.path
