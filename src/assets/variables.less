@@ -1,13 +1,54 @@
 // 颜色参考 http://zhongguose.com/#qianshibai
 // less变量
 
+// 字体
+
+@font-face {
+  font-family: 'PingFangSC';
+  src: url('./fonts/PingFangSC.ttf') format('truetype');
+}
+
+body {
+  .normalFontFace();
+}
+
+.normalFontFace {
+  font-family: 'PingFangSC', sans-serif;
+}
+
+/* 设置 h1-h6 标签使用 PingFangSC.ttf 字体 */
+h1, h2, h3, h4, h5, h6 {
+  .normalFontFace();
+}
+
+/* 设置 p 标签使用 PingFangSC.ttf 字体 */
+p {
+  .normalFontFace();
+}
+
+/* 设置 a 标签使用 PingFangSC.ttf 字体 */
+a {
+  .normalFontFace();
+}
+
+/* 设置 strong 标签使用 PingFangSC.ttf 字体 */
+strong {
+  .normalFontFace();
+}
+
+/* 设置 em 标签使用 PingFangSC.ttf 字体 */
+em {
+  .normalFontFace();
+}
+
+
 @btn-skyblue: var(--color);
 @btn-skyblue-bleak: var(--color-bleak);
 @btn-skyblue-none: rgba(69, 159, 251, 0);
 // 主题颜色
 @themeColor: @btn-skyblue;
 // 檀紫
-@themeActiveColor:rgba(56,25,36,1);
+@themeActiveColor: rgba(56, 25, 36, 1);
 @themeColor-bleak: @btn-skyblue-bleak;
 @themeColor-bleak-bleak: @fontColor-bleak-bleak;
 // 主题色翻转

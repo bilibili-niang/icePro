@@ -6,12 +6,15 @@ shrinkBar
   <ice-text>
     你可以把鼠标往浏览器屏幕左边移动,然后点击固定,可以让他固定在侧边
   </ice-text>
+  <ice-text>
+    它的border取决于
+    <ice-tag>@themeActiveColor</ice-tag>
+    这个css变量
+  </ice-text>
   <show>
-    <shrinkBar>
+    <shrinkBar direction="left">
       <template v-slot:body>
         <div class="ice-column">
-          <ice-button>example</ice-button>
-
           <ice-title>
             水调歌头-崔与之
           </ice-title>

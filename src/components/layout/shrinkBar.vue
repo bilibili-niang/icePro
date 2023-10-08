@@ -9,22 +9,31 @@
        @mouseleave="hover = false"
   >
     <ice-button @click="getTip">{{ clickShow ? '取消固定' : '固定' }}</ice-button>
-
+    direction:{{ direction }}
     <slot name="body"></slot>
 
   </div>
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import {ref} from 'vue'
 
 const hover = ref(false)
 const shrinkBar = ref()
 let clickShow = ref(false)
+
+const props = defineProps({
+  // 需要收缩的方向
+  direction: {
+    type: String,
+    default: 'left'
+  }
+})
+
 const getTip = () => {
   clickShow.value = !clickShow.value
   if (clickShow.value) {
-    window.document.body.style.paddingLeft = `${ shrinkBar.value.offsetWidth }px`
+    window.document.body.style.paddingLeft = `${shrinkBar.value.offsetWidth}px`
   } else {
     window.document.body.style.paddingLeft = 0
   }
@@ -50,17 +59,17 @@ export default {
   min-width: 15rem;
   transition-duration: .7s;
   opacity: 0;
-
+  background: @bac;
+  border: @themeActiveColor 1px solid;
+  z-index: 100;
 }
 
 .shrinkBarShow {
   left: 0rem;
-  background: @themeColorReversal;
   opacity: 1;
 }
 
 .shrinkBarShow2 {
-  background: @themeColorReversal;
   opacity: 1;
   left: 0rem !important;
 }
