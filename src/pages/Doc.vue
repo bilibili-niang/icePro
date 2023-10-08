@@ -69,7 +69,6 @@ const clearColor = () => {
     padding-top: @padding;
     transition: .5s;
     z-index: 9999;
-    background: @bac;
     height: 100vh;
     overflow-y: auto;
     box-sizing: border-box;

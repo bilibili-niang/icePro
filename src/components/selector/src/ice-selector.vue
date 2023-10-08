@@ -1,29 +1,39 @@
 <template>
   <div class="ice-selector">
-    <ice-text class="inputVal">{{ placeholder }}</ice-text>
-    <iceSelect :value="val"></iceSelect>
-
+    <!--当前选中的值-->
+    <ice-text underLine>
+      selectVal:{{ selectVal}}
+    </ice-text>
   </div>
 </template>
 
 <script setup>
-
-import IceSelect from '../../select/iceSelect.vue'
-import { ref, defineProps } from 'vue'
+import { defineProps, defineEmits, computed } from 'vue'
 
 const props = defineProps({
-  lable: {
-    type: String,
-    default: ''
+  modelValue: {
+    type: [String, Number]
   },
-  // 预输入文字
-  placeholder: {
-    type: String,
-    default: ''
+  list: {
+    type: Array,
+    default: () => {
+      return []
+    }
   }
 })
 
-const val = ref('')
+const emits = defineEmits(["update:modelValue"])
+
+
+const selectVal = computed(() => {
+  const res = props.list.filter(item => item.value + '' === props.modelValue + '')
+  return res.label ? res.label : res[0].label
+})
+
+console.log('props.list', props.list)
+console.log('props.modelValue', props.modelValue)
+
+
 </script>
 
 <script>
@@ -33,7 +43,5 @@ export default {
 </script>
 
 <style scoped lang="less">
-.inputVal {
-  border: #7a7374 1px solid;
-}
+
 </style>
