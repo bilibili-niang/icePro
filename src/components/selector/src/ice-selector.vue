@@ -30,8 +30,10 @@ const selectVal = computed(() => {
   return res.label ? res.label : res[0].label
 })
 
+/*
 console.log('props.list', props.list)
 console.log('props.modelValue', props.modelValue)
+*/
 
 
 </script>
