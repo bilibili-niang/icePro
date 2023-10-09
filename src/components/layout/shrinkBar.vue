@@ -1,24 +1,28 @@
 <template>
-  <div :class="['shrinkBar',
+  <div ref="shrinkBar"
+       :class="['shrinkBar',
   'ice-column',
   hover?'shrinkBarShow':'',
   clickShow?'shrinkBarShow':''
   ]"
-       ref="shrinkBar"
-       @mouseover="hover = true"
        @mouseleave="hover = false"
+       @mouseover="hover = true"
   >
     <ice-button @click="getTip">{{ clickShow ? '取消固定' : '固定' }}</ice-button>
+
     direction:{{ direction }}
+    <br>
     hover:{{ hover }}
+    <br>
     clickShow:{{ clickShow }}
+
     <slot name="body"></slot>
 
   </div>
 </template>
 
 <script setup>
-import {nextTick, ref} from 'vue'
+import { ref } from 'vue'
 
 const hover = ref(false)
 const shrinkBar = ref()
@@ -35,12 +39,13 @@ const props = defineProps({
 const getTip = () => {
   clickShow.value = !clickShow.value
   if (clickShow.value) {
-    window.document.body.style.paddingLeft = `${shrinkBar.value.offsetWidth}px`
+    window.document.body.style.paddingLeft = `${ shrinkBar.value.offsetWidth }px`
   } else {
     window.document.body.style.paddingLeft = 0
   }
 }
-if (window.document.body.style.paddingLeft !== 0) {
+console.log('window.document.body.style.paddingLeft', window.document.body.style.paddingLeft)
+if (window.document.body.style.paddingLeft + '' === '0px') {
   clickShow.value = true
 }
 /*nextTick(() => {
@@ -56,7 +61,7 @@ export default {
   name: "shrinkBar"
 }
 </script>
-<style scoped lang="less">
+<style lang="less" scoped>
 @import '../../assets/variables.less';
 
 .shrinkBar {
@@ -68,14 +73,14 @@ export default {
   min-width: 15rem;
   transition-duration: .7s;
   opacity: 0;
-  //background: @bac;
-  background: rgba(255, 255, 255, .1);
+  background: @bac;
+  //background: rgba(255, 255, 255, .1);
   border: @themeActiveColor 1px solid;
   z-index: 100;
 }
 
 .shrinkBarShow {
-  left: 0rem;
+  left: 0;
   opacity: 1;
 }
 
