@@ -10,13 +10,15 @@
   >
     <ice-button @click="getTip">{{ clickShow ? '取消固定' : '固定' }}</ice-button>
     direction:{{ direction }}
+    hover:{{ hover }}
+    clickShow:{{ clickShow }}
     <slot name="body"></slot>
 
   </div>
 </template>
 
 <script setup>
-import {ref} from 'vue'
+import {nextTick, ref} from 'vue'
 
 const hover = ref(false)
 const shrinkBar = ref()
@@ -41,6 +43,13 @@ const getTip = () => {
 if (window.document.body.style.paddingLeft !== 0) {
   clickShow.value = true
 }
+/*nextTick(() => {
+  window.document.body.style.paddingLeft = 0
+})*/
+setTimeout(() => {
+  console.log('设置为0')
+  window.document.body.style.paddingLeft = 0
+})
 </script>
 <script>
 export default {
@@ -59,7 +68,8 @@ export default {
   min-width: 15rem;
   transition-duration: .7s;
   opacity: 0;
-  background: @bac;
+  //background: @bac;
+  background: rgba(255, 255, 255, .1);
   border: @themeActiveColor 1px solid;
   z-index: 100;
 }
@@ -69,8 +79,8 @@ export default {
   opacity: 1;
 }
 
-.shrinkBarShow2 {
+.shrinkBarHide {
   opacity: 1;
-  left: 0rem !important;
+  left: -95% !important;
 }
 </style>

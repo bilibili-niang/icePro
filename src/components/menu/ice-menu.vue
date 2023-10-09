@@ -61,6 +61,11 @@ const props = defineProps({
   nofold: {
     type: Boolean,
     default: false
+  },
+  // 布局方向
+  direction: {
+    type: String,
+    default: 'column'
   }
 })
 
@@ -113,7 +118,7 @@ export default {
         &:before {
           content: '';
           display: flex;
-          width:.5rem;
+          width: .5rem;
         }
       }
     }
