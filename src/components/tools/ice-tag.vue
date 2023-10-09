@@ -1,20 +1,20 @@
 <template>
-  <div class="ice-tag noselect" :class="[type,
+  <div :class="[type,
   round?'round':'defaultRound',
   color?'btn-colors':'default-color',
   size?`size-${size}`:'size-normal'
-  ]"
-       :style="{ '--hover-color': findColor(color).color,'--color': findColor(color).hover }"
+  ]" :style="{ '--hover-color': findColor(color).color,'--color': findColor(color).hover }"
+       class="ice-tag noselect"
   >
     <slot></slot>
   </div>
 </template>
 
 <script setup>
-import { findColor } from '../../hooks/tools.js'
+import { findColor } from '@/hooks/tools.js'
 import { defineProps } from 'vue'
 
-const props = defineProps({
+defineProps({
   type: {
     type: String,
     default: 'normal'
@@ -43,7 +43,7 @@ export default {
 }
 </script>
 
-<style scoped lang="less">
+<style lang="less" scoped>
 @import '../../assets/variables.less';
 
 .ice-tag {

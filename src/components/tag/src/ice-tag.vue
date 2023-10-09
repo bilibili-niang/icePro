@@ -1,20 +1,20 @@
 <template>
-  <div class="ice-tag noselect" :class="[type,
+  <div :class="[type,
   round?'round':'defaultRound',
   color?'btn-colors':'default-color',
   size?`size-${size}`:'size-normal'
-  ]"
-       :style="{ '--hover-color': findColor(color).color,'--color': findColor(color).hover }"
+  ]" :style="{ '--hover-color': findColor(color).color,'--color': findColor(color).hover }"
+       class="ice-tag noSelect"
   >
     <slot></slot>
   </div>
 </template>
 
 <script setup>
-import { findColor } from '../../../hooks/tools.js'
-import { useRouter } from 'vue-router'
-import { defineProps} from 'vue'
-const props = defineProps({
+import { findColor } from '@/hooks/tools.js'
+import { defineProps } from 'vue'
+
+defineProps({
   type: {
     type: String,
     default: 'normal'
@@ -36,17 +36,6 @@ const props = defineProps({
   }
 })
 
-const router = useRouter()
-const jump = () => {
-  if (props.href) {
-    const url = router.push({
-      path: props.href
-    })
-    // 设置在新页面打开
-    window.open(url, '_blank')
-  }
-}
-
 </script>
 <script>
 export default {
@@ -54,7 +43,7 @@ export default {
 }
 </script>
 
-<style scoped lang="less">
+<style lang="less" scoped>
 @import '../../../assets/variables.less';
 
 .ice-tag {

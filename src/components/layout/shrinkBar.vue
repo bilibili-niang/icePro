@@ -8,6 +8,9 @@
        @mouseleave="hover = false"
        @mouseover="hover = true"
   >
+    <!--不收起的slot-->
+    <slot name="header"></slot>
+
     <ice-button @click="getTip">{{ clickShow ? '取消固定' : '固定' }}</ice-button>
 
     direction:{{ direction }}
@@ -25,10 +28,12 @@
 import { ref } from 'vue'
 
 const hover = ref(false)
+
+// eslint-disable-next-line
 const shrinkBar = ref()
 let clickShow = ref(false)
 
-const props = defineProps({
+defineProps({
   // 需要收缩的方向
   direction: {
     type: String,
@@ -48,9 +53,7 @@ console.log('window.document.body.style.paddingLeft', window.document.body.style
 if (window.document.body.style.paddingLeft + '' === '0px') {
   clickShow.value = true
 }
-/*nextTick(() => {
-  window.document.body.style.paddingLeft = 0
-})*/
+
 setTimeout(() => {
   console.log('设置为0')
   window.document.body.style.paddingLeft = 0
@@ -74,7 +77,6 @@ export default {
   transition-duration: .7s;
   opacity: 0;
   background: @bac;
-  //background: rgba(255, 255, 255, .1);
   border: @themeActiveColor 1px solid;
   z-index: 100;
 }

@@ -1,19 +1,19 @@
 <template>
-  <div class="ice-input" :class="{inputNowait:nativeInputValue}">
-    <div v-if="placeholder" class="wait" :class="{nowait:nativeInputValue}">
+  <div :class="{inputNowait:nativeInputValue}" class="ice-input">
+    <div v-if="placeholder" :class="{nowait:nativeInputValue}" class="wait">
       {{ placeholder }}
     </div>
     <input
         ref="input"
         :disabled="disabled"
-        :type="type"
-        class="jw-input-inner"
-        autocomplete="off"
         :readonly="readonly"
+        :type="type"
         :value="nativeInputValue"
-        @input="handleChange"
+        autocomplete="off"
+        class="jw-input-inner"
         @blur="handleBlur"
         @focus="handleFocus"
+        @input="handleChange"
     />
   </div>
 </template>
@@ -27,13 +27,8 @@ const emits = defineEmits(inputEmit)
 
 const {
   disabled,
-  classes,
-  clearable,
   type,
-  passwordVisible,
   placeholder,
-  suffixIcon,
-  prefixIcon,
   readonly,
   nativeInputValue,
 } = useInput(props, emits)
@@ -51,11 +46,6 @@ const handleChange = (e) => {
   emits("input", value)
 }
 
-const hanldeClear = () => {
-  emits("update:modelValue", "")
-  emits("input", "")
-  emits("clear", "")
-}
 
 const handleBlur = (e) => {
   emits("blur", e)
@@ -79,10 +69,6 @@ const blur = () => {
     range.selectNode(inputOrTextarea.value)
     selection.removeAllRanges()
   })
-}
-
-const handlePasswordVisible = () => {
-  passwordVisible.value = !passwordVisible.value
 }
 
 const select = () => {
@@ -114,7 +100,7 @@ export default {
 }
 </script>
 
-<style scoped lang="less">
+<style lang="less" scoped>
 @import "../../../assets/variables.less";
 
 .ice-input {

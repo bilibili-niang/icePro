@@ -13,6 +13,13 @@ shrinkBar
   </ice-text>
   <show>
     <shrinkBar direction="left">
+
+      <template v-slot:show>
+        <ice-text>
+          披金成王,伴坤远航
+        </ice-text>
+      </template>
+
       <template v-slot:body>
         <div class="ice-column">
           <ice-title>

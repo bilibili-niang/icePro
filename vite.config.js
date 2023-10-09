@@ -3,6 +3,8 @@ import vue from '@vitejs/plugin-vue'
 import vitePluginVue from './plugins/fileFilter.js'
 import mdPlugin from "vite-plugin-markdown"
 import path from 'path'
+import eslintPlugin from 'vite-plugin-eslint'
+
 
 export default defineConfig({
     plugins: [
@@ -10,7 +12,10 @@ export default defineConfig({
         mdPlugin.plugin({
             mode: ["html", "vue"],
         }),
-        vitePluginVue
+        vitePluginVue,
+        eslintPlugin({
+            include: ['src/**/*.ts', 'src/**/*.vue']
+        })
     ],
     output: {
         globals: {

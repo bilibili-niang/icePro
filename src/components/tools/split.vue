@@ -1,6 +1,6 @@
 <template>
-  <div class="split dashed" v-if=dashed :class="type"></div>
-  <div class='split' :class="type" v-else></div>
+  <div v-if=dashed :class="type" class="split dashed"></div>
+  <div v-else :class="type" class='split'></div>
 </template>
 
 <script setup>
@@ -17,7 +17,7 @@ defineProps({
 </script>
 <script>
 export default {
-  name: 'split'
+  name: 'splitLine'
 }
 
 </script>

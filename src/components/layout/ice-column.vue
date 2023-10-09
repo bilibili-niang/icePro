@@ -1,5 +1,5 @@
 <template>
-  <div class='ice-column' :class="{center: center}">
+  <div :class="{center: center}" class='ice-column'>
     <slot></slot>
     <slot name="top"/>
     <slot name="bottom"/>
@@ -9,7 +9,7 @@
 <script setup>
 import { defineProps } from 'vue'
 
-const props = defineProps({
+defineProps({
   center: {
     type: Boolean,
     default: false

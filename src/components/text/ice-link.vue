@@ -1,21 +1,21 @@
 <template>
-  <a class="ice-link" :class="[
+  <a :class="[
       size?'size-'+size:'size-n',
       color?'hoverColor':'defaultColor',
       border?'border':'no-border'
-  ]"
-     :href="disabled ? null : href"
+  ]" :href="disabled ? null : href"
+     :style="{ '--hover-color': findColor(color).color,'--color': findColor(color).hover }"
      :target="target?target:'_self'"
-     :style="{ '--hover-color': findColor(color).color,'--color': findColor(color).hover }">
+     class="ice-link">
     <slot/>
   </a>
 </template>
 
 <script setup>
-import { findColor } from '../../hooks/tools.js'
-import { useRouter } from 'vue-router'
-import { defineProps} from 'vue'
-const props = defineProps({
+import { findColor } from '@/hooks/tools.js'
+import { defineProps } from 'vue'
+
+defineProps({
   size: {
     type: String,
     default: ''
@@ -44,20 +44,6 @@ const props = defineProps({
     default: true
   }
 })
-const jump = () => {
-  if (props.href) {
-    if (props.href.indexOf('http') != - 1) {
-      window.open(props.href)
-    } else {
-      const router = useRouter()
-      router.push({
-        path: props.href
-      })
-    }
-  } else {
-    return
-  }
-}
 
 </script>
 
@@ -66,7 +52,7 @@ export default {
   name: 'ice-link'
 }
 </script>
-<style scoped lang="less">
+<style lang="less" scoped>
 @import '../../assets/variables.less';
 
 .ice-link {
@@ -84,13 +70,15 @@ export default {
   }
 }
 
-.border{
+.border {
   border-bottom-style: solid;
   border-bottom-width: 1px;
 }
-.no-border{
+
+.no-border {
   border-style: none;
 }
+
 .defaultColor {
   color: @themeColor-bleak;
 

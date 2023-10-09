@@ -1,28 +1,29 @@
 <template>
-  <transition :duration="300" leave-active-class="animate__zoomOut" enter-active-class="animate__zoomIn"
+  <transition :duration="300" enter-active-class="animate__zoomIn" leave-active-class="animate__zoomOut"
               @before-leave="onClose" @after-leave="$emit('destroy')">
-    <div class="ice-message-lim border-normal" v-if="visible"
-         :class="[
+    <div v-if="visible" :class="[
         color?'message-colors':type?type:''
     ]"
          :style="{ '--hover-color': findColor(color).color,'--color': findColor(color).hover }"
+         class="ice-message-lim border-normal"
     >
       <ice-text :color="color?color:type?type:''">
         {{ message }}
       </ice-text>
-      <ice-button v-if="showClose" :type="type" :color="color" @click="close()">close</ice-button>
+      <ice-button v-if="showClose" :color="color" :type="type" @click="close()">close</ice-button>
     </div>
   </transition>
 </template>
 
 
 <script setup>
-import { computed, onMounted, onUnmounted, ref, defineProps } from 'vue'
+import { onMounted, onUnmounted, ref, defineProps } from 'vue'
 import { findColor } from '../../../hooks/tools.js'
 import IceText from '../../text/ice-text.vue'
 import IceButton from '../../button/src/iceButton.vue'
 
 const visible = ref(false)
+// eslint-disable-next-line no-unused-vars
 let stopTimer = undefined
 const props = defineProps({
   duration: {
@@ -67,7 +68,6 @@ const props = defineProps({
   }
 })
 
-console.log(props)
 const emits = defineEmits(["destroy", "close"])
 
 function startTimer () {
@@ -79,11 +79,6 @@ function startTimer () {
       }
     }, props.duration)
   }
-}
-
-function clearTimer () {
-  clearTimeout(stopTimer)
-  stopTimer = undefined
 }
 
 function keydown ({ code }) {
@@ -114,14 +109,6 @@ function close () {
   emits('close')
 }
 
-const customStyle = computed(() => ( {
-  top: `${ props.offset }px`,
-  zIndex: props.zIndex,
-} ))
-
-const destroy = () => {
-  emits('destroy')
-}
 
 </script>
 

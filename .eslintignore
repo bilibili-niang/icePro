@@ -1,0 +1,5 @@
+// eslint 忽略文件
+/dist
+/node_modules
+.eslintrc.cjs
+vite.config.ts

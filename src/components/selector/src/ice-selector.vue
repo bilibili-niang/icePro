@@ -2,7 +2,7 @@
   <div class="ice-selector">
     <!--当前选中的值-->
     <ice-text underLine>
-      selectVal:{{ selectVal}}
+      selectVal:{{ selectVal }}
     </ice-text>
   </div>
 </template>
@@ -22,7 +22,7 @@ const props = defineProps({
   }
 })
 
-const emits = defineEmits(["update:modelValue"])
+defineEmits(["update:modelValue"])
 
 
 const selectVal = computed(() => {
@@ -42,6 +42,6 @@ export default {
 }
 </script>
 
-<style scoped lang="less">
+<style lang="less" scoped>
 
 </style>
