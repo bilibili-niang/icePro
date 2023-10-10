@@ -1,14 +1,14 @@
 <template>
   <div class="ice-row wideContainer">
-    <div class="ice-column leftContent scrollStyle"
-         :class="[
+    <div :class="[
         fixed?'positionFix':''
-    ]">
+    ]"
+         class="ice-column leftContent scrollStyle">
       <!--      <ice-button @click="changePosition" class="fixedBtn">{{ fixed ? '展开' : '收起' }}
             </ice-button>-->
       <ice-button @click="changeMode">{{ dark ? 'light' : 'dark' }}</ice-button>
       <ice-row v-if="false">
-        <input type="color" v-model="colorVal">
+        <input v-model="colorVal" type="color">
         <text :style="{'color':colorVal}">
           {{ colorVal }}
           <ice-button @click="setColor">set</ice-button>
@@ -41,10 +41,6 @@ const changeMode = () => {
   localStorage.setItem('mode', ( !dark.value ).toString())
 }
 const fixed = ref(false)
-const changePosition = () => {
-  fixed.value = !fixed.value
-}
-
 const colorVal = ref('#422929')
 const setColor = () => {
   localStorage.setItem('color', colorVal.value)
@@ -54,7 +50,7 @@ const clearColor = () => {
 }
 </script>
 
-<style scoped lang="less">
+<style lang="less" scoped>
 .flexFull {
   padding-left: 1rem;
   padding-bottom: 200px;

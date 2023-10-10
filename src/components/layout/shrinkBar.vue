@@ -9,7 +9,9 @@
        @mouseover="hover = true"
   >
     <!--不收起的slot-->
-    <slot name="header"></slot>
+    <div class="alwaysShow">
+      <slot name="show"></slot>
+    </div>
 
     <ice-button @click="getTip">{{ clickShow ? '取消固定' : '固定' }}</ice-button>
 
@@ -31,6 +33,7 @@ const hover = ref(false)
 
 // eslint-disable-next-line
 const shrinkBar = ref()
+console.log('shrinkBar', shrinkBar)
 let clickShow = ref(false)
 
 defineProps({
@@ -89,5 +92,12 @@ export default {
 .shrinkBarHide {
   opacity: 1;
   left: -95% !important;
+}
+
+.alwaysShow {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  background: #888888;
 }
 </style>
