@@ -1,14 +1,30 @@
 <template>
-  <div class="ice-selector">
+  <div class="iceSelector">
     <!--当前选中的值-->
-    <ice-text underLine>
-      selectVal:{{ selectVal }}
+    <ice-text class="activeSelection" noselect @click="showAllSelections">
+      {{ selectVal }}
     </ice-text>
+    <div :class="[
+        showSelectionFlag?'showSelection':''
+    ]"
+         class="selections"
+    >
+      <div v-if="list.length>0" class="selectItemLim">
+        <div v-for="(item,index) in list" :key="index" class="item">
+          <ice-selectionItem :item="item" :show="showSelectionFlag" @clicked="activeValue"/>
+        </div>
+      </div>
+      <div v-else>
+        <ice-text>
+          空
+        </ice-text>
+      </div>
+    </div>
   </div>
 </template>
 
 <script setup>
-import { defineProps, defineEmits, computed } from 'vue'
+import { defineProps, defineEmits, computed, ref } from 'vue'
 
 const props = defineProps({
   modelValue: {
@@ -21,8 +37,17 @@ const props = defineProps({
     }
   }
 })
+const activeValue = (e) => {
+  emits('update:modelValue', e.value)
+  // 支持返回整个改变对象的 Objet
+  emits('itemOnChange', e)
+  // 收起
+  showSelectionFlag.value = !showSelectionFlag.value
+}
 
-defineEmits(["update:modelValue"])
+let showSelectionFlag = ref(false)
+
+const emits = defineEmits(["update:modelValue", 'itemOnChange'])
 
 
 const selectVal = computed(() => {
@@ -30,6 +55,10 @@ const selectVal = computed(() => {
   return res.label ? res.label : res[0].label
 })
 
+// 点击展开所有选项
+const showAllSelections = () => {
+  showSelectionFlag.value = !showSelectionFlag.value
+}
 /*
 console.log('props.list', props.list)
 console.log('props.modelValue', props.modelValue)
@@ -45,5 +74,31 @@ export default {
 </script>
 
 <style lang="less" scoped>
+.iceSelector {
+  .activeSelection {
+    border: @themeActiveColor 1px solid;
+    border-radius: @radio-l;
+    margin-bottom: @m-normal;
+  }
 
+  .showSelection {
+
+    .selectItemLim {
+      .item {
+        height: fit-content;
+      }
+    }
+  }
+
+  .hideSelection {
+    .selectItemLim {
+      .item {
+        overflow: hidden;
+        height: 0;
+      }
+    }
+
+  }
+
+}
 </style>

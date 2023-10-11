@@ -8,7 +8,7 @@ text-nowrap
     禁止换行
   </ice-text>
 
-  <show>
+  <container>
     <div class="lim">
       <ice-text>
         overhead the albatross，hangs motionless upon the air，
@@ -25,7 +25,7 @@ text-nowrap
         submarine.
       </ice-text>
     </div>
-  </show>
+  </container>
 </template>
 <style lang='less' scoped>
 .lim {

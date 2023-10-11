@@ -7,8 +7,8 @@ link-normal
       使用 <ice-tag>href</ice-tag>传入想要跳转的链接
     </ice-text>
   </div>
-  <show>
+  <container>
     <ice-link>一个链接</ice-link>
-  </show>
+  </container>
 </template>
 

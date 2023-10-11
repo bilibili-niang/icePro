@@ -23,7 +23,7 @@ const vitePluginVue = {
             script = script.loc.source
         }
         const content = baseParse(file).children.find((n, index) => n.tag === "template")
-        let sourceCode = content.children.find((n, index) => n.tag === "show")
+        let sourceCode = content.children.find((n, index) => n.tag === "container")
         const title = parsed.children[0].content
         const main = file.split(parsed.loc.source).join("").trim()
         if (!sourceCode) {

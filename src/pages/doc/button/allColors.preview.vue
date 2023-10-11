@@ -9,10 +9,10 @@ colors
       传参,传入的应是下面的拼音
     </ice-text>
   </div>
-  <show class="colorBlock ice-row">
+  <container class="colorBlock ice-row">
     <template v-for="(item,index) in allColor" :key="index">
       <div class="ice-column colorBlockItem" @click="copy(item.pinyin)">
-        <div class="item radio-m noselect" :style="{background:findColor(item.pinyin).color}">
+        <div :style="{background:findColor(item.pinyin).color}" class="item radio-m noselect">
         </div>
         <div :style="{
           'color':findColor(item.pinyin).color
@@ -21,7 +21,7 @@ colors
         </div>
       </div>
     </template>
-  </show>
+  </container>
 
 </template>
 
@@ -49,7 +49,7 @@ const copy = async (str) => {
 }
 </script>
 
-<style scoped lang="less">
+<style lang="less" scoped>
 .colorBlockItem {
   width: 15%;
   padding: @p-normal;

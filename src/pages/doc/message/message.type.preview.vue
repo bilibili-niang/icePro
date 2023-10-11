@@ -9,7 +9,7 @@ message-color
       控制弹窗的类型(语义化)
     </ice-text>
   </div>
-  <show>
+  <container>
     <ice-button @click="alertMessage">
       info
     </ice-button>
@@ -22,7 +22,7 @@ message-color
     <ice-button @click="alertMessage4">
       ready
     </ice-button>
-  </show>
+  </container>
 </template>
 <script setup>
 import { iceMessage } from '../../../../index.js'

@@ -9,10 +9,10 @@
       来控制为类型
     </ice-text>
   </div>
-  <show>
+  <container>
     <div class="ice-column w100percent">
       <div class="ice-column w100percent">
-        <split></split>
+        <iceSplit/>
       </div>
       <br/>
       <div class="ice-column w100percent">
@@ -24,8 +24,8 @@
       </div>
       <br/>
       <div class="ice-column w100percent" style="height: 5rem">
-        <split type="vertical" dashed></split>
+        <split dashed type="vertical"></split>
       </div>
     </div>
-  </show>
+  </container>
 </template>

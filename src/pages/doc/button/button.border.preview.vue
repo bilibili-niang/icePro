@@ -9,11 +9,10 @@
       控制是否要显示border
     </ice-text>
   </div>
-  <show>
+  <container>
     <ice-button color="yejuzi">野菊紫</ice-button>
-    <ice-button color="yejuzi" :border="false">野菊紫</ice-button>
-  </show>
+    <ice-button :border="false" color="yejuzi">野菊紫</ice-button>
+  </container>
 </template>
 <script setup>
-import IceLink from '@/components/text/ice-link.vue'
 </script>

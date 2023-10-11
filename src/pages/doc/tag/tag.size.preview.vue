@@ -13,5 +13,5 @@ tag-size
     <ice-tag size="small">small</ice-tag>
     <ice-tag size="normal">default</ice-tag>
     <ice-tag size="large">large</ice-tag>
-  </show>
+  </container>
 </template>

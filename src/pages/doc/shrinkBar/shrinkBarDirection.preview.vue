@@ -9,7 +9,7 @@ shrinkBar
     更改收缩方向
   </ice-text>
 
-  <show>
+  <container>
     <shrinkBar direction="top">
       <template v-slot:body>
         <div class="ice-column">
@@ -23,7 +23,7 @@ shrinkBar
         </div>
       </template>
     </shrinkBar>
-  </show>
+  </container>
 </template>
 <script setup>
 import ShrinkBar from '@/components/layout/shrinkBar.vue'</script>

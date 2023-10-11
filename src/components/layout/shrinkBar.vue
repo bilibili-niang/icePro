@@ -1,4 +1,12 @@
 <template>
+
+  <!--不收起的slot-->
+  <div :style="{
+    'background':bacColor+'!important;'
+  }" class="alwaysShow">
+    <slot name="show"></slot>
+  </div>
+
   <div ref="shrinkBar"
        :class="['shrinkBar',
   'ice-column',
@@ -8,10 +16,6 @@
        @mouseleave="hover = false"
        @mouseover="hover = true"
   >
-    <!--不收起的slot-->
-    <div class="alwaysShow">
-      <slot name="show"></slot>
-    </div>
 
     <ice-button @click="getTip">{{ clickShow ? '取消固定' : '固定' }}</ice-button>
 
@@ -41,6 +45,9 @@ defineProps({
   direction: {
     type: String,
     default: 'left'
+  },
+  bacColor: {
+    type: String
   }
 })
 
@@ -52,7 +59,6 @@ const getTip = () => {
     window.document.body.style.paddingLeft = 0
   }
 }
-console.log('window.document.body.style.paddingLeft', window.document.body.style.paddingLeft)
 if (window.document.body.style.paddingLeft + '' === '0px') {
   clickShow.value = true
 }
@@ -98,6 +104,7 @@ export default {
   position: fixed;
   top: 10px;
   left: 10px;
-  background: #888888;
+  background: @bac;
+  z-index: 99;
 }
 </style>

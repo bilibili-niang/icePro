@@ -10,12 +10,12 @@
     </ice-text>
   </div>
 
-  <show>
+  <container>
     <ice-button hover>primary</ice-button>
     <ice-button hover type="shadow-r-b">hover</ice-button>
     <ice-button hover type="shadow-r-t">hover</ice-button>
     <ice-button hover type="shadow-inner">hover</ice-button>
     <ice-button hover type="shadow-lt-rb">hover</ice-button>
     <ice-button hover type="shadow-inner-lt-rb">hover</ice-button>
-  </show>
+  </container>
 </template>

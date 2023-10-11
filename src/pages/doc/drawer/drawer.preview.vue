@@ -2,14 +2,14 @@
 抽屉-drawer
 </preview>
 <template>
-  <show>
+  <container>
     <div class="ice-column">
       <ice-button @click="drawer=true">展开</ice-button>
       <ice-text>
         父组件中的值: drawer:{{ drawer }}
       </ice-text>
 
-      <split></split>
+      <iceSplit/>
       <ice-selector-group v-model="selectorValue">
         <ice-selector label=""></ice-selector>
       </ice-selector-group>
@@ -18,7 +18,7 @@
         drawer里面的数据
       </ice-drawer>
     </div>
-  </show>
+  </container>
 
 </template>
 <script setup>

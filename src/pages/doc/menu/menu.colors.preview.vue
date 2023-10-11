@@ -9,10 +9,10 @@ menu-border
       的传入,还有bug,你不要在一个组件里用多个color变量
     </ice-text>
   </div>
-  <show>
+  <container>
     <ice-menu :list="items" color="muguahuang"></ice-menu>
     <ice-menu :list="items" color="jiguanghong"></ice-menu>
-  </show>
+  </container>
 </template>
 <script setup>
 import IceMenu from '@/components/menu/ice-menu.vue'

@@ -5,12 +5,12 @@
     <iceTag>block</iceTag>
     控制显示的边框
   </ice-text>
-  <show>
+  <container>
     <div class="ice-column">
       <ice-avatar :src="imgUrl" block></ice-avatar>
       <ice-avatar :src="imgUrl"></ice-avatar>
     </div>
-  </show>
+  </container>
 </template>
 <script setup>
 import { ref } from 'vue'

@@ -7,14 +7,14 @@ selector-normal
       selector
     </ice-text>
   </div>
-  <show>
+  <container>
     <div class="column">
       <ice-text>下面这个是选择器</ice-text>
-      <!--      <ice-selector :v-model="selectionVal" :lables="selectionList"></ice-selector>-->
+      <!--<ice-selector :v-model="selectionVal" :lables="selectionList"></ice-selector>-->
       <ice-selector v-model="value" :list="selectionList"></ice-selector>
       <ice-text>end</ice-text>
     </div>
-  </show>
+  </container>
 </template>
 
 <script setup>

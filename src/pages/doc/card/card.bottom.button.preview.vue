@@ -7,7 +7,7 @@ card-normal
     <ice-tag>bottom</ice-tag>
     来配置底部需要显示的内容
   </ice-text>
-  <show>
+  <container>
     <ice-card :border="false">
       <template v-slot:header>
         <ice-title>
@@ -34,6 +34,6 @@ card-normal
         </div>
       </template>
     </ice-card>
-  </show>
+  </container>
 </template>
 

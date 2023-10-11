@@ -5,9 +5,9 @@
     <iceTag>block</iceTag>
     来控制取消圆角
   </ice-text>
-  <show>
+  <container>
     <ice-button>primary</ice-button>
     <ice-button block>primary</ice-button>
-  </show>
+  </container>
 </template>
 

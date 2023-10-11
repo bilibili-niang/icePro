@@ -7,9 +7,9 @@ menu-normal
       最基础的使用
     </ice-text>
   </div>
-  <show>
+  <container>
     <ice-menu :list="items"></ice-menu>
-  </show>
+  </container>
 </template>
 <script setup>
 import IceMenu from '@/components/menu/ice-menu.vue'

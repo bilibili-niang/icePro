@@ -5,9 +5,9 @@
     <iceTag>round</iceTag>
     来控制圆角
   </ice-text>
-  <show>
+  <container>
     <ice-button>primary</ice-button>
     <ice-button round>primary</ice-button>
-  </show>
+  </container>
 </template>
 

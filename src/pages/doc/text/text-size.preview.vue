@@ -16,11 +16,11 @@ text-size
 
   </div>
 
-  <show>
+  <container>
     <ice-text>晴空一鹤排云上</ice-text>
     <ice-text size="s">晴空一鹤排云上</ice-text>
     <ice-text size="l">晴空一鹤排云上</ice-text>
-  </show>
+  </container>
 </template>
 
 <script setup>

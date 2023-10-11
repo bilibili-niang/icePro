@@ -9,9 +9,9 @@ menu-nofold
       的传入,是否折叠,默认折叠
     </ice-text>
   </div>
-  <show>
+  <container>
     <ice-menu :list="items" nofold></ice-menu>
-  </show>
+  </container>
 </template>
 <script setup>
 import IceMenu from '@/components/menu/ice-menu.vue'

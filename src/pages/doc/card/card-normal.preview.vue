@@ -8,7 +8,7 @@ card-normal
     和
     <ice-tag>body</ice-tag>
   </ice-text>
-  <show>
+  <container>
     <ice-card>
       <template v-slot:header>
         <ice-title>
@@ -22,6 +22,6 @@ card-normal
         <ice-text>"手写留屯奏，炯炯寸心丹。",</ice-text>
       </template>
     </ice-card>
-  </show>
+  </container>
 </template>
 

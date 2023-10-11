@@ -5,8 +5,8 @@
     <iceTag>disable</iceTag>
     来控制是否要被启用
   </ice-text>
-  <show>
+  <container>
     <ice-button disable>disable</ice-button>
-    <ice-button disable color="boluohong">disable</ice-button>
-  </show>
+    <ice-button color="boluohong" disable>disable</ice-button>
+  </container>
 </template>

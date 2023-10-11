@@ -11,8 +11,8 @@ shrinkBar
     <ice-tag>@themeActiveColor</ice-tag>
     这个css变量
   </ice-text>
-  <show>
-    <shrinkBar direction="left">
+  <container>
+    <shrinkBar bac-color="#ffffff" direction="left">
 
       <template v-slot:show>
         <ice-text>
@@ -32,7 +32,7 @@ shrinkBar
         </div>
       </template>
     </shrinkBar>
-  </show>
+  </container>
 </template>
 <script setup>
 import ShrinkBar from '@/components/layout/shrinkBar.vue'</script>

@@ -7,9 +7,9 @@ menu-normal
       不同的方向:
     </ice-text>
   </div>
-  <show>
+  <container>
     <ice-menu :list="items" direction="row"></ice-menu>
-  </show>
+  </container>
 </template>
 <script setup>
 import IceMenu from '@/components/menu/ice-menu.vue'

@@ -6,11 +6,11 @@ layout-row
   <ice-text>
     不使用具名插槽会作用在默认的位置
   </ice-text>
-  <show>
+  <container>
     <ice-row>
       <ice-button>button one</ice-button>
       <ice-button>button two</ice-button>
     </ice-row>
-  </show>
+  </container>
 </template>
 

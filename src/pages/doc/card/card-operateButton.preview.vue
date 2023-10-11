@@ -5,7 +5,7 @@ card-operate
   <ice-text noselect>
     提供了一般的操作按钮
   </ice-text>
-  <show>
+  <container>
     <ice-card>
       <template v-slot:header>
         <ice-title>
@@ -20,6 +20,6 @@ card-operate
         <ice-text>"手写留屯奏，炯炯寸心丹。",</ice-text>
       </template>
     </ice-card>
-  </show>
+  </container>
 </template>
 

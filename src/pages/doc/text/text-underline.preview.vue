@@ -14,16 +14,16 @@ text-underLine
     <ice-tag>color</ice-tag>
     控制它的颜色
   </ice-text>
-  <show>
+  <container>
     <div class="lim">
       <ice-text underLine>
         晴空一鹤排云上
       </ice-text>
-      <ice-text underLine color="tieshuihong">
+      <ice-text color="tieshuihong" underLine>
         晴空一鹤排云上
       </ice-text>
     </div>
-  </show>
+  </container>
 </template>
 
 <script setup>

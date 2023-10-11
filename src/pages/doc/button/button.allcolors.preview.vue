@@ -16,14 +16,14 @@
       <ice-link href="/doc/button/colors">colors</ice-link>
     </ice-text>
   </div>
-  <show>
+  <container>
     <ice-button color="xiancaizi">苋菜紫</ice-button>
     <ice-button color="lizong">栗棕</ice-button>
     <ice-button color="qinglian">青莲</ice-button>
     <ice-button color="wumeizi">乌梅紫</ice-button>
     <ice-button color="yejuzi">野菊紫</ice-button>
     <ice-button color="honglan">虹蓝</ice-button>
-  </show>
+  </container>
 </template>
 <script setup>
 import IceLink from '@/components/text/ice-link.vue'

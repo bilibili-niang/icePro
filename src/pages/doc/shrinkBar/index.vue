@@ -1,9 +1,11 @@
 <template>
-  <!--  <Preview :component="shrinkBar"/>-->
-  <Preview :component="shrinkBarDirection"/>
+    <Preview :component="shrinkBarPreview"/>
+<!--  <Preview :component="shrinkBarDirection"/>-->
 </template>
 
 <script setup>
-import shrinkBarDirection from './shrinkBarDirection.preview.vue'
-import Preview from '@/components/editor/preview.vue'</script>
+// import shrinkBarDirection from './shrinkBarDirection.preview.vue'
+import Preview from '@/components/editor/preview.vue'
+import shrinkBarPreview from './shrinkBar.preview.vue'
+</script>
 

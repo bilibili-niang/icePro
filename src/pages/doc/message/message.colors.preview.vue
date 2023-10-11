@@ -8,7 +8,7 @@ message-color
     控制弹窗的颜色,注意type和color是会覆盖的,colors>type,
     <ice-link href="/doc/button/colors">所有颜色</ice-link>
   </ice-text>
-  <show>
+  <container>
     <ice-button @click="alertMessage">
       xiangrikuihuang
     </ice-button>
@@ -18,7 +18,7 @@ message-color
     <ice-button @click="alertMessage3">
       yinzhu
     </ice-button>
-  </show>
+  </container>
 </template>
 <script setup>
 import { iceMessage } from '../../../../index.js'

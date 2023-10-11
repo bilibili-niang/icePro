@@ -5,10 +5,10 @@
     <iceTag>type</iceTag>
     来控制基础样式,下面是几个主要的语义化按钮
   </ice-text>
-  <show>
+  <container>
     <ice-button>primary</ice-button>
     <ice-button type="danger">danger</ice-button>
     <ice-button type="success">success</ice-button>
     <iceButton type="ready">ready</iceButton>
-  </show>
+  </container>
 </template>

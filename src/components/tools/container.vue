@@ -10,6 +10,6 @@
 </script>
 <script>
 export default {
-  name: 'showComponent'
+  name: 'container'
 }
 </script>

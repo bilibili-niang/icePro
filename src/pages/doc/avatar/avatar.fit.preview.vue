@@ -5,16 +5,16 @@
     <iceTag>fit</iceTag>
     控制显示的图片
   </ice-text>
-  <show>
+  <container>
     <div class="ice-row">
       <div v-for="fit in fits" :key="fit" class="ice-column">
-        <ice-avatar :src="imgUrl" size="120" :fit="fit" block></ice-avatar>
+        <ice-avatar :fit="fit" :src="imgUrl" block size="120"></ice-avatar>
         <ice-text>
           {{ fit }}
         </ice-text>
       </div>
     </div>
-  </show>
+  </container>
 </template>
 <script setup>
 import { reactive } from 'vue'

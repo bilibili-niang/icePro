@@ -9,10 +9,10 @@ tag
       来控制颜色类型
     </ice-text>
   </div>
-  <show class="ice-column">
+  <container class="ice-column">
     <ice-tag>default</ice-tag>
     <ice-tag color="pipahuang">default</ice-tag>
     <ice-tag color="wanshoujuhuang">default</ice-tag>
     <ice-tag color="dahong">default</ice-tag>
-  </show>
+  </container>
 </template>

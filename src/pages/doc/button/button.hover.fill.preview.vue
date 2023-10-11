@@ -9,8 +9,8 @@
       控制为fill类型
     </ice-text>
   </div>
-  <show>
-    <ice-button hover fill="fill">primary</ice-button>
-    <ice-button hover fill="fill-l">fill to left</ice-button>
-  </show>
+  <container>
+    <ice-button fill="fill" hover>primary</ice-button>
+    <ice-button fill="fill-l" hover>fill to left</ice-button>
+  </container>
 </template>

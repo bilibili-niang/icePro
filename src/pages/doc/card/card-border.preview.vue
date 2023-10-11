@@ -12,7 +12,7 @@ card-border
     <ice-tag color="dahong">!important</ice-tag>
     来设置card的border样式
   </ice-text>
-  <show>
+  <container>
     <ice-card :border="false">
       <template v-slot:header>
         <ice-title>
@@ -26,6 +26,6 @@ card-border
         <ice-text>"手写留屯奏，炯炯寸心丹。",</ice-text>
       </template>
     </ice-card>
-  </show>
+  </container>
 </template>
 

@@ -1,9 +1,9 @@
 import iceButton from './src/components/button/src/iceButton.vue'
 import iceText from './src/components/text/ice-text.vue'
-import split from './src/components/tools/split.vue'
+import iceSplit from './src/components/tools/ice-split.vue'
 import iceTag from './src/components/tag/src/ice-tag.vue'
 import iceLink from './src/components/text/ice-link.vue'
-import show from './src/components/tools/show.vue'
+import container from './src/components/tools/container.vue'
 import iceTitle from './src/components/text/ice-title.vue'
 import iceCard from './src/components/card/ice-card.vue'
 import iceMessage from './src/components/message/index'
@@ -16,16 +16,17 @@ import iceSelector from './src/components/selector/index.js'
 import iceSelectorGroup from './src/components/selector-group/index.js'
 import avatar from './src/components/avatar/src/iceAvatar.vue'
 import shrinkBar from './src/components/layout/shrinkBar.vue'
+import iceSelectionItem from '@/components/selectorItem/src/ice-selectionItem.vue'
 
 import './src/assets/common.less'
 
 const components = {
     iceButton,
     iceText,
-    split,
+    iceSplit,
     iceTag,
     iceLink,
-    show,
+    container,
     iceTitle,
     iceCard,
     iceMenu,
@@ -36,16 +37,17 @@ const components = {
     iceSelector,
     iceSelectorGroup,
     avatar,
-    shrinkBar
+    shrinkBar,
+    iceSelectionItem
 }
 
 export {
     iceButton,
     iceText,
-    split,
+    iceSplit,
     iceTag,
     iceLink,
-    show,
+    container,
     iceTitle,
     iceCard,
     iceMessage,
@@ -68,7 +70,8 @@ function install (app) {
 }
 
 const icepro = {
-    version: '1.0.8'
+    version: '1.0.8',
+    components
 }
 
 // 导出组件

@@ -7,9 +7,9 @@ menu-border
       支持<ice-tag>border</ice-tag>的传入,是否显示border
     </ice-text>
   </div>
-  <show>
+  <container>
     <ice-menu :list="items" border></ice-menu>
-  </show>
+  </container>
 </template>
 <script setup>
 import IceMenu from '@/components/menu/ice-menu.vue'

@@ -7,11 +7,11 @@ message-normal
       最基础的使用
     </ice-text>
   </div>
-  <show>
+  <container>
     <ice-button @click="alertMessage">
       copy
     </ice-button>
-  </show>
+  </container>
 </template>
 <script setup>
 import { iceMessage } from '../../../../index.js'

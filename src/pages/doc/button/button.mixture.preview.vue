@@ -9,8 +9,8 @@
       传入多个可选值(有点麻烦)
     </ice-text>
   </div>
-  <show>
+  <container>
     <ice-button hover type="ready shadow-lt-rb">ready</ice-button>
     <ice-button hover type="simple shadow-inner">simple</ice-button>
-  </show>
+  </container>
 </template>
