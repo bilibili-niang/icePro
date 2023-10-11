@@ -9,7 +9,7 @@ tag-size
       来控制为指定尺寸
     </ice-text>
   </div>
-  <show class="ice-column">
+  <container class="ice-column">
     <ice-tag size="small">small</ice-tag>
     <ice-tag size="normal">default</ice-tag>
     <ice-tag size="large">large</ice-tag>

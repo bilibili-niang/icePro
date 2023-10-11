@@ -26,7 +26,7 @@
         </template>
       </ice-card>
     </div>
-    <split dashed></split>
+    <iceSplit dashed></iceSplit>
     <ice-row>
       <ice-column>
         <ice-text>

@@ -1,29 +1,29 @@
 <template>
   <!--变量-->
-  <div class="ice-card" :class="[size,color? color: '',
+  <div v-if="header" :class="[size,color? color: '',
   border?'border':'noborder'
   ]"
-       v-if="header"
-       :style="{'--hover-color': themeColor.hoverColor,'--color': themeColor.color}">
-    <div class="slot" :class="type">
+       :style="{'--hover-color': themeColor.hoverColor,'--color': themeColor.color}"
+       class="ice-card">
+    <div :class="type" class="slot">
       <div class="header ice-row flex-sb">
         <slot name="header"></slot>
       </div>
-      <div class="body" v-if="body">
-        <split dashed></split>
+      <div v-if="body" class="body">
+        <iceSplit dashed></iceSplit>
         <slot name="body"></slot>
       </div>
-      <div class="bottom" v-if="bottom">
-        <split dashed></split>
+      <div v-if="bottom" class="bottom">
+        <iceSplit dashed></iceSplit>
         <div class="ice-column content">
           <ice-button @click="showBottom=!showBottom">
             {{ showBottom ? '收起' : '展开' }}
-            <div class="tag" :class="[
+            <div :class="[
               showBottom?'down':'up'
-          ]">^
+          ]" class="tag">^
             </div>
           </ice-button>
-          <div class="bottomLim show" ref="bottomContent">
+          <div ref="bottomContent" class="bottomLim show">
             <slot name="bottom"></slot>
           </div>
         </div>
@@ -103,7 +103,7 @@ export default {
 }
 </script>
 
-<style scoped lang="less">
+<style lang="less" scoped>
 @import "../../assets/variables.less";
 @import "../../assets/common.less";
 

@@ -17,7 +17,7 @@ defineProps({
 </script>
 <script>
 export default {
-  name: 'splitLine'
+  name: 'iceSplit'
 }
 
 </script>

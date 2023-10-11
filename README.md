@@ -1,3 +1,8 @@
+<div align=center>
+<img src="./src/assets/png/logo.png" width="123px" height="123px" />
+</div>
+<hr/>
+
 基于 Vue 3 和 Vite，这是一个我为了好玩而编写的ui框架
 
 目前仍在开发中，目标是创建一个我可以在自己的项目中使用的 UI 框架

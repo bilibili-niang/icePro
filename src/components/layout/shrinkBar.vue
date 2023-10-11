@@ -1,9 +1,12 @@
 <template>
 
   <!--不收起的slot-->
-  <div :style="{
-    'background':bacColor+'!important;'
-  }" class="alwaysShow">
+  <div :class="[
+      bacColor?'':'normalBackgroundColor',
+       hover?'slotHide':'',
+  ]"
+       class="alwaysShow"
+  >
     <slot name="show"></slot>
   </div>
 
@@ -19,25 +22,24 @@
 
     <ice-button @click="getTip">{{ clickShow ? '取消固定' : '固定' }}</ice-button>
 
+    <slot name="show"></slot>
+    <slot name="body"></slot>
+
     direction:{{ direction }}
     <br>
     hover:{{ hover }}
     <br>
     clickShow:{{ clickShow }}
 
-    <slot name="body"></slot>
-
   </div>
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import {ref} from 'vue'
 
 const hover = ref(false)
 
-// eslint-disable-next-line
 const shrinkBar = ref()
-console.log('shrinkBar', shrinkBar)
 let clickShow = ref(false)
 
 defineProps({
@@ -54,7 +56,7 @@ defineProps({
 const getTip = () => {
   clickShow.value = !clickShow.value
   if (clickShow.value) {
-    window.document.body.style.paddingLeft = `${ shrinkBar.value.offsetWidth }px`
+    window.document.body.style.paddingLeft = `${shrinkBar.value.offsetWidth}px`
   } else {
     window.document.body.style.paddingLeft = 0
   }
@@ -104,7 +106,12 @@ export default {
   position: fixed;
   top: 10px;
   left: 10px;
-  background: @bac;
   z-index: 99;
 }
+
+.normalBackgroundColor {
+  background: @bac;
+}
+
+
 </style>
