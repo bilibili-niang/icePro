@@ -11,7 +11,7 @@
 </template>
 
 <script setup>
-import { findColor } from '../../../hooks/tools'
+import { findColor } from '../../hooks/tools'
 import { defineProps } from 'vue'
 
 defineProps({

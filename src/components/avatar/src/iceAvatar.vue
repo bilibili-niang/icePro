@@ -1,26 +1,26 @@
 <template>
-  <div class="ice-avatar"
-       :class="[
+  <div :class="[
       round&&!block?'':'background'
   ]"
+       class="ice-avatar"
   >
-    <img :src="src"
-         :alt="title"
-         :title="title"
+    <img :alt="title"
          :class="[
         'avatar',
         size==='default-size'?'default-size':'',
         round&&!block?'round':'block'
     ]"
-         @error="handleError"
+         :src="src"
          :style="{'object-fit': fit,'width':size+'px','height':size+'px',}"
+         :title="title"
+         @error="handleError"
     >
   </div>
 </template>
 <script setup>
-import { defineProps } from 'vue'
+import {defineProps} from 'vue'
 
-const defaultPng = 'http://blog.icestone.work/default.png'
+const defaultPng = '/src/assets/png/logo.png'
 const handleError = (e) => {
   e.target.src = defaultPng
 }
@@ -58,7 +58,7 @@ export default {
 }
 </script>
 
-<style scoped lang="less">
+<style lang="less" scoped>
 @import '../../../assets/variables.less';
 
 .background {

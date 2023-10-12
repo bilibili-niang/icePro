@@ -52,19 +52,18 @@ const emits = defineEmits(["update:modelValue", 'itemOnChange'])
 
 
 const selectVal = computed(() => {
-  const res = props.list.filter(item => item.value + '' === props.modelValue + '')
-  return res.label ? res.label : res[0].label
+  if (props.list) {
+    const res = props.list.filter(item => item.value + '' === props.modelValue + '')
+    return res.label ? res.label : res[0].label
+  } else {
+    return 'null'
+  }
 })
 
 // 点击展开所有选项
 const showAllSelections = () => {
   showSelectionFlag.value = !showSelectionFlag.value
 }
-/*
-console.log('props.list', props.list)
-console.log('props.modelValue', props.modelValue)
-*/
-
 
 </script>
 
@@ -76,6 +75,8 @@ export default {
 
 <style lang="less" scoped>
 .iceSelector {
+  z-index: 10;
+
   .activeSelection {
     border: @themeActiveColor 1px solid;
     border-radius: @radio-l;

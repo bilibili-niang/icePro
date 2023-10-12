@@ -1,24 +1,30 @@
 <template>
   <Teleport to="body">
-    <div class="ice-drawer" :class="[
+    <div :class="[
     direction?direction:'left',
     modelValue?'fadeIn':'fadeOut'
   ]"
-         :style="styleObj"
+         class="ice-drawer"
     >
-      modelValue:{{ modelValue }}
-      <br>
-      direction:{{ direction }}
-
-      <div class="header ice-row">
-        <ice-button @click="close">close</ice-button>
+      <div :style="styleObj" class="slotStyle">
+        <slot></slot>
       </div>
-      <slot></slot>
+
+      <div class="blank" @click="close">
+        <ice-text>
+          modelValue:{{ modelValue }}
+        </ice-text>
+        <br>
+        <ice-text>
+          direction:{{ direction }}
+        </ice-text>
+        <ice-button color="honglan" @click="close">close</ice-button>
+      </div>
     </div>
   </Teleport>
 </template>
 <script setup>
-import { computed, defineEmits, ref, watch , defineProps} from 'vue'
+import {computed, defineEmits, ref, watch, defineProps} from 'vue'
 
 const emits = defineEmits(['update:modelValue'])
 const props = defineProps({
@@ -70,14 +76,30 @@ export default {
 }
 </script>
 
-<style scoped lang="less">
+<style lang="less" scoped>
 @import '../../../assets/variables.less';
 @import "../../../assets/animate.less";
 
 .ice-drawer {
   position: fixed;
-  background-color: @themeColor-bleak;
   transition: all @time-l ease;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  z-index: 50;
+
+  .blank {
+    flex: 1;
+    //filter: blur(5px);
+    transition: all 1s ease;
+  }
+
+  .slotStyle {
+    height: 100%;
+    background: @bac;
+    border: @borderColor 1px solid;
+  }
 }
 
 // direction

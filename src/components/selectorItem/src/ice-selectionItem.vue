@@ -47,7 +47,6 @@ export default {
 <style lang="less" scoped>
 .ice-selectionItem {
   .selectionItem {
-    z-index: 5;
     font-size: @fontSize-n;
     line-height: @lineHeight-n;
     transition-duration: @time-n;
