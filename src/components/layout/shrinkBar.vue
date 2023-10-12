@@ -25,12 +25,6 @@
     <slot name="show"></slot>
     <slot name="body"></slot>
 
-    direction:{{ direction }}
-    <br>
-    hover:{{ hover }}
-    <br>
-    clickShow:{{ clickShow }}
-
   </div>
 </template>
 
@@ -112,6 +106,5 @@ export default {
 .normalBackgroundColor {
   background: @bac;
 }
-
 
 </style>

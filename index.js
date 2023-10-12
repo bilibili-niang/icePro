@@ -16,7 +16,7 @@ import iceSelector from './src/components/selector/index.js'
 import iceSelectorGroup from './src/components/selector-group/index.js'
 import avatar from './src/components/avatar/src/iceAvatar.vue'
 import shrinkBar from './src/components/layout/shrinkBar.vue'
-import iceSelectionItem from '@/components/selectorItem/src/ice-selectionItem.vue'
+import iceSelectionItem from './src/components/selectorItem/src/ice-selectionItem.vue'
 
 import './src/assets/common.less'
 

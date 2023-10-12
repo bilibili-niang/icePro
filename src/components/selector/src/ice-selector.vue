@@ -4,10 +4,11 @@
     <ice-text class="activeSelection" noselect @click="showAllSelections">
       {{ selectVal }}
     </ice-text>
-    <div :class="[
-        showSelectionFlag?'showSelection':''
+    <div
+        :class="[
+        showSelectionFlag?'showSelection':'hideSelection'
     ]"
-         class="selections"
+        class="selections"
     >
       <div v-if="list.length>0" class="selectItemLim">
         <div v-for="(item,index) in list" :key="index" class="item">
@@ -24,7 +25,7 @@
 </template>
 
 <script setup>
-import { defineProps, defineEmits, computed, ref } from 'vue'
+import {defineProps, defineEmits, computed, ref} from 'vue'
 
 const props = defineProps({
   modelValue: {
@@ -79,6 +80,27 @@ export default {
     border: @themeActiveColor 1px solid;
     border-radius: @radio-l;
     margin-bottom: @m-normal;
+    transition-duration: @time-n;
+    color: @fontColor;
+
+    &:hover {
+      color: @fontColor-bleak;
+      border-color: @fontColor-bleak;
+    }
+
+  }
+
+  .selections {
+    position: relative;
+
+    .selectItemLim {
+      background: @bac;
+      border-radius: @radio-n;
+      position: absolute;
+      //top: @lineHeight-s;
+      top: @m-normal;
+      width: 100%;
+    }
   }
 
   .showSelection {
@@ -93,8 +115,7 @@ export default {
   .hideSelection {
     .selectItemLim {
       .item {
-        overflow: hidden;
-        height: 0;
+        line-height: 0;
       }
     }
 

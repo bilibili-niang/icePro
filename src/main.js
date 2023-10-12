@@ -1,8 +1,9 @@
-import { createApp } from 'vue'
+import {createApp} from 'vue'
 import App from './App.vue'
 import './assets/common.less'
 import route from './router/index'
 import icepro from '../index'
+import {findColor} from "./hooks/tools.js";
 
 const app = createApp(App)
 
@@ -15,7 +16,7 @@ const app = createApp(App)
 })*/
 
 icepro.install(app)
-
+app.config.globalProperties.findColor = findColor
 app
     .use(route)
     .mount('#app')

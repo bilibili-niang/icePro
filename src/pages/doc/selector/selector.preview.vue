@@ -12,7 +12,6 @@ selector-normal
       <ice-text>下面这个是选择器</ice-text>
       <!--<ice-selector :v-model="selectionVal" :lables="selectionList"></ice-selector>-->
       <ice-selector v-model="value" :list="selectionList"></ice-selector>
-      <ice-text>end</ice-text>
     </div>
   </container>
 </template>
