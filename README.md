@@ -1,5 +1,5 @@
 <div align=center>
-<img src="./src/assets/png/logo.png" width="123px" height="123px" />
+<img src="http://icepro.icestone.work/src/assets/png/logo.png" width="123px" height="123px" />
 </div>
 <hr/>
 
