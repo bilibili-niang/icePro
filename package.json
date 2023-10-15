@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite --port 83",
-    "build": "npm publish",
+    "build": "vite build",
     "preview": "vite preview",
     "publish": "npm publish",
     "version": " npm version"
