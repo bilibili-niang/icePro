@@ -48,34 +48,5 @@ export default defineConfig({
     minify: true,
     external: ["vue"],
     externals: ["vue"],
-  },
-  /*build: {
-      lib: {
-          entry: "./index.js",
-          name: "icepro",
-          fileName: "icepro",
-          formats: ["es", "umd", "cjs"],
-      },
-      //打包后文件目录
-      outDir: "docs",
-      //压缩
-      minify: true,
-      external: ['vue'],
-      externals: ['vue'],
-      // 打包
-      rollupOptions: {
-          outDir: "docs",
-          base: '/docs/',
-          //压缩
-          minify: false,
-          // 排除 Vue 依赖
-          external: ['vue'],
-          inlineDynamicImports: true,
-          output: {
-              globals: {
-                  vue: 'Vue'
-              }
-          }
-      }
-  }*/
+  }
 });
