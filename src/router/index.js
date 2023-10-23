@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import {createRouter, createWebHistory} from "vue-router";
 
 /*const moduleContext = require.context()
 console.log('moduleContext-->')
@@ -73,6 +73,9 @@ const routes = [
             }, {
                 path: 'selector',
                 component: () => import('../pages/doc/selector/index.vue'),
+            }, {
+                path: 'pagination',
+                component: () => import('../pages/doc/pagination/index.vue'),
             }
         ],
     },

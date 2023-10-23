@@ -1,13 +1,13 @@
 <template>
-  <div :class="{center: center}" class='ice-column'>
+  <div :class="{center: center}" :style="{
+    'width': width
+  }" class='ice-column'>
     <slot></slot>
-    <slot name="top"/>
-    <slot name="bottom"/>
   </div>
 </template>
 
 <script setup>
-import { defineProps } from 'vue'
+import {defineProps} from "vue";
 
 defineProps({
   center: {
@@ -16,14 +16,14 @@ defineProps({
   },
   width: {
     type: String,
-    default: '100%'
+    default: "100%"
   }
-})
+});
 </script>
 <script>
 export default {
-  name: 'IceColumn'
-}
+  name: "IceColumn"
+};
 </script>
 <style lang='less' scoped>
 .ice-column {

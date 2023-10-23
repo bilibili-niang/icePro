@@ -14,7 +14,7 @@
         </ice-title>
         <ul class='list-children-ul'>
           <li v-for="(it, itIndex) in item.children" :key="itIndex">
-            <ice-button :href="it.href" :border="false" v-if="it.href" :class="{activeLink:nowPath===it.href}"
+            <ice-button v-if="it.href" :border="false" :class="{activeLink:nowPath===it.href}" :href="it.href"
                         @click="goHref(it.href)">
               {{ it.text }}
             </ice-button>
@@ -32,136 +32,145 @@
 </template>
 
 <script setup>
-import IceLink from '@/components/text/ice-link.vue'
-import { useRoute } from 'vue-router'
-import { ref, watch } from 'vue'
-import IceButton from '@/components/button/src/iceButton.vue'
-import { useRouter } from 'vue-router'
+import IceLink from "@/components/text/ice-link.vue";
+import {useRoute} from "vue-router";
+import {ref, watch} from "vue";
+import IceButton from "@/components/button/src/iceButton.vue";
+import {useRouter} from "vue-router";
 
 const items = [
   {
-    text: '基础组件',
+    text: "基础组件",
     children: [
       {
-        text: 'button 按钮',
-        href: '/doc/button'
+        text: "button 按钮",
+        href: "/doc/button"
       },
       {
-        text: 'colors 颜色',
-        href: '/doc/button/colors'
+        text: "colors 颜色",
+        href: "/doc/button/colors"
       },
       {
-        text: 'tools 工具',
-        href: '/doc/tools'
+        text: "tools 工具",
+        href: "/doc/tools"
       },
       {
-        text: 'card 卡片',
-        href: '/doc/card'
+        text: "card 卡片",
+        href: "/doc/card"
       },
       {
-        text: 'text 文字',
-        href: '/doc/text'
+        text: "text 文字",
+        href: "/doc/text"
       },
       {
-        text: 'tag',
-        href: '/doc/tag'
+        text: "tag",
+        href: "/doc/tag"
       },
       {
-        text: 'link',
-        href: '/doc/link'
+        text: "link",
+        href: "/doc/link"
       }
     ]
   },
   {
-    text: '布局容器',
+    text: "布局容器",
     children: [
       {
-        text: '基础',
-        href: '/doc/container'
+        text: "基础",
+        href: "/doc/container"
       },
       {
-        text: '收缩栏',
-        href: '/doc/shrinkBar'
+        text: "收缩栏",
+        href: "/doc/shrinkBar"
       }
     ]
   },
   {
-    text: '反馈',
+    text: "反馈",
     children: [
       {
-        text: 'message 消息弹窗',
-        href: '/doc/message'
+        text: "message 消息弹窗",
+        href: "/doc/message"
       },
       {
-        text: 'drawer 抽屉',
-        href: '/doc/drawer'
+        text: "drawer 抽屉",
+        href: "/doc/drawer"
       },
 
     ]
   },
   {
-    text: '头像',
+    text: "头像",
     children: [
       {
-        text: 'avatar',
-        href: '/doc/avatar'
+        text: "avatar",
+        href: "/doc/avatar"
       }
     ]
   },
   {
-    text: '菜单容器',
+    text: "菜单容器",
     children: [
       {
-        text: '导航菜单',
-        href: '/doc/menu'
+        text: "导航菜单",
+        href: "/doc/menu"
       }
     ]
   },
   {
-    text: '输入组件',
+    text: "输入组件",
     children: [
       {
-        text: 'input 输入框',
-        href: '/doc/input'
+        text: "input 输入框",
+        href: "/doc/input"
       }
     ]
   },
   {
-    text: '选择器',
+    text: "选择器",
     children: [
       {
-        text: 'selector 选择器',
-        href: '/doc/selector'
+        text: "selector 选择器",
+        href: "/doc/selector"
+      }
+    ]
+  },
+  {
+    text: "数据展示",
+    children: [
+      {
+        text: "pagination 分页",
+        href: "/doc/pagination"
       }
     ]
   }
-]
+];
 
 
-const routers = useRouter()
+const routers = useRouter();
 /**
  * 路由跳转
  */
 const goHref = (href) => {
-  routers.push(href)
-}
+  routers.push(href);
+};
 
-const route = useRoute()
-let nowPath = ref('')
-nowPath.value = route.path
+const route = useRoute();
+let nowPath = ref("");
+nowPath.value = route.path;
 watch(() => route.path,
     (newVal) => {
-      nowPath.value = newVal
-    })
+      nowPath.value = newVal;
+    });
 </script>
 
 <script>
 export default {
   name: "docLeft"
-}
+};
 </script>
 
-<style scoped lang="less">
+<style lang="less" scoped>
 @import "@/assets/variables.less";
 
 .active {

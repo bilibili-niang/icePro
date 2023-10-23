@@ -60,7 +60,6 @@ if (window.document.body.style.paddingLeft + '' === '0px') {
 }
 
 setTimeout(() => {
-  console.log('设置为0')
   window.document.body.style.paddingLeft = 0
 })
 </script>
