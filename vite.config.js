@@ -41,7 +41,6 @@ export default defineConfig({
     }
   },
   build: {
-    lib: {},
     //打包后文件目录
     outDir: "dist",
     //压缩
