@@ -5,8 +5,8 @@
   "type": "module",
   "bin": "./index.js",
   "scripts": {
-    "dev": "vite --port 83",
     "build": "vite build",
+    "dev": "vite --port 83",
     "preview": "vite preview",
     "publish": "npm publish",
     "version": " npm version"
