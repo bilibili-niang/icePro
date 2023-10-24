@@ -42,7 +42,7 @@ export default defineConfig({
   },
   build: {
     //打包后文件目录
-    outDir: "dist",
+    outDir: "docs",
     //压缩
     minify: true,
     external: ["vue"],
