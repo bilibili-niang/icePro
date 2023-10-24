@@ -11,13 +11,14 @@
       </div>
       <div v-if="body" class="body">
         <iceSplit dashed></iceSplit>
+        <iceSplit dashed></iceSplit>
         <slot name="body"></slot>
       </div>
       <div v-if="bottom" class="bottom">
         <iceSplit dashed></iceSplit>
         <div class="ice-column content">
           <ice-button @click="showBottom=!showBottom">
-            {{ showBottom ? '收起' : '展开' }}
+            {{ showBottom ? "收起" : "展开" }}
             <div :class="[
               showBottom?'down':'up'
           ]" class="tag">^
@@ -33,74 +34,74 @@
 </template>
 
 <script setup>
-import { defineProps, onMounted, reactive, ref, useSlots, watch } from 'vue'
-import { findColor } from '../../hooks/tools.js'
+import {defineProps, onMounted, reactive, ref, useSlots, watch} from "vue";
+import {findColor} from "../../hooks/tools.js";
 
-const { header, body, bottom } = useSlots()
-let showBottom = ref(false)
+const {header, body, bottom} = useSlots();
+let showBottom = ref(false);
 
-const bottomContent = ref('')
-let bottomHeight = ref('')
+const bottomContent = ref("");
+let bottomHeight = ref("");
 watch(showBottom,
     (newVal) => {
       if (!newVal) {
-        bottomContent.value.style.height = 0
-        bottomContent.value.style.opacity = 0
+        bottomContent.value.style.height = 0;
+        bottomContent.value.style.opacity = 0;
       } else {
-        bottomContent.value.style.height = bottomHeight.value * 1 + 'px'
-        bottomContent.value.style.opacity = 1
+        bottomContent.value.style.height = bottomHeight.value * 1 + "px";
+        bottomContent.value.style.opacity = 1;
       }
-    })
+    });
 
 const props = defineProps({
   type: {
     type: String,
-    default: 'normal'
+    default: "normal"
   },
   size: {
     type: String,
-    default: 'n'
+    default: "n"
   },
   color: {
     type: String,
-    default: ''
+    default: ""
   },
   border: {
     type: Boolean,
     default: true
   }
-})
+});
 
-let themeColor = reactive({})
+let themeColor = reactive({});
 if (props.color) {
-  const colorObj = findColor(props.color)
+  const colorObj = findColor(props.color);
   themeColor = {
-    color: `rgba(${ colorObj.RGB[0] },${ colorObj.RGB[1] },${ colorObj.RGB[2] },1)`,
-    hoverColor: `rgba(${ colorObj.RGB[0] },${ colorObj.RGB[1] },${ colorObj.RGB[2] },0.5)`
-  }
+    color: `rgba(${colorObj.RGB[0]},${colorObj.RGB[1]},${colorObj.RGB[2]},1)`,
+    hoverColor: `rgba(${colorObj.RGB[0]},${colorObj.RGB[1]},${colorObj.RGB[2]},0.5)`
+  };
 }
 
 const init = () => {
-  bottomHeight.value = bottomContent.value.scrollHeight
+  bottomHeight.value = bottomContent.value.scrollHeight;
   if (showBottom.value) {
-    bottomContent.value.style.height = bottomHeight.value * 1 + 'px'
+    bottomContent.value.style.height = bottomHeight.value * 1 + "px";
   } else {
-    bottomContent.value.style.height = 0
-    bottomContent.value.style.opacity = 0
+    bottomContent.value.style.height = 0;
+    bottomContent.value.style.opacity = 0;
   }
-}
+};
 
 onMounted(() => {
   if (bottom) {
-    init()
+    init();
   }
-})
+});
 
 </script>
 <script>
 export default {
   name: "iceCard"
-}
+};
 </script>
 
 <style lang="less" scoped>
@@ -112,11 +113,17 @@ export default {
   border-width: 1px;
 }
 
+.noborder {
+  padding: 0 !important;
+  margin: 0 !important;
+  bottom: 0 !important;
+}
+
 .ice-card {
   box-sizing: border-box;
   border-color: @themeColor;
   width: 100%;
-  padding: @p-normal;
+  //padding: @p-normal;
   margin: @m-normal;
   border-radius: @radio-n;
 
