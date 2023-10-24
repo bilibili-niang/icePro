@@ -306,7 +306,30 @@ p {
 
   &::-webkit-scrollbar-thumb {
     border-radius: 10px;
-    //-webkit-box-shadow: inset 0 0 5px @themeActiveColor;
     background: @fontColor;
+  }
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.fit-content {
+  width: fit-content;
+}
+
+.hidden-s {
+  @media (min-width: 1200px) {
+    display: none;
+  }
+}
+
+.hidden-xs {
+  @media (max-width: 900px) {
+    display: none;
   }
 }
