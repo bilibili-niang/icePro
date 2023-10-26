@@ -16,7 +16,7 @@
         </div>
       </div>
       <div v-else>
-        <ice-text>
+        <ice-text size="s">
           空
         </ice-text>
       </div>
