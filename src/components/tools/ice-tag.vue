@@ -82,13 +82,14 @@ export default {
 .size-small {
   margin: @m-small;
   padding: 0;
+  font-size: @fontSize-s;
   transition-duration: @time-s;
 }
 
 .size-normal {
   margin: 0 @m-small;
   padding: @p-small;
-  font-size: @fontSize-s;
+  font-size: @fontSize-n;
   transition-duration: @time-n;
 }
 

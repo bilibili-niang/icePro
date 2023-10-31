@@ -11,7 +11,6 @@
       </div>
       <div v-if="body" class="body">
         <iceSplit dashed></iceSplit>
-        <iceSplit dashed></iceSplit>
         <slot name="body"></slot>
       </div>
       <div v-if="bottom" class="bottom">
