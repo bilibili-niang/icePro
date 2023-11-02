@@ -8,12 +8,17 @@ message-normal
     </ice-text>
   </div>
   <container>
+    <ice-column>
 
-    <ice-pagination/>
+      pageIndex:{{ pageIndex }}
+      <ice-pagination v-model="pageIndex" :total="50" next prev/>
 
+    </ice-column>
   </container>
 </template>
 <script setup>
+import icePagination from "@/components/pagination/src/ice-pagination.vue";
+import {ref} from "vue";
 
-
+let pageIndex = ref(1);
 </script>
