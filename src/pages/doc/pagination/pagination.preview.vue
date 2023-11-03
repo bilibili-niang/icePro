@@ -11,7 +11,7 @@ message-normal
     <ice-column>
 
       pageIndex:{{ pageIndex }}
-      <ice-pagination v-model="pageIndex" :total="50" next prev/>
+      <ice-pagination v-model="pageIndex" :total="51" next prev/>
 
     </ice-column>
   </container>

@@ -2,19 +2,18 @@
   <div class="ice-pagination">
     <ice-row>
       <template v-for="(item,index) in tempTotal" :key="index">
-        <ice-tag @click="changePageIndex(item)">
+        <ice-tag v-if="item<=total" @click="changePageIndex(item)">
           {{ item }}
         </ice-tag>
         <template v-if="bottomPageIndex[0]===tempTotal[index]">
           <template v-for="(item,index) in bottomPageIndex" :key="index">
-            <ice-tag color="yinzhu" @click="changeValue(item)">
+            <ice-tag v-if="item<=total" color="yinzhu"  @click="changeValue(item)">
               {{ item }}
             </ice-tag>
           </template>
         </template>
       </template>
     </ice-row>
-
   </div>
 </template>
 <script setup>
