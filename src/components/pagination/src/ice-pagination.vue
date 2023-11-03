@@ -5,28 +5,29 @@
         <ice-tag @click="changePageIndex(item)">
           {{ item }}
         </ice-tag>
-      </template>
-
-    </ice-row>
-
-    <ice-row>
-      <template v-for="(item,index) in bottomPageIndex" :key="index">
-        <ice-tag>
-          {{ item }}
-        </ice-tag>
+        <template v-if="bottomPageIndex[0]===tempTotal[index]">
+          <template v-for="(item,index) in bottomPageIndex" :key="index">
+            <ice-tag color="yinzhu" @click="changeValue(item)">
+              {{ item }}
+            </ice-tag>
+          </template>
+        </template>
       </template>
     </ice-row>
+
   </div>
 </template>
 <script setup>
 import {defineProps, defineEmits, ref, computed} from "vue";
 
-// const emits =
-defineEmits(["update:modelValue", "input", "blur", "focus"]);
+const emits = defineEmits(["update:modelValue", "input", "blur", "focus"]);
 
 let fsPageIndex = ref(1);
 const changePageIndex = (index) => {
   fsPageIndex.value = index;
+};
+const changeValue = (item) => {
+  emits("update:modelValue", item);
 };
 const props = defineProps({
   modelValue: {
@@ -69,18 +70,10 @@ const init = () => {
   }
 };
 init();
-
 // 子列表
-// eslint-disable-next-line vue/return-in-computed-property
 const bottomPageIndex = computed(() => {
-  console.log(tempTotal.value);
-  console.log(fsPageIndex.value);
-  if (fsPageIndex.value === 1) {
-    return Array.from({length: 5}, (_, i) => i + 1);
-  } else {
-    console.log("tempTotal.value:");
-    console.log(tempTotal.value);
-  }
+  const tempIndex = tempTotal.value.filter(item => item === fsPageIndex.value);
+  return Array.from({length: 5}, (_, i) => i + tempIndex[0]);
 });
 
 </script>
