@@ -2,12 +2,12 @@
   <div class="ice-pagination">
     <ice-row>
       <template v-for="(item,index) in tempTotal" :key="index">
-        <ice-tag v-if="item<=total" @click="changePageIndex(item)">
+        <ice-tag v-if="item<=total" finger noselect @click="changePageIndex(item)">
           {{ item }}
         </ice-tag>
         <template v-if="bottomPageIndex[0]===tempTotal[index]">
           <template v-for="(item,index) in bottomPageIndex" :key="index">
-            <ice-tag v-if="item<=total" color="yinzhu"  @click="changeValue(item)">
+            <ice-tag v-if="item<=total" color="yinzhu" finger noselect @click="changeValue(item)">
               {{ item }}
             </ice-tag>
           </template>
@@ -55,7 +55,7 @@ const props = defineProps({
   }
 });
 
-/*f
+/*
 const changePage = (index) => {
   emits("update:modelValue", index);
 };

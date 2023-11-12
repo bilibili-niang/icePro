@@ -9,10 +9,9 @@ message-normal
   </div>
   <container>
     <ice-column>
-
-      pageIndex:{{ pageIndex }}
-      <ice-pagination v-model="pageIndex" :total="51" next prev/>
-
+      <ice-text>pageIndex:{{ pageIndex }}</ice-text>
+      <ice-text>totalSIze:{{ totalSIze }}</ice-text>
+      <ice-pagination v-model="pageIndex" :total="totalSIze" next prev/>
     </ice-column>
   </container>
 </template>
@@ -21,4 +20,6 @@ import icePagination from "@/components/pagination/src/ice-pagination.vue";
 import {ref} from "vue";
 
 let pageIndex = ref(1);
+let totalSIze = ref(50);
+totalSIze.value = parseInt(Math.random(100) * 100);
 </script>

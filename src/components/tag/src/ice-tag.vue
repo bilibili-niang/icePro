@@ -2,7 +2,9 @@
   <div :class="[type,
   round?'round':'defaultRound',
   color?'btn-colors':'default-color',
-  size?`size-${size}`:'size-normal'
+  size?`size-${size}`:'size-normal',
+  noselect?'noselect':'',
+  finger?'finger':''
   ]" :style="{ '--hover-color': findColor(color).color,'--color': findColor(color).hover }"
        class="ice-tag noSelect"
   >
@@ -11,13 +13,13 @@
 </template>
 
 <script setup>
-import { findColor } from '../../../hooks/tools'
-import { defineProps } from 'vue'
+import {findColor} from "../../../hooks/tools";
+import {defineProps} from "vue";
 
 defineProps({
   type: {
     type: String,
-    default: 'normal'
+    default: "normal"
   },
   round: {
     type: Boolean,
@@ -25,28 +27,37 @@ defineProps({
   },
   color: {
     type: String,
-    default: ''
+    default: ""
   },
   size: {
     type: String
   },
   href: {
     type: String,
-    default: ''
+    default: ""
+  },
+  // 是可以选中
+  noselect: {
+    type: Boolean,
+    default: false
+  },
+  finger:{
+    type: Boolean,
+    default: false
   }
-})
+});
 
 </script>
 <script>
 export default {
   name: "iceTag"
-}
+};
 </script>
 
 <style lang="less" scoped>
 @import '../../../assets/variables.less';
 
-.ice-tag {
+.ice-tag{
   display: flex;
   justify-content: center;
   height: fit-content;
@@ -58,7 +69,7 @@ export default {
   white-space: nowrap;
   overflow: hidden;
 
-  &:before {
+  &:before{
     position: absolute;
     content: '';
     display: flex;
@@ -71,31 +82,31 @@ export default {
   }
 }
 
-.defaultRound {
+.defaultRound{
   border-radius: @radio-l;
 }
 
 // round
-.round {
+.round{
   border-radius: 50%;
   aspect-ratio: 1;
 }
 
 // size\
-.size-small {
+.size-small{
   margin: @m-small;
   padding: 0;
   transition-duration: @time-s;
 }
 
-.size-normal {
+.size-normal{
   margin: 0 @m-small;
   padding: @p-normal;
-  font-size: @fontSize-s;
+  font-size: @fontSize-n;
   transition-duration: @time-n;
 }
 
-.size-large {
+.size-large{
   font-size: @fontSize-l;
   margin: @m-normal @m-large;
   padding: @p-normal @p-large-su;
@@ -103,20 +114,20 @@ export default {
 }
 
 // 没有传入color时的颜色
-.default-color {
+.default-color{
   color: @themeColor;
 
-  &:before {
+  &:before{
     opacity: .1;
     background: @themeColor;
     transition-duration: @time-s;
   }
 
-  &:hover {
+  &:hover{
     border: none;
     color: @themeColor-bleak;
 
-    &:before {
+    &:before{
       opacity: .3;
       background: @themeColor;
     }
@@ -124,21 +135,21 @@ export default {
 }
 
 // 传入color时的样式
-.btn-colors {
+.btn-colors{
   color: var(--color);
   //border-color: var(--color);
 
-  &:before {
+  &:before{
     background: var(--color);
     opacity: .2;
   }
 
-  &:hover {
+  &:hover{
     border: none;
     color: var(--hover-color);
     //border-color: var(--hover-color);
 
-    &:before {
+    &:before{
       opacity: .4;
       background: var(--color);
     }
