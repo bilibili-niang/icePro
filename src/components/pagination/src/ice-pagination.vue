@@ -19,7 +19,7 @@
 <script setup>
 import {defineProps, defineEmits, ref, computed} from "vue";
 
-const emits = defineEmits(["update:modelValue", "input", "blur", "focus"]);
+const emits = defineEmits(["update:modelValue", "input", "blur", "focus", "valueChange"]);
 
 let fsPageIndex = ref(1);
 const changePageIndex = (index) => {
@@ -27,6 +27,7 @@ const changePageIndex = (index) => {
 };
 const changeValue = (item) => {
   emits("update:modelValue", item);
+  emits("valueChange", item);
 };
 const props = defineProps({
   modelValue: {
@@ -40,6 +41,10 @@ const props = defineProps({
   pageSize: {
     type: Number,
     default: 10
+  },
+  step: {
+    type: Number,
+    default: 20
   },
   prev: {
     type: Boolean,
@@ -63,7 +68,7 @@ const changePage = (index) => {
 let tempTotal = ref([1]);
 const init = () => {
   for (let i = 0; i <= props.total; i++) {
-    if (i % 5 === 0 && i !== 0) {
+    if (i % props.step === 0 && i !== 0) {
       tempTotal.value.push(i);
     }
   }
@@ -72,7 +77,7 @@ init();
 // 子列表
 const bottomPageIndex = computed(() => {
   const tempIndex = tempTotal.value.filter(item => item === fsPageIndex.value);
-  return Array.from({length: 5}, (_, i) => i + tempIndex[0]);
+  return Array.from({length: props.step}, (_, i) => i + tempIndex[0]);
 });
 
 </script>

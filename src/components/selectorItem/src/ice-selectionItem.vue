@@ -13,7 +13,7 @@
 </template>
 
 <script setup>
-import {defineProps, defineEmits} from 'vue'
+import {defineProps, defineEmits} from "vue";
 
 const props = defineProps({
   show: {
@@ -27,26 +27,28 @@ const props = defineProps({
   },
   color: {
     type: String,
-    default: ''
+    default: ""
   },
 
-})
+});
 
-const emits = defineEmits(['clicked'])
+const emits = defineEmits(["clicked"]);
 const clickTrigger = () => {
-  emits('clicked', props.item)
-}
+  emits("clicked", props.item);
+};
 </script>
 
 <script>
 export default {
-  name: 'ice-selectionItem'
-}
+  name: "ice-selectionItem"
+};
 </script>
 
 <style lang="less" scoped>
-.ice-selectionItem {
-  .selectionItem {
+.ice-selectionItem{
+  min-width: 7rem;
+
+  .selectionItem{
     font-size: @fontSize-n;
     line-height: @lineHeight-n;
     transition-duration: @time-n;
@@ -57,17 +59,17 @@ export default {
     border-radius: @radio-l;
     color: @themeColor;
 
-    &:hover {
-      color: @fontColor-bleak;
+    &:hover{
+      color: @themeActiveColor;
     }
   }
 
-  .showItem {
+  .showItem{
     opacity: 1;
     margin-bottom: @m-normal;
   }
 
-  .hideItem {
+  .hideItem{
     opacity: 0;
     padding: 0 !important;
     font-size: 0;
@@ -78,12 +80,12 @@ export default {
   }
 }
 
-.hoverColor {
+.hoverColor{
   color: var(--color);
   border-color: var(--color);
   text-decoration-color: var(--color) !important;
 
-  &:hover {
+  &:hover{
     color: var(--hover-color);
     border-color: var(--hover-color);
   }

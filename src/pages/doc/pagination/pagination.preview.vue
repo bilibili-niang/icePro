@@ -11,7 +11,8 @@ message-normal
     <ice-column>
       <ice-text>pageIndex:{{ pageIndex }}</ice-text>
       <ice-text>totalSIze:{{ totalSIze }}</ice-text>
-      <ice-pagination v-model="pageIndex" :total="totalSIze" next prev/>
+      <ice-text>step:{{ step }}</ice-text>
+      <ice-pagination v-model="pageIndex" :step="step" :total="totalSIze" next prev/>
     </ice-column>
   </container>
 </template>
@@ -20,6 +21,7 @@ import icePagination from "@/components/pagination/src/ice-pagination.vue";
 import {ref} from "vue";
 
 let pageIndex = ref(1);
-let totalSIze = ref(50);
-totalSIze.value = parseInt(Math.random(100) * 100);
+let totalSIze = ref(157);
+let step = ref(15);
+// totalSIze.value = parseInt(Math.random(100) * 100);
 </script>
