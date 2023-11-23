@@ -82,6 +82,10 @@ const items = [
       {
         text: "收缩栏",
         href: "/doc/shrinkBar"
+      },
+      {
+        text: "图片预览",
+        href: "/doc/imgPreview"
       }
     ]
   },

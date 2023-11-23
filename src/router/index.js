@@ -59,18 +59,26 @@ const routes = [
       }, {
         path: "avatar",
         component: () => import("../pages/doc/avatar/index.vue"),
-      }, {
+      },
+      {
         path: "shrinkBar",
         component: () => import("../pages/doc/shrinkBar/index.vue"),
-      }, {
+      },
+      {
         path: "link",
         component: () => import("../pages/doc/link/index.vue"),
-      }, {
+      },
+      {
         path: "selector",
         component: () => import("../pages/doc/selector/index.vue"),
-      }, {
+      },
+      {
         path: "pagination",
         component: () => import("../pages/doc/pagination/index.vue"),
+      },
+      {
+        path: "imgPreview",
+        component: () => import("../pages/doc/iceImgPreview/index.vue"),
       }
     ],
   },

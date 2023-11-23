@@ -18,24 +18,24 @@
   </div>
 </template>
 <script setup>
-import {defineProps} from 'vue'
+import {defineProps} from "vue";
 
-const defaultPng = '/src/assets/png/logo.png'
+const defaultPng = "/src/assets/png/logo.png";
 const handleError = (e) => {
-  e.target.src = defaultPng
-}
+  e.target.src = defaultPng;
+};
 defineProps({
   src: {
     type: String,
-    default: ''
+    default: ""
   },
   title: {
     type: String,
-    default: ''
+    default: ""
   },
   size: {
     type: String,
-    default: 'default-size'
+    default: "default-size"
   },
   round: {
     type: Boolean,
@@ -47,43 +47,47 @@ defineProps({
   },
   fit: {
     type: String,
-    default: 'fill'
+    default: "fill"
   }
-})
+});
 
 </script>
 <script>
 export default {
   name: "iceAvatar"
-}
+};
 </script>
 
 <style lang="less" scoped>
 @import '../../../assets/variables.less';
 
-.background {
+.background{
   background: @themeColor-bleak-bleak;
 }
 
-.ice-avatar {
+.ice-avatar{
   margin: @m-normal;
   width: fit-content;
   height: fit-content;
 
-  .avatar {
+  img{
+    transition-duration: @time-n;
+  }
+
+  .avatar{
     display: flex;
     object-fit: cover;
   }
 
-  .round {
+  .round{
     border-radius: 50%;
   }
 
-  .block {
+  .block{
     border-radius: .3rem;
   }
 
-  .default-size {
+  .default-size{
     display: flex;
     width: 3rem;
     height: 3rem;

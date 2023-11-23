@@ -18,6 +18,7 @@ import avatar from "./src/components/avatar/src/iceAvatar.vue";
 import shrinkBar from "./src/components/layout/shrinkBar.vue";
 import iceSelectionItem from "./src/components/selectorItem/src/ice-selectionItem.vue";
 import icePagination from "./src/components/pagination/index.js";
+import iceImgPreview from "./src/components/imgPreview/index.js";
 
 import "./src/assets/common.less";
 
@@ -40,7 +41,8 @@ const components = {
   avatar,
   shrinkBar,
   iceSelectionItem,
-  icePagination
+  icePagination,
+  iceImgPreview
 };
 
 export {
@@ -62,7 +64,8 @@ export {
   iceSelectorGroup,
   avatar,
   shrinkBar,
-  icePagination
+  icePagination,
+  iceImgPreview
 };
 
 function install(app) {

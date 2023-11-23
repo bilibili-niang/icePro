@@ -1,6 +1,6 @@
 <template>
   <div class="ice-button" @click="clickCallBack">
-    <div class='btn btn-time-s  text-nowrap ice-row' :class="[
+    <div :class="[
         type?color?'btn-colors':type:'',
         color?'btn-colors':'',
         fill?fill:'',
@@ -9,23 +9,23 @@
         size?`size-${size}`:'size-n',
         disable?'disable':'pointer',
         border?'border':''
-        ]"
+        ]" :style="{ '--hover-color': findColor(color).color,'--color': findColor(color).hover }"
          :title="title?title:''"
-         :style="{ '--hover-color': findColor(color).color,'--color': findColor(color).hover }">
+         class='btn btn-time-s  text-nowrap ice-row'>
       <slot></slot>
     </div>
   </div>
 </template>
 
 <script setup>
-import { defineProps } from 'vue'
-import { findColor } from '../../../hooks/tools'
+import {defineProps} from "vue";
+import {findColor} from "../../../hooks/tools";
 
-const emit = defineEmits(['click'])
+const emit = defineEmits(["click"]);
 const props = defineProps({
   type: {
     type: String,
-    default: 'primary'
+    default: "primary"
   },
   hover: {
     type: Boolean,
@@ -36,15 +36,15 @@ const props = defineProps({
   },
   color: {
     type: String,
-    default: ''
+    default: ""
   },
   title: {
     type: String,
-    default: ''
+    default: ""
   },
   fill: {
     type: String,
-    default: ''
+    default: ""
   },
   round: {
     type: Boolean,
@@ -62,79 +62,81 @@ const props = defineProps({
     type: Boolean,
     default: true
   }
-})
+});
 
 const clickCallBack = (evt) => {
   if (props.disable) {
-    return
+    return;
   }
-  emit('click', evt)
-}
+  emit("click", evt);
+};
 </script>
 <script>
 export default {
   name: "iceButton",
-}
+};
 </script>
 <style lang="less" scoped>
 @import '../../../assets/variables.less';
 @import "../../../assets/animate.less";
-
-.btn {
+.ice-button{
+  width: fit-content;
+}
+.btn{
   border-radius: @radio-l;
   user-select: none;
   flex-grow: 0;
   width: fit-content;
 }
 
-.border {
+.border{
   border-width: 1px;
   border-style: solid;
 }
 
-.btn > * {
+.btn > *{
   flex-grow: 0;
 }
 
 // primary类型按钮
-.primary {
+.primary{
   border-color: @themeColor-bleak;
   color: @themeColor-bleak;
 
-  &:hover {
+  &:hover{
     color: @themeColor;
     border-color: @themeColor;
   }
 }
 
 // danger类型按钮
-.danger {
+.danger{
   color: @dangerColor-bleak;
   border-color: @dangerColor-bleak;
 
-  &:hover {
+  &:hover{
     color: @dangerColor;
     border-color: @dangerColor
   }
 }
 
 // success类型按钮
-.success {
+.success{
   color: @successColor-bleak;
   border-color: @successColor-bleak;
 
-  &:hover {
+  &:hover{
     color: @successColor;
     border-color: @successColor
   }
 }
 
 // ready
-.ready {
+.ready{
   color: @startColor-bleak;
   border-color: @startColor-bleak;
 
-  &:hover {
+  &:hover{
     color: @startColor;
     border-color: @startColor;
   }
@@ -142,8 +144,8 @@ export default {
 
 // hover button style
 // default style
-.light {
-  .btn-hover {
+.light{
+  .btn-hover{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -154,12 +156,12 @@ export default {
 }
 
 // primary hover style
-.hoverLim {
-  .primary {
+.hoverLim{
+  .primary{
     color: @fontColor;
     border-color: @fontColor;
 
-    &:hover {
+    &:hover{
       background-color: @themeColor;
       color: @fontColor-light;
       border-color: @fontColor-light;
@@ -169,50 +171,50 @@ export default {
 
 // button hover simple
 //shadow to right and button
-.shadow-r-b {
+.shadow-r-b{
   border-color: @fontColor;
 
-  &:hover {
+  &:hover{
     border-color: @fontColor-none;
     box-shadow: @hoverBlurLength @hoverLength-n @hoverLength-n @fontColor;
   }
 }
 
-.shadow-r-t {
+.shadow-r-t{
   border-color: @fontColor;
 
-  &:hover {
+  &:hover{
     border-color: @fontColor-none;
     box-shadow: @hoverBlurLength -@hoverLength-n @hoverLength-n @fontColor;
   }
 }
 
-.shadow-inner {
+.shadow-inner{
   border-color: @fontColor;
 
-  &:hover {
+  &:hover{
     border-color: @fontColor-none;
     box-shadow: inset @hoverBlurLength @hoverLength-n @hoverLength-n @fontColor;
   }
 }
 
-.shadow-lt-rb {
+.shadow-lt-rb{
   border-color: @fontColor;
   box-shadow: -@hoverLength-n -@hoverLength-n @hoverLength-n @fontColor;
 
-  &:hover {
+  &:hover{
     border-color: @fontColor-none;
     box-shadow: @hoverBlurLength @hoverLength-n @hoverLength-n @fontColor;
   }
 }
 
 //  shadow from inner lt to rb
-.shadow-inner-lt-rb {
+.shadow-inner-lt-rb{
   position: relative;
   transition: @time-n;
   border-color: @fontColor;
 
-  &:after, &:before {
+  &:after, &:before{
     transition: @time-n;
     display: flex;
     width: 100%;
@@ -224,25 +226,25 @@ export default {
     border-radius: @radio-l;
   }
 
-  &:after {
+  &:after{
     box-shadow: -@hoverBlurLength -@hoverLength-n @hoverLength-n @fontColor;
     opacity: 1;
   }
 
-  &:before {
+  &:before{
     opacity: 0;
     box-shadow: inset 0 0 0 @fontColor;
   }
 
-  &:hover {
+  &:hover{
     border-color: @fontColor-none;
 
-    &:after {
+    &:after{
       opacity: 0;
       box-shadow: 0 0 0 @fontColor;
     }
 
-    &:before {
+    &:before{
       opacity: 1;
       box-shadow: inset @hoverBlurLength @hoverLength-n @hoverLength-n @fontColor;
     }
@@ -251,78 +253,78 @@ export default {
 
 // round
 // 默认圆角
-.defaultRound {
+.defaultRound{
   border-radius: @radio-l;
 }
 
-.round {
+.round{
   border-radius: 1.3rem;
 }
 
 // block
-.block {
+.block{
   border-radius: 0;
 }
 
 // size
-.size-s {
+.size-s{
   padding: @p-small;
   margin: @m-small;
   font-size: @fontSize-s;
 }
 
-.size-n {
+.size-n{
   padding: @p-normal;
   margin: @m-normal;
   font-size: @fontSize-n;
 }
 
-.size-l {
+.size-l{
   padding: @p-large;
   margin: @m-normal;
   font-size: @fontSize-l;
 }
 
 // 默认color
-.default-color {
+.default-color{
   border-color: @themeColor;
   color: @themeColor;
 
-  &:hover {
+  &:hover{
     border-color: @themeColor-bleak;
     color: @themeColor-bleak;
   }
 }
 
-.btn-colors() {
+.btn-colors(){
   border-color: var(--color);
   color: var(--color);
 
-  &:hover {
+  &:hover{
     border-color: var(--hover-color);
     color: var(--hover-color);
   }
 }
 
 // colors
-.light {
-  .btn-colors {
+.light{
+  .btn-colors{
     border-color: var(--color);
     color: var(--color);
 
-    &:hover {
+    &:hover{
       border-color: var(--hover-color);
       color: var(--hover-color);
     }
   }
 }
 
-.dark {
-  .btn-colors {
+.dark{
+  .btn-colors{
     border-color: var(--color);
     color: var(--color);
 
-    &:hover {
+    &:hover{
       border-color: var(--hover-color);
       color: var(--hover-color);
     }
@@ -330,7 +332,7 @@ export default {
 }
 
 // disable
-.disable {
+.disable{
   display: flex;
   width: fit-content;
   cursor: not-allowed;
