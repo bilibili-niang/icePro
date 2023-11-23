@@ -20,6 +20,11 @@ const props = defineProps({
   defaultShow: {
     type: Boolean,
     default: false
+  },
+  // 关闭按钮是否展示在右侧
+  closeIconRight: {
+    type: Boolean,
+    default: false
   }
 });
 let showImgList = ref(false);
@@ -31,12 +36,13 @@ const init = () => {
     showImgList.value = true;
   }
   imgList.value = props.imgUrls;
-  activeItem.value = imgList.value [0];
+  activeItem.value = imgList.value[0];
 };
 
 const show = (list) => {
   imgList.value = list;
   showImgList.value = true;
+  activeItem.value = list[0];
 };
 init();
 /**
@@ -62,7 +68,8 @@ defineExpose({
 <template>
   <teleport to="body">
     <div :class="[showImgList?'showPreview':'hidePreview']" class="imgPreview">
-      <div class="bacCover noselect" @click="closePreview">close</div>
+      <ice-button :class="[ closeIconRight?'right':'left' ]" class="bacCover noselect" @click="closePreview">close
+      </ice-button>
       <div class="imgList">
         <div class="imgBigCover">
           <img :src="activeItem" alt="">
@@ -70,7 +77,7 @@ defineExpose({
         <div class="imageBottomContainer">
           <div v-for="(item,index) in imgList" :key="index" class="lim">
             <div class="imageLim" @click="changeActiveImg(index,item)">
-              <ice-avatar :size="activeIndex===index?'120':'100'" :src="item" block fit="fill"></ice-avatar>
+              <ice-avatar :size="activeIndex===index?'120':'100'" :src="item" block fit="contain"></ice-avatar>
             </div>
           </div>
         </div>
@@ -103,8 +110,15 @@ defineExpose({
   .bacCover{
     position: absolute;
     top: 1rem;
-    left: 1rem;
     z-index: 14;
+  }
+
+  .left{
+    left: 1rem;
+  }
+
+  .right{
+    right: 1rem;
   }
 
   .imgList{
@@ -125,6 +139,7 @@ defineExpose({
         height: 100%;
         min-width: 200px;
         max-width: 80%;
+        max-height: 75vh;
       }
     }
 

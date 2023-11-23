@@ -8,7 +8,7 @@ ice-img-preview
     <ice-column>
       <ice-button @click="showPreview">点击查看</ice-button>
     </ice-column>
-    <iceImgPreview ref="imgPreviewRef" :imgUrls="imgList" defaultShow/>
+    <iceImgPreview ref="imgPreviewRef" :imgUrls="imgList" closeIconRight/>
   </container>
 </template>
 
@@ -20,6 +20,7 @@ let imgList = ref([
   "/src/assets/png/bac1.png",
   "/src/assets/png/bac2.png",
   "/src/assets/png/bac3.png",
+  "/src/assets/png/ding.png",
 ]);
 const showPreview = () => {
   imgPreviewRef.value.show(imgList.value);
