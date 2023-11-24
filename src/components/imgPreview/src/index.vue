@@ -94,7 +94,7 @@ defineExpose({
 }
 .showPreview{
   opacity: 1;
-  top: 0%;
+  top: 0;
 }
 
 .imgPreview{
