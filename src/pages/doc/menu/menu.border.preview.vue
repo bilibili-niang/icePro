@@ -13,7 +13,6 @@ menu-border
 </template>
 <script setup>
 import IceMenu from '@/components/menu/ice-menu.vue'
-import IceTag from '@/components/tools/ice-tag.vue'
 
 const items = [
   {

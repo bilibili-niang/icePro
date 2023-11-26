@@ -4,7 +4,8 @@
   color?'btn-colors':'default-color',
   size?`size-${size}`:'size-normal',
   noselect?'noselect':'',
-  finger?'finger':''
+  finger?'finger':'',
+  pointer?'pointer':''
   ]" :style="{ '--hover-color': findColor(color).color,'--color': findColor(color).hover }"
        class="ice-tag noSelect"
   >
@@ -41,7 +42,11 @@ defineProps({
     type: Boolean,
     default: false
   },
-  finger:{
+  finger: {
+    type: Boolean,
+    default: false
+  },
+  pointer: {
     type: Boolean,
     default: false
   }
@@ -92,7 +97,7 @@ export default {
   aspect-ratio: 1;
 }
 
-// size\
+// size
 .size-small{
   margin: @m-small;
   padding: 0;
@@ -108,8 +113,8 @@ export default {
 
 .size-large{
   font-size: @fontSize-l;
-  margin: @m-normal @m-large;
-  padding: @p-normal @p-large-su;
+  margin: @m-small @m-normal;
+  padding: @p-normal @p-large;
   transition-duration: @time-l;
 }
 
