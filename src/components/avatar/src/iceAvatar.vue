@@ -1,6 +1,7 @@
 <template>
   <div :class="[
-      round&&!block?'':'background'
+      round&&!block?'':'background',
+      round?'round':''
   ]"
        class="ice-avatar"
   >
@@ -63,6 +64,9 @@ export default {
 
 .background{
   background: @themeColor-bleak-bleak;
+}
+.round{
+  border-radius: @radio-n;
 }
 
 .ice-avatar{
