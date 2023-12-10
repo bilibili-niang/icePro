@@ -1,5 +1,5 @@
 <preview>
-message-normal
+ice-pagination
 </preview>
 <template>
   <div class="ice-column">

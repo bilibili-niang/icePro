@@ -5,7 +5,7 @@ header-normal
 <template>
   <div class="ice-column">
     默认由三种size,任君选择,默认为
-    <ice-tagn>n</ice-tagn>
+    <ice-tag>n</ice-tag>
   </div>
 
   <container>
