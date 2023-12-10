@@ -1,9 +1,9 @@
 <template>
   <ice-card :border="false">
     <template v-slot:header>
-      <ice-title noselect>
+      <ice-header noselect>
         {{ component.__sourceCodeTitle }}
-      </ice-title>
+      </ice-header>
     </template>
     <template v-slot:body>
       <div class="pre-component">
@@ -13,8 +13,8 @@
     <template v-slot:bottom>
       <div class="pre-code ice-column w100percent">
         <pre class="language-html" v-html="html"/>
-        <pre class="language-css" v-html="css" v-if="component.__styleCode"/>
-        <pre class="language-javascript" v-html="script" v-if="component.__script"/>
+        <pre v-if="component.__styleCode" class="language-css" v-html="css"/>
+        <pre v-if="component.__script" class="language-javascript" v-html="script"/>
       </div>
     </template>
   </ice-card>
@@ -24,8 +24,6 @@
 import "prismjs"
 import "prismjs/themes/prism.css"
 import { computed, defineProps } from "vue"
-import IceCard from '@/components/card/ice-card.vue'
-import IceTitle from '@/components/text/ice-title.vue'
 
 const Prism = window.Prism
 

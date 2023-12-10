@@ -14,8 +14,8 @@
         </ice-title>
         <ul class='list-children-ul'>
           <li v-for="(it, itIndex) in item.children" :key="itIndex">
-            <ice-button v-if="it.href" :border="false" :class="{activeLink:nowPath===it.href}" :href="it.href"
-                        @click="goHref(it.href)">
+            <ice-button v-if="it.href" :border="false" :href="it.href"
+                        :type=" nowPath===it.href ?'danger':'primary'" @click="goHref(it.href)">
               {{ it.text }}
             </ice-button>
             <ice-text v-else noselect>{{ it.text }}</ice-text>
@@ -63,12 +63,16 @@ const items = [
         href: "/doc/text"
       },
       {
-        text: "tag",
+        text: "tag 标记",
         href: "/doc/tag"
       },
       {
-        text: "link",
+        text: "link 链接",
         href: "/doc/link"
+      },
+      {
+        text: "header 标题",
+        href: "/doc/header"
       }
     ]
   },
@@ -177,20 +181,16 @@ export default {
 <style lang="less" scoped>
 @import "@/assets/variables.less";
 
-.active {
+.active{
   color: @themeColor;
   border-bottom: @themeColor 1px solid;
 }
 
-.list-item-child {
+.list-item-child{
   padding-left: 1rem;
 }
 
-.activeLink {
-  color: darkred;
-}
-
-.listContainer {
+.listContainer{
   height: fit-content;
 }
 </style>

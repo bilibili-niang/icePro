@@ -1,3 +1,6 @@
+import "./src/assets/variables.less";
+import "./src/assets/common.less";
+
 import iceButton from "./src/components/button/src/iceButton.vue";
 import iceText from "./src/components/text/ice-text.vue";
 import iceSplit from "./src/components/tools/ice-split.vue";
@@ -19,8 +22,8 @@ import shrinkBar from "./src/components/layout/shrinkBar.vue";
 import iceSelectionItem from "./src/components/selectorItem/src/ice-selectionItem.vue";
 import icePagination from "./src/components/pagination/index.js";
 import iceImgPreview from "./src/components/imgPreview/index.js";
+import iceHeader from "./src/components/header/index.js";
 
-import "./src/assets/common.less";
 
 const components = {
   iceButton,
@@ -42,7 +45,8 @@ const components = {
   shrinkBar,
   iceSelectionItem,
   icePagination,
-  iceImgPreview
+  iceImgPreview,
+  iceHeader
 };
 
 export {
@@ -65,7 +69,8 @@ export {
   avatar,
   shrinkBar,
   icePagination,
-  iceImgPreview
+  iceImgPreview,
+  iceHeader
 };
 
 function install(app) {

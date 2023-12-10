@@ -1,0 +1,38 @@
+.ice-header{
+  border-left: @themeColor 5px solid;
+  padding-left: @p-large;
+  height: fit-content;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  transition-duration: @time-n;
+  margin: @m-normal;
+
+  &:hover{
+    padding-left: @p-large-su;
+  }
+}
+.ice-header-n{
+  font-size: @fontSize-n;
+  padding-left: @p-normal;
+}
+
+.ice-header-s{
+  font-size: @fontSize-s;
+  padding-left: @p-small;
+}
+
+.ice-header-l{
+  font-size: @fontSize-l;
+  padding-left: @p-large;
+}
+// 色彩
+.btn-colors{
+  border-left-color: var(--color);
+  color: var(--color);
+
+  &:hover{
+    border-left-color: var(--hover-color);
+    color: var(--hover-color);
+  }
+}
