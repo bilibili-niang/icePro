@@ -106,7 +106,7 @@ export default {
 
 .size-normal{
   margin: 0 @m-small;
-  padding: @p-normal;
+  padding: @p-small @p-normal;
   font-size: @fontSize-n;
   transition-duration: @time-n;
 }

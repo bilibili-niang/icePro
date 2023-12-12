@@ -1,0 +1,41 @@
+import{P as f}from"./preview-dac8e0c6.js";import{_ as p,r as c,o as u,c as a,b as e,w as o,d as n,F as s,a as h,I as y}from"./index-35bddd09.js";function m(t){return t.__sourceCode=`<container>\r
+    <ice-button>primary</ice-button>\r
+    <ice-button type="danger">danger</ice-button>\r
+    <ice-button type="success">success</ice-button>\r
+    <iceButton type="ready">ready</iceButton>\r
+  </container>`,t.__sourceCodeTitle="按钮-type",t.__styleCode=null,t.__script=null,t}const B={};function D(t,d){const i=c("iceTag"),l=c("ice-text"),r=c("ice-button"),_=c("iceButton"),b=c("container");return u(),a(s,null,[e(l,null,{default:o(()=>[n(" 使用 "),e(i,null,{default:o(()=>[n("type")]),_:1}),n(" 来控制基础样式,下面是几个主要的语义化按钮 ")]),_:1}),e(b,null,{default:o(()=>[e(r,null,{default:o(()=>[n("primary")]),_:1}),e(r,{type:"danger"},{default:o(()=>[n("danger")]),_:1}),e(r,{type:"success"},{default:o(()=>[n("success")]),_:1}),e(_,{type:"ready"},{default:o(()=>[n("ready")]),_:1})]),_:1})],64)}typeof m=="function"&&m(B);const E=p(B,[["render",D]]);function v(t){return t.__sourceCode=`<container>\r
+    <ice-button hover>primary</ice-button>\r
+    <ice-button hover type="shadow-r-b">hover</ice-button>\r
+    <ice-button hover type="shadow-r-t">hover</ice-button>\r
+    <ice-button hover type="shadow-inner">hover</ice-button>\r
+    <ice-button hover type="shadow-lt-rb">hover</ice-button>\r
+    <ice-button hover type="shadow-inner-lt-rb">hover</ice-button>\r
+  </container>`,t.__sourceCodeTitle=" 按钮-hover-朴素 ",t.__styleCode=null,t.__script=null,t}const P={},M={class:"ice-column"};function R(t,d){const i=c("iceTag"),l=c("ice-text"),r=c("ice-button"),_=c("container");return u(),a(s,null,[h("div",M,[e(l,null,{default:o(()=>[n(" 使用 "),e(i,null,{default:o(()=>[n("hover")]),_:1}),n(" 控制为hover类型,传入type使用不同样式 ")]),_:1})]),e(_,null,{default:o(()=>[e(r,{hover:""},{default:o(()=>[n("primary")]),_:1}),e(r,{hover:"",type:"shadow-r-b"},{default:o(()=>[n("hover")]),_:1}),e(r,{hover:"",type:"shadow-r-t"},{default:o(()=>[n("hover")]),_:1}),e(r,{hover:"",type:"shadow-inner"},{default:o(()=>[n("hover")]),_:1}),e(r,{hover:"",type:"shadow-lt-rb"},{default:o(()=>[n("hover")]),_:1}),e(r,{hover:"",type:"shadow-inner-lt-rb"},{default:o(()=>[n("hover")]),_:1})]),_:1})],64)}typeof v=="function"&&v(P);const A=p(P,[["render",R]]);function x(t){return t.__sourceCode=`<container>\r
+    <ice-button fill="fill" hover>primary</ice-button>\r
+    <ice-button fill="fill-l" hover>fill to left</ice-button>\r
+  </container>`,t.__sourceCodeTitle=" 按钮-hover-fill ",t.__styleCode=null,t.__script=null,t}const j={},G={class:"ice-row"};function J(t,d){const i=c("iceTag"),l=c("ice-text"),r=c("ice-button"),_=c("container");return u(),a(s,null,[h("div",G,[e(l,null,{default:o(()=>[n(" 使用 "),e(i,null,{default:o(()=>[n("fill")]),_:1}),n(" 控制为fill类型 ")]),_:1})]),e(_,null,{default:o(()=>[e(r,{fill:"fill",hover:""},{default:o(()=>[n("primary")]),_:1}),e(r,{fill:"fill-l",hover:""},{default:o(()=>[n("fill to left")]),_:1})]),_:1})],64)}typeof x=="function"&&x(j);const K=p(j,[["render",J]]);function g(t){return t.__sourceCode=`<container>\r
+    <ice-button hover type="ready shadow-lt-rb">ready</ice-button>\r
+    <ice-button hover type="simple shadow-inner">simple</ice-button>\r
+  </container>`,t.__sourceCodeTitle=" 按钮-混合 ",t.__styleCode=null,t.__script=null,t}const N={},O={class:"ice-column"};function Q(t,d){const i=c("iceTag"),l=c("ice-text"),r=c("ice-button"),_=c("container");return u(),a(s,null,[h("div",O,[e(l,null,{default:o(()=>[n(" 使用 "),e(i,null,{default:o(()=>[n("hover")]),_:1}),n(" 传入多个可选值(有点麻烦) ")]),_:1})]),e(_,null,{default:o(()=>[e(r,{hover:"",type:"ready shadow-lt-rb"},{default:o(()=>[n("ready")]),_:1}),e(r,{hover:"",type:"simple shadow-inner"},{default:o(()=>[n("simple")]),_:1})]),_:1})],64)}typeof g=="function"&&g(N);const S=p(N,[["render",Q]]);function w(t){return t.__sourceCode=`<container>\r
+    <ice-button color="xiancaizi">苋菜紫</ice-button>\r
+    <ice-button color="lizong">栗棕</ice-button>\r
+    <ice-button color="qinglian">青莲</ice-button>\r
+    <ice-button color="wumeizi">乌梅紫</ice-button>\r
+    <ice-button color="yejuzi">野菊紫</ice-button>\r
+    <ice-button color="honglan">虹蓝</ice-button>\r
+  </container>`,t.__sourceCodeTitle=" 按钮-hover-colors ",t.__styleCode=null,t.__script=`<script setup>\r
+import IceLink from '@/components/text/ice-link.vue'\r
+<\/script>`,t}const U={class:"ice-column"},I={__name:"button.allcolors.preview",setup(t){return(d,i)=>{const l=c("iceTag"),r=c("ice-text"),_=c("ice-tag"),b=c("ice-button"),L=c("container");return u(),a(s,null,[h("div",U,[e(r,null,{default:o(()=>[n(" 使用 "),e(l,null,{default:o(()=>[n("color")]),_:1}),n(" 控制字体颜色和hover的颜色, "),e(y,{href:"/doc/button/colors"},{default:o(()=>[n("所有颜色")]),_:1})]),_:1}),e(r,null,{default:o(()=>[n(" 或者查看所有 "),e(_,null,{default:o(()=>[n("color")]),_:1}),n(" 的支持 "),e(y,{href:"/doc/button/colors"},{default:o(()=>[n("colors")]),_:1})]),_:1})]),e(L,null,{default:o(()=>[e(b,{color:"xiancaizi"},{default:o(()=>[n("苋菜紫")]),_:1}),e(b,{color:"lizong"},{default:o(()=>[n("栗棕")]),_:1}),e(b,{color:"qinglian"},{default:o(()=>[n("青莲")]),_:1}),e(b,{color:"wumeizi"},{default:o(()=>[n("乌梅紫")]),_:1}),e(b,{color:"yejuzi"},{default:o(()=>[n("野菊紫")]),_:1}),e(b,{color:"honglan"},{default:o(()=>[n("虹蓝")]),_:1})]),_:1})],64)}}};typeof w=="function"&&w(I);function T(t){return t.__sourceCode=`<container>\r
+    <ice-button disable>disable</ice-button>\r
+    <ice-button color="boluohong" disable>disable</ice-button>\r
+  </container>`,t.__sourceCodeTitle="按钮-disable",t.__styleCode=null,t.__script=null,t}const V={};function W(t,d){const i=c("iceTag"),l=c("ice-text"),r=c("ice-button"),_=c("container");return u(),a(s,null,[e(l,null,{default:o(()=>[n(" 使用 "),e(i,null,{default:o(()=>[n("disable")]),_:1}),n(" 来控制是否要被启用 ")]),_:1}),e(_,null,{default:o(()=>[e(r,{disable:""},{default:o(()=>[n("disable")]),_:1}),e(r,{color:"boluohong",disable:""},{default:o(()=>[n("disable")]),_:1})]),_:1})],64)}typeof T=="function"&&T(V);const X=p(V,[["render",W]]);function $(t){return t.__sourceCode=`<container>\r
+    <ice-button>primary</ice-button>\r
+    <ice-button round>primary</ice-button>\r
+  </container>`,t.__sourceCodeTitle="按钮-type",t.__styleCode=null,t.__script=null,t}const q={};function Y(t,d){const i=c("iceTag"),l=c("ice-text"),r=c("ice-button"),_=c("container");return u(),a(s,null,[e(l,null,{default:o(()=>[n(" 使用 "),e(i,null,{default:o(()=>[n("round")]),_:1}),n(" 来控制圆角 ")]),_:1}),e(_,null,{default:o(()=>[e(r,null,{default:o(()=>[n("primary")]),_:1}),e(r,{round:""},{default:o(()=>[n("primary")]),_:1})]),_:1})],64)}typeof $=="function"&&$(q);const Z=p(q,[["render",Y]]);function k(t){return t.__sourceCode=`<container>\r
+    <ice-button>primary</ice-button>\r
+    <ice-button block>primary</ice-button>\r
+  </container>`,t.__sourceCodeTitle="按钮-type",t.__styleCode=null,t.__script=null,t}const F={};function C(t,d){const i=c("iceTag"),l=c("ice-text"),r=c("ice-button"),_=c("container");return u(),a(s,null,[e(l,null,{default:o(()=>[n(" 使用 "),e(i,null,{default:o(()=>[n("block")]),_:1}),n(" 来控制取消圆角 ")]),_:1}),e(_,null,{default:o(()=>[e(r,null,{default:o(()=>[n("primary")]),_:1}),e(r,{block:""},{default:o(()=>[n("primary")]),_:1})]),_:1})],64)}typeof k=="function"&&k(F);const ee=p(F,[["render",C]]);function z(t){return t.__sourceCode=`<container>\r
+    <ice-button color="yejuzi">野菊紫</ice-button>\r
+    <ice-button :border="false" color="yejuzi">野菊紫</ice-button>\r
+  </container>`,t.__sourceCodeTitle=" 按钮-border ",t.__styleCode=null,t.__script=`<script setup>\r
+<\/script>`,t}const H={},te={class:"ice-column"};function ne(t,d){const i=c("iceTag"),l=c("ice-text"),r=c("ice-button"),_=c("container");return u(),a(s,null,[h("div",te,[e(l,null,{default:o(()=>[n(" 使用 "),e(i,null,{default:o(()=>[n("border")]),_:1}),n(" 控制是否要显示border ")]),_:1})]),e(_,null,{default:o(()=>[e(r,{color:"yejuzi"},{default:o(()=>[n("野菊紫")]),_:1}),e(r,{border:!1,color:"yejuzi"},{default:o(()=>[n("野菊紫")]),_:1})]),_:1})],64)}typeof z=="function"&&z(H);const oe=p(H,[["render",ne]]),ie={__name:"index",setup(t){return(d,i)=>(u(),a(s,null,[e(f,{component:E}),e(f,{component:I}),e(f,{component:X}),e(f,{component:A}),e(f,{component:K}),e(f,{component:Z}),e(f,{component:ee}),e(f,{component:S}),e(f,{component:oe})],64))}};export{ie as default};

@@ -25,7 +25,9 @@
 </template>
 
 <script setup>
-import {defineProps, defineEmits, computed, ref} from 'vue'
+import {defineProps, defineEmits, computed, ref} from "vue";
+
+import("../../../assets/variables.less");
 
 const props = defineProps({
   modelValue: {
@@ -34,67 +36,67 @@ const props = defineProps({
   list: {
     type: Array,
     default: () => {
-      return []
+      return [];
     }
   }
-})
+});
 const activeValue = (e) => {
-  emits('update:modelValue', e.value)
+  emits("update:modelValue", e.value);
   // 支持返回整个改变对象的 Objet
-  emits('itemOnChange', e)
+  emits("itemOnChange", e);
   // 收起
-  showSelectionFlag.value = !showSelectionFlag.value
-}
+  showSelectionFlag.value = !showSelectionFlag.value;
+};
 
-let showSelectionFlag = ref(false)
+let showSelectionFlag = ref(false);
 
-const emits = defineEmits(["update:modelValue", 'itemOnChange'])
+const emits = defineEmits(["update:modelValue", "itemOnChange"]);
 
 
 const selectVal = computed(() => {
   if (props.list) {
-    const res = props.list.filter(item => item.value + '' === props.modelValue + '')
-    return res.label ? res.label : res[0].label
+    const res = props.list.filter(item => item.value + "" === props.modelValue + "");
+    return res.label ? res.label : res[0].label;
   } else {
-    return 'null'
+    return "null";
   }
-})
+});
 
 // 点击展开所有选项
 const showAllSelections = () => {
-  showSelectionFlag.value = !showSelectionFlag.value
-}
+  showSelectionFlag.value = !showSelectionFlag.value;
+};
 
 </script>
 
 <script>
 export default {
   name: "ice-selector"
-}
+};
 </script>
 
 <style lang="less" scoped>
-.iceSelector {
+.iceSelector{
   z-index: 10;
 
-  .activeSelection {
+  .activeSelection{
     border: @themeActiveColor 1px solid;
     border-radius: @radio-l;
     margin-bottom: @m-normal;
     transition-duration: @time-n;
     color: @fontColor;
 
-    &:hover {
+    &:hover{
       color: @fontColor-bleak;
       border-color: @fontColor-bleak;
     }
 
   }
 
-  .selections {
+  .selections{
     position: relative;
 
-    .selectItemLim {
+    .selectItemLim{
       background: @bac;
       border-radius: @radio-n;
       position: absolute;
@@ -104,18 +106,18 @@ export default {
     }
   }
 
-  .showSelection {
+  .showSelection{
 
-    .selectItemLim {
-      .item {
+    .selectItemLim{
+      .item{
         height: fit-content;
       }
     }
   }
 
-  .hideSelection {
-    .selectItemLim {
-      .item {
+  .hideSelection{
+    .selectItemLim{
+      .item{
         line-height: 0;
       }
     }

@@ -24,7 +24,6 @@ import icePagination from "./src/components/pagination/index.js";
 import iceImgPreview from "./src/components/imgPreview/index.js";
 import iceHeader from "./src/components/header/index.js";
 
-
 const components = {
   iceButton,
   iceText,
