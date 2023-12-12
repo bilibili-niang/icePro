@@ -40,12 +40,12 @@ export default defineConfig({
       },
     }
   },
-  /* build: {
-     //打包后文件目录
-     // outDir: "docs",
-     //压缩
-     minify: true,
-     external: ["vue"],
-     externals: ["vue"],
-   }*/
+  build: {
+    //打包后文件目录
+    outDir: "docs",
+    //压缩
+    minify: true,
+    external: ["vue"],
+    externals: ["vue"],
+  }
 });
