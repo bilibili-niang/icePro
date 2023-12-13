@@ -1,37 +1,4 @@
-import {
-  computed,
-  createBlock,
-  createCommentVNode,
-  createElementBlock,
-  createElementVNode,
-  createTextVNode,
-  createVNode,
-  Fragment,
-  isRef,
-  isVNode,
-  nextTick,
-  normalizeClass,
-  normalizeStyle,
-  onMounted,
-  onUnmounted,
-  openBlock,
-  popScopeId,
-  pushScopeId,
-  reactive,
-  ref,
-  render,
-  renderList,
-  renderSlot,
-  resolveComponent,
-  Teleport,
-  toDisplayString,
-  Transition,
-  unref,
-  useSlots,
-  watch,
-  withCtx
-} from "vue";
-
+import { openBlock, createElementBlock, createElementVNode, normalizeClass, normalizeStyle, unref, renderSlot, useSlots, ref, watch, reactive, onMounted, resolveComponent, createVNode, createCommentVNode, isRef, withCtx, createTextVNode, toDisplayString, onUnmounted, createBlock, Transition, isVNode, render, Fragment, renderList, computed, nextTick, Teleport, pushScopeId, popScopeId } from "vue";
 const variables = "";
 const common = "";
 const colors = [
@@ -3757,7 +3724,7 @@ const findColor = function(pinyin) {
     return obj || false;
   }
 };
-const iceButton_vue_vue_type_style_index_0_scoped_b6b0afe0_lang = "";
+const index_vue_vue_type_style_index_0_scoped_4397857a_lang = "";
 const _export_sfc = (sfc, props) => {
   const target = sfc.__vccOpts || sfc;
   for (const [key, val] of props) {
@@ -3846,7 +3813,7 @@ const _sfc_main$l = /* @__PURE__ */ Object.assign(__default__$i, {
     };
   }
 });
-const iceButton = /* @__PURE__ */ _export_sfc(_sfc_main$l, [["__scopeId", "data-v-b6b0afe0"]]);
+const iceButton = /* @__PURE__ */ _export_sfc(_sfc_main$l, [["__scopeId", "data-v-4397857a"]]);
 const iceText_vue_vue_type_style_index_0_scoped_1218abce_lang = "";
 const __default__$h = {
   name: "iceText"
@@ -3892,7 +3859,7 @@ const _sfc_main$k = /* @__PURE__ */ Object.assign(__default__$h, {
   }
 });
 const iceText = /* @__PURE__ */ _export_sfc(_sfc_main$k, [["__scopeId", "data-v-1218abce"]]);
-const iceSplit_vue_vue_type_style_index_0_scoped_b1638e82_lang = "";
+const iceSplit_vue_vue_type_style_index_0_scoped_1283f0d7_lang = "";
 const __default__$g = {
   name: "iceSplit"
 };
@@ -3919,7 +3886,7 @@ const _sfc_main$j = /* @__PURE__ */ Object.assign(__default__$g, {
     };
   }
 });
-const iceSplit = /* @__PURE__ */ _export_sfc(_sfc_main$j, [["__scopeId", "data-v-b1638e82"]]);
+const iceSplit = /* @__PURE__ */ _export_sfc(_sfc_main$j, [["__scopeId", "data-v-1283f0d7"]]);
 const iceTag_vue_vue_type_style_index_0_scoped_eef960f5_lang = "";
 const __default__$f = {
   name: "iceTag"
@@ -4296,6 +4263,8 @@ const _sfc_main$d = /* @__PURE__ */ Object.assign(__default__$b, {
       emits("close");
     }
     return (_ctx, _cache) => {
+      const _component_ice_text = resolveComponent("ice-text");
+      const _component_ice_button = resolveComponent("ice-button");
       return openBlock(), createBlock(Transition, {
         duration: 300,
         "enter-active-class": "animate__zoomIn",
@@ -4311,7 +4280,7 @@ const _sfc_main$d = /* @__PURE__ */ Object.assign(__default__$b, {
             ], "ice-message-lim border-normal"]),
             style: normalizeStyle({ "--hover-color": unref(findColor)(__props.color).color, "--color": unref(findColor)(__props.color).hover })
           }, [
-            createVNode(iceText, {
+            createVNode(_component_ice_text, {
               color: __props.color ? __props.color : __props.type ? __props.type : ""
             }, {
               default: withCtx(() => [
@@ -4319,7 +4288,7 @@ const _sfc_main$d = /* @__PURE__ */ Object.assign(__default__$b, {
               ]),
               _: 1
             }, 8, ["color"]),
-            __props.showClose ? (openBlock(), createBlock(iceButton, {
+            __props.showClose ? (openBlock(), createBlock(_component_ice_button, {
               key: 0,
               color: __props.color,
               type: __props.type,
@@ -5054,7 +5023,7 @@ const _sfc_main$5 = /* @__PURE__ */ Object.assign(__default__$4, {
   }
 });
 const avatar = /* @__PURE__ */ _export_sfc(_sfc_main$5, [["__scopeId", "data-v-2c75cc4e"]]);
-const shrinkBar_vue_vue_type_style_index_0_scoped_909bc058_lang = "";
+const shrinkBar_vue_vue_type_style_index_0_scoped_f76aec90_lang = "";
 const __default__$3 = {
   name: "shrinkBar"
 };
@@ -5123,7 +5092,7 @@ const _sfc_main$4 = /* @__PURE__ */ Object.assign(__default__$3, {
     };
   }
 });
-const shrinkBar = /* @__PURE__ */ _export_sfc(_sfc_main$4, [["__scopeId", "data-v-909bc058"]]);
+const shrinkBar = /* @__PURE__ */ _export_sfc(_sfc_main$4, [["__scopeId", "data-v-f76aec90"]]);
 const iceSelectionItem_vue_vue_type_style_index_0_scoped_5efddeef_lang = "";
 const __default__$2 = {
   name: "ice-selectionItem"
