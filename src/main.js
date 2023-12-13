@@ -7,13 +7,10 @@ import {findColor} from "./hooks/tools.js";
 
 const app = createApp(App);
 
-// console.log(icepro.components)
-
-const keys = Object.keys(icepro.components);
-
+/*const keys = Object.keys(icepro.components);
 keys.map(item => {
   console.log(icepro.components[item]);
-});
+});*/
 
 icepro.install(app);
 app.config.globalProperties.findColor = findColor;
