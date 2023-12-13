@@ -15,8 +15,6 @@
 <script setup>
 import {defineProps, defineEmits} from "vue";
 
-import("../../../assets/variables.less");
-
 const props = defineProps({
   show: {
     type: Boolean,
@@ -47,6 +45,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
+@import '../../../assets/variables.less';
 
 .ice-selectionItem{
   min-width: 7rem;

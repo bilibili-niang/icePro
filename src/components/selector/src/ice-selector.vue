@@ -27,8 +27,6 @@
 <script setup>
 import {defineProps, defineEmits, computed, ref} from "vue";
 
-import("../../../assets/variables.less");
-
 const props = defineProps({
   modelValue: {
     type: [String, Number]
@@ -76,6 +74,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
+@import '../../../assets/variables.less';
 .iceSelector{
   z-index: 10;
 
