@@ -1,5 +1,5 @@
-import { baseParse } from '@vue/compiler-core'
-import * as fs from 'fs'
+import {baseParse} from "@vue/compiler-core";
+import * as fs from "fs";
 
 const vitePluginVue = {
     name: "preview",

@@ -1,19 +1,24 @@
 import {defineConfig} from "vite";
 import vue from "@vitejs/plugin-vue";
+
+// 这个插件在开发时必须存在
+import vitePluginVue from "./plugins/fileFilter.js";
+import mdPlugin from "vite-plugin-markdown";
 import path from "path";
+import eslintPlugin from "vite-plugin-eslint";
 
 
 export default defineConfig({
   plugins: [
     vue(),
-    /*mdPlugin.plugin({
-      // mode: ["html", "vue"],
-      mode: ["vue"],
+    mdPlugin.plugin({
+      mode: ["html", "vue"],
+      // mode: ["vue"],
     }),
     vitePluginVue,
     eslintPlugin({
-      include: ["src/!**!/!*.ts", "src/!**!/!*.vue"]
-    })*/
+      include: ["src/**/*.ts", "src/!**/!*.vue"]
+    })
   ],
   output: {
     // 设置打包后的文件目录
@@ -39,14 +44,6 @@ export default defineConfig({
       },
     }
   },
-  /*build: {
-    //打包后文件目录
-    outDir: "docs",
-    //压缩
-    minify: true,
-    external: ["vue"],
-    externals: ["vue"],
-  },*/
   build: {
     //打包后文件目录
     outDir: "es",
