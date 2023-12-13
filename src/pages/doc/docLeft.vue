@@ -32,10 +32,8 @@
 </template>
 
 <script setup>
-import IceLink from "@/components/text/ice-link.vue";
 import {useRoute} from "vue-router";
 import {ref, watch} from "vue";
-import IceButton from "@/components/button/src/iceButton.vue";
 import {useRouter} from "vue-router";
 
 const items = [

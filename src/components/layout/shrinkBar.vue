@@ -20,7 +20,7 @@
        @mouseover="hover = true"
   >
 
-    <ice-button @click="getTip">{{ clickShow ? '取消固定' : '固定' }}</ice-button>
+    <ice-button @click="getTip">{{ clickShow ? "取消固定" : "固定" }}</ice-button>
 
     <slot name="show"></slot>
     <slot name="body"></slot>
@@ -29,49 +29,49 @@
 </template>
 
 <script setup>
-import {ref} from 'vue'
+import {ref, defineProps} from "vue";
 
-const hover = ref(false)
+const hover = ref(false);
 
-const shrinkBar = ref()
-let clickShow = ref(false)
+const shrinkBar = ref();
+let clickShow = ref(false);
 
 defineProps({
   // 需要收缩的方向
   direction: {
     type: String,
-    default: 'left'
+    default: "left"
   },
   bacColor: {
     type: String
   }
-})
+});
 
 const getTip = () => {
-  clickShow.value = !clickShow.value
+  clickShow.value = !clickShow.value;
   if (clickShow.value) {
-    window.document.body.style.paddingLeft = `${shrinkBar.value.offsetWidth}px`
+    window.document.body.style.paddingLeft = `${shrinkBar.value.offsetWidth}px`;
   } else {
-    window.document.body.style.paddingLeft = 0
+    window.document.body.style.paddingLeft = 0;
   }
-}
-if (window.document.body.style.paddingLeft + '' === '0px') {
-  clickShow.value = true
+};
+if (window.document.body.style.paddingLeft + "" === "0px") {
+  clickShow.value = true;
 }
 
 setTimeout(() => {
-  window.document.body.style.paddingLeft = 0
-})
+  window.document.body.style.paddingLeft = 0;
+});
 </script>
 <script>
 export default {
   name: "shrinkBar"
-}
+};
 </script>
 <style lang="less" scoped>
 @import '../../assets/variables.less';
 
-.shrinkBar {
+.shrinkBar{
   position: fixed;
   top: 0;
   left: -13rem;
@@ -85,24 +85,24 @@ export default {
   z-index: 100;
 }
 
-.shrinkBarShow {
+.shrinkBarShow{
   left: 0;
   opacity: 1;
 }
 
-.shrinkBarHide {
+.shrinkBarHide{
   opacity: 1;
   left: -95% !important;
 }
 
-.alwaysShow {
+.alwaysShow{
   position: fixed;
   top: 10px;
   left: 10px;
   z-index: 99;
 }
 
-.normalBackgroundColor {
+.normalBackgroundColor{
   background: @bac;
 }
 

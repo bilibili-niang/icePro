@@ -23,6 +23,3 @@ import buttonBlockPreview from './button.block.preview.vue'
 import buttonBorder from './button.border.preview.vue'
 </script>
 
-<style scoped>
-
-</style>

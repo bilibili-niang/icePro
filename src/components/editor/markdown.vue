@@ -4,12 +4,12 @@
 </template>
 
 <script setup>
-import { defineProps } from 'vue'
+import {defineProps} from "vue";
 // 传入的md文件
-const props = defineProps({
+defineProps({
   content: {
     type: String,
     required: true,
   },
-})
+});
 </script>

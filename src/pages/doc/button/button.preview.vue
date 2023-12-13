@@ -9,6 +9,6 @@
     <ice-button>primary</ice-button>
     <ice-button type="danger">danger</ice-button>
     <ice-button type="success">success</ice-button>
-    <iceButton type="ready">ready</iceButton>
+    <ice-button type="ready">ready</ice-button>
   </container>
 </template>

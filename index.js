@@ -1,7 +1,7 @@
 import "./src/assets/variables.less";
 import "./src/assets/common.less";
 
-import iceButton from "./src/components/button/src/iceButton.vue";
+import iceButton from "./src/components/button/index.js";
 import iceText from "./src/components/text/ice-text.vue";
 import iceSplit from "./src/components/tools/ice-split.vue";
 import iceTag from "./src/components/tag/src/ice-tag.vue";

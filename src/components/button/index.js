@@ -1,9 +1,3 @@
-import iceButton from './src/iceButton.vue'
-
-console.log(iceButton)
-/* istanbul ignore next */
-iceButton.install = function (app) {
-    app.component(iceButton.name, iceButton)
-}
+import iceButton from "./src/index.vue";
 
 export default iceButton

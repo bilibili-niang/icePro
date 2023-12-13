@@ -4,8 +4,6 @@
         fixed?'positionFix':''
     ]"
          class="ice-column leftContent scrollStyle">
-      <!--      <ice-button @click="changePosition" class="fixedBtn">{{ fixed ? '展开' : '收起' }}
-            </ice-button>-->
       <ice-button @click="changeMode">{{ dark ? "light" : "dark" }}</ice-button>
       <ice-row v-if="false">
         <input v-model="colorVal" type="color">

@@ -4,43 +4,45 @@
 </template>
 
 <script setup>
+import {defineProps} from "vue";
+
 defineProps({
   type: {
     type: String,
-    default: 'landscape'
+    default: "landscape"
   },
   dashed: {
     type: Boolean,
     default: false
   }
-})
+});
 </script>
 <script>
 export default {
-  name: 'iceSplit'
-}
+  name: "iceSplit"
+};
 
 </script>
 <style lang='less' scoped>
 @import '../../assets/variables.less';
 
-.split {
+.split{
   border-color: @themeColor-bleak;
   margin-bottom: @m-large;
   margin-top: @m-normal;
 }
 
-.dashed {
+.dashed{
   border-style: dashed !important;
   border-bottom: @themeColor 1px solid;
 }
 
-.landscape {
+.landscape{
   width: 100%;
   border-bottom: @themeColor 1px solid;
 }
 
-.vertical {
+.vertical{
   width: 0;
   height: 100%;
   min-height: 3rem;
