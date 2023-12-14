@@ -4,7 +4,9 @@
       color?'hoverColor':'',
       size?'size-'+size:'size-n',
       underLine?'underLine':'',
-      noselect?'noselect':''
+      noselect?'noselect':'',
+      m0?'m0':'',
+      p0?'p0':'',
   ]"
        :style="{ '--hover-color': findColor(color).color,'--color': findColor(color).hover }"
        class='ice-text'
@@ -14,8 +16,8 @@
 </template>
 
 <script setup>
-import { defineProps } from 'vue'
-import { findColor } from '../../hooks/tools'
+import {defineProps} from "vue";
+import {findColor} from "../../hooks/tools";
 
 defineProps({
   nowrap: {
@@ -24,11 +26,11 @@ defineProps({
   },
   color: {
     type: String,
-    default: ''
+    default: ""
   },
   size: {
     type: String,
-    default: ''
+    default: ""
   },
   underLine: {
     type: Boolean,
@@ -37,18 +39,26 @@ defineProps({
   noselect: {
     type: Boolean,
     default: false
+  },
+  m0: {
+    type: Boolean,
+    default: false
+  },
+  p0: {
+    type: Boolean,
+    default: false
   }
-})
+});
 </script>
 <script>
 export default {
   name: "iceText"
-}
+};
 </script>
 <style lang='less' scoped>
 @import '../../assets/variables.less';
 
-.ice-text {
+.ice-text{
   color: @themeColor;
   display: flex;
   justify-content: flex-start;
@@ -57,40 +67,40 @@ export default {
 }
 
 // size
-.size-n {
+.size-n{
   font-size: @fontSize-n;
   font-weight: @fontWeight-n;
   padding: @p-normal @p-large;
   transition: @time-n;
 }
 
-.size-s {
+.size-s{
   font-size: @fontSize-s;
   font-weight: @fontWeight-s;
   padding: @p-small @p-normal;
   transition: @time-s;
 }
 
-.size-l {
+.size-l{
   font-size: @fontSize-l;
   font-weight: @fontWeight-l;
   padding: @p-normal @p-large;
   transition: @time-l;
 }
 
-.hoverColor {
-  color: var(--color);
-  border-color: var(--color);
+.hoverColor{
   text-decoration-color: var(--color) !important;
+  color: var(--hover-color);
+  border-color: var(--hover-color);
 
-  &:hover {
-    color: var(--hover-color);
-    border-color: var(--hover-color);
+  &:hover{
+    color: var(--color);
+    border-color: var(--color);
   }
 }
 
 // underline
-.underLine {
+.underLine{
   text-decoration: underline @themeColor;
 }
 </style>

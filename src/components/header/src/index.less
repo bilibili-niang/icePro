@@ -6,8 +6,9 @@
   flex-direction: row;
   align-items: flex-end;
   transition-duration: @time-n;
-  margin: @m-normal;
   color: @fontColor;
+  margin: @m-normal @m-normal @m-large;
+  user-select: none;
 
   &:hover{
     padding-left: @p-large-su;
@@ -29,11 +30,11 @@
 }
 // 色彩
 .btn-colors{
-  border-left-color: var(--color);
-  color: var(--color);
+  border-left-color: var(--hover-color);
+  color: var(--hover-color);
 
   &:hover{
-    border-left-color: var(--hover-color);
-    color: var(--hover-color);
+    border-left-color: var(--color);
+    color: var(--color);
   }
 }

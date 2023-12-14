@@ -48,7 +48,7 @@ export default defineConfig({
     //打包后文件目录
     outDir: "es",
     //压缩
-    minify: false,
+    minify: true,
     rollupOptions: {
       //忽略打包vue文件
       external: ["vue"],

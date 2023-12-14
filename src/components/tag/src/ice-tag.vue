@@ -5,7 +5,9 @@
   size?`size-${size}`:'size-normal',
   noselect?'noselect':'',
   finger?'finger':'',
-  pointer?'pointer':''
+  pointer?'pointer':'',
+  m0?'m0':'',
+  p0?'p0':''
   ]" :style="{ '--hover-color': findColor(color).color,'--color': findColor(color).hover }"
        class="ice-tag noSelect"
   >
@@ -47,6 +49,14 @@ defineProps({
     default: false
   },
   pointer: {
+    type: Boolean,
+    default: false
+  },
+  m0: {
+    type: Boolean,
+    default: false
+  },
+  p0: {
     type: Boolean,
     default: false
   }
@@ -100,8 +110,9 @@ export default {
 // size
 .size-small{
   margin: @m-small;
-  padding: 0;
+  padding: 0 @p-small;
   transition-duration: @time-s;
+  font-size: @fontSize-s;
 }
 
 .size-normal{
@@ -141,8 +152,7 @@ export default {
 
 // 传入color时的样式
 .btn-colors{
-  color: var(--color);
-  //border-color: var(--color);
+  color: var(--hover-color);
 
   &:before{
     background: var(--color);
@@ -151,8 +161,7 @@ export default {
 
   &:hover{
     border: none;
-    color: var(--hover-color);
-    //border-color: var(--hover-color);
+    color: var(--color);
 
     &:before{
       opacity: .4;

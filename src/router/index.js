@@ -31,6 +31,10 @@ const routes = [
         component: () => import("../pages/doc/card/index.vue"),
       },
       {
+        path: "split",
+        component: () => import("../pages/doc/split/index.vue"),
+      },
+      {
         path: "text",
         component: () => import("../pages/doc/text/index.vue"),
       },

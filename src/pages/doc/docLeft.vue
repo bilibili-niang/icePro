@@ -53,6 +53,10 @@ const items = [
         href: "/doc/tools"
       },
       {
+        text: "split 分割线",
+        href: "/doc/split"
+      },
+      {
         text: "card 卡片",
         href: "/doc/card"
       },
