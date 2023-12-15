@@ -109,14 +109,14 @@ export default {
   transition-duration: @time-n;
   height: 1.4rem;
   border: rgba(0, 0, 0, 0) 1px solid;
-  margin-top: @m-normal;
+  margin-top: @m-large;
 
   // 占位元素
   .wait{
     position: absolute;
     top: 30%;
     left: .3rem;
-    z-index: 3;
+    z-index: -3;
     transition-duration: @time-n;
     font-size: @fontSize-n;
     color: @themeColor;
@@ -129,6 +129,7 @@ export default {
     top: -25%;
     background: @bac;
     padding-left: @p-small;
+    z-index: -2;
   }
 
   input{
@@ -152,6 +153,11 @@ export default {
   border-bottom: @themeColor 1px solid;
   border-left: @themeColor 1px solid;
   border-right: @themeColor 1px solid;
-  border-radius: @radio-n;
+  border-bottom-left-radius: @radio-n;
+  border-bottom-right-radius: @radio-n;
+
+  input{
+    border: none;
+  }
 }
 </style>
