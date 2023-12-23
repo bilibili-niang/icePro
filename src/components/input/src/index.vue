@@ -1,5 +1,7 @@
 <template>
-  <div :class="{inputNowait:nativeInputValue}" class="ice-input">
+  <div :class="[nativeInputValue?'inputNowait':'',
+  'size'+size
+  ]" class="ice-input">
     <div v-if="placeholder" :class="{nowait:nativeInputValue}" class="wait">
       {{ placeholder }}
     </div>
@@ -31,6 +33,7 @@ const {
   placeholder,
   readonly,
   nativeInputValue,
+  size
 } = useInput(props, emits);
 
 const input = document.querySelector("input");
@@ -159,5 +162,8 @@ export default {
   input{
     border: none;
   }
+}
+.size-n{
+
 }
 </style>
