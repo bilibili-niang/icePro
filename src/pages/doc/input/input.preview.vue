@@ -28,6 +28,11 @@ input-normal
       <div class="ice-row">
         <ice-input v-model="text3" class="input" disabled placeholder="请输入文字"></ice-input>
       </div>
+
+
+      <div class="ice-row">
+        <ice-input v-model="obj.text" class="input" placeholder="对象属性修改"></ice-input>
+      </div>
     </div>
   </container>
 </template>
@@ -37,6 +42,9 @@ import {ref} from "vue";
 let text = ref("坤坤菜菜子");
 let text2 = ref("一个真正的鳗");
 let text3 = ref("iKun铠甲,合体!");
+let obj=ref({
+  text:'测试文字'
+})
 </script>
 <style lang="less" scoped>
 .input {

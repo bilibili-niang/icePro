@@ -94,7 +94,6 @@ defineExpose({
   select,
 });
 
-
 </script>
 
 <script>
@@ -119,20 +118,21 @@ export default {
     position: absolute;
     top: 30%;
     left: .3rem;
-    z-index: -3;
+    //z-index: -3;
     transition-duration: @time-n;
     font-size: @fontSize-n;
-    color: @themeColor;
+    color: @fontColor-bleak;
     padding-left: @p-normal;
   }
 
   .nowait{
-    color: @themeColor-bleak;
+    color: @fontColor-bleak;
     font-size: @fontSize-s;
     top: -25%;
     background: @bac;
     padding-left: @p-small;
-    z-index: -2;
+    //z-index: -3;
+    background: none !important;
   }
 
   input{
@@ -143,7 +143,9 @@ export default {
     width: 100%;
     height: 100%;
     font-size: @fontSize-n;
-    color: @themeColor;
+    color: @fontColor;
+    position: relative;
+    z-index: 2;
 
     &:focus{
       outline: none;
@@ -162,8 +164,5 @@ export default {
   input{
     border: none;
   }
-}
-.size-n{
-
 }
 </style>

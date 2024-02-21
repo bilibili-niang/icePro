@@ -22,8 +22,9 @@
 import {defineProps} from "vue";
 
 const defaultPng = "/src/assets/png/logo.png";
-const handleError = (e) => {
+let handleError = (e) => {
   e.target.src = defaultPng;
+  handleError = null;
 };
 defineProps({
   src: {

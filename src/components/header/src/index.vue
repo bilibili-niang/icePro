@@ -5,7 +5,7 @@ export default {
 </script>
 <script setup>
 import "./index.less";
-import {findColor} from "@/hooks/tools.js";
+import {findColor} from "../../../hooks/tools.js";
 import {defineProps} from "vue";
 // const props=
 defineProps({
