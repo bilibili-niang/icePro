@@ -23,6 +23,7 @@ import iceSelectionItem from "./src/components/selectorItem/src/ice-selectionIte
 import icePagination from "./src/components/pagination/index.js";
 import iceImgPreview from "./src/components/imgPreview/index.js";
 import iceHeader from "./src/components/header/index.js";
+import iceTextarea from "./src/components/textarea/index.js";
 
 const components = {
   iceButton,
@@ -45,7 +46,8 @@ const components = {
   iceSelectionItem,
   icePagination,
   iceImgPreview,
-  iceHeader
+  iceHeader,
+  iceTextarea
 };
 
 export {
@@ -69,7 +71,8 @@ export {
   shrinkBar,
   icePagination,
   iceImgPreview,
-  iceHeader
+  iceHeader,
+  iceTextarea
 };
 
 function install(app) {

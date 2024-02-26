@@ -40,7 +40,6 @@ const input = document.querySelector("input");
 const textarea = document.querySelector("textarea");
 const inputOrTextarea = () => input.value || textarea.value;
 
-
 // 监听输入
 const handleChange = (e) => {
   const value = e.target.value;
@@ -48,7 +47,6 @@ const handleChange = (e) => {
   emits("update:modelValue", value);
   emits("input", value);
 };
-
 
 const handleBlur = (e) => {
   emits("blur", e);

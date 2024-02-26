@@ -11,6 +11,3 @@ text-normal
   </container>
 </template>
 
-<script setup>
-</script>
-<style lang='less' scoped></style>

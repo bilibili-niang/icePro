@@ -133,6 +133,10 @@ const items = [
       {
         text: "input 输入框",
         href: "/doc/input"
+      },
+      {
+        text: "textarea 输入区域",
+        href: "/doc/textarea"
       }
     ]
   },

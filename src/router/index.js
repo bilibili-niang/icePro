@@ -55,6 +55,10 @@ const routes = [
         component: () => import("../pages/doc/input/index.vue"),
       },
       {
+        path: "textarea",
+        component: () => import("../pages/doc/textarea/index.vue"),
+      },
+      {
         path: "container",
         component: () => import("../pages/doc/container/index.vue"),
       }, {
