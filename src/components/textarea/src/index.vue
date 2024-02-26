@@ -1,10 +1,12 @@
 <template>
   <div class="ice-textarea">
-
+    <ice-text v-if="placeholder.length>0">{{ placeholder }}</ice-text>
     <textarea
+        :cols="cols"
+        :disabled="disable"
+        :rows="rows"
         :value="modelValue"
-        cols="33"
-        rows="5" @input="handleChange"/>
+        @input="handleChange"/>
   </div>
 
 </template>
@@ -12,11 +14,27 @@
 <script setup>
 import {defineProps, defineEmits} from "vue";
 
-const props = defineProps(
+defineProps(
     {
       modelValue: {
         type: [Number, String],
       },
+      cols: {
+        type: Number,
+        default: 33
+      },
+      rows: {
+        type: Number,
+        default: 5
+      },
+      disable: {
+        type: Boolean,
+        default: false
+      },
+      placeholder: {
+        type: String,
+        default: ""
+      }
     }
 );
 const emits = defineEmits([
@@ -34,7 +52,6 @@ const handleChange = (e) => {
   emits("input", value);
 };
 
-
 </script>
 
 <script>
@@ -49,9 +66,14 @@ export default {
 .ice-textarea{
   textarea{
     color: @fontColor;
-    border-radius: @radio-n;
+    font-size: @fontSize-n;
+    border-radius: @radio-n @radio-n 0 0;
     background: @bac;
     padding: @p-small;
+    resize: none;
+    outline: none;
+    border-style: none;
+    border-bottom: @borderColor 1px solid;
   }
 }
 
