@@ -1,13 +1,11 @@
-<div align=center>
-<img src="http://icepro.icestone.work/src/assets/png/logo.png" width="123px" height="123px" />
-</div>
+<span><div style="text-align: center;">![](src\assets\png\logo.png)</div></span>
 <hr/>
 
 基于 Vue 3 和 Vite,为我的个人项目开发的ui框架
 
-> experience [address](http://icepro.icestone.work/),The current online version may lag far behind
+> [预览地址](http://icepro.icestone.work/),这个是线上部署版本,可能会落后
 
-> [npm address](https://www.npmjs.com/package/icepro)
+> [npm地址](https://www.npmjs.com/package/icepro)
 
 usage:
 
@@ -40,6 +38,15 @@ app
 > 更新日志
 
 
+__*2024.02.28*__
+
+version:`1.1.19`  
+新增`ice-textarea`输入框组件  
+修复`ice-input`组件的占位文字的z-index层级bug  
+修改了readme中的image语法,修改部分洋文为中文
+
 __*2023.12.10*__
 
+version:`1.1.10`  
 新增语义化标签,`ice-header`
+
