@@ -1,6 +1,6 @@
 <template>
   <div class="ice-textarea">
-    <ice-text v-if="placeholder.length>0">{{ placeholder }}</ice-text>
+    <ice-header v-if="placeholder.length>0">{{ placeholder }}</ice-header>
     <textarea
         :cols="cols"
         :disabled="disable"
@@ -64,16 +64,40 @@ export default {
 @import "../../../assets/variables";
 
 .ice-textarea{
+  margin-top: @m-small;
+
   textarea{
     color: @fontColor;
     font-size: @fontSize-n;
     border-radius: @radio-n @radio-n 0 0;
-    background: @bac;
+    background: @bac-dark-bleak;
     padding: @p-small;
     resize: none;
     outline: none;
     border-style: none;
     border-bottom: @borderColor 1px solid;
+    width: 100%;
+    box-sizing: border-box;
+    margin-left: @m-small;
+    margin-right: @m-small;
+  }
+
+  /* 针对WebKit浏览器（如Chrome和Safari）的滚动条样式 */
+
+  textarea::-webkit-scrollbar{
+    width: 5px; /* 滚动条的宽度 */
+  }
+
+  textarea::-webkit-scrollbar-track{
+    background: @themeActiveColor; /* 滚动条轨道的背景色 */
+  }
+
+  textarea::-webkit-scrollbar-thumb{
+    background: @bac-reversal-bleak; /* 滚动条滑块的背景色 */
+  }
+
+  textarea::-webkit-scrollbar-thumb:hover{
+    background: @bac-reversal-bleak; /* 鼠标悬停时滚动条滑块的背景色 */
   }
 }
 

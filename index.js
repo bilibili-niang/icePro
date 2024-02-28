@@ -83,7 +83,7 @@ function install(app) {
 }
 
 const icepro = {
-  version: "1.1.16",
+  version: "1.1.17",
   components
 };
 
