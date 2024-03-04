@@ -4,7 +4,10 @@
         fixed?'positionFix':''
     ]"
          class="ice-column leftContent scrollStyle">
-      <ice-button @click="changeMode">{{ dark ? "light" : "dark" }}</ice-button>
+      <ice-text>
+        切换颜色
+        <ice-button @click="changeMode">{{ dark ? "light" : "dark" }}</ice-button>
+      </ice-text>
       <ice-row v-if="false">
         <input v-model="colorVal" type="color">
         <text :style="{'color':colorVal}">

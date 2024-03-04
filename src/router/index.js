@@ -9,7 +9,7 @@ const routes = [
   {
     path: "/doc",
     component: () => import("../pages/Doc.vue"),
-    // redirect: "/doc/button",
+    redirect: "/doc/button",
     children: [
       {
         path: "button",
