@@ -4,8 +4,6 @@ const colorsMap = colors;
 
 const dark = localStorage.getItem("mode") ? localStorage.getItem("mode") : null;
 
-const defaultColor = localStorage.getItem("color") ? localStorage.getItem("color") : null;
-
 colorsMap.forEach(item => {
   colorsMap[item.pinyin] = {
     color: item.RGBA,

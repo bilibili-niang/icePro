@@ -19,6 +19,7 @@
 <script setup>
 import {onMounted, onUnmounted, ref, defineProps, defineEmits} from "vue";
 import {findColor} from "../../../hooks/tools.js";
+import iceText from "../../text/ice-text.vue";
 
 const visible = ref(false);
 // eslint-disable-next-line no-unused-vars
@@ -185,11 +186,5 @@ export default {
 .message-colors{
   color: var(--hover-color);
   border-color: var(--hover-color);
-
-  /*&:hover {
-    color: var(--hover-color);
-    border-color: var(--hover-color);
-  }*/
 }
-
 </style>
