@@ -145,6 +145,15 @@ p{
 .w100percent{
   width: 100%;
 }
+.w9percent{
+  width: 9%;
+}
+.w10percent{
+  width: 10%;
+}
+.w15percent{
+  width: 15%;
+}
 
 // flex布局的类名
 // 允许换行
@@ -203,6 +212,29 @@ p{
 .p-bottom-l{
   padding-bottom: @p-large;
 }
+// margin
+.m-bottom-s{
+  margin-bottom: @m-small;
+}
+.m-bottom-n{
+  margin-bottom: @m-normal;
+}
+.m-bottom-l{
+  margin-bottom: @m-large;
+}
+.margin-lr-s{
+  margin-left: @m-small;
+  margin-right: @m-small;
+}
+.margin-lr-n{
+  margin-left: @m-normal;
+  margin-right: @m-normal;
+}
+.margin-lr-l{
+  margin-left: @m-large;
+  margin-right: @m-large;
+}
+
 
 // ul布局
 .list-column(@direction:column){
@@ -311,6 +343,9 @@ p{
 
 .space-between{
   justify-content: space-between;
+}
+.justCenter{
+  justify-content: center;
 }
 
 .align-items-center{

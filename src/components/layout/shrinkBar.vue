@@ -78,7 +78,7 @@ export default {
   display: flex;
   min-height: 100vh;
   min-width: 15rem;
-  transition-duration: .7s;
+  transition-duration: @time-l;
   opacity: 0;
   background: @bac;
   border: @themeActiveColor 1px solid;
