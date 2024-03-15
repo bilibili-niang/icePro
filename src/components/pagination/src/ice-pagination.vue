@@ -18,9 +18,7 @@
 </template>
 <script setup>
 import {defineProps, defineEmits, ref, computed} from "vue";
-
 const emits = defineEmits(["update:modelValue", "input", "blur", "focus", "valueChange"]);
-
 let fsPageIndex = ref(1);
 const changePageIndex = (index) => {
   fsPageIndex.value = index;
@@ -60,11 +58,6 @@ const props = defineProps({
   }
 });
 
-/*
-const changePage = (index) => {
-  emits("update:modelValue", index);
-};
-*/
 let tempTotal = ref([1]);
 const init = () => {
   for (let i = 0; i <= props.total; i++) {
@@ -79,9 +72,4 @@ const bottomPageIndex = computed(() => {
   const tempIndex = tempTotal.value.filter(item => item === fsPageIndex.value);
   return Array.from({length: props.step}, (_, i) => i + tempIndex[0]);
 });
-
 </script>
-
-<style lang="less" scoped>
-
-</style>

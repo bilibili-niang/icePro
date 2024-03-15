@@ -24,6 +24,7 @@ import icePagination from "./src/components/pagination/index.js";
 import iceImgPreview from "./src/components/imgPreview/index.js";
 import iceHeader from "./src/components/header/index.js";
 import iceTextarea from "./src/components/textarea/index.js";
+import colorSelector from "./src/components/colorSelector/index.js";
 
 const components = {
   iceButton,
@@ -47,7 +48,8 @@ const components = {
   icePagination,
   iceImgPreview,
   iceHeader,
-  iceTextarea
+  iceTextarea,
+  colorSelector
 };
 
 export {
@@ -72,7 +74,8 @@ export {
   icePagination,
   iceImgPreview,
   iceHeader,
-  iceTextarea
+  iceTextarea,
+  colorSelector
 };
 
 function install(app) {

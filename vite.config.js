@@ -13,7 +13,6 @@ export default defineConfig({
     vue(),
     mdPlugin.plugin({
       mode: ["html", "vue"],
-      // mode: ["vue"],
     }),
     vitePluginVue,
     eslintPlugin({

@@ -9,7 +9,3 @@ shrinkBar
 
   </container>
 </template>
-
-<style scoped>
-
-</style>

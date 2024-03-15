@@ -75,6 +75,10 @@ const items = [
       {
         text: "header 标题",
         href: "/doc/header"
+      },
+      {
+        text: "colorSelector 颜色选择器",
+        href: "/doc/colorSelector"
       }
     ]
   },

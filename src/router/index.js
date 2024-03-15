@@ -81,6 +81,10 @@ const routes = [
         component: () => import("../pages/doc/header/index.vue"),
       },
       {
+        path: "colorSelector",
+        component: () => import("../pages/doc/colorSelector/index.vue"),
+      },
+      {
         path: "selector",
         component: () => import("../pages/doc/selector/index.vue"),
       },
