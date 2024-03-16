@@ -181,7 +181,8 @@ export default {
 }
 
 .shadow-r-t{
-  border-color: @fontColor;
+  border-color: var(--color);
+  color: var(--color);
 
   &:hover{
     border-color: @fontColor-none;
@@ -190,7 +191,8 @@ export default {
 }
 
 .shadow-inner{
-  border-color: @fontColor;
+  border-color: var(--color);
+  color: var(--color);
 
   &:hover{
     border-color: @fontColor-none;
@@ -199,7 +201,8 @@ export default {
 }
 
 .shadow-lt-rb{
-  border-color: @fontColor;
+  border-color: var(--color);
+  color: var(--color);
   box-shadow: -@hoverLength-n -@hoverLength-n @hoverLength-n @fontColor;
 
   &:hover{
@@ -212,7 +215,8 @@ export default {
 .shadow-inner-lt-rb{
   position: relative;
   transition: @time-n;
-  border-color: @fontColor;
+  border-color: var(--color);
+  color: var(--color);
 
   &:after, &:before{
     transition: @time-n;
