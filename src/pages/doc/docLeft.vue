@@ -161,6 +161,15 @@ const items = [
         href: "/doc/pagination"
       }
     ]
+  },
+  {
+    text: "扩展",
+    children: [
+      {
+        text: "inlineStyle 行内样式",
+        href: "/doc/inlineStyle"
+      }
+    ]
   }
 ];
 

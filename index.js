@@ -25,6 +25,7 @@ import iceImgPreview from "./src/components/imgPreview/index.js";
 import iceHeader from "./src/components/header/index.js";
 import iceTextarea from "./src/components/textarea/index.js";
 import colorSelector from "./src/components/colorSelector/index.js";
+import inlineStyle from "./src/components/editor/inlineStyle.vue";
 
 const components = {
   iceButton,
@@ -49,7 +50,8 @@ const components = {
   iceImgPreview,
   iceHeader,
   iceTextarea,
-  colorSelector
+  colorSelector,
+  inlineStyle
 };
 
 export {
@@ -75,7 +77,8 @@ export {
   iceImgPreview,
   iceHeader,
   iceTextarea,
-  colorSelector
+  colorSelector,
+  inlineStyle
 };
 
 function install(app) {

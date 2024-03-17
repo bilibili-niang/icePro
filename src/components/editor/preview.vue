@@ -19,7 +19,6 @@
     </template>
   </ice-card>
 </template>
-
 <script setup>
 import "prismjs"
 import "prismjs/themes/prism.css"

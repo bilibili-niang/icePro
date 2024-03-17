@@ -95,6 +95,10 @@ const routes = [
       {
         path: "imgPreview",
         component: () => import("../pages/doc/iceImgPreview/index.vue"),
+      },
+      {
+        path: "inlineStyle",
+        component: () => import("../pages/doc/inlineStyle/index.vue"),
       }
     ],
   },
