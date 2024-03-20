@@ -17,7 +17,7 @@
         <iceSplit dashed></iceSplit>
         <div class="ice-column content">
           <ice-button @click="showBottom=!showBottom">
-            {{ showBottom ? "收起" : "展开" }}
+            {{ showBottom ? buttonText[0] : buttonText[1]}}
             <div :class="[
               showBottom?'down':'up'
           ]" class="tag">^
@@ -68,6 +68,10 @@ const props = defineProps({
   border: {
     type: Boolean,
     default: true
+  },
+  buttonText: {
+    type: Array,
+    default: ["收起", "展开"]
   }
 });
 
@@ -107,18 +111,18 @@ export default {
 @import "../../assets/variables.less";
 @import "../../assets/common.less";
 
-.border {
+.border{
   border-style: solid;
   border-width: 1px;
 }
 
-.noborder {
+.noborder{
   padding: 0 !important;
   margin: 0 !important;
   bottom: 0 !important;
 }
 
-.ice-card {
+.ice-card{
   box-sizing: border-box;
   border-color: @themeColor;
   width: 100%;
@@ -126,32 +130,32 @@ export default {
   margin: @m-normal;
   border-radius: @radio-n;
 
-  .header {
+  .header{
     line-height: @lineHeight-n;
     color: @themeColor;
   }
 
-  .body {
+  .body{
     font-size: @fontSize-n;
     line-height: @lineHeight-n;
     color: @themeColor;
     font-weight: @fontWeight-n;
   }
 
-  .bottom {
+  .bottom{
     width: 100%;
 
-    .content {
+    .content{
       width: 100%;
 
-      .show {
+      .show{
         display: flex;
         height: auto;
         transition-duration: @time-n;
         overflow: hidden;
       }
 
-      .hide {
+      .hide{
         display: flex;
         height: 0;
         overflow-y: hidden;
@@ -161,17 +165,17 @@ export default {
 }
 
 // 箭头翻转
-.down {
+.down{
   transform: rotate(180deg);
   transition: transform 0.3s;
 }
 
-.up {
+.up{
   transform: rotate(0deg);
   transition: transform 0.3s;
 }
 
-.bottomLim {
+.bottomLim{
   border-radius: .3rem;
 }
 </style>
