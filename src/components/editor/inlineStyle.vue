@@ -1,6 +1,6 @@
 <template>
   <div class="inlineStyleTransform">
-
+    {{ component }}
   </div>
 </template>
 

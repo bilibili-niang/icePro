@@ -20,6 +20,7 @@
 import {onMounted, onUnmounted, ref, defineProps, defineEmits} from "vue";
 import {findColor} from "../../../hooks/tools.js";
 import iceText from "../../text/ice-text.vue";
+import iceButton from '../../button/index.js';
 
 const visible = ref(false);
 // eslint-disable-next-line no-unused-vars

@@ -3,7 +3,6 @@ import vue from "@vitejs/plugin-vue";
 
 // 这个插件在开发时必须存在
 import vitePluginVue from "./plugins/fileFilter.js";
-import inlineStyleTransform from "./plugins/inlineStyle.js";
 import mdPlugin from "vite-plugin-markdown";
 import path from "path";
 import eslintPlugin from "vite-plugin-eslint";
@@ -16,7 +15,7 @@ export default defineConfig({
       mode: ["html", "vue"],
     }),
     vitePluginVue,
-    inlineStyleTransform,
+    // inlineStyleTransform,
     eslintPlugin({
       include: ["src/**/*.ts", "src/!**/!*.vue"]
     })
