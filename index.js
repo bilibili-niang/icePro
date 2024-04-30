@@ -26,75 +26,81 @@ import iceHeader from "./src/components/header/index.js";
 import iceTextarea from "./src/components/textarea/index.js";
 import colorSelector from "./src/components/colorSelector/index.js";
 import inlineStyle from "./src/components/editor/inlineStyle.vue";
+import {findColor} from "./src/hooks/tools.js";
 
 const components = {
-  iceButton,
-  iceText,
-  iceSplit,
-  iceTag,
-  iceLink,
-  container,
-  iceTitle,
-  iceCard,
-  iceMenu,
-  iceInput,
-  iceRow,
-  iceColumn,
-  iceDrawer,
-  iceSelector,
-  iceSelectorGroup,
-  avatar,
-  shrinkBar,
-  iceSelectionItem,
-  icePagination,
-  iceImgPreview,
-  iceHeader,
-  iceTextarea,
-  colorSelector,
-  inlineStyle
+    iceButton,
+    iceText,
+    iceSplit,
+    iceTag,
+    iceLink,
+    container,
+    iceTitle,
+    iceCard,
+    iceMenu,
+    iceInput,
+    iceRow,
+    iceColumn,
+    iceDrawer,
+    iceSelector,
+    iceSelectorGroup,
+    avatar,
+    shrinkBar,
+    iceSelectionItem,
+    icePagination,
+    iceImgPreview,
+    iceHeader,
+    iceTextarea,
+    colorSelector,
+    inlineStyle
 };
 
 export {
-  iceButton,
-  iceText,
-  iceSplit,
-  iceTag,
-  iceLink,
-  container,
-  iceTitle,
-  iceCard,
-  iceMessage,
-  iceMenu,
-  iceInput,
-  iceRow,
-  iceColumn,
-  iceDrawer,
-  iceSelector,
-  iceSelectorGroup,
-  avatar,
-  shrinkBar,
-  icePagination,
-  iceImgPreview,
-  iceHeader,
-  iceTextarea,
-  colorSelector,
-  inlineStyle
+    iceButton,
+    iceText,
+    iceSplit,
+    iceTag,
+    iceLink,
+    container,
+    iceTitle,
+    iceCard,
+    iceMessage,
+    iceMenu,
+    iceInput,
+    iceRow,
+    iceColumn,
+    iceDrawer,
+    iceSelector,
+    iceSelectorGroup,
+    avatar,
+    shrinkBar,
+    icePagination,
+    iceImgPreview,
+    iceHeader,
+    iceTextarea,
+    colorSelector,
+    inlineStyle
 };
 
 function install(app) {
-  const keys = Object.keys(components);
-  for (let i = 0; i < keys.length; i++) {
-    app.component(components[keys[i]].name, components[keys[i]]);
-  }
+    const keys = Object.keys(components);
+    for (let i = 0; i < keys.length; i++) {
+        app.component(components[keys[i]].name, components[keys[i]]);
+    }
 }
 
 const icepro = {
-  version: "1.1.17",
-  components
+    version: "1.1.17",
+    components
 };
 
 // 导出组件
 icepro.install = install;
 
 export default icepro;
+// 工具
+
+export {
+    findColor
+}
 
