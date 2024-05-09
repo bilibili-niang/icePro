@@ -12,7 +12,7 @@
 </template>
 
 <script setup>
-import {defineProps, defineEmits} from "vue";
+import {defineEmits, defineProps} from "vue";
 
 defineProps(
     {
@@ -63,10 +63,11 @@ export default {
 <style lang="less" scoped>
 @import "../../../assets/variables";
 
-.ice-textarea{
+.ice-textarea {
   margin-top: @m-small;
+  height: fit-content;
 
-  textarea{
+  textarea {
     color: @fontColor;
     font-size: @fontSize-n;
     border-radius: @radio-n @radio-n 0 0;
@@ -83,21 +84,26 @@ export default {
   }
 
   /* 针对WebKit浏览器（如Chrome和Safari）的滚动条样式 */
-
-  textarea::-webkit-scrollbar{
+  textarea::-webkit-scrollbar {
     width: 5px; /* 滚动条的宽度 */
   }
 
-  textarea::-webkit-scrollbar-track{
-    background: @themeActiveColor; /* 滚动条轨道的背景色 */
+  /* 滚动条轨道的背景色 */
+
+  textarea::-webkit-scrollbar-track {
+    background: @themeActiveColor;
   }
 
-  textarea::-webkit-scrollbar-thumb{
-    background: @bac-reversal-bleak; /* 滚动条滑块的背景色 */
+  /* 滚动条滑块的背景色 */
+
+  textarea::-webkit-scrollbar-thumb {
+    background: @bac-reversal-bleak;
   }
 
-  textarea::-webkit-scrollbar-thumb:hover{
-    background: @bac-reversal-bleak; /* 鼠标悬停时滚动条滑块的背景色 */
+  /* 鼠标悬停时滚动条滑块的背景色 */
+
+  textarea::-webkit-scrollbar-thumb:hover {
+    background: @bac-reversal-bleak;
   }
 }
 

@@ -6,19 +6,19 @@ colors
     <ice-text>
       使用
       <iceTag>color</iceTag>
-      传参,传入的应是下面的拼音
+      传参,传入的应是下面的拼音,点击复制
     </ice-text>
   </div>
   <container class="colorBlock ice-row">
     <template v-for="(item,index) in allColor" :key="index">
       <div class="ice-column colorBlockItem" @click="copy(item.pinyin)">
-        <div :style="{background:findColor(item.pinyin).color}" class="item radio-m noselect">
+        <div :style=/"{background:findColor(item.pinyin).color}" class="item radio-m noselect">
         </div>
-        <div :style="{
-          'color':findColor(item.pinyin).color
-        }">
-          {{ item.pinyin }}
-        </div>
+        <ice-button type="shadow-lt-rb" :color="item.pinyin">
+          <div :style="{'color':findColor(item.pinyin).color}">
+            {{ item.pinyin }}
+          </div>
+        </ice-button>
       </div>
     </template>
   </container>
@@ -28,9 +28,9 @@ colors
 <script setup>
 import colors from "../../../assets/colors/colors.json"
 import '@/assets/variables.less'
-import { reactive } from 'vue'
-import { copyText, findColor } from '../../../hooks/tools.js'
-import { iceMessage } from '../../../../index.js'
+import {reactive} from 'vue'
+import {copyText, findColor} from '../../../hooks/tools.js'
+import {iceMessage} from '../../../../index.js'
 
 const allColor = reactive(colors)
 const copy = async (str) => {
