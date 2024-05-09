@@ -72,19 +72,22 @@ export default {
 <style lang="less" scoped>
 @import '../../../assets/variables.less';
 
-.ice-tag{
+.ice-tag {
   display: flex;
   justify-content: center;
   height: fit-content;
   font-weight: bold;
-  z-index: 1;
   position: relative;
   width: fit-content;
   border: none;
   white-space: nowrap;
   overflow: hidden;
 
-  &:before{
+  &:hover {
+    cursor: default ;
+  }
+
+  &:before {
     position: absolute;
     content: '';
     display: flex;
@@ -97,32 +100,32 @@ export default {
   }
 }
 
-.defaultRound{
+.defaultRound {
   border-radius: @radio-l;
 }
 
 // round
-.round{
+.round {
   border-radius: 50%;
   aspect-ratio: 1;
 }
 
 // size
-.size-small{
+.size-small {
   margin: @m-small;
   padding: 0 @p-small;
   transition-duration: @time-s;
   font-size: @fontSize-s;
 }
 
-.size-normal{
+.size-normal {
   margin: 0 @m-small;
   padding: @p-small @p-normal;
   font-size: @fontSize-n;
   transition-duration: @time-n;
 }
 
-.size-large{
+.size-large {
   font-size: @fontSize-l;
   margin: @m-small @m-normal;
   padding: @p-normal @p-large;
@@ -130,20 +133,20 @@ export default {
 }
 
 // 没有传入color时的颜色
-.default-color{
+.default-color {
   color: @themeColor;
 
-  &:before{
+  &:before {
     opacity: .1;
     background: @themeColor;
     transition-duration: @time-s;
   }
 
-  &:hover{
+  &:hover {
     border: none;
     color: @themeColor-bleak;
 
-    &:before{
+    &:before {
       opacity: .3;
       background: @themeColor;
     }
@@ -151,19 +154,19 @@ export default {
 }
 
 // 传入color时的样式
-.btn-colors{
+.btn-colors {
   color: var(--hover-color);
 
-  &:before{
+  &:before {
     background: var(--color);
     opacity: .2;
   }
 
-  &:hover{
+  &:hover {
     border: none;
     color: var(--color);
 
-    &:before{
+    &:before {
       opacity: .4;
       background: var(--color);
     }
