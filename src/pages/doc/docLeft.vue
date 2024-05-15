@@ -96,6 +96,14 @@ const items = [
       {
         text: "图片预览",
         href: "/doc/imgPreview"
+      },
+      {
+        text: "drawer 抽屉",
+        href: "/doc/drawer"
+      },
+      {
+        text:'tabs 标签页',
+        href:'/doc/tabs'
       }
     ]
   },
@@ -105,10 +113,6 @@ const items = [
       {
         text: "message 消息弹窗",
         href: "/doc/message"
-      },
-      {
-        text: "drawer 抽屉",
-        href: "/doc/drawer"
       },
 
     ]
@@ -200,16 +204,16 @@ export default {
 <style lang="less" scoped>
 @import "@/assets/variables.less";
 
-.active{
+.active {
   color: @themeColor;
   border-bottom: @themeColor 1px solid;
 }
 
-.list-item-child{
+.list-item-child {
   padding-left: 1rem;
 }
 
-.listContainer{
+.listContainer {
   height: fit-content;
 }
 </style>

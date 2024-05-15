@@ -99,6 +99,10 @@ const routes = [
       {
         path: "inlineStyle",
         component: () => import("../pages/doc/inlineStyle/index.vue"),
+      },
+      {
+        path: "tabs",
+        component: () => import("../pages/doc/tabs/index.vue"),
       }
     ],
   },
