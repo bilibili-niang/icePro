@@ -22,7 +22,7 @@
 <script setup>
 import "prismjs"
 import "prismjs/themes/prism.css"
-import { computed, defineProps } from "vue"
+import { computed } from "vue"
 
 const Prism = window.Prism
 

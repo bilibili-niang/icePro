@@ -19,7 +19,6 @@
   </div>
 </template>
 <script setup>
-import {defineProps} from "vue";
 
 const defaultPng = "/src/assets/png/logo.png";
 let handleError = (e) => {

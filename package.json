@@ -11,6 +11,12 @@
     "publish": "npm publish",
     "version": " npm version"
   },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-git",
+      "useEmoji": true
+    }
+  },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
@@ -19,7 +25,9 @@
     "ui",
     "icepro"
   ],
-  "dependencies": {},
+  "dependencies": {
+    "cz-git": "^1.9.1"
+  },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.2.3",
     "clipboard": "^2.0.11",

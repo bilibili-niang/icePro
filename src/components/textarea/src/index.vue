@@ -12,7 +12,6 @@
 </template>
 
 <script setup>
-import {defineEmits, defineProps} from "vue";
 
 defineProps(
     {
@@ -84,6 +83,7 @@ export default {
   }
 
   /* 针对WebKit浏览器（如Chrome和Safari）的滚动条样式 */
+
   textarea::-webkit-scrollbar {
     width: 5px; /* 滚动条的宽度 */
   }

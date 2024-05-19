@@ -5,7 +5,7 @@ export default {
 </script>
 
 <script setup>
-import {defineEmits, defineProps, ref} from "vue";
+import { ref} from "vue";
 
 const emits = defineEmits(["update:modelValue"]);
 import colorJson from "../../../assets/colors/colors.json";

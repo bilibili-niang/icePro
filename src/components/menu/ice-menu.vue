@@ -33,7 +33,7 @@
 </template>
 
 <script setup>
-import { defineProps, ref } from 'vue'
+import { ref } from 'vue'
 import { findColor } from '../../hooks/tools.js'
 import IceLink from '../../components/text/ice-link.vue'
 import IceTitle from '../../components/text/ice-title.vue'

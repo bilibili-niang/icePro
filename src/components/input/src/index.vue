@@ -21,7 +21,7 @@
 </template>
 
 <script setup>
-import {defineProps, nextTick} from "vue";
+import { nextTick} from "vue";
 import {inputEmit, inputProps, useInput} from "./ice-input.js";
 
 const props = defineProps(inputProps);

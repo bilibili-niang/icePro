@@ -6,7 +6,6 @@ export default {
 <script setup>
 import "./index.less";
 import {findColor} from "../../../hooks/tools.js";
-import {defineProps} from "vue";
 // const props=
 defineProps({
   // 大小

@@ -17,7 +17,7 @@
 
 
 <script setup>
-import {onMounted, onUnmounted, ref, defineProps, defineEmits} from "vue";
+import {onMounted, onUnmounted, ref} from "vue";
 import {findColor} from "../../../hooks/tools.js";
 import iceText from "../../text/ice-text.vue";
 import iceButton from '../../button/index.js';
