@@ -27,6 +27,7 @@ import iceTextarea from "./src/components/textarea/index.js";
 import colorSelector from "./src/components/colorSelector/index.js";
 import inlineStyle from "./src/components/editor/inlineStyle.vue";
 import iceTabs from "./src/components/tabs/index.js";
+import iceTabItem from "./src/components/tabItem"
 import {findColor} from "./src/hooks/tools.js";
 
 const components = {
@@ -54,7 +55,8 @@ const components = {
     iceTextarea,
     colorSelector,
     inlineStyle,
-    iceTabs
+    iceTabs,
+    iceTabItem
 };
 
 export {
@@ -82,7 +84,8 @@ export {
     iceTextarea,
     colorSelector,
     inlineStyle,
-    iceTabs
+    iceTabs,
+    iceTabItem
 };
 
 function install(app) {

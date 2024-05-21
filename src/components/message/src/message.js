@@ -1,4 +1,4 @@
-import { createVNode, isVNode, ref, render } from 'vue'
+import {createVNode, isVNode, ref, render} from 'vue'
 import iceMessage from './message.vue'
 
 let seed = 1
@@ -13,16 +13,16 @@ const Message = function (options = {}) {
         }
     }
     let verticalOffset = options.offset || 20
-    instances.forEach(({ vm }) => {
-        verticalOffset += ( vm.el?.offsetHeight || 0 ) + 70
+    instances.forEach(({vm}) => {
+        verticalOffset += (vm.el?.offsetHeight || 0) + 70
     })
-    const id = `message_${ seed ++ }`
+    const id = `message_${seed++}`
     const userOnClose = options.onClose
     const props = {
         message: options.message,
         id,
         offset: verticalOffset,
-        zIndex: zIndex.value ++,
+        zIndex: zIndex.value++,
         ...options,
         onClose: () => {
             close(id, userOnClose)
@@ -47,19 +47,19 @@ const Message = function (options = {}) {
     }
 
     // 为创建的元素指定一个类名
-    container.className = `${ id } ice-message`
+    container.className = `${id} ice-message`
     const message = props.message
     const vm = createVNode(
         iceMessage,
         // 传入属性
         props,
-        isVNode(props.message) ? { default: () => message } : null
+        isVNode(props.message) ? {default: () => message} : null
     )
     vm.props.onDestroy = () => {
         render(null, container)
     }
     render(vm, container)
-    instances.push({ vm })
+    instances.push({vm})
     containerFa.appendChild(container)
     // 父容器添加进body
     appendTo.appendChild(containerFa)
@@ -67,7 +67,7 @@ const Message = function (options = {}) {
         close: () => {
             console.log('调用了emit的close--->')
             close(id, userOnClose),
-                ( ( vm.component.proxy ).visible = false )
+                ((vm.component.proxy).visible = false)
         },
         destroy: () => {
             console.log('destroy')
@@ -75,10 +75,10 @@ const Message = function (options = {}) {
     }
 }
 
-export function destroy (id) {
-    const index = instances.findIndex(({ vm }) => vm.component.props.id === id)
-    if (index !== - 1) {
-        const { vm } = instances[index]
+export function destroy(id) {
+    const index = instances.findIndex(({vm}) => vm.component.props.id === id)
+    if (index !== -1) {
+        const {vm} = instances[index]
         if (vm) {
             render(null, vm.el)
             instances.splice(index, 1)
@@ -102,10 +102,10 @@ list.forEach((type) => {
     }
 })
 
-export function close (id, userOnClose) {
+export function close() {
     setTimeout(function () {
         const divs = document.querySelector('.ice-message-container').children
-        for (let i = divs.length - 1; i >= 0; i --) {
+        for (let i = divs.length - 1; i >= 0; i--) {
             const div = divs[i]
             if (div.textContent.trim() === '') {
                 div.remove()

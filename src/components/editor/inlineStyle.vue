@@ -7,16 +7,11 @@
 <script>
 export default {
   name: "inlineStyle"
-};
+}
 </script>
 
 <script setup>
-const props = defineProps({
-  component: Object,
-});
-console.log(props);
+defineProps({
+  component: Object
+})
 </script>
-
-<style lang="less" scoped>
-
-</style>

@@ -1,3 +1,3 @@
-import iceHeader from "./src/index.vue";
+import iceHeader from "./src/index.vue"
 
-export default iceHeader;
+export default iceHeader

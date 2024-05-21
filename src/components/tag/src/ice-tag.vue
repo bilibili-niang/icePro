@@ -16,7 +16,7 @@
 </template>
 
 <script setup>
-import {findColor} from "../../../hooks/tools";
+import {findColor} from "../../../hooks/tools"
 
 defineProps({
   type: {
@@ -59,7 +59,7 @@ defineProps({
     type: Boolean,
     default: false
   }
-});
+})
 
 </script>
 <script>
@@ -83,7 +83,7 @@ export default {
   overflow: hidden;
 
   &:hover {
-    cursor: default ;
+    cursor: default;
   }
 
   &:before {

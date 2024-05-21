@@ -17,7 +17,7 @@ export default defineConfig({
         vitePluginVue,
         // inlineStyleTransform,
         eslintPlugin({
-            include: ["src/**/*.ts", "src/!**/!*.vue"]
+            include: ["src/**/*.js", "src/**/*.vue"]
         })
     ],
     output: {

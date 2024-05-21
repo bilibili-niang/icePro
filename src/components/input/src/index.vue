@@ -21,8 +21,8 @@
 </template>
 
 <script setup>
-import { nextTick} from "vue";
-import {inputEmit, inputProps, useInput} from "./ice-input.js";
+import {nextTick} from "vue";
+import {inputEmit, inputProps, useInput} from "./index.js";
 
 const props = defineProps(inputProps);
 const emits = defineEmits(inputEmit);
@@ -103,7 +103,7 @@ export default {
 <style lang="less" scoped>
 @import "../../../assets/variables.less";
 
-.ice-input{
+.ice-input {
   position: relative;
   padding: @p-normal;
   transition-duration: @time-n;
@@ -112,7 +112,7 @@ export default {
   margin-top: @m-large;
 
   // 占位元素
-  .wait{
+  .wait {
     position: absolute;
     top: 30%;
     left: .3rem;
@@ -123,7 +123,7 @@ export default {
     padding-left: @p-normal;
   }
 
-  .nowait{
+  .nowait {
     color: @fontColor-bleak;
     font-size: @fontSize-s;
     top: -25%;
@@ -133,7 +133,7 @@ export default {
     background: none !important;
   }
 
-  input{
+  input {
     border: none;
     background: none;
     border-bottom: @themeColor 1px solid;
@@ -145,21 +145,21 @@ export default {
     position: relative;
     z-index: 2;
 
-    &:focus{
+    &:focus {
       outline: none;
     }
   }
 }
 
 // 等待输入的样式
-.inputNowait{
+.inputNowait {
   border-bottom: @themeColor 1px solid;
   border-left: @themeColor 1px solid;
   border-right: @themeColor 1px solid;
   border-bottom-left-radius: @radio-n;
   border-bottom-right-radius: @radio-n;
 
-  input{
+  input {
     border: none;
   }
 }
