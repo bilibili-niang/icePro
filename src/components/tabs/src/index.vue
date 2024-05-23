@@ -24,11 +24,8 @@ export default {
 </script>
 
 <script setup>
-import {ref, useSlots, computed} from 'vue'
-import {findColor} from "../../../../index.js"
+import {useSlots, computed} from 'vue'
 import iceTabItem from '../../tabItem/index.js'
-
-console.log('findColor', findColor)
 
 const props = defineProps({
   modelValue: {
@@ -47,18 +44,12 @@ const current = computed(() => {
   return slots.find((tag) => tag.props.name === props.modelValue)
 })
 
-// const emits = defineEmits(['update:modelValue'])
-
-
-const container = ref(null)
-
 const init = () => {
   slots.forEach((tag) => {
     if (tag.type.name !== iceTabItem.name) {
       throw new Error("iceTabs 子标签必须是iceTabItem")
     }
   })
-  console.log(container)
 
 }
 

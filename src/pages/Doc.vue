@@ -26,6 +26,7 @@
 
 <script setup>
 import {ref} from "vue"
+import docLeft from './doc/docLeft.vue'
 
 const dark = ref(false)
 const changeMode = () => {
