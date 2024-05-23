@@ -102,7 +102,7 @@ list.forEach((type) => {
     }
 })
 
-export function close (id, userOnClose) {
+export function close () {
     setTimeout(function () {
         const divs = document.querySelector('.ice-message-container').children
         for (let i = divs.length - 1; i >= 0; i --) {

@@ -1,4 +1,4 @@
-import iceTextarea from "./src/index.vue";
+import iceTextarea from "./src/index.vue"
 
 export default iceTextarea
 

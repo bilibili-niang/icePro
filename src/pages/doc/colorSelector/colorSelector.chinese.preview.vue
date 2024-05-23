@@ -17,7 +17,7 @@ color-selector 中国传统色
   </container>
 </template>
 <script setup>
-import {ref} from "vue";
+import {ref} from "vue"
 
-const colorValue = ref("");
+const colorValue = ref("")
 </script>

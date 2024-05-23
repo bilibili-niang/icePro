@@ -16,6 +16,6 @@
 </template>
 
 <script setup>
-import inlineStyleDemo from "./inlineStyleDemo.inlineStyle.vue";
+import inlineStyleDemo from "./inlineStyleDemo.inlineStyle.vue"
 </script>
 

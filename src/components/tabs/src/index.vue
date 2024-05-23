@@ -25,7 +25,10 @@ export default {
 
 <script setup>
 import {ref, useSlots, computed} from 'vue'
-import {iceTabItem} from "../../../../index.js"
+import {findColor} from "../../../../index.js"
+import iceTabItem from '../../tabItem/index.js'
+
+console.log('findColor', findColor)
 
 const props = defineProps({
   modelValue: {

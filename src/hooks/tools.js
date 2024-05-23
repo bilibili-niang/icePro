@@ -1,15 +1,15 @@
-import colors from "../assets/colors/colors.json";
+import colors from "../assets/colors/colors.json"
 
-const colorsMap = colors;
+const colorsMap = colors
 
-const dark = localStorage.getItem("mode") ? localStorage.getItem("mode") : null;
+const dark = localStorage.getItem("mode") ? localStorage.getItem("mode") : null
 
 colorsMap.forEach(item => {
   colorsMap[item.pinyin] = {
     color: item.RGBA,
     hover: item.bleak
-  };
-});
+  }
+})
 /**
  * 通过json返回对应的颜色信息
  * 需要判断 深色/浅色 模式
@@ -19,13 +19,13 @@ colorsMap.forEach(item => {
  */
 const findColor = function (pinyin) {
   if (dark) {
-    const obj = colorsMap[pinyin];
-    return obj || false;
+    const obj = colorsMap[pinyin]
+    return obj || false
   } else {
-    const obj = colorsMap[pinyin];
-    return obj || false;
+    const obj = colorsMap[pinyin]
+    return obj || false
   }
-};
+}
 /**
  * 复制
  * Author: 张嘉凯
@@ -35,13 +35,13 @@ const findColor = function (pinyin) {
 const copyText = function (str) {
   return navigator.clipboard.writeText(str)
     .then(() => {
-      return true;
+      return true
     })
     .catch(() => {
-      return false;
-    });
-};
+      return false
+    })
+}
 export {
   findColor,
   copyText
-};
+}

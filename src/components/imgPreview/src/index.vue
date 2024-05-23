@@ -1,19 +1,19 @@
 <script>
 export default {
   name: "iceImgPreview"
-};
+}
 </script>
 <script setup>
 import {
   ref,
   defineProps
-} from "vue";
+} from "vue"
 
 const props = defineProps({
   imgUrls: {
     type: Array,
     default: () => {
-      return ["http://blog.icestone.work/default.png"];
+      return ["http://blog.icestone.work/default.png"]
     }
   },
   // 是否默认展示 默认不展示
@@ -26,43 +26,43 @@ const props = defineProps({
     type: Boolean,
     default: false
   }
-});
-let showImgList = ref(false);
-let imgList = ref([]);
-let activeItem = ref("");
+})
+let showImgList = ref(false)
+let imgList = ref([])
+let activeItem = ref("")
 const init = () => {
   // 如果传递来默认展示了
   if (props.defaultShow) {
-    showImgList.value = true;
+    showImgList.value = true
   }
-  imgList.value = props.imgUrls;
-  activeItem.value = imgList.value[0];
-};
+  imgList.value = props.imgUrls
+  activeItem.value = imgList.value[0]
+}
 
 const show = (list) => {
-  imgList.value = list;
-  showImgList.value = true;
-  activeItem.value = list[0];
-};
-init();
+  imgList.value = list
+  showImgList.value = true
+  activeItem.value = list[0]
+}
+init()
 /**
  * 关闭方法
  */
 const closePreview = () => {
-  showImgList.value = false;
-};
+  showImgList.value = false
+}
 
 // 默认激活index
-let activeIndex = ref(0);
+let activeIndex = ref(0)
 const changeActiveImg = (index, item) => {
-  activeIndex.value = index;
-  activeItem.value = item;
-};
+  activeIndex.value = index
+  activeItem.value = item
+}
 
 defineExpose({
   show,
   closePreview
-});
+})
 
 </script>
 <template>

@@ -4,7 +4,7 @@
 </template>
 
 <script setup>
-import colorSelectorNormal from "./colorSelector.normal.preview.vue";
-import colorSelectorChinese from "./colorSelector.chinese.preview.vue";
-import Preview from "@/components/editor/preview.vue";
+import colorSelectorNormal from "./colorSelector.normal.preview.vue"
+import colorSelectorChinese from "./colorSelector.chinese.preview.vue"
+import Preview from "@/components/editor/preview.vue"
 </script>

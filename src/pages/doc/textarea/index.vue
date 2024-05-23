@@ -3,7 +3,7 @@
 
 </template>
 <script setup>
-import textareaPreview from "./textarea.preview.vue";
-import Preview from "@/components/editor/preview.vue";
+import textareaPreview from "./textarea.preview.vue"
+import Preview from "@/components/editor/preview.vue"
 
 </script>

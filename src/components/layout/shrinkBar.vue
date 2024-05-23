@@ -29,12 +29,12 @@
 </template>
 
 <script setup>
-import {ref} from "vue";
+import {ref} from "vue"
 
-const hover = ref(false);
+const hover = ref(false)
 
-const shrinkBar = ref();
-let clickShow = ref(false);
+const shrinkBar = ref()
+let clickShow = ref(false)
 
 defineProps({
   // 需要收缩的方向
@@ -45,28 +45,28 @@ defineProps({
   bacColor: {
     type: String
   }
-});
+})
 
 const getTip = () => {
-  clickShow.value = !clickShow.value;
+  clickShow.value = !clickShow.value
   if (clickShow.value) {
-    window.document.body.style.paddingLeft = `${shrinkBar.value.offsetWidth}px`;
+    window.document.body.style.paddingLeft = `${shrinkBar.value.offsetWidth}px`
   } else {
-    window.document.body.style.paddingLeft = 0;
+    window.document.body.style.paddingLeft = 0
   }
-};
+}
 if (window.document.body.style.paddingLeft + "" === "0px") {
-  clickShow.value = true;
+  clickShow.value = true
 }
 
 setTimeout(() => {
-  window.document.body.style.paddingLeft = 0;
-});
+  window.document.body.style.paddingLeft = 0
+})
 </script>
 <script>
 export default {
   name: "shrinkBar"
-};
+}
 </script>
 <style lang="less" scoped>
 @import '../../assets/variables.less';

@@ -37,14 +37,14 @@
 
 </template>
 <script setup>
-import {reactive, ref} from "vue";
+import {reactive, ref} from "vue"
 
 
-let direction = ref("left");
-let drawer = ref(false);
+let direction = ref("left")
+let drawer = ref(false)
 
-let percentWidth = ref("30%");
-let width = ref("20%");
+let percentWidth = ref("30%")
+let width = ref("20%")
 const selectionList = reactive([
   {
     label: "从左侧展开",
@@ -62,7 +62,7 @@ const selectionList = reactive([
     label: "从底部展开",
     value: "bottom"
   }
-]);
+])
 
 </script>
 

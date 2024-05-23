@@ -1,4 +1,4 @@
-import iceInput from "./src/index.vue";
+import iceInput from "./src/index.vue"
 
 export default iceInput
 

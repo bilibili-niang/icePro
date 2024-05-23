@@ -20,11 +20,11 @@
 </template>
 <script setup>
 
-const defaultPng = "/src/assets/png/logo.png";
+const defaultPng = "/src/assets/png/logo.png"
 let handleError = (e) => {
-  e.target.src = defaultPng;
-  handleError = null;
-};
+  e.target.src = defaultPng
+  handleError = null
+}
 defineProps({
   src: {
     type: String,
@@ -50,13 +50,13 @@ defineProps({
     type: String,
     default: "fill"
   }
-});
+})
 
 </script>
 <script>
 export default {
   name: "iceAvatar"
-};
+}
 </script>
 
 <style lang="less" scoped>

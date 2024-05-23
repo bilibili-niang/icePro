@@ -17,12 +17,12 @@ defineProps({
     type: String,
     default: "100%"
   }
-});
+})
 </script>
 <script>
 export default {
   name: "IceRow"
-};
+}
 </script>
 <style lang='less' scoped>
 .ice-row {

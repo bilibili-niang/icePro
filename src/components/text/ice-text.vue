@@ -16,7 +16,7 @@
 </template>
 
 <script setup>
-import {findColor} from "../../hooks/tools";
+import {findColor} from "../../hooks/tools"
 
 defineProps({
   nowrap: {
@@ -47,12 +47,12 @@ defineProps({
     type: Boolean,
     default: false
   }
-});
+})
 </script>
 <script>
 export default {
   name: "iceText"
-};
+}
 </script>
 <style lang='less' scoped>
 @import '../../assets/variables.less';

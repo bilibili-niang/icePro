@@ -17,16 +17,16 @@
   </div>
 </template>
 <script setup>
-import {ref, computed} from "vue";
-const emits = defineEmits(["update:modelValue", "input", "blur", "focus", "valueChange"]);
-let fsPageIndex = ref(1);
+import {ref, computed} from "vue"
+const emits = defineEmits(["update:modelValue", "input", "blur", "focus", "valueChange"])
+let fsPageIndex = ref(1)
 const changePageIndex = (index) => {
-  fsPageIndex.value = index;
-};
+  fsPageIndex.value = index
+}
 const changeValue = (item) => {
-  emits("update:modelValue", item);
-  emits("valueChange", item);
-};
+  emits("update:modelValue", item)
+  emits("valueChange", item)
+}
 const props = defineProps({
   modelValue: {
     type: [String, Number],
@@ -56,20 +56,20 @@ const props = defineProps({
     type: Number,
     default: 5
   }
-});
+})
 
-let tempTotal = ref([1]);
+let tempTotal = ref([1])
 const init = () => {
   for (let i = 0; i <= props.total; i++) {
     if (i % props.step === 0 && i !== 0) {
-      tempTotal.value.push(i);
+      tempTotal.value.push(i)
     }
   }
-};
-init();
+}
+init()
 // 子列表
 const bottomPageIndex = computed(() => {
-  const tempIndex = tempTotal.value.filter(item => item === fsPageIndex.value);
-  return Array.from({length: props.step}, (_, i) => i + tempIndex[0]);
-});
+  const tempIndex = tempTotal.value.filter(item => item === fsPageIndex.value)
+  return Array.from({length: props.step}, (_, i) => i + tempIndex[0])
+})
 </script>

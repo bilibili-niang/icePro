@@ -32,9 +32,8 @@
 </template>
 
 <script setup>
-import {useRoute} from "vue-router";
-import {ref, watch} from "vue";
-import {useRouter} from "vue-router";
+import {useRoute, useRouter} from "vue-router"
+import {ref, watch} from "vue"
 
 const items = [
   {
@@ -102,8 +101,8 @@ const items = [
         href: "/doc/drawer"
       },
       {
-        text:'tabs 标签页',
-        href:'/doc/tabs'
+        text: 'tabs 标签页',
+        href: '/doc/tabs'
       }
     ]
   },
@@ -175,30 +174,30 @@ const items = [
       }
     ]
   }
-];
+]
 
 
-const routers = useRouter();
+const routers = useRouter()
 /**
  * 路由跳转
  */
 const goHref = (href) => {
-  routers.push(href);
-};
+  routers.push(href)
+}
 
-const route = useRoute();
-let nowPath = ref("");
-nowPath.value = route.path;
+const route = useRoute()
+let nowPath = ref("")
+nowPath.value = route.path
 watch(() => route.path,
     (newVal) => {
-      nowPath.value = newVal;
-    });
+      nowPath.value = newVal
+    })
 </script>
 
 <script>
 export default {
   name: "docLeft"
-};
+}
 </script>
 
 <style lang="less" scoped>

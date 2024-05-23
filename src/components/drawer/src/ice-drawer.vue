@@ -30,9 +30,9 @@
   </Teleport>
 </template>
 <script setup>
-import {computed, ref, watch } from "vue";
+import {computed, ref, watch } from "vue"
 
-const emits = defineEmits(["update:modelValue"]);
+const emits = defineEmits(["update:modelValue"])
 const props = defineProps({
   // 如果不定义绑定的值的名称，默认为modelValue
   modelValue: Boolean,
@@ -50,43 +50,43 @@ const props = defineProps({
     type: String,
     default: "20%"
   }
-});
+})
 const close = () => {
-  emits("update:modelValue", false);
-};
+  emits("update:modelValue", false)
+}
 
 const styleObj = computed(() => {
   if (props.direction === "left" || props.direction === "right") {
     return {
       width: props.percent,
-    };
+    }
   } else {
     return {
       height: props.percent,
-    };
+    }
   }
-});
+})
 const layoutDirection = computed(() => {
   if (props.direction === "left" || props.direction === "right") {
-    return "row";
+    return "row"
   } else {
-    return "column";
+    return "column"
   }
-});
+})
 
-const body = ref(document.querySelector("body"));
+const body = ref(document.querySelector("body"))
 watch(() => props.modelValue, (newVal) => {
   if (newVal) {
-    body.value.classList.value += " showDrawer";
+    body.value.classList.value += " showDrawer"
   } else {
-    body.value.classList.value = body.value.classList.value.replaceAll(" showDrawer", "");
+    body.value.classList.value = body.value.classList.value.replaceAll(" showDrawer", "")
   }
-});
+})
 </script>
 <script>
 export default {
   name: "ice-drawer"
-};
+}
 </script>
 
 <style lang="less" scoped>

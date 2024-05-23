@@ -13,7 +13,7 @@ color-selector
   </container>
 </template>
 <script setup>
-import {ref} from "vue";
+import {ref} from "vue"
 
-const colorValue = ref("");
+const colorValue = ref("")
 </script>

@@ -29,18 +29,18 @@ const props = defineProps({
     default: ""
   },
 
-});
+})
 
-const emits = defineEmits(["clicked"]);
+const emits = defineEmits(["clicked"])
 const clickTrigger = () => {
-  emits("clicked", props.item);
-};
+  emits("clicked", props.item)
+}
 </script>
 
 <script>
 export default {
   name: "ice-selectionItem"
-};
+}
 </script>
 
 <style lang="less" scoped>

@@ -21,11 +21,11 @@
 </template>
 
 <script setup>
-import {nextTick} from "vue";
-import {inputEmit, inputProps, useInput} from "./index.js";
+import {nextTick} from "vue"
+import {inputEmit, inputProps, useInput} from "./index.js"
 
-const props = defineProps(inputProps);
-const emits = defineEmits(inputEmit);
+const props = defineProps(inputProps)
+const emits = defineEmits(inputEmit)
 
 const {
   disabled,
@@ -34,54 +34,54 @@ const {
   readonly,
   nativeInputValue,
   size
-} = useInput(props, emits);
+} = useInput(props, emits)
 
-const input = document.querySelector("input");
-const textarea = document.querySelector("textarea");
-const inputOrTextarea = () => input.value || textarea.value;
+const input = document.querySelector("input")
+const textarea = document.querySelector("textarea")
+const inputOrTextarea = () => input.value || textarea.value
 
 // 监听输入
 const handleChange = (e) => {
-  const value = e.target.value;
-  if (value === nativeInputValue.value) return;
-  emits("update:modelValue", value);
-  emits("input", value);
-};
+  const value = e.target.value
+  if (value === nativeInputValue.value) return
+  emits("update:modelValue", value)
+  emits("input", value)
+}
 
 const handleBlur = (e) => {
-  emits("blur", e);
-};
+  emits("blur", e)
+}
 
 const handleFocus = (e) => {
-  emits("focus", e);
-};
+  emits("focus", e)
+}
 
 const focus = () => {
   nextTick(() => {
-    inputOrTextarea.value?.focus();
-  });
-};
+    inputOrTextarea.value?.focus()
+  })
+}
 
 const blur = () => {
   nextTick(() => {
-    inputOrTextarea.value?.blur();
-    const selection = document.getSelection();
-    const range = document.createRange();
-    range.selectNode(inputOrTextarea.value);
-    selection.removeAllRanges();
-  });
-};
+    inputOrTextarea.value?.blur()
+    const selection = document.getSelection()
+    const range = document.createRange()
+    range.selectNode(inputOrTextarea.value)
+    selection.removeAllRanges()
+  })
+}
 
 const select = () => {
   nextTick(() => {
-    inputOrTextarea.value?.focus();
-    const selection = document.getSelection();
-    const range = document.createRange();
-    range.selectNode(inputOrTextarea.value);
-    selection.removeAllRanges();
-    selection.addRange(range);
-  });
-};
+    inputOrTextarea.value?.focus()
+    const selection = document.getSelection()
+    const range = document.createRange()
+    range.selectNode(inputOrTextarea.value)
+    selection.removeAllRanges()
+    selection.addRange(range)
+  })
+}
 
 defineExpose({
   input,
@@ -90,14 +90,14 @@ defineExpose({
   blur,
   focus,
   select,
-});
+})
 
 </script>
 
 <script>
 export default {
   name: "ice-input"
-};
+}
 </script>
 
 <style lang="less" scoped>

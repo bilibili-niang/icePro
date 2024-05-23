@@ -18,7 +18,7 @@
 </template>
 
 <script setup>
-import {findColor} from "../../hooks/tools.js";
+import {findColor} from "../../hooks/tools.js"
 
 defineProps({
   type: {
@@ -42,24 +42,26 @@ defineProps({
     type: String,
     default: "center"
   }
-});
+})
 </script>
 <script>
 export default {
   name: "iceSplit"
-};
-
+}
 </script>
 <style lang='less' scoped>
 @import '../../assets/variables.less';
-.customColor{
+
+.customColor {
   color: var(--color) !important;
   border-color: var(--color) !important;
 }
-.defaultColor{
+
+.defaultColor {
   color: @btn-skyblue;
 }
-.split{
+
+.split {
   border-color: @themeColor-bleak;
   margin-bottom: @m-large;
   margin-top: @m-normal;
@@ -67,28 +69,28 @@ export default {
   box-sizing: border-box;
   position: relative;
 
-  .text{
+  .text {
     position: absolute;
     background: @bac;
     font-size: @fontSize-n;
     padding: @p-normal;
   }
 
-  .center{
+  .center {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
     padding: 0 @p-normal;
   }
 
-  .left{
+  .left {
     left: 0;
     top: 50%;
     transform: translateY(-50%);
     padding-right: @p-normal;
   }
 
-  .right{
+  .right {
     right: 0;
     top: 50%;
     transform: translateY(-50%);
@@ -96,18 +98,18 @@ export default {
   }
 }
 
-.dashed{
+.dashed {
   border-style: dashed !important;
   border-bottom: @themeColor 1px solid;
 }
 
-.landscape{
+.landscape {
   width: 100%;
   box-sizing: border-box;
   border-bottom: @themeColor 1px solid;
 }
 
-.vertical{
+.vertical {
   width: 0;
   height: 100%;
   min-height: 3rem;

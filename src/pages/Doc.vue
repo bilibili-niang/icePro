@@ -25,30 +25,29 @@
 </template>
 
 <script setup>
-import DocLeft from "@/pages/doc/docLeft.vue";
-import {ref} from "vue";
+import {ref} from "vue"
 
-const dark = ref(false);
+const dark = ref(false)
 const changeMode = () => {
-  dark.value = Boolean(localStorage.getItem("mode") == "false" ? false : true || null);
+  dark.value = Boolean(localStorage.getItem("mode") == "false" ? false : true || null)
   if (dark.value) {
-    document.querySelector("html").classList.add("dark");
-    document.querySelector("html").classList.remove("light");
+    document.querySelector("html").classList.add("dark")
+    document.querySelector("html").classList.remove("light")
   } else {
-    document.querySelector("html").classList.add("light");
-    document.querySelector("html").classList.remove("dark");
-    localStorage.setItem("mode", "true");
+    document.querySelector("html").classList.add("light")
+    document.querySelector("html").classList.remove("dark")
+    localStorage.setItem("mode", "true")
   }
-  localStorage.setItem("mode", (!dark.value).toString());
-};
-const fixed = ref(false);
-const colorVal = ref("#422929");
+  localStorage.setItem("mode", (!dark.value).toString())
+}
+const fixed = ref(false)
+const colorVal = ref("#422929")
 const setColor = () => {
-  localStorage.setItem("color", colorVal.value);
-};
+  localStorage.setItem("color", colorVal.value)
+}
 const clearColor = () => {
-  localStorage.removeItem("color");
-};
+  localStorage.removeItem("color")
+}
 </script>
 
 <style lang="less" scoped>

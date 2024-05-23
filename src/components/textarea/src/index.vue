@@ -35,28 +35,28 @@ defineProps(
         default: ""
       }
     }
-);
+)
 const emits = defineEmits([
   "update:modelValue",
   "input",
   "clear",
   "blur",
   "focus",
-]);
+])
 
 // 监听输入
 const handleChange = (e) => {
-  const value = e.target.value;
-  emits("update:modelValue", value);
-  emits("input", value);
-};
+  const value = e.target.value
+  emits("update:modelValue", value)
+  emits("input", value)
+}
 
 </script>
 
 <script>
 export default {
   name: "ice-textarea"
-};
+}
 </script>
 
 <style lang="less" scoped>

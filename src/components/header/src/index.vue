@@ -1,11 +1,11 @@
 <script>
 export default {
   name: "iceHeader"
-};
+}
 </script>
 <script setup>
-import "./index.less";
-import {findColor} from "../../../hooks/tools.js";
+import "./index.less"
+import {findColor} from "../../../hooks/tools.js"
 // const props=
 defineProps({
   // 大小
@@ -21,7 +21,7 @@ defineProps({
     type: Boolean,
     default: false
   },
-});
+})
 </script>
 <template>
   <div :class="[

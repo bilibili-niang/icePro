@@ -1,16 +1,16 @@
 <script>
 export default {
   name: "colorSelector"
-};
+}
 </script>
 
 <script setup>
-import { ref} from "vue";
+import { ref} from "vue"
 
-const emits = defineEmits(["update:modelValue"]);
-import colorJson from "../../../assets/colors/colors.json";
+const emits = defineEmits(["update:modelValue"])
+import colorJson from "../../../assets/colors/colors.json"
 
-const colorObj = ref(colorJson);
+const colorObj = ref(colorJson)
 
 const props = defineProps({
   modelValue: {
@@ -22,26 +22,26 @@ const props = defineProps({
     type: Boolean,
     default: false
   }
-});
+})
 const changeColor = () => {
-  emits("update:modelValue", componentVal.value);
-};
+  emits("update:modelValue", componentVal.value)
+}
 
-const componentVal = ref("#fc8c23");
+const componentVal = ref("#fc8c23")
 
 /**
  * 进入时判断是否需要赋值,如果父组件没有传来值,那么将当前值传给父组件
  */
 const init = () => {
-  props.modelValue ? componentVal.value = props.modelValue : changeColor();
-};
+  props.modelValue ? componentVal.value = props.modelValue : changeColor()
+}
 
-init();
-const colorListFlag = ref(false);
+init()
+const colorListFlag = ref(false)
 const changeColorList = () => {
-  colorListFlag.value = !colorListFlag.value;
-  emits("update:modelValue", componentVal.value);
-};
+  colorListFlag.value = !colorListFlag.value
+  emits("update:modelValue", componentVal.value)
+}
 </script>
 <template>
   <div class="colorSelector">

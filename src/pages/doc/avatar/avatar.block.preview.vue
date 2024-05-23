@@ -13,10 +13,10 @@
   </container>
 </template>
 <script setup>
-import {ref} from "vue";
+import {ref} from "vue"
 
-const imgUrl = ref("http://blog.icestone.work/default.png");
-// const imgUrl = "src/assets/png/default.png";
+const imgUrl = ref("http://blog.icestone.work/default.png")
+// const imgUrl = "src/assets/png/default.png"
 </script>
 
 

@@ -1,11 +1,11 @@
-import {defineConfig} from "vite";
-import vue from "@vitejs/plugin-vue";
+import {defineConfig} from "vite"
+import vue from "@vitejs/plugin-vue"
 
 // 这个插件在开发时必须存在
-import vitePluginVue from "./plugins/fileFilter.js";
-import mdPlugin from "vite-plugin-markdown";
-import path from "path";
-import eslintPlugin from "vite-plugin-eslint";
+import vitePluginVue from "./plugins/fileFilter.js"
+import mdPlugin from "vite-plugin-markdown"
+import path from "path"
+import eslintPlugin from "vite-plugin-eslint"
 
 
 export default defineConfig({
@@ -66,4 +66,4 @@ export default defineConfig({
             formats: ["es", "umd", "cjs"],
         },
     }
-});
+})

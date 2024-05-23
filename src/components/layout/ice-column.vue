@@ -17,12 +17,12 @@ defineProps({
     type: String,
     default: "100%"
   }
-});
+})
 </script>
 <script>
 export default {
   name: "IceColumn"
-};
+}
 </script>
 <style lang='less' scoped>
 .ice-column {

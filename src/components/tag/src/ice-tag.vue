@@ -65,7 +65,7 @@ defineProps({
 <script>
 export default {
   name: "iceTag"
-};
+}
 </script>
 
 <style lang="less" scoped>

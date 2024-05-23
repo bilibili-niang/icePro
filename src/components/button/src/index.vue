@@ -18,9 +18,9 @@
 </template>
 
 <script setup>
-import {findColor} from "../../../../index.js";
+import {findColor} from "../../../../index.js"
 
-const emit = defineEmits(["click"]);
+const emit = defineEmits(["click"])
 const props = defineProps({
   type: {
     type: String,
@@ -61,19 +61,19 @@ const props = defineProps({
     type: Boolean,
     default: true
   }
-});
+})
 
 const clickCallBack = (evt) => {
   if (props.disable) {
-    return;
+    return void 0
   }
-  emit("click", evt);
-};
+  emit("click", evt)
+}
 </script>
 <script>
 export default {
   name: "iceButton",
-};
+}
 </script>
 <style lang="less" scoped>
 @import '../../../assets/variables.less';

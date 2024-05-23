@@ -13,16 +13,16 @@ ice-img-preview
 </template>
 
 <script setup>
-import {ref} from "vue";
+import {ref} from "vue"
 
-let imgPreviewRef = ref();
+let imgPreviewRef = ref()
 let imgList = ref([
   "/src/assets/png/bac1.png",
   "/src/assets/png/bac2.png",
   "/src/assets/png/bac3.png",
   "/src/assets/png/ding.png",
-]);
+])
 const showPreview = () => {
-  imgPreviewRef.value.show(imgList.value);
-};
+  imgPreviewRef.value.show(imgList.value)
+}
 </script>

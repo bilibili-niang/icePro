@@ -65,7 +65,6 @@ const Message = function (options = {}) {
     appendTo.appendChild(containerFa)
     return {
         close: () => {
-            console.log('调用了emit的close--->')
             close(id, userOnClose),
                 ((vm.component.proxy).visible = false)
         },

@@ -17,11 +17,11 @@ ice-pagination
   </container>
 </template>
 <script setup>
-import icePagination from "@/components/pagination/src/ice-pagination.vue";
-import {ref} from "vue";
+import icePagination from "@/components/pagination/src/ice-pagination.vue"
+import {ref} from "vue"
 
-let pageIndex = ref(1);
-let totalSIze = ref(157);
-let step = ref(15);
+let pageIndex = ref(1)
+let totalSIze = ref(157)
+let step = ref(15)
 // totalSIze.value = parseInt(Math.random(100) * 100);
 </script>

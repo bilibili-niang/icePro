@@ -13,8 +13,8 @@ textarea-normal
 </template>
 
 <script setup>
-import {ref} from "vue";
+import {ref} from "vue"
 
-const word = ref("但使龙城飞将在,不教胡马度阴山.");
+const word = ref("但使龙城飞将在,不教胡马度阴山.")
 
 </script>

@@ -3,8 +3,8 @@
 </template>
 
 <script setup>
-import Preview from "@/components/editor/preview.vue";
-import pagination from "./pagination.preview.vue";
+import Preview from "@/components/editor/preview.vue"
+import pagination from "./pagination.preview.vue"
 
 
 </script>

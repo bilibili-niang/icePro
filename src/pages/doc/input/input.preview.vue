@@ -37,11 +37,11 @@ input-normal
   </container>
 </template>
 <script setup>
-import {ref} from "vue";
+import {ref} from "vue"
 
-let text = ref("坤坤菜菜子");
-let text2 = ref("一个真正的鳗");
-let text3 = ref("iKun铠甲,合体!");
+let text = ref("坤坤菜菜子")
+let text2 = ref("一个真正的鳗")
+let text3 = ref("iKun铠甲,合体!")
 let obj=ref({
   text:'测试文字'
 })

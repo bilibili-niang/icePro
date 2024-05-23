@@ -32,7 +32,6 @@ tabs-normal
         </ice-text>
       </ice-tab-item>
 
-
       <ice-tab-item label="second" name="I GOT SMOKE">
         <ice-text>
           满身烟味的我 走路带上点浮夸
@@ -41,15 +40,12 @@ tabs-normal
           想买悦刻五代找我丁真就对了
         </ice-text>
       </ice-tab-item>
-
     </ice-tabs>
   </container>
-
 </template>
 
 <script setup>
 import {ref} from 'vue'
 
-const activeName = ref('白日梦想家');
-
+const activeName = ref('白日梦想家')
 </script>

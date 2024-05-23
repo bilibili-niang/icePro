@@ -1,4 +1,4 @@
-import {computed, ref} from "vue";
+import {computed, ref} from "vue"
 
 export const inputProps = {
     modelValue: {
@@ -37,31 +37,31 @@ export const inputProps = {
         type: String,
         default: "n"
     }
-};
+}
 export const inputEmit = [
     "update:modelValue",
     "input",
     "clear",
     "blur",
     "focus",
-];
+]
 
 export const useInput = (props) => {
-    const disabled = computed(() => props.disabled);
-    const placeholder = computed(() => props.placeholder);
-    const clearable = computed(() => props.clearable);
+    const disabled = computed(() => props.disabled)
+    const placeholder = computed(() => props.placeholder)
+    const clearable = computed(() => props.clearable)
 
-    const showPassword = computed(() => props.showPassword);
-    const passwordVisible = ref(false);
-    const readonly = computed(() => props.readonly);
+    const showPassword = computed(() => props.showPassword)
+    const passwordVisible = ref(false)
+    const readonly = computed(() => props.readonly)
 
     const type = computed(() => {
         return showPassword.value
             ? passwordVisible.value
                 ? "text"
                 : "password"
-            : props.type;
-    });
+            : props.type
+    })
 
     const classes = computed(() => ({
         "is-disabled": disabled.value,
@@ -72,13 +72,13 @@ export const useInput = (props) => {
         "jw-input-suffix":
             showPassword.value || clearable.value || props.suffixIcon,
         "jw-input-prefix": props.prefixIcon,
-    }));
+    }))
 
     const nativeInputValue = computed(() =>
         props.modelValue === null || props.modelValue === undefined
             ? ""
             : String(props.modelValue)
-    );
+    )
     return {
         disabled,
         classes,
@@ -91,5 +91,5 @@ export const useInput = (props) => {
         prefixIcon: props.prefixIcon,
         readonly,
         nativeInputValue,
-    };
-};
+    }
+}

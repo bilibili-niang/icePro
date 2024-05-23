@@ -33,24 +33,24 @@
 </template>
 
 <script setup>
-import {onMounted, reactive, ref, useSlots, watch} from "vue";
-import {findColor} from "../../hooks/tools.js";
+import {onMounted, reactive, ref, useSlots, watch} from "vue"
+import {findColor} from "../../hooks/tools.js"
 
-const {header, body, bottom} = useSlots();
-let showBottom = ref(false);
+const {header, body, bottom} = useSlots()
+let showBottom = ref(false)
 
-const bottomContent = ref("");
-let bottomHeight = ref("");
+const bottomContent = ref("")
+let bottomHeight = ref("")
 watch(showBottom,
     (newVal) => {
       if (!newVal) {
-        bottomContent.value.style.height = 0;
-        bottomContent.value.style.opacity = 0;
+        bottomContent.value.style.height = 0
+        bottomContent.value.style.opacity = 0
       } else {
-        bottomContent.value.style.height = bottomHeight.value * 1 + "px";
-        bottomContent.value.style.opacity = 1;
+        bottomContent.value.style.height = bottomHeight.value * 1 + "px"
+        bottomContent.value.style.opacity = 1
       }
-    });
+    })
 
 const props = defineProps({
   type: {
@@ -73,38 +73,38 @@ const props = defineProps({
     type: Array,
     default: () => ["收起", "展开"]
   }
-});
+})
 
-let themeColor = reactive({});
+let themeColor = reactive({})
 if (props.color) {
-  const colorObj = findColor(props.color);
+  const colorObj = findColor(props.color)
   themeColor = {
     color: `rgba(${colorObj.RGB[0]},${colorObj.RGB[1]},${colorObj.RGB[2]},1)`,
     hoverColor: `rgba(${colorObj.RGB[0]},${colorObj.RGB[1]},${colorObj.RGB[2]},0.5)`
-  };
+  }
 }
 
 const init = () => {
-  bottomHeight.value = bottomContent.value.scrollHeight;
+  bottomHeight.value = bottomContent.value.scrollHeight
   if (showBottom.value) {
-    bottomContent.value.style.height = bottomHeight.value * 1 + "px";
+    bottomContent.value.style.height = bottomHeight.value * 1 + "px"
   } else {
-    bottomContent.value.style.height = 0;
-    bottomContent.value.style.opacity = 0;
+    bottomContent.value.style.height = 0
+    bottomContent.value.style.opacity = 0
   }
-};
+}
 
 onMounted(() => {
   if (bottom) {
-    init();
+    init()
   }
-});
+})
 
 </script>
 <script>
 export default {
   name: "iceCard"
-};
+}
 </script>
 
 <style lang="less" scoped>
