@@ -7,7 +7,7 @@
 
 > [npm地址](https://www.npmjs.com/package/icepro)
 
-usage:
+使用:
 
 ```shell
 // shell
@@ -37,7 +37,10 @@ app
 
 > 更新日志
 
-__*2024.05.21*__
+__**2024.05.30**__  
+新增`tabs`组件
+
+__*2024.05.21*__  
 修改`ice-tag`组件的hover样式
 
 __*2024.03.21*__  
