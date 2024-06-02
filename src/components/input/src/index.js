@@ -75,9 +75,7 @@ export const useInput = (props) => {
     }))
 
     const nativeInputValue = computed(() =>
-        props.modelValue === null || props.modelValue === undefined
-            ? ""
-            : String(props.modelValue)
+        props.modelValue === null || props.modelValue === undefined ? "" : String(props.modelValue)
     )
     return {
         disabled,

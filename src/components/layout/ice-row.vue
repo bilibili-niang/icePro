@@ -1,7 +1,5 @@
 <template>
-  <div :class="{center: center}" :style="{
-    'width': width
-  }" class='ice-row'>
+  <div :class="['ice-row',{center: center},flexWrap&&'flex-wrap']" :style="{'width': width}">
     <slot></slot>
   </div>
 </template>
@@ -16,6 +14,10 @@ defineProps({
   width: {
     type: String,
     default: "100%"
+  },
+  flexWrap: {
+    type: Boolean,
+    default: false
   }
 })
 </script>
