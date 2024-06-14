@@ -34,5 +34,3 @@ shrinkBar
     </shrinkBar>
   </container>
 </template>
-<script setup>
-import ShrinkBar from '@/components/layout/shrinkBar.vue'</script>
