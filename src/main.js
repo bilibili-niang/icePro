@@ -3,7 +3,7 @@ import App from "./App.vue"
 import "./assets/common.less"
 import route from "./router/index"
 import icepro from "../index"
-import {findColor} from "./hooks/tools.js"
+import {findColor} from "./utils/tools.js"
 
 const app = createApp(App)
 

@@ -34,7 +34,7 @@
 
 <script setup>
 import {onMounted, reactive, ref, useSlots, watch} from "vue"
-import {findColor} from "../../hooks/tools.js"
+import {findColor} from "../../utils/tools.js"
 
 const {header, body, bottom} = useSlots()
 let showBottom = ref(false)

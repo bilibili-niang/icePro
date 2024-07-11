@@ -28,7 +28,7 @@ import colorSelector from "./src/components/colorSelector/index.js"
 import inlineStyle from "./src/components/editor/inlineStyle.vue"
 import iceTabs from "./src/components/tabs/index.js"
 import iceTabItem from "./src/components/tabItem"
-import {findColor} from "./src/hooks/tools.js"
+import {findColor} from "./src/utils/tools.js"
 
 findColor.activeColor = "#fba414"
 

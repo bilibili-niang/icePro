@@ -9,7 +9,7 @@
 </template>
 
 <script setup>
-import { findColor } from '../../hooks/tools.js'
+import { findColor } from '../../utils/tools.js'
 
 defineProps({
   type: {

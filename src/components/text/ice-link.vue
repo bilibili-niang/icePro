@@ -12,7 +12,7 @@
 </template>
 
 <script setup>
-import { findColor } from '../../hooks/tools'
+import { findColor } from '../../utils/tools'
 
 defineProps({
   size: {

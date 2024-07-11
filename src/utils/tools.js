@@ -13,7 +13,6 @@ colorsMap.forEach(item => {
 /**
  * 通过json返回对应的颜色信息
  * 需要判断 深色/浅色 模式
- * Author: 张嘉凯
  * Date: 2023/7/26
  * Time: 11:09
  */
@@ -28,7 +27,6 @@ const findColor = function (pinyin) {
 }
 /**
  * 复制
- * Author: 张嘉凯
  * Date: 2023/7/26
  * Time: 15:01
  */

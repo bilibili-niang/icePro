@@ -2,39 +2,38 @@
 // less变量
 // 字体
 
-body{
+body {
   .normalFontFace();
 }
 
-.normalFontFace{
+.normalFontFace {
   font-family: 'PingFangSC', sans-serif;
 }
 
 /* 设置 h1-h6 标签使用 PingFangSC.ttf 字体 */
-h1, h2, h3, h4, h5, h6{
+h1, h2, h3, h4, h5, h6 {
   .normalFontFace();
 }
 
 /* 设置 p 标签使用 PingFangSC.ttf 字体 */
-p{
+p {
   .normalFontFace();
 }
 
 /* 设置 a 标签使用 PingFangSC.ttf 字体 */
-a{
+a {
   .normalFontFace();
 }
 
 /* 设置 strong 标签使用 PingFangSC.ttf 字体 */
-strong{
+strong {
   .normalFontFace();
 }
 
 /* 设置 em 标签使用 PingFangSC.ttf 字体 */
-em{
+em {
   .normalFontFace();
 }
-
 
 @btn-skyblue: var(--color);
 @btn-skyblue-bleak: var(--color-bleak);
@@ -42,8 +41,8 @@ em{
 // 主题颜色
 @themeColor: @btn-skyblue;
 // 檀紫
-@themeActiveColor: rgba(56, 25, 36, 1);
-@themeActiveColor-bleak: rgba(56, 25, 36, .8);
+@themeActiveColor: #a7535a;
+@themeActiveColor-bleak: #a7535a;
 @themeColor-bleak: @btn-skyblue-bleak;
 @themeColor-bleak-bleak: @fontColor-bleak-bleak;
 // 主题色翻转
@@ -108,7 +107,7 @@ em{
 
 // 字体颜色
 // 主题字体颜色,锌灰
-html.light{
+html.light {
   --color: rgba(122, 115, 116, 1);
   --colorHover: rgba(31, 32, 36, 1);
   --color-bleak: rgba(122, 115, 116, 1);
@@ -117,7 +116,7 @@ html.light{
 }
 
 // 深色模式
-html.dark{
+html.dark {
   --color: rgba(218, 212, 203, 1);
   --colorHover: rgba(122, 115, 116, .9);
   --color-bleak: rgba(218, 212, 203, .6);
