@@ -26,7 +26,8 @@
     "icepro"
   ],
   "dependencies": {
-    "cz-git": "^1.9.1"
+    "cz-git": "^1.9.1",
+    "vue-draggable-plus": "^0.5.2"
   },
   "author": "iceStone",
   "license": "MIT",

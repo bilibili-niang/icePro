@@ -103,6 +103,10 @@ const routes = [
       {
         path: "tabs",
         component: () => import("../pages/doc/tabs/index.vue"),
+      },
+      {
+        path: "dragAndDrop",
+        component: () => import("../pages/doc/dragAndDrop/index.vue"),
       }
     ],
   },

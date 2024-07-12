@@ -32,145 +32,149 @@
 </template>
 
 <script setup>
-import {useRoute, useRouter} from "vue-router"
-import {ref, watch} from "vue"
+import { useRoute, useRouter } from 'vue-router'
+import { ref, watch } from 'vue'
 
 const items = [
   {
-    text: "基础组件",
+    text: '基础组件',
     children: [
       {
-        text: "button 按钮",
-        href: "/doc/button"
+        text: 'button 按钮',
+        href: '/doc/button'
       },
       {
-        text: "colors 颜色",
-        href: "/doc/button/colors"
+        text: 'colors 颜色',
+        href: '/doc/button/colors'
       },
       {
-        text: "tools 工具",
-        href: "/doc/tools"
+        text: 'tools 工具',
+        href: '/doc/tools'
       },
       {
-        text: "split 分割线",
-        href: "/doc/split"
+        text: 'split 分割线',
+        href: '/doc/split'
       },
       {
-        text: "card 卡片",
-        href: "/doc/card"
+        text: 'card 卡片',
+        href: '/doc/card'
       },
       {
-        text: "text 文字",
-        href: "/doc/text"
+        text: 'text 文字',
+        href: '/doc/text'
       },
       {
-        text: "tag 标记",
-        href: "/doc/tag"
+        text: 'tag 标记',
+        href: '/doc/tag'
       },
       {
-        text: "link 链接",
-        href: "/doc/link"
+        text: 'link 链接',
+        href: '/doc/link'
       },
       {
-        text: "header 标题",
-        href: "/doc/header"
+        text: 'header 标题',
+        href: '/doc/header'
       },
       {
-        text: "colorSelector 颜色选择器",
-        href: "/doc/colorSelector"
+        text: 'colorSelector 颜色选择器',
+        href: '/doc/colorSelector'
       }
     ]
   },
   {
-    text: "布局容器",
+    text: '布局容器',
     children: [
       {
-        text: "基础",
-        href: "/doc/container"
+        text: '基础',
+        href: '/doc/container'
       },
       {
-        text: "图片预览",
-        href: "/doc/imgPreview"
+        text: '图片预览',
+        href: '/doc/imgPreview'
       },
       {
-        text: "drawer 抽屉",
-        href: "/doc/drawer"
+        text: 'drawer 抽屉',
+        href: '/doc/drawer'
       },
       {
         text: 'tabs 标签页',
         href: '/doc/tabs'
+      },
+      {
+        text: 'dragAndDrop 拖拽',
+        href: '/doc/dragAndDrop'
       }
     ]
   },
   {
-    text: "反馈",
+    text: '反馈',
     children: [
       {
-        text: "message 消息弹窗",
-        href: "/doc/message"
-      },
+        text: 'message 消息弹窗',
+        href: '/doc/message'
+      }
 
     ]
   },
   {
-    text: "头像",
+    text: '头像',
     children: [
       {
-        text: "avatar",
-        href: "/doc/avatar"
+        text: 'avatar',
+        href: '/doc/avatar'
       }
     ]
   },
   {
-    text: "菜单容器",
+    text: '菜单容器',
     children: [
       {
-        text: "导航菜单",
-        href: "/doc/menu"
+        text: '导航菜单',
+        href: '/doc/menu'
       },
       {
-        text: "收缩栏",
-        href: "/doc/shrinkBar"
+        text: '收缩栏',
+        href: '/doc/shrinkBar'
+      }
+    ]
+  },
+  {
+    text: '输入组件',
+    children: [
+      {
+        text: 'input 输入框',
+        href: '/doc/input'
       },
-    ]
-  },
-  {
-    text: "输入组件",
-    children: [
       {
-        text: "input 输入框",
-        href: "/doc/input"
-      },
-      {
-        text: "textarea 输入区域",
-        href: "/doc/textarea"
+        text: 'textarea 输入区域',
+        href: '/doc/textarea'
       }
     ]
   },
   {
-    text: "选择器",
+    text: '选择器',
     children: [
       {
-        text: "selector 选择器",
-        href: "/doc/selector"
+        text: 'selector 选择器',
+        href: '/doc/selector'
       }
     ]
   },
   {
-    text: "数据展示",
+    text: '数据展示',
     children: [
       {
-        text: "pagination 分页",
-        href: "/doc/pagination"
+        text: 'pagination 分页',
+        href: '/doc/pagination'
       }
     ]
   },
   {
-    text: "扩展",
+    text: '扩展',
     children: [
       {
-        text: "inlineStyle 行内样式",
-        href: "/doc/inlineStyle"
+        text: 'inlineStyle 行内样式',
+        href: '/doc/inlineStyle'
       }
     ]
   }
@@ -186,17 +190,17 @@ const goHref = (href) => {
 }
 
 const route = useRoute()
-let nowPath = ref("")
+let nowPath = ref('')
 nowPath.value = route.path
 watch(() => route.path,
-    (newVal) => {
-      nowPath.value = newVal
-    })
+  (newVal) => {
+    nowPath.value = newVal
+  })
 </script>
 
 <script>
 export default {
-  name: "docLeft"
+  name: 'docLeft'
 }
 </script>
 
