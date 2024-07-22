@@ -1,19 +1,19 @@
 <template>
   <div class="tab-item">
     <ice-column>
-      <slot/>
+      <slot />
     </ice-column>
   </div>
 </template>
 
 <script>
 export default {
-  name: "iceTabItem"
+  name: 'iceTabItem'
 }
 </script>
 
 <script setup>
-import {defineProps} from 'vue'
+import { defineProps } from 'vue'
 
 defineProps({
   name: {
@@ -32,3 +32,8 @@ defineProps({
   }
 })
 </script>
+<style lang="less" scoped>
+.tab-item {
+  width: 100%;
+}
+</style>
