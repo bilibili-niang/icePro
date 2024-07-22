@@ -1,1 +1,1 @@
-export dragger from './src'
+export { default } from './src'

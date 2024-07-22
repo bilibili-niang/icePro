@@ -27,6 +27,7 @@
   ],
   "dependencies": {
     "cz-git": "^1.9.1",
+    "vue-draggable-next": "^2.2.1",
     "vue-draggable-plus": "^0.5.2"
   },
   "author": "iceStone",

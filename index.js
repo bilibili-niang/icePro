@@ -29,7 +29,8 @@ import inlineStyle from './src/components/editor/inlineStyle.vue'
 import iceTabs from './src/components/tabs/index.js'
 import iceTabItem from './src/components/tabItem'
 import { findColor } from './src/utils/tools.js'
-import dragger from './src/components/dragger'
+import iceDragger from './src/components/dragger'
+import empty from './src/components/empty'
 
 findColor.activeColor = '#fba414'
 
@@ -60,7 +61,8 @@ const components = {
   inlineStyle,
   iceTabs,
   iceTabItem,
-  dragger
+  iceDragger,
+  empty
 }
 
 export {
@@ -90,7 +92,8 @@ export {
   inlineStyle,
   iceTabs,
   iceTabItem,
-  dragger
+  iceDragger,
+  empty
 }
 
 function install(app) {

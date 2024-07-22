@@ -1,15 +1,17 @@
 <script>
 export default {
-  name: 'dragger'
+  name: 'iceDragger'
 }
 </script>
 <script setup>
-import { ref } from 'vue'
+import { VueDraggableNext as draggable } from 'vue-draggable-next'
+import { watch, toRefs } from 'vue'
+import { empty } from '../../../../index.js'
 
 const props = defineProps({
   list: {
     type: Array,
-    default: () => []
+    default: () => [{}]
   },
   disabled: {
     type: Boolean,
@@ -28,37 +30,63 @@ const props = defineProps({
     default: () => ({})
   }
 })
-const list = ref([])
-const init = () => {
-  list.value = props.list
-}
-init()
+
+
+const data = toRefs(props)
+const emits = defineEmits(['update:data'])
+watch(() => data.value, (val) => {
+  emits('update:data', val)
+})
+console.log('data:')
+console.log(data.list.value)
+
 </script>
 
 <template>
   <div class="ice-dragger">
-    <VueDraggable
+    <div class="empty" v-if="data.list.length ===0">
+      <empty />
+    </div>
+    <draggable
+      v-else
       ref="el"
-      v-model="list"
+      v-model="data.list"
       :disabled="disabled"
       :animation="150"
       ghostClass="ghost"
-      class="flex flex-col gap-2 p-4 w-300px h-300px m-auto bg-gray-500/5 rounded"
+      class="draggable"
       @start="onStart"
       @update="onUpdate"
       @end="onEnd"
     >
       <div
-        v-for="item in list"
-        :key="item.id"
-        class="cursor-move h-30 bg-gray-500/5 rounded p-3"
+        draggable
+        v-for="(item,index) in data.list"
+        :key="index"
+        class="cursor-move"
       >
-        {{ item.name }}
+        {{ item?.name }}
       </div>
-    </VueDraggable>
+    </draggable>
   </div>
 </template>
 
 <style scoped lang="less">
+.draggable {
+  display: flex;
+  height: auto;
+  padding: 10px;
+  flex-direction: column;
 
+  .cursor-move {
+    display: flex;
+    height: fit-content;
+    padding: 10px;
+    color: @themeActiveColor;
+    min-height: 20px;
+    background: gray;
+    margin-top: 10px;
+  }
+
+}
 </style>
