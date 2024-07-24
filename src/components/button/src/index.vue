@@ -18,13 +18,13 @@
 </template>
 
 <script setup>
-import {findColor} from "../../../../index.js"
+import { findColor } from '../../../../index.js'
 
-const emit = defineEmits(["click"])
+const emit = defineEmits(['click'])
 const props = defineProps({
   type: {
     type: String,
-    default: "primary"
+    default: 'primary'
   },
   hover: {
     type: Boolean,
@@ -35,15 +35,15 @@ const props = defineProps({
   },
   color: {
     type: String,
-    default: ""
+    default: ''
   },
   title: {
     type: String,
-    default: ""
+    default: ''
   },
   fill: {
     type: String,
-    default: ""
+    default: ''
   },
   round: {
     type: Boolean,
@@ -67,12 +67,12 @@ const clickCallBack = (evt) => {
   if (props.disable) {
     return void 0
   }
-  emit("click", evt)
+  emit('click', evt)
 }
 </script>
 <script>
 export default {
-  name: "iceButton",
+  name: 'iceButton'
 }
 </script>
 <style lang="less" scoped>
