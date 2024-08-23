@@ -1,9 +1,12 @@
 <template>
   <div class="ice-tabs ice-column">
     <ice-row>
-      <template v-for="(item,index) in titles" :key="index">
-        <ice-tag @click="titleChange(item)" :color="item===modelValue?'jucheng':''">
-          {{ item }}
+      <template v-for="(item,index) in items" :key="index">
+        <ice-tag
+          @click="titleChange(item.label)"
+          :color="item.label===modelValue?'jucheng':''"
+        >
+          {{ item.name }}
         </ice-tag>
       </template>
     </ice-row>
@@ -38,11 +41,11 @@ const emits = defineEmits(['update:modelValue'])
 // 这里获取到的是默认插槽的vnode，但拿不到对应的dom实例
 const slots = useSlots().default()
 
-const titles = slots.map((tag) => tag.props.label)
-
 const current = computed(() => {
   return slots.find((tag) => tag.props.label === props.modelValue)
 })
+
+const items = computed(() => slots.map(it => it.props))
 
 const init = () => {
   slots.forEach((tag) => {
@@ -53,9 +56,7 @@ const init = () => {
 }
 
 // 更新当前激活的tab
-const titleChange = (title) => {
-  emits('update:modelValue', title)
-}
+const titleChange = (label) => emits('update:modelValue', label)
 
 init()
 
