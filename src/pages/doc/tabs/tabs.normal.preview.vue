@@ -12,7 +12,7 @@ tabs-normal
         <ice-card :border="false">
           <template v-slot:header>
             <ice-title>
-              白日梦想家
+              这是一段话,白日梦想家
             </ice-title>
           </template>
           <template v-slot:body>
@@ -32,7 +32,7 @@ tabs-normal
         </ice-text>
       </ice-tab-item>
 
-      <ice-tab-item label="second" name="I GOT SMOKE">
+      <ice-tab-item label="third" name="I GOT SMOKE">
         <ice-text>
           满身烟味的我 走路带上点浮夸
         </ice-text>
@@ -45,7 +45,7 @@ tabs-normal
 </template>
 
 <script setup>
-import {ref} from 'vue'
+import { ref } from 'vue'
 
-const activeName = ref('白日梦想家')
+const activeName = ref('first')
 </script>
