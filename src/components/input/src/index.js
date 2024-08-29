@@ -2,7 +2,8 @@ import { computed, ref } from 'vue'
 
 export const inputProps = {
   modelValue: {
-    type: [Number, String]
+    type: String,
+    default: ''
   },
   placeholder: {
     type: String
@@ -19,15 +20,11 @@ export const inputProps = {
     type: Boolean,
     default: false
   },
-  /*type: {
-    type: String,
-    default: 'text'
-  },*/
   suffixIcon: {
-    type: [String, Object]
+    type: String
   },
   prefixIcon: {
-    type: [String, Object]
+    type: String
   },
   readonly: {
     type: Boolean,
@@ -55,19 +52,10 @@ export const useInput = (props) => {
   const passwordVisible = ref(false)
   const readonly = computed(() => props.readonly)
 
-  /*const type = computed(() => {
-    return showPassword.value ? passwordVisible.value
-        ? 'text'
-        : 'password'
-      : props.type
-  })*/
-
   const classes = computed(() => ({
     'is-disabled': disabled.value,
     'is-clearable': clearable.value,
     'show-password': showPassword.value,
-    'jw-input': type.value !== 'textarea',
-    'jw-textarea': type.value === 'textarea',
     'jw-input-suffix':
       showPassword.value || clearable.value || props.suffixIcon,
     'jw-input-prefix': props.prefixIcon
@@ -81,7 +69,6 @@ export const useInput = (props) => {
     classes,
     clearable,
     showPassword,
-    // type,
     passwordVisible,
     placeholder,
     suffixIcon: props.suffixIcon,

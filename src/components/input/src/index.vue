@@ -1,8 +1,15 @@
 <template>
-  <div :class="[nativeInputValue?'inputNowait':'',
-  'size'+size
-  ]" class="ice-input">
-    <div v-if="placeholder" :class="{nowait:nativeInputValue}" class="wait">
+  <div
+    :class="['ice-input',
+    nativeInputValue?'inputNowait':'',
+    'size'+size,
+    disabled&&'disabled'
+   ]"
+  >
+    <div
+      v-if="placeholder"
+      :class="{nowait:nativeInputValue}"
+      class="wait">
       {{ placeholder }}
     </div>
     <input
@@ -16,7 +23,6 @@
       @focus="handleFocus"
       @input="handleChange"
     />
-    <!--:type="type?type:null"-->
   </div>
 </template>
 
@@ -29,17 +35,12 @@ const emits = defineEmits(inputEmit)
 
 const {
   disabled,
-  // type,
   placeholder,
   readonly,
   nativeInputValue,
   size
 } = useInput(props, emits)
 
-/*
-console.log('type')
-console.log(type)
-*/
 
 const input = document.querySelector('input')
 const textarea = document.querySelector('textarea')
@@ -106,7 +107,19 @@ export default {
 </script>
 
 <style lang="less" scoped>
-@import "../../../assets/variables.less";
+
+.disabled {
+  &:after {
+    content: '';
+    position: absolute;
+    width: 110%;
+    height: 1px;
+    background: var(--color-bleak);
+    bottom: 40%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
 
 .ice-input {
   position: relative;
@@ -121,7 +134,6 @@ export default {
     position: absolute;
     top: 30%;
     left: .3rem;
-    //z-index: -3;
     transition-duration: @time-n;
     font-size: @fontSize-n;
     color: @fontColor-bleak;
@@ -161,8 +173,8 @@ export default {
   border-bottom: @themeColor 1px solid;
   border-left: @themeColor 1px solid;
   border-right: @themeColor 1px solid;
-  border-bottom-left-radius: @radio-n;
-  border-bottom-right-radius: @radio-n;
+  border-bottom-left-radius: @radio-l;
+  border-bottom-right-radius: @radio-l;
 
   input {
     border: none;
