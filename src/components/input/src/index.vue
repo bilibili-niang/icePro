@@ -6,54 +6,59 @@
       {{ placeholder }}
     </div>
     <input
-        ref="input"
-        :disabled="disabled"
-        :readonly="readonly"
-        :type="type"
-        :value="nativeInputValue"
-        autocomplete="off"
-        class="jw-input-inner"
-        @blur="handleBlur"
-        @focus="handleFocus"
-        @input="handleChange"
+      ref="input"
+      :disabled="disabled"
+      :readonly="readonly"
+      :value="nativeInputValue"
+      autocomplete="off"
+      class="jw-input-inner"
+      @blur="handleBlur"
+      @focus="handleFocus"
+      @input="handleChange"
     />
+    <!--:type="type?type:null"-->
   </div>
 </template>
 
 <script setup>
-import {nextTick} from "vue"
-import {inputEmit, inputProps, useInput} from "./index.js"
+import { nextTick } from 'vue'
+import { inputEmit, inputProps, useInput } from './index.js'
 
 const props = defineProps(inputProps)
 const emits = defineEmits(inputEmit)
 
 const {
   disabled,
-  type,
+  // type,
   placeholder,
   readonly,
   nativeInputValue,
   size
 } = useInput(props, emits)
 
-const input = document.querySelector("input")
-const textarea = document.querySelector("textarea")
+/*
+console.log('type')
+console.log(type)
+*/
+
+const input = document.querySelector('input')
+const textarea = document.querySelector('textarea')
 const inputOrTextarea = () => input.value || textarea.value
 
 // 监听输入
 const handleChange = (e) => {
   const value = e.target.value
   if (value === nativeInputValue.value) return
-  emits("update:modelValue", value)
-  emits("input", value)
+  emits('update:modelValue', value)
+  emits('input', value)
 }
 
 const handleBlur = (e) => {
-  emits("blur", e)
+  emits('blur', e)
 }
 
 const handleFocus = (e) => {
-  emits("focus", e)
+  emits('focus', e)
 }
 
 const focus = () => {
@@ -89,14 +94,14 @@ defineExpose({
   textarea,
   blur,
   focus,
-  select,
+  select
 })
 
 </script>
 
 <script>
 export default {
-  name: "ice-input"
+  name: 'ice-input'
 }
 </script>
 

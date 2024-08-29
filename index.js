@@ -112,6 +112,9 @@ const icepro = {
 icepro.install = install
 
 export default icepro
+
+console.log('icepro-----------')
+
 // 工具
 
 export {
