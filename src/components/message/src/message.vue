@@ -17,9 +17,9 @@
 
 
 <script setup>
-import {onMounted, onUnmounted, ref} from "vue"
-import {findColor} from "../../../utils/tools.js"
-import iceText from "../../text/ice-text.vue"
+import { onMounted, onUnmounted, ref } from 'vue'
+import { findColor } from '../../../utils/tools.js'
+import iceText from '../../text/ice-text.vue'
 import iceButton from '../../button/index.js'
 
 const visible = ref(false)
@@ -32,43 +32,43 @@ const props = defineProps({
   },
   id: {
     type: String,
-    default: "",
+    default: ''
   },
   offset: {
     type: Number,
-    default: 100,
+    default: 100
   },
   zIndex: {
     type: Number,
-    default: 0,
+    default: 0
   },
   onClose: {
     type: Function,
-    required: false,
+    required: false
   },
   type: {
     type: String,
-    default: "info",
+    default: 'info'
   },
   message: {
     type: [String, Object],
-    default: "",
+    default: ''
   },
   showClose: {
     type: Boolean,
-    default: true,
+    default: true
   },
   center: {
     type: Boolean,
-    default: false,
+    default: false
   },
   color: {
     type: String,
-    default: "",
+    default: ''
   }
 })
 
-const emits = defineEmits(["destroy", "close"])
+const emits = defineEmits(['destroy', 'close'])
 
 function startTimer() {
   // 是否设置了延迟关闭的时间
@@ -81,9 +81,9 @@ function startTimer() {
   }
 }
 
-function keydown({code}) {
+function keydown({ code }) {
   // 键盘按下esc触发
-  if (code === "Escape") {
+  if (code === 'Escape') {
     // 如果元素显示
     if (visible.value) {
       close()
@@ -97,23 +97,23 @@ function keydown({code}) {
 onMounted(() => {
   startTimer()
   visible.value = true
-  document.addEventListener("keydown", keydown)
+  document.addEventListener('keydown', keydown)
 })
 // 销毁时取消监听
 onUnmounted(() => {
-  document.removeEventListener("keydown", keydown)
+  document.removeEventListener('keydown', keydown)
 })
 
 function close() {
   visible.value = false
-  emits("close")
+  emits('close')
 }
 
 </script>
 
 <script>
 export default {
-  name: "iceMessage",
+  name: 'iceMessage'
 }
 </script>
 <style lang="less">

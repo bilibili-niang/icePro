@@ -2,7 +2,7 @@
   <ice-card :border="false">
     <template v-slot:header>
       <ice-header noselect>
-        {{ component.__sourceCodeTitle }}
+        {{ component?.__sourceCodeTitle }}
       </ice-header>
     </template>
     <template v-slot:body>
@@ -61,7 +61,6 @@ pre::-webkit-scrollbar {
 }
 
 pre {
-  border-radius: @radio-l;
   text-shadow: none;
   width: 100%;
   padding: 0 !important;

@@ -31,6 +31,7 @@ import iceTabItem from './src/components/tabItem'
 import { findColor } from './src/utils/tools.js'
 import iceDragger from './src/components/dragger'
 import empty from './src/components/empty'
+import iceMessageBox from './src/components/messageBox'
 
 findColor.activeColor = '#fba414'
 
@@ -63,6 +64,7 @@ const components = {
   iceTabItem,
   iceDragger,
   empty
+  // iceMessageBox
 }
 
 export {
@@ -93,7 +95,8 @@ export {
   iceTabs,
   iceTabItem,
   iceDragger,
-  empty
+  empty,
+  iceMessageBox
 }
 
 function install(app) {

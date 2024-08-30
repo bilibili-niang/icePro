@@ -7,7 +7,6 @@
   </div>
   <ul class="list-ul listContainer">
     <li v-for="item in items" :key="item.text">
-      <!--有子菜单-->
       <div v-if="item.children" class="ice-menu-child">
         <ice-title noselect>
           {{ item.text }}
@@ -15,14 +14,13 @@
         <ul class='list-children-ul'>
           <li v-for="(it, itIndex) in item.children" :key="itIndex">
             <ice-button v-if="it.href" :border="false" :href="it.href"
-                        :type=" nowPath===it.href ?'danger':'primary'" @click="goHref(it.href)">
+                        :type=" nowPath===it.href ?'danger activeUrl':'primary'" @click="goHref(it.href)">
               {{ it.text }}
             </ice-button>
             <ice-text v-else noselect>{{ it.text }}</ice-text>
           </li>
         </ul>
       </div>
-      <!--无子菜单-->
       <div v-else>
         {{ item.text }}
       </div>
@@ -112,6 +110,10 @@ const items = [
       {
         text: 'message 消息弹窗',
         href: '/doc/message'
+      },
+      {
+        text: 'messageBox 消息确认',
+        href: '/doc/iceMessageBox'
       }
 
     ]
@@ -206,17 +208,24 @@ export default {
 
 <style lang="less" scoped>
 @import "@/assets/variables.less";
-
 .active {
   color: @themeColor;
   border-bottom: @themeColor 1px solid;
 }
-
 .list-item-child {
   padding-left: 1rem;
 }
-
 .listContainer {
   height: fit-content;
+}
+.activeUrl {
+  position: relative;
+  &::before {
+    position: absolute;
+    content: '>>>';
+    left: -30px;
+    top: 0;
+    color: @themeColor;
+  }
 }
 </style>

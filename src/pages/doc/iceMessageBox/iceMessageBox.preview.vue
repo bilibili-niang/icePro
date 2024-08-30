@@ -1,0 +1,26 @@
+<preview>
+iceMessageBox
+</preview>
+
+<template>
+  <ice-text>消息弹窗组件</ice-text>
+
+  <container>
+    <ice-column>
+      <ice-button
+        @click="showPreview"
+      >看看消息
+      </ice-button>
+    </ice-column>
+  </container>
+
+</template>
+<script lang="ts" setup>
+import { iceMessageBox } from '../../../../index'
+
+const showPreview = () => {
+  iceMessageBox()
+
+}
+
+</script>

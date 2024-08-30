@@ -4,239 +4,202 @@
 @import './variables.less';
 // 动画
 @import "./animate.less";
-
-html.light{
+html.light {
   background-color: @bac;
-  //transition: .5s;
-  div.pre-code{
-    background-color: @fontColor-bleak-bleak !important;
+  transition: .5s;
+  div.pre-code {
+    border-radius: @radio-l;
+    background-color: rgba(0, 0, 0, .5) !important;
   }
-
-  pre{
+  pre {
     background-color: @bac !important;
   }
 }
-
-html.dark{
+html.dark {
   background-color: @bac-dark;
-  //transition: .5s;
-  div.pre-code{
-    background-color: @bac-dark-bleak !important;
+  transition: .5s;
+  div.pre-code {
+    border-radius: @radio-l;
+    background-color: #ffffff !important;
   }
-
-  pre{
+  pre {
     background-color: @bac-dark-bleak !important;
   }
 }
-
+div.pre-code {
+  padding: @p-normal;
+}
 h4,
-p{
+p {
   //font-family: '宋体';
   font-weight: 650;
 }
-
-.noselect{
+.noselect {
   user-select: none;
 }
-
 // 动画持续时间 small
-.btn-time-s{
+.btn-time-s {
   transition: .5s;
 }
-
-html{
+html {
   font-size: 20px;
 }
-
-h4{
+h4 {
   margin-top: @m-small;
   font-size: 1.4rem;
   margin-bottom: .3rem;
   color: @fontColor;
 }
-
-p{
+p {
   font-size: 1rem;
   color: @fontColor;
   margin: @m-normal;
 }
-
-.ice-column{
+.ice-column {
   display: flex;
   flex-direction: column;
   margin-bottom: @m-small;
 }
-
-.ice-row{
+.ice-row {
   display: flex;
   flex-direction: row;
   margin-bottom: @m-small;
 }
-
-.item-row{
+.item-row {
   display: flex;
   flex-direction: row;
   margin: @m-small;
 }
-
-.item-column{
+.item-column {
   display: flex;
   flex-direction: column;
   margin: @m-small;
 }
-
-.border-normal{
+.border-normal {
   border: @fonColor-dark-bleak 1px solid;
   border-radius: @radio-n;
   padding: @p-normal;
 }
-
 // hover
-.hoverTest{
+.hoverTest {
   background-color: antiquewhite;
   .btn-time-s();
-
-  &:hover{
+  &:hover {
     background-color: aquamarine;
   }
 }
-
 //border
-.border-t{
+.border-t {
   border-top: @themeColor 1px solid;
 }
-
-.border-b{
+.border-b {
   border-bottom: @themeColor 1px solid;
 }
-
-.border-l{
+.border-l {
   border-left: @themeColor 1px solid;
 }
-
-.border-r{
+.border-r {
   border-right: @themeColor 1px solid;
 }
-
 // border-radio
-.radio-none{
+.radio-none {
   border-radius: 0;
 }
-
-.radio-s{
+.radio-s {
   border-radius: .3rem;
 }
-
-.radio-m{
+.radio-m {
   border-radius: .5rem;
 }
-
-.radio-l{
+.radio-l {
   border-radius: .8rem;
 }
-
-.round{
+.round {
   border-radius: 50%;
 }
-
 // 布局宽度/高度
 // 宽度100%
-.w100percent{
+.w100percent {
   width: 100%;
 }
-.w9percent{
+.w9percent {
   width: 9%;
 }
-.w10percent{
+.w10percent {
   width: 10%;
 }
-.w15percent{
+.w15percent {
   width: 15%;
 }
-
 // flex布局的类名
 // 允许换行
-.flex-wrap{
+.flex-wrap {
   flex-wrap: wrap;
 }
-
-.flex-sb{
+.flex-sb {
   display: flex;
   justify-content: space-between;
 }
-
-.flexFull{
+.flexFull {
   flex: 1;
 }
-
-.flex-align-center{
+.flex-align-center {
   display: flex;
   align-items: center;
 }
-
-
-.image-n{
+.image-n {
   display: flex;
   width: 5rem;
   height: 5rem;
 }
-
-.image-s{
+.image-s {
   display: flex;
   width: 3rem;
   height: 3rem;
 }
-
 //padding 尺寸
-.p-small{
+.p-small {
   padding: @p-small;
 }
-
-.p-normal{
+.p-normal {
   padding: @p-normal;
 }
-
-.p-large{
+.p-large {
   padding: @p-large;
 }
-
-.p-bottom-n{
+.p-bottom-n {
   padding-bottom: @p-normal;
 }
-
-.p-bottom-l{
+.p-bottom-l {
   padding-bottom: @p-large;
 }
 // margin
-.m-bottom-s{
+.m-bottom-s {
   margin-bottom: @m-small;
 }
-.m-bottom-n{
+.m-bottom-n {
   margin-bottom: @m-normal;
 }
-.m-bottom-l{
+.m-bottom-l {
   margin-bottom: @m-large;
 }
-.margin-lr-s{
+.margin-lr-s {
   margin-left: @m-small;
   margin-right: @m-small;
 }
-.margin-lr-n{
+.margin-lr-n {
   margin-left: @m-normal;
   margin-right: @m-normal;
 }
-.margin-lr-l{
+.margin-lr-l {
   margin-left: @m-large;
   margin-right: @m-large;
 }
-
-
 // ul布局
-.list-column(@direction:column){
+.list-column(@direction:column) {
   display: flex;
   flex-direction: @direction;
-
-  .list-item{
+  .list-item {
     display: flex;
     flex-direction: @direction;
     padding: @p-normal;
@@ -245,130 +208,108 @@ p{
     width: 100%;
   }
 }
-
-.list-row{
+.list-row {
   .list-column(row);
 }
-
 // 文字不换行
-.text-nowrap{
+.text-nowrap {
   white-space: nowrap;
 }
-
 // ice-message的全局配置
-.ice-message-container{
+.ice-message-container {
   position: fixed;
   display: flex;
   flex-direction: column;
   right: 10px;
   top: 10px;
 }
-
 // avtice样式
-.activeLink{
+.activeLink {
   color: @themeColorActive !important;
 }
-
-
 // drawer
-.showDrawer{
+.showDrawer {
   //filter: grayscale(80%);
-  #app{
+  #app {
     filter: blur(.5rem);
   }
 }
-
 // hover时手指呀样式:
-.pointer{
-  &:hover{
+.pointer {
+  &:hover {
     cursor: pointer !important;
   }
 }
-
-.noBackground{
+.noBackground {
   background: none;
 }
-
-.noborder{
+.noborder {
   border: none;
 }
-
-.container{
+.container {
   margin: 0 auto;
 }
-
-.wideContainer{
+.wideContainer {
   margin: 0 auto;
 }
-
 // 自适应
-@media (max-width: 1200px){
-  .wideContainer{
+@media (max-width: 1200px) {
+  .wideContainer {
     max-width: 95vw
   }
-
-  .container{
+  .container {
     max-width: 95vw
   }
 }
-
-@media (min-width: 1200px){
-  .wideContainer{
+@media (min-width: 1200px) {
+  .wideContainer {
     max-width: 70vw;
   }
-
-  .container{
+  .container {
     max-width: 70vw;
   }
 }
-
 // 滚动条样式
-.scrollStyle{
-  &::-webkit-scrollbar{
+.scrollStyle {
+  &::-webkit-scrollbar {
     height: 20px;
     width: 5px;
     background: @bac;
   }
-
-  &::-webkit-scrollbar-thumb{
+  &::-webkit-scrollbar-thumb {
     border-radius: 10px;
     background: @fontColor;
   }
 }
-
-.space-between{
+.space-between {
   justify-content: space-between;
 }
-.justCenter{
+.justCenter {
   justify-content: center;
 }
-
-.align-items-center{
+.align-items-center {
   align-items: center;
 }
-
-.fit-content{
+.fit-content {
   width: fit-content;
 }
-
-.hidden-s{
-  @media (min-width: 1200px){
+.hidden-s {
+  @media (min-width: 1200px) {
     display: none;
   }
 }
-
-.hidden-xs{
-  @media (max-width: 900px){
+.hidden-xs {
+  @media (max-width: 900px) {
     display: none;
   }
 }
 // hover时显示手指
-.finger{
+.finger {
   cursor: pointer;
 }
-.m0{
+.m0 {
   margin: 0 !important;
 }
-.p0{
+.p0 {
   padding: 0 !important;
 }

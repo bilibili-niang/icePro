@@ -43,6 +43,10 @@ const routes = [
         component: () => import("../pages/doc/message/index.vue"),
       },
       {
+        path: "iceMessageBox",
+        component: () => import("../pages/doc/iceMessageBox/index.vue"),
+      },
+      {
         path: "drawer",
         component: () => import("../pages/doc/drawer/index.vue"),
       },
