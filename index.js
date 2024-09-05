@@ -32,6 +32,7 @@ import { findColor } from './src/utils/tools.js'
 import iceDragger from './src/components/dragger'
 import empty from './src/components/empty'
 import iceMessageBox from './src/components/messageBox'
+import { getTheme } from './src/components/theme'
 
 findColor.activeColor = '#fba414'
 
@@ -96,7 +97,8 @@ export {
   iceTabItem,
   iceDragger,
   empty,
-  iceMessageBox
+  iceMessageBox,
+  getTheme
 }
 
 function install(app) {
