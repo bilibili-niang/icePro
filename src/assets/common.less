@@ -8,7 +8,6 @@ html.light {
   background-color: @bac;
   div.pre-code {
     border-radius: @radio-l;
-    background-color: rgba(0, 0, 0, .5) !important;
   }
   pre {
     background-color: @bac !important;
@@ -18,7 +17,6 @@ html.dark {
   background-color: @bac-dark;
   div.pre-code {
     border-radius: @radio-l;
-    background-color: #ffffff !important;
   }
   pre {
     background-color: @bac-dark-bleak !important;
@@ -310,4 +308,15 @@ p {
 }
 .p0 {
   padding: 0 !important;
+}
+// 最小宽度和最小高度
+.min-limted {
+  @media (min-width: 200px) {
+    .min-width-xs {
+      min-width: 300px;
+    }
+    .min-height-xs {
+      min-height: 300px;
+    }
+  }
 }

@@ -33,6 +33,7 @@ import iceDragger from './src/components/dragger'
 import empty from './src/components/empty'
 import iceMessageBox from './src/components/messageBox'
 import { getTheme } from './src/components/theme'
+import misalignedCard from './src/components/misalignedCard'
 
 findColor.activeColor = '#fba414'
 
@@ -64,7 +65,8 @@ const components = {
   iceTabs,
   iceTabItem,
   iceDragger,
-  empty
+  empty,
+  misalignedCard
   // iceMessageBox
 }
 
@@ -98,7 +100,8 @@ export {
   iceDragger,
   empty,
   iceMessageBox,
-  getTheme
+  getTheme,
+  misalignedCard
 }
 
 function install(app) {
@@ -117,8 +120,6 @@ const icepro = {
 icepro.install = install
 
 export default icepro
-
-console.log('icepro-----------')
 
 // 工具
 

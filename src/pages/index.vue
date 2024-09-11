@@ -41,23 +41,36 @@
         <ice-link href="https://github.com/bilibili-niang" title="关注我,带你看更多的18禁">bilibili-niang</ice-link>
       </ice-column>
     </ice-row>
+    <ice-text>
+      <ice-tag color="meiguihui">
+        还有一些有意思的组件
+      </ice-tag>
+
+    </ice-text>
+    <ice-row>
+      <MisalignedCard />
+    </ice-row>
   </div>
 
 </template>
 
 <script setup>
-import imgUrl from "/src/assets/png/logo.png"
+import imgUrl from '/src/assets/png/logo.png'
 import IceLink from '@/components/text/ice-link.vue'
-import IceColumn from '@/components/layout/ice-column.vue'</script>
+import IceColumn from '@/components/layout/ice-column.vue'
+// import MisalignedCard from '@/components/misalignedCard'
+</script>
 
 <style lang='less' scoped>
+.index {
+  transition-duration: @time-n;
+}
 // 小屏
 @media (max-width: 1200px) {
   .index {
-    padding-top: 40%;
+    padding-top: 10%;
   }
 }
-
 //大屏
 @media (min-width: 1200px) {
   .index {

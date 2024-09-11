@@ -19,7 +19,7 @@ iceMessageBox
 import { iceMessageBox } from '../../../../index'
 
 const showPreview = () => {
-  iceMessageBox()
+  iceMessageBox('你好啊')
 
 }
 
