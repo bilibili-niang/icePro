@@ -69,7 +69,7 @@ export default defineConfig({
     }
   },
   build: {
-    outDir: 'dist', // 指定构建输出目录
+    outDir: 'docs', // 指定构建输出目录
     minify: true, // 启用代码压缩
     rollupOptions: {
       // external: ['vue'],
