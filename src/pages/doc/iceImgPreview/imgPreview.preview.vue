@@ -14,13 +14,14 @@ iceImgPreview
 
 <script setup>
 import { ref } from 'vue'
+import bac1 from '@/assets/png/bac1.png'
+import bac2 from '@/assets/png/bac2.png'
+import bac3 from '@/assets/png/bac3.png'
+import ding from '@/assets/png/ding.png'
 
 let imgPreviewRef = ref()
 let imgList = ref([
-  '/src/assets/png/bac1.png',
-  '/src/assets/png/bac2.png',
-  '/src/assets/png/bac3.png',
-  '/src/assets/png/ding.png'
+  bac1, bac2, bac3, ding
 ])
 const showPreview = () => {
   imgPreviewRef.value.show(imgList.value)
