@@ -49,6 +49,10 @@
     </ice-text>
     <ice-row>
       <MisalignedCard />
+      <MusicCard
+        :url="music"
+        class="margin-lr-n"
+      />
     </ice-row>
   </div>
 
@@ -58,7 +62,7 @@
 import imgUrl from '/src/assets/png/logo.png'
 import IceLink from '@/components/text/ice-link.vue'
 import IceColumn from '@/components/layout/ice-column.vue'
-// import MisalignedCard from '@/components/misalignedCard'
+import music from '@/assets/music/jntm.mp3'
 </script>
 
 <style lang='less' scoped>

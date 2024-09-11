@@ -34,6 +34,7 @@ import empty from './src/components/empty'
 import iceMessageBox from './src/components/messageBox'
 import { getTheme } from './src/components/theme'
 import misalignedCard from './src/components/misalignedCard'
+import musicCard from './src/components/musicCard'
 
 findColor.activeColor = '#fba414'
 
@@ -66,7 +67,8 @@ const components = {
   iceTabItem,
   iceDragger,
   empty,
-  misalignedCard
+  misalignedCard,
+  musicCard
   // iceMessageBox
 }
 
@@ -101,7 +103,8 @@ export {
   empty,
   iceMessageBox,
   getTheme,
-  misalignedCard
+  misalignedCard,
+  musicCard
 }
 
 function install(app) {
