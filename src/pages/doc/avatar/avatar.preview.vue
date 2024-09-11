@@ -9,11 +9,13 @@
     <div class="ice-column">
       <ice-avatar :src="imgUrl"></ice-avatar>
       <ice-text>加载出错,使用默认占位符:</ice-text>
-      <ice-avatar src="@/src/assets/png/logo.png"></ice-avatar>
+      <ice-avatar :src="logo"></ice-avatar>
     </div>
   </container>
 </template>
 <script setup>
-import imgUrl from "/src/assets/png/logo.png"</script>
+import logo from '@/assets/png/logo.png'
+import imgUrl from '/src/assets/png/logo.png'
+</script>
 
 
