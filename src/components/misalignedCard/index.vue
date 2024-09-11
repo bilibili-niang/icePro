@@ -76,6 +76,10 @@ const props = defineProps({
   height: {
     type: Number,
     default: 300
+  },
+  color: {
+    type: String,
+    default: '#ffffff'
   }
 })
 
@@ -86,6 +90,10 @@ const articleStyle = computed(() => {
     height: height + 'px'
   }
 })
+const fontColor = computed(() => {
+  const { color } = props
+  return { color }
+})
 
 </script>
 
@@ -95,7 +103,7 @@ const articleStyle = computed(() => {
   >
     <div class="assets">
       <img :src="props.background" alt="" />
-      <h3>{{ props.title }}</h3>
+      <h3 :style="fontColor">{{ props.title }}</h3>
       <img :src="props.foreground" alt="" />
     </div>
     <div class="blur">
@@ -111,67 +119,38 @@ const articleStyle = computed(() => {
       <p>
         <Icon name="AcUnitFilled">
         </Icon>
-        <span>{{ props.topContent }}</span>
+        <span :style="fontColor">{{ props.topContent }}</span>
       </p>
-      <p>{{ props.bottomContent }}</p>
+      <p :style="fontColor">{{ props.bottomContent }}</p>
     </div>
   </article>
 </template>
 
 <style scoped lang="css">
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
-@import 'normalize.css';
-*,
-*:after,
-*:before {
-  box-sizing: border-box;
-}
-:root {
-  --x: 0;
-  --y: 0;
-}
-html {
-  color-scheme: light only;
-}
-body {
-  display: flex;
-  place-items: center;
-  justify-content: center;
-  min-height: 100svh;
+article {
+  *,
+  *:after,
+  *:before {
+    box-sizing: border-box;
+  }
   touch-action: none;
   font-family: 'SF Pro Text', 'SF Pro Icons', 'AOS Icons', 'Helvetica Neue',
   Helvetica, Arial, sans-serif, system-ui;
-  margin: 0;
-  padding: 0.5rem;
-}
-body::before {
-  --line: color-mix(in lch, canvasText 25%, transparent);
-  --size: 60px;
-  content: '';
-  height: 100vh;
-  width: 100vw;
-  position: fixed;
-  background: linear-gradient(90deg,
-  var(--line) 1px,
-  transparent 1px var(--size)) 0 -5vmin / var(--size) var(--size),
-  linear-gradient(var(--line) 1px, transparent 1px var(--size)) 0 -5vmin / var(
-    --size
-  ) var(--size);
-  mask: linear-gradient(-15deg, transparent 60%, white);
-  top: 0;
-  z-index: -1;
-}
-article {
   aspect-ratio: 2 / 1.1;
   max-height: calc(100svh - 2rem);
   position: relative;
   overflow: hidden;
   max-width: calc(100% - 2rem);
+  border-radius: 4em;
+  user-select: none;
 }
-@media (orientation: portrait) {
-  article {
-    min-height: 330px;
-  }
+:root {
+  --x: 0;
+  --y: 0;
+}
+.assets {
+  inset: 0;
 }
 .assets > img {
   position: absolute;
@@ -179,7 +158,7 @@ article {
   left: 50%;
   translate: -50% 0;
   height: 100%;
-  width: 660px;
+  width: 110%;
   object-fit: cover;
   object-position: center 43%;
   user-select: none;
@@ -193,35 +172,28 @@ article {
   object-position: calc(-50% + (var(--x) * 40px)) calc(43% + (var(--y) * -40px));
 }
 .assets h3 {
+  animation-duration: .3s;
   position: absolute;
-  left: 50%;
+  left: 40%;
   top: 6%;
   margin: 0;
   font-size: 8rem;
   translate: -50% 0;
   text-transform: uppercase;
   font-family: 'Bebas Neue', sans-serif;
-  color: var(--color);
   translate: calc(-90% + (var(--x) * -30px)) calc(var(--y) * -20px);
-  &:hover {
-    color: var(--color-bleak);
-  }
 }
 .content {
   min-height: 32%;
   position: absolute;
   bottom: 0;
   width: 100%;
-  color: var(--color);
   display: grid;
   gap: 0.2rem;
   place-items: center;
   align-content: center;
   padding-bottom: 0.5rem;
   z-index: 2;
-}
-.content svg {
-  width: 20px;
 }
 .content p {
   margin: 0;
@@ -244,7 +216,6 @@ article {
 .content p:last-of-type {
   opacity: 0.8;
 }
-/* Blurring */
 .blur {
   --layers: 5;
   position: absolute;
@@ -261,28 +232,6 @@ article {
   #fff 15%,
   #0000 calc((15 + var(--stop)) * 1%));
 }
-.assets {
-  position: absolute;
-  inset: 0;
-  border-radius: 4em;
-  overflow: hidden;
-}
-/*.bear-link {
-  color: canvasText;
-  position: fixed;
-  top: 1rem;
-  left: 1rem;
-  width: 48px;
-  aspect-ratio: 1;
-  display: grid;
-  place-items: center;
-  opacity: 0.8;
-}
-:where(.x-link, .bear-link):is(:hover, :focus-visible) {
-  opacity: 1;
-}
-.bear-link svg {
-  width: 75%;
-}*/
+
 
 </style>
