@@ -1,6 +1,6 @@
 <template>
   <div class="ice-column docLeft">
-    <ice-link href="/" title="回到首页">
+    <ice-link disabled @click="goIndex" title="回到首页">
       <ice-avatar :src="logo"></ice-avatar>
     </ice-link>
     <ice-link href="https://github.com/bilibili-niang/icePro" target="_blank">github地址</ice-link>
@@ -33,6 +33,13 @@
 import { useRoute, useRouter } from 'vue-router'
 import { ref, watch } from 'vue'
 import logo from '@/assets/png/logo.png'
+import router from '@/router/index.js'
+
+const goIndex = () => {
+  router.push({
+    name: 'index'
+  })
+}
 
 const items = [
   {

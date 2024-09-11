@@ -1,4 +1,4 @@
-import{P as d}from"./preview-db753740.js";import{_ as f,r as i,o as l,c as s,b as e,w as c,d as n,F as _,a as h}from"./index-4b3e608d.js";import"https://cdn.skypack.dev/gsap@3.12.0";function x(t){return t.__sourceCode=`<container>\r
+import{P as d}from"./preview-24dfa672.js";import{_ as f,r as i,o as l,c as s,b as e,w as c,d as n,F as _,a as h}from"./index-d1edc189.js";import"https://cdn.skypack.dev/gsap@3.12.0";function x(t){return t.__sourceCode=`<container>\r
     <ice-text>晴空一鹤排云上</ice-text>\r
   </container>`,t.__sourceCodeTitle=" text-normal ",t.__styleCode=null,t.__script=null,t}const w={};function k(t,u){const o=i("ice-text"),r=i("container");return l(),s(_,null,[e(o,null,{default:c(()=>[n(" 最基础的 ")]),_:1}),e(r,null,{default:c(()=>[e(o,null,{default:c(()=>[n("晴空一鹤排云上")]),_:1})]),_:1})],64)}typeof x=="function"&&x(w);const P=f(w,[["render",k]]);function p(t){return t.__sourceCode=`<container>\r
     <ice-text color="suxinhuang">晴空一鹤排云上</ice-text>\r

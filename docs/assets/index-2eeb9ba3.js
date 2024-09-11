@@ -1,4 +1,4 @@
-import{P as p}from"./preview-db753740.js";import{_ as f,r as i,o as r,c as s,b as e,w as n,d as c,F as u}from"./index-4b3e608d.js";import"https://cdn.skypack.dev/gsap@3.12.0";function d(t){return t.__sourceCode=`<container>\r
+import{P as p}from"./preview-24dfa672.js";import{_ as f,r as i,o as r,c as s,b as e,w as n,d as c,F as u}from"./index-d1edc189.js";import"https://cdn.skypack.dev/gsap@3.12.0";function d(t){return t.__sourceCode=`<container>\r
     <ice-split></ice-split>\r
   </container>`,t.__sourceCodeTitle=" ice-split-normal ",t.__styleCode=null,t.__script=null,t}const h={};function k(t,a){const o=i("ice-text"),_=i("ice-split"),l=i("container");return r(),s(u,null,[e(o,{noselect:""},{default:n(()=>[c(" 最基础的使用 ")]),_:1}),e(l,null,{default:n(()=>[e(_)]),_:1})],64)}typeof d=="function"&&d(h);const T=f(h,[["render",k]]);function x(t){return t.__sourceCode=`<container>\r
     <ice-split color="caomeihong"></ice-split>\r

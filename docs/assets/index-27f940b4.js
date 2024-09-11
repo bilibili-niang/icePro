@@ -1,4 +1,4 @@
-import{P as f}from"./preview-db753740.js";import{_ as p,r as o,o as a,c as s,a as b,b as n,w as c,d as t,F as u}from"./index-4b3e608d.js";import"https://cdn.skypack.dev/gsap@3.12.0";function k(e){return e.__sourceCode=`<container>\r
+import{P as f}from"./preview-24dfa672.js";import{_ as p,r as o,o as a,c as s,a as b,b as n,w as c,d as t,F as u}from"./index-d1edc189.js";import"https://cdn.skypack.dev/gsap@3.12.0";function k(e){return e.__sourceCode=`<container>\r
     <ice-link>一个链接</ice-link>\r
   </container>`,e.__sourceCodeTitle=" link-normal ",e.__styleCode=null,e.__script=null,e}const x={},v={class:"ice-column"};function g(e,d){const r=o("ice-tag"),l=o("ice-text"),_=o("ice-link"),i=o("container");return a(),s(u,null,[b("div",v,[n(l,null,{default:c(()=>[t(" 使用 "),n(r,null,{default:c(()=>[t("href")]),_:1}),t("传入想要跳转的链接 ")]),_:1})]),n(i,null,{default:c(()=>[n(_,null,{default:c(()=>[t("一个链接")]),_:1})]),_:1})],64)}typeof k=="function"&&k(x);const w=p(x,[["render",g]]);function m(e){return e.__sourceCode=`<container>\r
     <ice-link>存在border</ice-link>\r

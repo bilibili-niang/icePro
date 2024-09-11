@@ -1,4 +1,4 @@
-import{i as f,p as b,r as l,o as _,c as x,a,b as t,w as n,d as i,F as V,l as k}from"./index-4b3e608d.js";import{P as w}from"./preview-db753740.js";import"https://cdn.skypack.dev/gsap@3.12.0";function u(e){return e.__sourceCode=`<container>\r
+import{i as f,p as b,r as l,o as _,c as x,a,b as t,w as n,d as i,F as V,l as k}from"./index-d1edc189.js";import{P as w}from"./preview-24dfa672.js";import"https://cdn.skypack.dev/gsap@3.12.0";function u(e){return e.__sourceCode=`<container>\r
     <div class="column">\r
       <ice-text>下面这个是选择器</ice-text>\r
       <ice-selector v-model="value" :list="selectionList"></ice-selector>\r

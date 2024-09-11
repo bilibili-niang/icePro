@@ -1,4 +1,4 @@
-import{P as v}from"./preview-db753740.js";import{i as h,r as c,o as _,c as k,b as t,w as e,d as r,F as B,l as N}from"./index-4b3e608d.js";import"https://cdn.skypack.dev/gsap@3.12.0";function s(n){return n.__sourceCode=`<container class="ice-column">\r
+import{P as v}from"./preview-24dfa672.js";import{i as h,r as c,o as _,c as k,b as t,w as e,d as r,F as B,l as N}from"./index-d1edc189.js";import"https://cdn.skypack.dev/gsap@3.12.0";function s(n){return n.__sourceCode=`<container class="ice-column">\r
     <ice-tabs v-model="activeName">\r
 \r
       <ice-tab-item label="first" name="白日梦想家">\r
