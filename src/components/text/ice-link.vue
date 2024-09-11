@@ -3,11 +3,12 @@
       size?'size-'+size:'size-n',
       color?'hoverColor':'defaultColor',
       border?'border':'no-border'
-  ]" :href="disabled ? null : href"
+  ]"
+     :href="disabled ? null : href"
      :style="{ '--hover-color': findColor(color).color,'--color': findColor(color).hover }"
      :target="target?target:'_self'"
      class="ice-link">
-    <slot/>
+    <slot />
   </a>
 </template>
 
@@ -24,7 +25,7 @@ defineProps({
     default: ''
   },
   params: {
-    type: Object,
+    type: Object
   },
   color: {
     type: String,
@@ -53,7 +54,6 @@ export default {
 </script>
 <style lang="less" scoped>
 @import '../../assets/variables.less';
-
 .ice-link {
   font-size: @fontSize-n;
   border-color: @themeColor;
@@ -63,55 +63,45 @@ export default {
   transition: @time-n;
   height: fit-content;
   margin: @m-normal;
-
   &:hover {
     cursor: pointer
   }
 }
-
 .border {
   border-bottom-style: solid;
   border-bottom-width: 1px;
 }
-
 .no-border {
   border-style: none;
 }
-
 .defaultColor {
   color: @themeColor-bleak;
-
   &:hover {
     color: @themeColor;
   }
 }
-
 // 传入color
 .hoverColor {
   color: var(--color);
   border-color: var(--color);
   transition-duration: @time-n;
-
   &:hover {
     color: var(--hover-color);
     border-color: var(--hover-color);
   }
 }
-
 .size-n {
   font-size: @fontSize-n;
   font-weight: @fontWeight-n;
   padding: @p-normal @p-large;
   transition: @time-n;
 }
-
 .size-s {
   font-size: @fontSize-s;
   font-weight: @fontWeight-s;
   padding: @p-small @p-normal;
   transition: @time-s;
 }
-
 .size-l {
   font-size: @fontSize-l;
   font-weight: @fontWeight-l;

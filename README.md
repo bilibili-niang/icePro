@@ -3,7 +3,7 @@
 
 基于 Vue 3 和 Vite,为我的个人项目开发的ui框架
 
-> [预览地址](http://icepro.icestone.work/),这个是线上部署版本,可能会落后
+> [文档](https://bilibili-niang.github.io/icePro/#/)
 
 > [npm地址](https://www.npmjs.com/package/icepro)
 

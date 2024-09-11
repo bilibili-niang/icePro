@@ -9,7 +9,7 @@
         </template>
         <template v-slot:body>
           <ice-avatar :src="imgUrl"></ice-avatar>
-          <iceLink href="/#/doc">起步</iceLink>
+          <iceLink disabled @click="goDoc">起步</iceLink>
           <ice-text noselect>
             献丑了,出来实习之后2023.7开始写的一个基于
             <ice-tag color="beiguahuang">vue3</ice-tag>
@@ -63,6 +63,14 @@ import imgUrl from '/src/assets/png/logo.png'
 import IceLink from '@/components/text/ice-link.vue'
 import IceColumn from '@/components/layout/ice-column.vue'
 import music from '@/assets/music/jntm.mp3'
+import router from '../router'
+
+const goDoc = () => {
+  router.push({
+    name: 'docIndex'
+  })
+}
+
 </script>
 
 <style lang='less' scoped>
