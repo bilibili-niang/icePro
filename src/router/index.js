@@ -1,4 +1,15 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
+import advanceJson from './advance.json'
+
+const computedRoute = () => {
+  return advanceJson.pathList.map(it => {
+    return {
+      path: it.path,
+      name: it.name,
+      component: () => import(it.componentPath)
+    }
+  })
+}
 
 const routes = [
   {
@@ -7,10 +18,17 @@ const routes = [
     component: () => import('../pages/index.vue')
   },
   {
+    path: '/advancedComponent',
+    name: 'advancedComponent',
+    component: () => import('../pages/advancedComponent/index.vue'),
+    redirect: '/advancedComponent/misalignedCard',
+    children: computedRoute()
+  },
+  {
     path: '/doc',
+    name: 'docIndex',
     component: () => import('../pages/Doc.vue'),
     redirect: '/doc/button',
-    name: 'docIndex',
     children: [
       {
         path: 'button',

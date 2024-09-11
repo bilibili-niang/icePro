@@ -1,4 +1,5 @@
 <!--错位卡片-->
+// 'copy from https://twitter.com/intent/follow?screen_name=jh3yy
 <script>
 export default {
   name: 'MisalignedCard'
@@ -45,8 +46,6 @@ const START = () => {
   }
 }
 document.body.addEventListener('click', START, { once: true })
-
-console.log('copy from https://twitter.com/intent/follow?screen_name=jh3yy')
 
 const props = defineProps({
   title: {

@@ -22,7 +22,14 @@
         </ul>
       </div>
       <div v-else>
-        {{ item.text }}
+        <ice-link
+          class='m-bottom-l'
+          disabled
+          noselect
+          @click="goAdvanceComponents"
+        >
+          {{ item.text }}
+        </ice-link>
       </div>
     </li>
   </ul>
@@ -41,7 +48,17 @@ const goIndex = () => {
   })
 }
 
+const goAdvanceComponents = () => {
+  router.push({
+    name: 'advancedComponent'
+  })
+}
+
 const items = [
+  {
+    text: '进阶组件',
+    href: '/advancedComponent'
+  },
   {
     text: '基础组件',
     children: [

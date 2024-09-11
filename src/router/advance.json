@@ -1,0 +1,10 @@
+{
+  "pathList": [
+    {
+      "path": "/advancedComponent/misalignedCard",
+      "name": "misalignedCard",
+      "componentPath": "../pages/advancedComponent/misalignedCard/index.vue",
+      "text": "misalignedCard 偏移卡片"
+    }
+  ]
+}
