@@ -1,4 +1,4 @@
-import{r,o as p,c as d,a as h,b as n,w as t,d as s,F as m,M as c,I as z}from"./index-9145f539.js";import{P as b}from"./preview-50ceab38.js";import"https://cdn.skypack.dev/gsap@3.12.0";function y(e){return e.__sourceCode=`<container>\r
+import{r,o as p,c as d,a as h,b as n,w as t,d as s,F as m,M as c,I as z}from"./index-0cc6d532.js";import{P as b}from"./preview-f6a8538b.js";import"https://cdn.skypack.dev/gsap@3.12.0";function y(e){return e.__sourceCode=`<container>\r
     <ice-button @click="alertMessage">\r
       copy\r
     </ice-button>\r

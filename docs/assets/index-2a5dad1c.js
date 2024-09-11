@@ -1,4 +1,4 @@
-import{P as v}from"./preview-50ceab38.js";import{i as T}from"./logo-a981293b.js";import{r as c,o as l,c as _,b as t,w as n,d as r,a as g,u as y,F as u,i as $,p as j,k as B,t as N}from"./index-9145f539.js";import"https://cdn.skypack.dev/gsap@3.12.0";function x(e){return e.__sourceCode=`<container>\r
+import{P as v}from"./preview-f6a8538b.js";import{i as T}from"./logo-a981293b.js";import{r as c,o as l,c as _,b as t,w as n,d as r,a as g,u as y,F as u,i as $,p as j,k as B,t as N}from"./index-0cc6d532.js";import"https://cdn.skypack.dev/gsap@3.12.0";function x(e){return e.__sourceCode=`<container>\r
     <div class="ice-column">\r
       <ice-avatar :src="imgUrl"></ice-avatar>\r
       <ice-text>加载出错,使用默认占位符:</ice-text>\r

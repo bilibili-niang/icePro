@@ -1,7 +1,7 @@
 <template>
   <div class="ice-column docLeft">
     <ice-link href="/" title="回到首页">
-      <ice-avatar src="../src/assets/png/logo.png"></ice-avatar>
+      <ice-avatar :src="logo"></ice-avatar>
     </ice-link>
     <ice-link href="https://github.com/bilibili-niang/icePro" target="_blank">github地址</ice-link>
   </div>
@@ -32,6 +32,7 @@
 <script setup>
 import { useRoute, useRouter } from 'vue-router'
 import { ref, watch } from 'vue'
+import logo from '@/assets/png/logo.png'
 
 const items = [
   {

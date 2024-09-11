@@ -1,4 +1,4 @@
-import{P as B}from"./preview-50ceab38.js";import{p as T,r,o as t,c as l,a as i,b as n,w as s,d as a,F as d,k as M,q as I,s as m,u,v as y,t as j,_ as N,x as V,M as f,l as F}from"./index-9145f539.js";import"https://cdn.skypack.dev/gsap@3.12.0";function v(e){return e.__sourceCode=`<container class="colorBlock ice-row">\r
+import{P as B}from"./preview-f6a8538b.js";import{p as T,r,o as t,c as l,a as i,b as n,w as s,d as a,F as d,k as M,q as I,s as m,u,v as y,t as j,_ as N,x as V,M as f,l as F}from"./index-0cc6d532.js";import"https://cdn.skypack.dev/gsap@3.12.0";function v(e){return e.__sourceCode=`<container class="colorBlock ice-row">\r
     <template v-for="(item,index) in allColor" :key="index">\r
       <div class="ice-column colorBlockItem" @click="copy(item.pinyin)">\r
         <div :style="{background:findColor(item.pinyin).color}" class="item radio-m noselect">\r

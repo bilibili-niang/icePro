@@ -1,4 +1,4 @@
-import{i as f,r,o as s,c as x,b as o,w as a,d as c,t as v,F as w,l as V}from"./index-9145f539.js";import{P as k}from"./preview-50ceab38.js";import"https://cdn.skypack.dev/gsap@3.12.0";function l(e){return e.__sourceCode=`<container>\r
+import{i as f,r,o as s,c as x,b as o,w as a,d as c,t as v,F as w,l as V}from"./index-0cc6d532.js";import{P as k}from"./preview-f6a8538b.js";import"https://cdn.skypack.dev/gsap@3.12.0";function l(e){return e.__sourceCode=`<container>\r
     <ice-textarea v-model="word"></ice-textarea>\r
     {{ word }}\r
   </container>`,e.__sourceCodeTitle=" textarea-normal ",e.__styleCode=null,e.__script=`<script setup>\r
