@@ -9,7 +9,7 @@
         </template>
         <template v-slot:body>
           <ice-avatar :src="imgUrl"></ice-avatar>
-          <iceLink href="/doc">起步</iceLink>
+          <iceLink href="/#/doc">起步</iceLink>
           <ice-text noselect>
             献丑了,出来实习之后2023.7开始写的一个基于
             <ice-tag color="beiguahuang">vue3</ice-tag>
