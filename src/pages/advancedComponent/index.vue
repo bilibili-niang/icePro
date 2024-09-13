@@ -1,10 +1,5 @@
 <script setup>
-import MisalignedCardPreview from './misalignedCard/index.vue'
 import advanceJson from '../../router/advance.json'
-
-console.log('MisalignedCardPreview')
-
-console.log(MisalignedCardPreview)
 
 console.log('advanceJson.pathList')
 console.log(advanceJson.pathList)

@@ -6,10 +6,10 @@
   "bin": "./index.js",
   "scripts": {
     "build": "vite build",
+    "dist": "vite build --config vite.config.dist.js",
     "dev": "vite --port 83",
     "preview": "vite preview",
-    "publish": "npm publish",
-    "version": "npm version"
+    "publish": "npm publish"
   },
   "config": {
     "commitizen": {

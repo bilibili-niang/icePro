@@ -2,14 +2,14 @@
 // 'copy from https://twitter.com/intent/follow?screen_name=jh3yy
 <script>
 export default {
-  name: 'MisalignedCard'
+  name: 'misalignedCard'
 }
 </script>
 
 <script setup>
 import gsap from 'https://cdn.skypack.dev/gsap@3.12.0'
-import frontImg from '@/assets/png/foreground.png'
-import backgroundImg from '@/assets/png/background.jpg'
+import frontImg from '../../assets/png/foreground.png'
+import backgroundImg from '../../assets/png/background.jpg'
 import { Icon } from '@vicons/utils'
 import { computed } from 'vue'
 
