@@ -15,7 +15,7 @@ menu-border
   </container>
 </template>
 <script setup>
-import IceMenu from '@/components/menu/ice-menu.vue'
+import IceMenu from '~/components/menu/ice-menu.vue'
 
 const items = [
   {

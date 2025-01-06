@@ -30,7 +30,8 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      '@': path.resolve('src')
+      '@': path.resolve('src'),
+      '~': path.resolve('src')
     },
     dedupe: [
       'vue'
