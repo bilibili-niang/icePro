@@ -7,8 +7,8 @@ export default {
 
 <script setup>
 import gsap from 'https://cdn.skypack.dev/gsap@3.12.0'
-import frontImg from '@/assets/png/foreground.png'
-import backgroundImg from '@/assets/png/background.jpg'
+import frontImg from '../../assets/png/foreground.png'
+import backgroundImg from '../../assets/png/background.jpg'
 import { Icon } from '@vicons/utils'
 import { computed } from 'vue'
 
