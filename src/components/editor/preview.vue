@@ -1,5 +1,5 @@
 <template>
-  <ice-card :border="false">
+  <ice-card class="preview-card" :border="false">
     <template v-slot:header>
       <ice-header noselect>
         {{ component?.__sourceCodeTitle }}
@@ -7,49 +7,64 @@
     </template>
     <template v-slot:body>
       <div class="pre-component">
-        <component :is="component"/>
+        <component :is="component" />
       </div>
     </template>
     <template v-slot:bottom>
       <div class="pre-code ice-column w100percent">
-        <pre class="language-html" v-html="html"/>
-        <pre v-if="component.__styleCode" class="language-css" v-html="css"/>
-        <pre v-if="component.__script" class="language-javascript" v-html="script"/>
+        <pre class="language-html" v-html="html" />
+        <pre v-if="component.__styleCode" class="language-css" v-html="css" />
+        <pre v-if="component.__script" class="language-javascript" v-html="script" />
       </div>
     </template>
   </ice-card>
 </template>
-<script setup>
-import "prismjs"
-import "prismjs/themes/prism.css"
-import { computed } from "vue"
 
-const Prism = window.Prism
+<script setup>
+import 'prismjs'
+import 'prismjs/themes/prism.css'
+import { computed, ref } from 'vue'
+
+const isOpen = ref(false)
 
 const props = defineProps({
   component: Object,
+  content: {
+    type: String,
+    default: ''
+  },
+  layout: {
+    type: Boolean,
+    default: false
+  }
 })
+
+function handleClick() {
+  isOpen.value = !isOpen.value
+}
+
+const Prism = window.Prism
 
 const html = computed(() => {
   return Prism.highlight(
-      props.component.__sourceCode,
-      Prism.languages.html,
-      "html"
+    props.component.__sourceCode,
+    Prism.languages.html,
+    'html'
   )
 })
 const css = computed(() => {
   return Prism.highlight(
-      props.component.__styleCode,
-      Prism.languages.css,
-      "css"
+    props.component.__styleCode,
+    Prism.languages.css,
+    'css'
   )
 })
 
 const script = computed(() => {
   return Prism.highlight(
-      props.component.__script,
-      Prism.languages.javascript,
-      "javascript"
+    props.component.__script,
+    Prism.languages.javascript,
+    'javascript'
   )
 })
 
@@ -85,7 +100,7 @@ pre {
   color: red !important;
 }
 
-/deep/ .ice-title {
+:deep(.ice-title) {
   h4 {
     &:before {
       content: '>';
@@ -106,5 +121,9 @@ pre {
       }
     }
   }
+}
+
+.preview-card {
+  margin-bottom: 3rem !important;
 }
 </style>

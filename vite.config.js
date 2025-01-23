@@ -1,12 +1,12 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
-
-// 这个插件在开发时必须存在
 import vitePluginVue from './plugins/fileFilter.js'
 import mdPlugin from 'vite-plugin-markdown'
 import path from 'path'
 import eslintPlugin from 'vite-plugin-eslint'
+import { fileURLToPath } from 'url'
 
+const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
 export default defineConfig({
   base: './',
@@ -17,21 +17,18 @@ export default defineConfig({
       mode: ['html', 'vue']
     }),
     vitePluginVue,
-    // inlineStyleTransform,
     eslintPlugin({
       include: ['src/**/*.js', 'src/**/*.vue']
     })
   ],
   output: {
-    // 设置打包后的文件目录
     dir: 'dist/',
-    // 外部化 Vue，这样它就不会被打包到最终的 JavaScript 文件中
     external: ['vue']
   },
   resolve: {
     alias: {
-      '@': path.resolve('src'),
-      '~': path.resolve('src')
+      '@': path.resolve(__dirname, './src'),
+      '~': path.resolve(__dirname, './src')
     },
     dedupe: [
       'vue'
@@ -39,7 +36,6 @@ export default defineConfig({
     extensions: ['.mjs', '.js', '.ts', '.jsx', '.tsx', '.json', '.vue']
   },
   css: {
-    // 预处理器配置项
     preprocessorOptions: {
       less: {
         math: 'always',
@@ -48,12 +44,9 @@ export default defineConfig({
     }
   },
   build2: {
-    //打包后文件目录
     outDir: 'es',
-    //压缩
     minify: true,
     rollupOptions: {
-      //忽略打包vue文件
       external: ['vue'],
       output: {
         globals: {
@@ -70,10 +63,9 @@ export default defineConfig({
     }
   },
   build: {
-    outDir: 'docs', // 指定构建输出目录
-    minify: true, // 启用代码压缩
+    outDir: 'docs', 
+    minify: true, 
     rollupOptions: {
-      // external: ['vue'],
       /*output: {
         globals: {
           vue: 'Vue'

@@ -1,36 +1,35 @@
 module.exports = {
-    "env": {
-        "browser": true,
-        "es2021": true
-    },
-    "extends": [
-        "eslint:recommended",
-        "plugin:vue/vue3-essential"
-    ],
-    "overrides": [
-        {
-            "env": {
-                "node": true
-            },
-            "files": [
-                ".eslintrc.{js,cjs}"
-            ],
-            "parserOptions": {
-                "sourceType": "script"
-            }
-        }
-    ],
-    "parserOptions": {
-        "ecmaVersion": "latest",
-        "sourceType": "module"
-    },
-    "plugins": [
-        "vue"
-    ],
-    "rules": {
-        //关闭组件命名规则
-        "vue/multi-word-component-names": "off",
-        // 添加对分号使用的规则，设置为"never"来禁止分号的使用
-        "semi": ["warn", "never"]
-    }
+  root: true,
+  env: {
+    node: true,
+    browser: true,
+    es2021: true
+  },
+  extends: [
+    'eslint:recommended',
+    'plugin:vue/vue3-essential',
+    'plugin:@typescript-eslint/recommended'
+  ],
+  parser: 'vue-eslint-parser',
+  parserOptions: {
+    parser: '@typescript-eslint/parser',
+    ecmaVersion: 2020,
+    sourceType: 'module',
+    extraFileExtensions: ['.vue']
+  },
+  plugins: [
+    'vue',
+    '@typescript-eslint'
+  ],
+  rules: {
+    'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
+    'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
+    '@typescript-eslint/no-explicit-any': 'off',
+    '@typescript-eslint/explicit-module-boundary-types': 'off',
+    'vue/multi-word-component-names': 'off',
+    'semi': ['warn', 'never'],
+    '@typescript-eslint/no-unused-expressions': 'off',  // 关闭未使用表达式的警告
+    '@typescript-eslint/no-unused-vars': 'off',  // 关闭未使用变量的警告
+    'no-unused-vars': 'off'  // 同时关闭 ESLint 原生的未使用变量规则
+  }
 }

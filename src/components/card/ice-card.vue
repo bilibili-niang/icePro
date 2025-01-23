@@ -1,10 +1,11 @@
 <template>
   <!--变量-->
-  <div v-if="header" :class="[size,color? color: '',
-  border?'border':'noborder'
-  ]"
-       :style="{'--hover-color': themeColor.hoverColor,'--color': themeColor.color}"
-       class="ice-card">
+  <div
+    v-if="header"
+    :class="[size, color ? color : '', border ? 'border' : 'noborder']"
+    :style="{ '--hover-color': themeColor.hoverColor, '--color': themeColor.color }"
+    class="ice-card"
+  >
     <div :class="type" class="slot">
       <div class="header ice-row flex-sb">
         <slot name="header"></slot>
@@ -16,12 +17,9 @@
       <div v-if="bottom" class="bottom">
         <iceSplit dashed></iceSplit>
         <div class="ice-column content">
-          <ice-button @click="showBottom=!showBottom">
+          <ice-button @click="showBottom = !showBottom">
             {{ showBottom ? buttonText[0] : buttonText[1] }}
-            <div :class="[
-              showBottom?'down':'up'
-          ]" class="tag">^
-            </div>
+            <div :class="[showBottom ? 'down' : 'up']" class="tag">^</div>
           </ice-button>
           <div ref="bottomContent" class="bottomLim show">
             <slot name="bottom"></slot>
@@ -32,38 +30,26 @@
   </div>
 </template>
 
-<script setup>
-import {onMounted, reactive, ref, useSlots, watch} from "vue"
-import {findColor} from "../../utils/tools.js"
+<script setup lang="ts">
+import { onMounted, reactive, ref, useSlots, watch } from 'vue'
+import { findColor } from '../../utils/tools.js'
 
-const {header, body, bottom} = useSlots()
-let showBottom = ref(false)
-
-const bottomContent = ref("")
-let bottomHeight = ref("")
-watch(showBottom,
-    (newVal) => {
-      if (!newVal) {
-        bottomContent.value.style.height = 0
-        bottomContent.value.style.opacity = 0
-      } else {
-        bottomContent.value.style.height = bottomHeight.value * 1 + "px"
-        bottomContent.value.style.opacity = 1
-      }
-    })
+defineOptions({
+  name: 'iceCard'
+})
 
 const props = defineProps({
   type: {
     type: String,
-    default: "normal"
+    default: 'normal'
   },
   size: {
     type: String,
-    default: "n"
+    default: 'n'
   },
   color: {
     type: String,
-    default: ""
+    default: ''
   },
   border: {
     type: Boolean,
@@ -71,7 +57,46 @@ const props = defineProps({
   },
   buttonText: {
     type: Array,
-    default: () => ["收起", "展开"]
+    default: () => ['收起', '展开']
+  },
+  content: {
+    type: String
+  },
+  layout: {
+    type: Boolean,
+    default: false
+  }
+})
+
+const isOpen = ref(false)
+function handleClick() {
+  isOpen.value = !isOpen.value
+}
+
+const { header, body, bottom } = useSlots()
+let showBottom = ref(false)
+
+type StyleElement = {
+  style: {
+    height: string | number
+    opacity: number
+  }
+}
+
+const bottomContent = ref<StyleElement | null>(null)
+
+let bottomHeight = ref('')
+watch(showBottom, (newVal) => {
+  if (!newVal) {
+    if (bottomContent.value) {
+      bottomContent.value.style.height = 0
+      bottomContent.value.style.opacity = 0
+    }
+  } else {
+    if (bottomContent.value) {
+      bottomContent.value.style.height = bottomHeight.value * 1 + 'px'
+      bottomContent.value.style.opacity = 1
+    }
   }
 })
 
@@ -85,12 +110,14 @@ if (props.color) {
 }
 
 const init = () => {
-  bottomHeight.value = bottomContent.value.scrollHeight
-  if (showBottom.value) {
-    bottomContent.value.style.height = bottomHeight.value * 1 + "px"
-  } else {
-    bottomContent.value.style.height = 0
-    bottomContent.value.style.opacity = 0
+  if (bottomContent.value) {
+    bottomHeight.value = bottomContent.value.scrollHeight
+    if (showBottom.value) {
+      bottomContent.value.style.height = bottomHeight.value * 1 + 'px'
+    } else {
+      bottomContent.value.style.height = 0
+      bottomContent.value.style.opacity = 0
+    }
   }
 }
 
@@ -99,17 +126,11 @@ onMounted(() => {
     init()
   }
 })
-
-</script>
-<script>
-export default {
-  name: "iceCard"
-}
 </script>
 
 <style lang="less" scoped>
-@import "../../assets/variables.less";
-@import "../../assets/common.less";
+@import '../../assets/variables.less';
+@import '../../assets/common.less';
 
 .border {
   border-style: solid;
@@ -176,6 +197,6 @@ export default {
 }
 
 .bottomLim {
-  border-radius: .3rem;
+  border-radius: 0.3rem;
 }
 </style>

@@ -50,7 +50,7 @@ const props = defineProps({
     type: String,
     default: 'info'
   },
-  message: {
+  message: {    
     type: [String, Object],
     default: ''
   },
