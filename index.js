@@ -1,5 +1,5 @@
-import './src/assets/variables.less'
-import './src/assets/common.less'
+// 导入样式，可以通过 import 'icepro/src/styles' 单独引入
+import './src/styles/index.less'
 
 import iceButton from './src/components/button/index.js'
 import iceText from './src/components/text/ice-text.vue'
@@ -29,12 +29,6 @@ import inlineStyle from './src/components/editor/inlineStyle.vue'
 import iceTabs from './src/components/tabs/index.js'
 import iceTabItem from './src/components/tabItem'
 import { findColor } from './src/utils/tools.js'
-import iceDragger from './src/components/dragger'
-import empty from './src/components/empty'
-import iceMessageBox from './src/components/messageBox'
-import { getTheme } from './src/components/theme'
-import misalignedCard from './src/components/misalignedCard'
-import musicCard from './src/components/musicCard'
 
 findColor.activeColor = '#fba414'
 
@@ -64,12 +58,7 @@ const components = {
   colorSelector,
   inlineStyle,
   iceTabs,
-  iceTabItem,
-  iceDragger,
-  empty,
-  misalignedCard,
-  musicCard
-  // iceMessageBox
+  iceTabItem
 }
 
 export {
@@ -98,13 +87,7 @@ export {
   colorSelector,
   inlineStyle,
   iceTabs,
-  iceTabItem,
-  iceDragger,
-  empty,
-  iceMessageBox,
-  getTheme,
-  misalignedCard,
-  musicCard
+  iceTabItem
 }
 
 function install(app) {
@@ -129,4 +112,3 @@ export default icepro
 export {
   findColor
 }
-
