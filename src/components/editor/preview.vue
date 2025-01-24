@@ -31,10 +31,7 @@
 
 <script setup>
 import 'prismjs'
-// import 'prismjs/themes/prism-dark.min.css'
-// import 'prismjs/themes/prism-solarizedlight.min.css'
-import 'prismjs/themes/prism-twilight.min.css'
-
+import 'prismjs/themes/prism-tomorrow.min.css'
 import { computed, ref, watch } from 'vue'
 
 const isOpen = ref(false)

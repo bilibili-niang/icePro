@@ -4,8 +4,10 @@ import "./assets/common.less"
 import route from "./router/index"
 import icepro from "../index"
 import {findColor} from "./utils/tools.js"
+import { createPinia } from 'pinia'
 
 const app = createApp(App)
+const pinia = createPinia()
 
 /*const keys = Object.keys(icepro.components)
 keys.map(item => {
@@ -16,4 +18,5 @@ icepro.install(app)
 app.config.globalProperties.findColor = findColor
 app
     .use(route)
+    .use(pinia)
     .mount("#app")
