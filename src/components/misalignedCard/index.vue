@@ -11,7 +11,7 @@ import gsap from 'gsap'
 import frontImg from '../../assets/png/foreground.png'
 import backgroundImg from '../../assets/png/background.jpg'
 import { Icon } from '@vicons/utils'
-import { computed } from 'vue'
+import { computed, onMounted, onUnmounted } from 'vue'
 
 const UPDATE = ({ x, y }) => {
   gsap.set(document.documentElement, {
@@ -19,8 +19,6 @@ const UPDATE = ({ x, y }) => {
     '--y': gsap.utils.mapRange(0, window.innerHeight, -1, 1, y)
   })
 }
-
-window.addEventListener('mousemove', UPDATE)
 
 const handleOrientation = ({ beta, gamma }) => {
   const isLandscape = window.matchMedia('(orientation: landscape)').matches
@@ -31,9 +29,7 @@ const handleOrientation = ({ beta, gamma }) => {
 }
 
 const START = () => {
-  if (
-    DeviceOrientationEvent?.requestPermission
-  ) {
+  if (DeviceOrientationEvent?.requestPermission) {
     Promise.all([
       DeviceOrientationEvent.requestPermission()
     ]).then((results) => {
@@ -45,7 +41,17 @@ const START = () => {
     window.addEventListener('deviceorientation', handleOrientation)
   }
 }
-document.body.addEventListener('click', START, { once: true })
+
+onMounted(() => {
+  window.addEventListener('mousemove', UPDATE)
+  document.body.addEventListener('click', START, { once: true })
+})
+
+onUnmounted(() => {
+  window.removeEventListener('mousemove', UPDATE)
+  window.removeEventListener('deviceorientation', handleOrientation)
+  document.body.removeEventListener('click', START)
+})
 
 const props = defineProps({
   title: {

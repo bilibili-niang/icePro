@@ -16,14 +16,17 @@
           <ice-tag>html:</ice-tag>
         </div>
         <pre class="language-html" v-html="html" />
-        <div class="m-top-n m-bottom-l" v-if="component.__styleCode">
-          <ice-tag>css:</ice-tag>
-        </div>
-        <pre v-if="component.__styleCode" class="language-css" v-html="css" />
+
         <div class="m-top-n m-bottom-l" v-if="component.__script">
           <ice-tag>script:</ice-tag>
         </div>
         <pre v-if="component.__script" class="language-javascript" v-html="script" />
+
+        <div class="m-top-n m-bottom-l" v-if="component.__styleCode">
+          <ice-tag>css:</ice-tag>
+        </div>
+        <pre v-if="component.__styleCode" class="language-css" v-html="css" />
+
       </div>
     </template>
   </ice-card>
@@ -75,7 +78,7 @@ pre {
   width: 100%;
   padding: 0 !important;
   margin: 0 !important;
-  font-size: 0.9rem;
+  font-size: 0.75rem;
   font-weight: bold;
 
   .token .tag {

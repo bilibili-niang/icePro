@@ -60,10 +60,11 @@
 
 <script setup>
 import imgUrl from '/src/assets/png/logo.png'
-import IceLink from '@/components/text/ice-link.vue'
-import IceColumn from '@/components/layout/ice-column.vue'
-import music from '@/assets/music/jntm.mp3'
+import IceLink from '../components/text/ice-link.vue'
+import IceColumn from '../components/layout/ice-column.vue'
+import music from '../assets/music/jntm.mp3'
 import router from '../router'
+import MisalignedCard from '../components/misalignedCard/index.vue'
 
 const goDoc = () => {
   router.push({
@@ -77,12 +78,14 @@ const goDoc = () => {
 .index {
   transition-duration: @time-n;
 }
+
 // 小屏
 @media (max-width: 1200px) {
   .index {
     padding-top: 10%;
   }
 }
+
 //大屏
 @media (min-width: 1200px) {
   .index {

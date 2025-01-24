@@ -55,6 +55,7 @@
     "vite-plugin-markdown": "^2.1.0",
     "vue": "^3.3.4",
     "vue-eslint-parser": "^9.4.3",
-    "vue-router": "^4.2.1"
+    "vue-router": "^4.2.1",
+    "@vicons/utils": "^0.1.4"
   }
 }
