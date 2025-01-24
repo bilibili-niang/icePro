@@ -4147,7 +4147,7 @@ const ho = ["title"], bo = {
     };
   }
 });
-const Po = /* @__PURE__ */ F(xo, [["__scopeId", "data-v-c4f22a44"]]);
+const Po = /* @__PURE__ */ F(xo, [["__scopeId", "data-v-8d07f0b7"]]);
 const Go = {
   name: "iceMessage"
 }, Bo = /* @__PURE__ */ Object.assign(Go, {
@@ -5257,7 +5257,7 @@ const Sl = { class: "colorSelector" }, Ol = {
       ]);
     };
   }
-}), Xl = /* @__PURE__ */ F(Yl, [["__scopeId", "data-v-89e6be1b"]]), Ml = { class: "inlineStyleTransform" }, Tl = {
+}), Xl = /* @__PURE__ */ F(Yl, [["__scopeId", "data-v-71522cb0"]]), Ml = { class: "inlineStyleTransform" }, Tl = {
   name: "inlineStyle"
 }, Jl = /* @__PURE__ */ Object.assign(Tl, {
   props: {

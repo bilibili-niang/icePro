@@ -12,8 +12,17 @@
     </template>
     <template v-slot:bottom>
       <div class="pre-code ice-column w100percent">
+        <div class="m-top-n m-bottom-l" v-if="component.__sourceCode">
+          <ice-tag>html:</ice-tag>
+        </div>
         <pre class="language-html" v-html="html" />
+        <div class="m-top-n m-bottom-l" v-if="component.__styleCode">
+          <ice-tag>css:</ice-tag>
+        </div>
         <pre v-if="component.__styleCode" class="language-css" v-html="css" />
+        <div class="m-top-n m-bottom-l" v-if="component.__script">
+          <ice-tag>script:</ice-tag>
+        </div>
         <pre v-if="component.__script" class="language-javascript" v-html="script" />
       </div>
     </template>
@@ -22,8 +31,11 @@
 
 <script setup>
 import 'prismjs'
-import 'prismjs/themes/prism.css'
-import { computed, ref } from 'vue'
+// import 'prismjs/themes/prism-dark.min.css'
+// import 'prismjs/themes/prism-solarizedlight.min.css'
+import 'prismjs/themes/prism-twilight.min.css'
+
+import { computed, ref, watch } from 'vue'
 
 const isOpen = ref(false)
 
@@ -46,31 +58,17 @@ function handleClick() {
 const Prism = window.Prism
 
 const html = computed(() => {
-  return Prism.highlight(
-    props.component.__sourceCode,
-    Prism.languages.html,
-    'html'
-  )
+  return Prism.highlight(props.component.__sourceCode, Prism.languages.html, 'html')
 })
 const css = computed(() => {
-  return Prism.highlight(
-    props.component.__styleCode,
-    Prism.languages.css,
-    'css'
-  )
+  return Prism.highlight(props.component.__styleCode, Prism.languages.css, 'css')
 })
 
 const script = computed(() => {
-  return Prism.highlight(
-    props.component.__script,
-    Prism.languages.javascript,
-    'javascript'
-  )
+  return Prism.highlight(props.component.__script, Prism.languages.javascript, 'javascript')
 })
-
 </script>
 <style lang="less" scoped>
-
 pre::-webkit-scrollbar {
   display: none;
 }
@@ -80,8 +78,12 @@ pre {
   width: 100%;
   padding: 0 !important;
   margin: 0 !important;
-  font-size: .9rem;
+  font-size: 0.9rem;
   font-weight: bold;
+
+  .token .tag {
+    color: gray;
+  }
 
   .title {
     justify-content: space-between;
@@ -107,7 +109,7 @@ pre {
       font-weight: lighter;
       margin-right: 0;
       opacity: 0;
-      transition: .5s;
+      transition: 0.5s;
       width: 0;
     }
   }
