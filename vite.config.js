@@ -39,6 +39,7 @@ export default defineConfig({
     preprocessorOptions: {
       less: {
         math: 'always',
+        javascriptEnabled: true,
         additionalData: '@import \'@/assets/variables.less\';'
       }
     }

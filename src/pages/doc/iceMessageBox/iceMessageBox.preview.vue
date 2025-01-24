@@ -7,20 +7,14 @@ iceMessageBox
 
   <container>
     <ice-column>
-      <ice-button
-        @click="showPreview"
-      >看看消息
-      </ice-button>
+      <ice-button @click="showPreview">看看消息 </ice-button>
     </ice-column>
   </container>
-
 </template>
 <script lang="ts" setup>
-import { iceMessageBox } from '../../../../index'
+import iceMessageBox from '../../../components/messageBox'
 
 const showPreview = () => {
   iceMessageBox('你好啊')
-
 }
-
 </script>

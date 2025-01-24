@@ -1,3 +1,4 @@
+import './assets/variables.less'
 import {createApp} from "vue"
 import App from "./App.vue"
 import "./assets/common.less"

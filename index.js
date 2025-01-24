@@ -112,3 +112,6 @@ export default icepro
 export {
   findColor
 }
+
+// 导出全局状态
+export * from './src/store'

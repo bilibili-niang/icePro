@@ -7,7 +7,7 @@
   "main": "./index.js",
   "scripts": {
     "build": "vite build",
-    "dist": "vite build --config vite.config.dist.js",
+    "dist": "vite build --config vite.config.dist.js && node scripts/copy-styles.js",
     "dev": "vite --port 83",
     "preview": "vite preview",
     "publish": "npm publish"
@@ -43,6 +43,7 @@
     "cz-git": "^1.9.1",
     "eslint": "^8.57.0",
     "eslint-plugin-vue": "^9.21.0",
+    "fs-extra": "^11.3.0",
     "github-markdown-css": "^5.2.0",
     "gsap": "^3.12.7",
     "less": "^4.1.3",
@@ -55,7 +56,6 @@
     "vite-plugin-markdown": "^2.1.0",
     "vue": "^3.3.4",
     "vue-eslint-parser": "^9.4.3",
-    "vue-router": "^4.2.1",
-    "@vicons/utils": "^0.1.4"
+    "vue-router": "^4.2.1"
   }
 }

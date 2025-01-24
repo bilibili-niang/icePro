@@ -26,18 +26,17 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      '@': path.resolve('src')
+      // '@': path.resolve('src')
+      icepro: path.resolve(__dirname, './')
     },
-    dedupe: [
-      'vue'
-    ],
+    dedupe: ['vue'],
     extensions: ['.mjs', '.js', '.ts', '.jsx', '.tsx', '.json', '.vue']
   },
   css: {
     preprocessorOptions: {
       less: {
         math: 'always',
-        additionalData: '@import \'@/assets/variables.less\';'
+        additionalData: "@import '@/assets/variables.less';"
       }
     }
   },

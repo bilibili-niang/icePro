@@ -6,7 +6,7 @@ export default {
 <script setup>
 import { VueDraggableNext as draggable } from 'vue-draggable-next'
 import { watch, toRefs } from 'vue'
-import { empty } from '../../../../index.js'
+import empty from '../../../components/empty'
 
 const props = defineProps({
   list: {
@@ -31,20 +31,21 @@ const props = defineProps({
   }
 })
 
-
 const data = toRefs(props)
 const emits = defineEmits(['update:data'])
-watch(() => data.value, (val) => {
-  emits('update:data', val)
-})
+watch(
+  () => data.value,
+  (val) => {
+    emits('update:data', val)
+  }
+)
 console.log('data:')
 console.log(data.list.value)
-
 </script>
 
 <template>
   <div class="ice-dragger">
-    <div class="empty" v-if="data.list.length ===0">
+    <div class="empty" v-if="data.list.length === 0">
       <empty />
     </div>
     <draggable
@@ -59,12 +60,7 @@ console.log(data.list.value)
       @update="onUpdate"
       @end="onEnd"
     >
-      <div
-        draggable
-        v-for="(item,index) in data.list"
-        :key="index"
-        class="cursor-move"
-      >
+      <div draggable v-for="(item, index) in data.list" :key="index" class="cursor-move">
         {{ item?.name }}
       </div>
     </draggable>
@@ -87,6 +83,5 @@ console.log(data.list.value)
     background: gray;
     margin-top: 10px;
   }
-
 }
 </style>
