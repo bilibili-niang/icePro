@@ -3,20 +3,7 @@
 </template>
 
 <script setup>
-import router from '@/router'
 import DocContainerRender from './DocContainerRender/index'
-
-const goIndex = () => {
-  router.push({
-    name: 'index'
-  })
-}
-
-const goAdvanceComponents = () => {
-  router.push({
-    name: 'advancedComponent'
-  })
-}
 
 const items = [
   {

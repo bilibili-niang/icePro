@@ -4,17 +4,40 @@ import logo from '../../../../assets/png/logo.png'
 import { useRoute } from 'vue-router'
 
 interface MenuItem {
+  /** 显示的文本 */
   text: string;
+  /** 跳转链接，如 /doc/button */
   href?: string;
-  children?: MenuItem[];
+  /** 子菜单项 */
+  children?: {
+    /** 子菜单显示的文本 */
+    text: string;
+    /** 子菜单跳转链接，如 /doc/button */
+    href: string;
+  }[];
 }
 
 export default defineComponent({
   name: 'DocContainerRender',
   props: {
+    /** 菜单项数组 */
     item: {
       type: Array as PropType<MenuItem[]>,
-      required: true
+      required: true,
+      validator: (value: MenuItem[]) => {
+        return value.every(item => {
+          // 验证每个菜单项必须有text
+          if (!item.text) return false;
+          // 如果有children，验证每个子项必须有text和href
+          if (item.children) {
+            return item.children.every(child => 
+              typeof child.text === 'string' && 
+              typeof child.href === 'string'
+            );
+          }
+          return true;
+        });
+      }
     }
   },
   setup(props) {
