@@ -36,7 +36,7 @@ export default defineConfig({
     preprocessorOptions: {
       less: {
         math: 'always',
-        additionalData: "@import '@/assets/variables.less';"
+        additionalData: "@import './src/assets/variables.less';"
       }
     }
   },

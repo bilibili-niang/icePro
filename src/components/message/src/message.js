@@ -69,7 +69,7 @@ const Message = function (options = {}) {
                 ((vm.component.proxy).visible = false)
         },
         destroy: () => {
-            console.log('destroy')
+            console.log('message destroied')
         }
     }
 }

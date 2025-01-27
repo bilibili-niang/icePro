@@ -1,11 +1,10 @@
 <template>
-  <div :class="['ice-row',{center: center},flexWrap&&'flex-wrap']" :style="{'width': width}">
+  <div :class="['ice-row', { center: center }, flexWrap && 'flex-wrap']" :style="{ width: width }">
     <slot></slot>
   </div>
 </template>
 
 <script setup>
-
 defineProps({
   center: {
     type: Boolean,
@@ -13,7 +12,7 @@ defineProps({
   },
   width: {
     type: String,
-    default: "100%"
+    default: '100%'
   },
   flexWrap: {
     type: Boolean,
@@ -23,10 +22,10 @@ defineProps({
 </script>
 <script>
 export default {
-  name: "IceRow"
+  name: 'IceRow'
 }
 </script>
-<style lang='less' scoped>
+<style lang="less" scoped>
 .ice-row {
   display: flex;
   flex-direction: row;

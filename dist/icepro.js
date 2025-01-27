@@ -4291,7 +4291,7 @@ const Ca = R(2e3), Ae = [], Ge = function(e = {}) {
       ve(), c.component.proxy.visible = !1;
     },
     destroy: () => {
-      console.log("destroy");
+      console.log("message destroied");
     }
   };
 }, Na = ["success", "info", "warning", "error"];
@@ -4571,7 +4571,7 @@ const Ja = {
       z(n.$slots, "default", {}, void 0, !0)
     ], 6));
   }
-}), Xa = /* @__PURE__ */ v(Qa, [["__scopeId", "data-v-c2a34764"]]);
+}), Xa = /* @__PURE__ */ v(Qa, [["__scopeId", "data-v-60b1d497"]]);
 const Ya = {
   name: "IceColumn"
 }, Za = /* @__PURE__ */ Object.assign(Ya, {
@@ -4689,7 +4689,7 @@ const en = {
       }, 8, ["name"])
     ]));
   }
-}), rn = /* @__PURE__ */ v(tn, [["__scopeId", "data-v-79359159"]]);
+}), rn = /* @__PURE__ */ v(tn, [["__scopeId", "data-v-9e012ba0"]]);
 const ln = { class: "iceSelector" }, bn = {
   key: 0,
   class: "selectItemLim"
