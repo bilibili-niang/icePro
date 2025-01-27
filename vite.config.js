@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
+import vueJsx from '@vitejs/plugin-vue-jsx'
 import vitePluginVue from './plugins/fileFilter.js'
 import mdPlugin from 'vite-plugin-markdown'
 import path from 'path'
@@ -13,12 +14,13 @@ export default defineConfig({
   sourceMap: true,
   plugins: [
     vue(),
+    vueJsx(),
     mdPlugin.plugin({
       mode: ['html', 'vue']
     }),
     vitePluginVue,
     eslintPlugin({
-      include: ['src/**/*.js', 'src/**/*.vue']
+      include: ['src/**/*.js', 'src/**/*.vue', 'src/**/*.tsx', 'src/**/*.jsx']
     })
   ],
   output: {

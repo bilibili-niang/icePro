@@ -7,6 +7,17 @@ const routes = [
     component: () => import('../pages/index.vue')
   },
   {
+    path: '/thirdCompoments',
+    name: 'thirdCompoments',
+    children: [
+      {
+        path: 'index',
+        name: 'thirdCompomentsIndex',
+        component: () => import('../pages/thirdCompoments/index.vue')
+      }
+    ]
+  },
+  {
     path: '/advancedComponent',
     name: 'advancedComponent',
     component: () => import('../pages/advancedComponent/index.vue'),
@@ -15,7 +26,7 @@ const routes = [
       {
         path: '/advancedComponent/misalignedCard',
         name: 'misalignedCard',
-        component:()=>import('../pages/advancedComponent/misalignedCard/index.vue')
+        component: () => import('../pages/advancedComponent/misalignedCard/index.vue')
       }
     ]
   },

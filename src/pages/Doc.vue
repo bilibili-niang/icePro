@@ -26,7 +26,7 @@
 
 <script setup>
 import { ref } from 'vue'
-import docLeft from './doc/docLeft.vue'
+import docLeft from './doc/docLeft'
 import { themeStore } from '../store'
 import { storeToRefs } from 'pinia'
 

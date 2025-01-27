@@ -20,7 +20,7 @@ import iceSelectorGroup from './src/components/selector-group/index.js'
 import avatar from './src/components/avatar/src/iceAvatar.vue'
 import shrinkBar from './src/components/layout/shrinkBar.vue'
 import iceSelectionItem from './src/components/selectorItem/src/ice-selectionItem.vue'
-import icePagination from './src/components/pagination/index.js'
+import icePagination from './src/components/pagination/index.ts'
 import iceImgPreview from './src/components/imgPreview/index.js'
 import iceHeader from './src/components/header/index.js'
 import iceTextarea from './src/components/textarea/index.js'
@@ -109,9 +109,7 @@ export default icepro
 
 // 工具
 
-export {
-  findColor
-}
+export { findColor }
 
 // 导出全局状态
 export * from './src/store'
