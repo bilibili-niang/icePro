@@ -4924,7 +4924,9 @@ const An = {
       }, N(e.item.label), 3)
     ]));
   }
-}), vn = /* @__PURE__ */ v(Gn, [["__scopeId", "data-v-7a919d9c"]]), _n = { class: "ice-pagination" }, zn = {
+}), vn = /* @__PURE__ */ v(Gn, [["__scopeId", "data-v-7a919d9c"]]), _n = { class: "ice-pagination" }, zn = /* @__PURE__ */ Object.assign({
+  name: "ice-pagination"
+}, {
   __name: "ice-pagination",
   props: {
     modelValue: {
@@ -4983,8 +4985,8 @@ const An = {
               w <= e.total ? (b(), M(p, {
                 key: 0,
                 finger: "",
-                noselect: "",
-                onClick: (q) => t(w)
+                onClick: (q) => t(w),
+                class: "pointer"
               }, {
                 default: G(() => [
                   V(N(w), 1)
@@ -4996,8 +4998,8 @@ const An = {
                   key: 0,
                   color: "yinzhu",
                   finger: "",
-                  noselect: "",
-                  onClick: (ge) => r(q)
+                  onClick: (ge) => r(q),
+                  class: "pointer"
                 }, {
                   default: G(() => [
                     V(N(q), 1)
@@ -5012,7 +5014,7 @@ const An = {
       ]);
     };
   }
-};
+});
 const wn = { class: "imgList" }, Sn = { class: "imgBigCover" }, $n = ["src"], jn = { class: "imageBottomContainer" }, En = ["onClick"], Cn = {
   name: "iceImgPreview"
 }, Nn = /* @__PURE__ */ Object.assign(Cn, {
