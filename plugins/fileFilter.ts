@@ -22,20 +22,35 @@ const vitePluginVue: PreviewPlugin = {
     const parse = baseParse(file).children
     const parsed = parse.find((n: any) => n.tag === 'preview')
     let styleCode = parse.find((n: any) => n.tag === 'style') || null
-    let script = parse.find((n: any) => n.tag === 'script') || null
-
-    if (styleCode) {
-      styleCode = styleCode.loc.source
-    }
-    if (script) {
-      script = script.loc.source
-    }
     const content = parse.find((n: any) => n.tag === 'template')
-    const main = content?.children[0].loc.source
+    const previewNode = parse.find((n: any) => n.tag === 'preview')
+    const containerNode = content?.children.find((n: any) => n.tag === 'container')
+    const scriptNode = parse.find((n: any) => n.tag === 'script')
+    
+    // 获取预览标题
+    const title = previewNode?.children[0]?.content || ''
+    
+    // 获取container内容
+    const main = containerNode?.loc?.source?.replace(/<\/?container>/g, '').trim() || ''
+    
+    // 获取script内容
+    let scriptContent = ''
+    if (scriptNode) {
+      const setupMatch = scriptNode.loc?.source?.match(/<script.*?>([\s\S]*?)<\/script>/)?.[1] || ''
+      scriptContent = setupMatch.trim()
+    }
+    
+    // 获取style内容
+    let styleContent = ''
+    if (styleCode) {
+      styleContent = styleCode?.loc?.source?.replace(/<\/?style.*?>/g, '').trim() || ''
+    }
+
     return `export default Component => {
+      Component.__sourceCodeTitle = ${JSON.stringify(title)}
       Component.__sourceCode = ${JSON.stringify(main)}
-      ${styleCode ? `Component.__sourceStyle = ${JSON.stringify(styleCode)}` : ''}
-      ${script ? `Component.__sourceScript = ${JSON.stringify(script)}` : ''}
+      ${scriptContent ? `Component.__script = ${JSON.stringify(scriptContent)}` : ''}
+      ${styleContent ? `Component.__styleCode = ${JSON.stringify(styleContent)}` : ''}
     }`
   }
 }
