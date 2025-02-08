@@ -1,4 +1,4 @@
-<span><div style="text-align: center;">![](src\assets\png\logo.png)</div></span>
+<span><div style="text-align: center;">![](.\src\assets\png\logo.png)</div></span>
 <hr/>
 
 基于 Vue 3 和 Vite,为我的个人项目开发的ui框架
@@ -36,6 +36,12 @@ app
 <hr/>
 
 > 更新日志
+
+
+__**2025.02.08**__  
+新增`第三方`组件  
+重构部分代码为ts  
+新增github Action,自动打包文档
 
 __**2024.09.11**__  
 新增`MusicCard`组件
