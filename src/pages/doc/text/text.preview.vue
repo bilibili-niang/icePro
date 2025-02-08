@@ -10,4 +10,3 @@ text-normal
     <ice-text>晴空一鹤排云上</ice-text>
   </container>
 </template>
-
