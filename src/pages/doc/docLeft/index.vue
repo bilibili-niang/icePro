@@ -15,7 +15,7 @@ const items = [
       },
       {
         text: 'colors 颜色',
-        href: '/doc/button/colors'
+        href: '/doc/colors'
       },
       {
         text: 'tools 工具',

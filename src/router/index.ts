@@ -143,6 +143,9 @@ const routes = [
   }
 ]
 
+console.log('router-----------------')
+console.log(routes)
+
 const router = createRouter({
   // history: createWebHistory("/"),
   history: createWebHashHistory('/icePro/'),
