@@ -27,7 +27,7 @@
 </template>
 
 <script setup>
-import { nextTick } from 'vue'
+import { nextTick, ref } from 'vue'
 import { inputEmit, inputProps, useInput } from './index.js'
 
 const props = defineProps(inputProps)
@@ -42,8 +42,8 @@ const {
 } = useInput(props, emits)
 
 
-const input = document.querySelector('input')
-const textarea = document.querySelector('textarea')
+const input = ref(null)
+const textarea = ref(null)
 const inputOrTextarea = () => input.value || textarea.value
 
 // 监听输入
@@ -62,30 +62,24 @@ const handleFocus = (e) => {
   emits('focus', e)
 }
 
+// focus方法
 const focus = () => {
   nextTick(() => {
-    inputOrTextarea.value?.focus()
+    input.value?.focus()
   })
 }
 
+// blur方法
 const blur = () => {
   nextTick(() => {
-    inputOrTextarea.value?.blur()
-    const selection = document.getSelection()
-    const range = document.createRange()
-    range.selectNode(inputOrTextarea.value)
-    selection.removeAllRanges()
+    input.value?.blur()
   })
 }
 
+// select方法
 const select = () => {
   nextTick(() => {
-    inputOrTextarea.value?.focus()
-    const selection = document.getSelection()
-    const range = document.createRange()
-    range.selectNode(inputOrTextarea.value)
-    selection.removeAllRanges()
-    selection.addRange(range)
+    input.value?.select()
   })
 }
 
@@ -93,8 +87,8 @@ defineExpose({
   input,
   inputOrTextarea,
   textarea,
-  blur,
   focus,
+  blur,
   select
 })
 
