@@ -1,15 +1,9 @@
 <template>
-
-  <MisalignedCard />
-
+  <Preview :component="MisalignedCardPreview" />
 </template>
 
-
 <script setup>
-import MisalignedCard from '../../../components/misalignedCard'
+import Preview from '../../../components/editor/preview.vue'
+import MisalignedCardPreview from './misalignedCard.preview.vue'
 </script>
-<script>
-export default {
-  name: 'MisalignedCardPreview'
-}
-</script>
+
