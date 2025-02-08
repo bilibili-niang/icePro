@@ -72,8 +72,8 @@ export default defineConfig({
     }
   },
   build: {
-    outDir: 'docs', 
-    minify: true, 
+    outDir: 'docs',
+    minify: true,
     rollupOptions: {
       /*output: {
         globals: {
