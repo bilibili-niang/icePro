@@ -148,8 +148,5 @@ const router = createRouter({
   history: createWebHashHistory('/icePro/'),
   routes
 })
-console.log('routes')
-console.log(routes)
-
 
 export default router
