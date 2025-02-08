@@ -30,6 +30,7 @@ import iceTabs from './src/components/tabs/index.js'
 import iceTabItem from './src/components/tabItem'
 import { findColor } from './src/utils/tools.js'
 import RandomPixels from './src/thirdConponments/randomPixels'
+import SimpleBackground from './src/thirdConponments/simpleBackground'
 
 findColor.activeColor = '#fba414'
 
@@ -60,7 +61,8 @@ const components = {
   inlineStyle,
   iceTabs,
   iceTabItem,
-  RandomPixels
+  RandomPixels,
+  SimpleBackground
 }
 
 export {
@@ -90,7 +92,8 @@ export {
   inlineStyle,
   iceTabs,
   iceTabItem,
-  RandomPixels
+  RandomPixels,
+  SimpleBackground
 }
 
 function install(app) {
