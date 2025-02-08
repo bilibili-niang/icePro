@@ -7,13 +7,15 @@ const routes = [
     component: () => import('../pages/index.vue')
   },
   {
-    path: '/thirdCompoments',
-    name: 'thirdCompoments',
+    path: '/thirdComponents',
+    name: 'thirdComponents',
+    redirect: '/thirdComponents/randomPixels',
+    component: () => import('../pages/thirdComponents/index.vue'),
     children: [
       {
-        path: 'index',
-        name: 'thirdCompomentsIndex',
-        component: () => import('../pages/thirdCompoments/index.vue')
+        path: 'randomPixels',
+        name: 'randomPixels',
+        component: () => import('../pages/thirdComponents/randomPixels/index.vue')
       }
     ]
   },
@@ -24,7 +26,7 @@ const routes = [
     redirect: '/advancedComponent/misalignedCard',
     children: [
       {
-        path: '/advancedComponent/misalignedCard',
+        path: 'misalignedCard',
         name: 'misalignedCard',
         component: () => import('../pages/advancedComponent/misalignedCard/index.vue')
       }
@@ -42,7 +44,7 @@ const routes = [
         component: () => import('../pages/doc/button/index.vue')
       },
       {
-        path: 'button/colors',
+        path: 'colors',
         name: 'colors',
         component: () => import('../pages/doc/button/colors.vue')
       },
@@ -146,5 +148,8 @@ const router = createRouter({
   history: createWebHashHistory('/icePro/'),
   routes
 })
+console.log('routes')
+console.log(routes)
+
 
 export default router

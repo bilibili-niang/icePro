@@ -58,14 +58,14 @@ function handleClick() {
 const Prism = window.Prism
 
 const html = computed(() => {
-  return Prism.highlight(props.component.__sourceCode, Prism.languages.html, 'html')
+  return Prism.highlight(props.component?.__sourceCode || '-', Prism.languages.html, 'html')
 })
 const css = computed(() => {
-  return Prism.highlight(props.component.__styleCode, Prism.languages.css, 'css')
+  return Prism.highlight(props.component?.__styleCode || '-', Prism.languages.css, 'css')
 })
 
 const script = computed(() => {
-  return Prism.highlight(props.component.__script, Prism.languages.javascript, 'javascript')
+  return Prism.highlight(props.component?.__script || '-', Prism.languages.javascript, 'javascript')
 })
 </script>
 <style lang="less" scoped>

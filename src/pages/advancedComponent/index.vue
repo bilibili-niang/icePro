@@ -1,10 +1,5 @@
 <script setup>
 import advanceJson from '../../router/advance.json'
-
-console.log('advanceJson.pathList')
-console.log(advanceJson.pathList)
-
-
 </script>
 
 <template>

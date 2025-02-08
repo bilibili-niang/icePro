@@ -1,1 +1,0 @@
-import{M as e}from"./index-8913e483.js";import{o as a,h as r,u as s}from"./index-c6aa0d5d.js";const t={name:"MisalignedCardPreview"},p=Object.assign(t,{setup(o){return(n,c)=>(a(),r(s(e)))}});export{p as default};

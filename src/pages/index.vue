@@ -3,17 +3,17 @@
     <div class="ice-column flex-align-center">
       <ice-card :border="false">
         <template v-slot:header>
-          <ice-title> icepro </ice-title>
+          <ice-title> icepro</ice-title>
         </template>
         <template v-slot:body>
           <ice-avatar :src="imgUrl"></ice-avatar>
           <iceLink disabled @click="goDoc">起步</iceLink>
           <ice-text noselect>
-            献丑了,出来实习之后2023.7开始写的一个基于
+            2023.7实习的时候开始写的
             <ice-tag color="beiguahuang">vue3</ice-tag>
             的ui框架,目前还有不少bug,该项目主要是用于我的博客平台
           </ice-text>
-          <ice-text noselect> 基于我的定制化需求才开发的一个ui库 </ice-text>
+          <ice-text noselect> 基于我的定制化需求才开发的一个ui库</ice-text>
           <ice-text>
             <ice-tag color="danshuhong">简单</ice-tag>
             <ice-tag color="meiguihui">易用</ice-tag>
@@ -25,16 +25,16 @@
     <iceSplit dashed></iceSplit>
     <ice-row>
       <ice-column>
-        <ice-text> 我的博客: </ice-text>
+        <ice-text> 我的博客:</ice-text>
         <ice-link href="http://blog.icestone.work/#/">blog</ice-link>
       </ice-column>
       <ice-column>
-        <ice-text> 我的github: </ice-text>
+        <ice-text> 我的github:</ice-text>
         <ice-link href="https://github.com/bilibili-niang" title="关注我,带你看更多的18禁">bilibili-niang</ice-link>
       </ice-column>
     </ice-row>
     <ice-text>
-      <ice-tag color="meiguihui"> 还有一些有意思的组件 </ice-tag>
+      <ice-tag color="meiguihui"> 还有一些有意思的组件</ice-tag>
     </ice-text>
     <ice-row>
       <MisalignedCard />

@@ -14,11 +14,17 @@ export default defineConfig({
   sourceMap: true,
   plugins: [
     vue(),
-    vueJsx(),
+    vueJsx({
+      // 启用 TSX 文件的转换
+      include: [/\.[jt]sx$/]
+    }),
     mdPlugin.plugin({
       mode: ['html', 'vue']
     }),
-    vitePluginVue,
+    {
+      ...vitePluginVue,
+      enforce: 'post'
+    },
     eslintPlugin({
       include: ['src/**/*.js', 'src/**/*.vue', 'src/**/*.tsx', 'src/**/*.jsx']
     })

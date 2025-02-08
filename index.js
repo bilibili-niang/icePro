@@ -29,6 +29,7 @@ import inlineStyle from './src/components/editor/inlineStyle.vue'
 import iceTabs from './src/components/tabs/index.js'
 import iceTabItem from './src/components/tabItem'
 import { findColor } from './src/utils/tools.js'
+import RandomPixels from './src/thirdConponments/randomPixels'
 
 findColor.activeColor = '#fba414'
 
@@ -58,7 +59,8 @@ const components = {
   colorSelector,
   inlineStyle,
   iceTabs,
-  iceTabItem
+  iceTabItem,
+  RandomPixels
 }
 
 export {
@@ -87,7 +89,8 @@ export {
   colorSelector,
   inlineStyle,
   iceTabs,
-  iceTabItem
+  iceTabItem,
+  RandomPixels
 }
 
 function install(app) {

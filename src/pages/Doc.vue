@@ -1,13 +1,7 @@
 <template>
   <div class="ice-row wideContainer">
-    <div :class="[
-        fixed?'positionFix':''
-    ]"
-         class="ice-column leftContent scrollStyle">
-      <ice-text>
-        切换颜色
-        <ice-button @click="changeTheme">{{ isDark ? 'dark' : 'light' }}</ice-button>
-      </ice-text>
+    <div class='ice-column leftContent scrollStyle'>
+
       <ice-row v-if="false">
         <input v-model="colorVal" type="color">
         <text :style="{'color':colorVal}">
@@ -16,6 +10,7 @@
           <ice-button @click="clearColor">clear</ice-button>
         </text>
       </ice-row>
+
       <docLeft></docLeft>
     </div>
     <div class="ice-column flexFull scrollStyle">
@@ -27,14 +22,7 @@
 <script setup>
 import { ref } from 'vue'
 import docLeft from './doc/docLeft'
-import { themeStore } from '../store'
-import { storeToRefs } from 'pinia'
 
-const store = themeStore()
-const { isDark } = storeToRefs(store)
-const { changeTheme } = store
-
-const fixed = ref(false)
 const colorVal = ref('#422929')
 const setColor = () => {
   localStorage.setItem('color', colorVal.value)

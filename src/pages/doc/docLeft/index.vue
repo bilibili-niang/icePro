@@ -145,13 +145,19 @@ const items = [
   {
     text: '扩展',
     children: [
-      {
+      /*{
         text: 'inlineStyle 行内样式',
         href: '/doc/inlineStyle'
-      },
+      },*/
       {
-        text: 'third component 第三方扩展',
-        href: '/thirdCompoments/index'
+        text: '第三方组件',
+        href: '/thirdComponents/randomPixels'
+        /*children: [
+          {
+            text: 'randomPixels 随机像素',
+            href: '/thirdComponents/randomPixels'
+          }
+        ]*/
       },
       {
         text: '进阶组件',
