@@ -7,5 +7,5 @@
 <script setup>
 import Preview from '@/components/editor/preview.vue'
 import linkPreview from './link.preview.vue'
-import linkBorderPreview from './link.Border.preview.vue'
+import linkBorderPreview from './link.border.preview.vue'
 </script>
