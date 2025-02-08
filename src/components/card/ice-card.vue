@@ -185,15 +185,21 @@ onMounted(() => {
   }
 }
 
+.tag {
+  display: inline-block;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
 // 箭头翻转
 .down {
-  transform: rotate(180deg);
-  transition: transform 0.3s;
+  transform: rotate3d(1, 0, 0, 180deg);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .up {
-  transform: rotate(0deg);
-  transition: transform 0.3s;
+  transform: rotate3d(1, 0, 0, 0deg);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .bottomLim {
