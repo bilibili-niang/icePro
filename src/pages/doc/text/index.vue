@@ -14,7 +14,3 @@ import textWrapPreview from './text.wrap.preview.vue'
 import textSizePreview from './text-size.preview.vue'
 import textUnderlinePreview from './text-underline.preview.vue'
 </script>
-
-<style scoped>
-
-</style>
