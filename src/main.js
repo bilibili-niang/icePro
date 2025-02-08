@@ -1,10 +1,10 @@
 import './assets/variables.less'
-import {createApp} from "vue"
-import App from "./App.vue"
-import "./assets/common.less"
-import route from "./router/index"
-import icepro from "../index"
-import {findColor} from "./utils/tools.js"
+import { createApp } from 'vue'
+import App from './App.vue'
+import './assets/common.less'
+import route from './router/index'
+import icepro from '../index'
+import { findColor } from './utils/tools.js'
 import { createPinia } from 'pinia'
 
 const app = createApp(App)
@@ -18,6 +18,6 @@ keys.map(item => {
 icepro.install(app)
 app.config.globalProperties.findColor = findColor
 app
-    .use(route)
-    .use(pinia)
-    .mount("#app")
+  .use(route)
+  .use(pinia)
+  .mount('#app')

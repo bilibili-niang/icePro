@@ -1,10 +1,11 @@
 <template>
-  <div class="third-components ice-row wideContainer">
+  <div class="ice-row wideContainer">
     <div
       :class="[
         'ice-column leftContent scrollStyle']">
       <DocContainerRender :item="componentList" />
     </div>
+
     <div class="ice-column flexFull scrollStyle">
       <router-view></router-view>
     </div>
@@ -28,18 +29,36 @@ const componentList = [
 </script>
 
 <style lang="less" scoped>
-.third-components {
-  padding: 20px;
+.flexFull {
+  padding-left: 1rem;
+  padding-bottom: 200px;
+  height: 100vh;
+  overflow-y: auto;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
 
-  .component-list {
-    margin-top: 20px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-
-    .component-item {
-      width: 300px;
-    }
+.wideContainer {
+  .leftContent {
+    padding-top: @padding;
+    transition: .5s;
+    z-index: 10;
+    height: 100vh;
+    overflow-y: auto;
+    box-sizing: border-box;
+    overflow-x: hidden;
   }
 }
+
+.positionFix {
+  position: fixed;
+  left: -100% !important;
+}
+
+.fixedBtn {
+  position: fixed;
+  top: 10px;
+  left: 0;
+}
+
 </style>

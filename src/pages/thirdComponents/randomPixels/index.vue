@@ -1,14 +1,10 @@
 <template>
-  <div>
-    <ice-text>
-      你好
-    </ice-text>
     <Preview :component="RandomPixelsPreview" />
-  </div>
+    <Preview :component="SimpleBackgroundPreview" />
 </template>
 
 <script setup>
-import RandomPixelsPreview from './randomPixels.preview.vue'
 import Preview from '../../../components/editor/preview.vue'
-
+import RandomPixelsPreview from './randomPixels.preview.vue'
+import SimpleBackgroundPreview from './simpleBackground.preview.vue'
 </script>

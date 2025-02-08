@@ -1,3 +1,3 @@
-import RandomPixels from './src/index.vue'
+import RandomPixels from './src'
 
 export default RandomPixels
