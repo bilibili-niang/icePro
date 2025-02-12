@@ -3,9 +3,12 @@
       type,
   dashed?'dashed':'',
  'customColor'
-  ]" :style="{
-  '--color':findColor(color).color
-  }" class='split'>
+  ]"
+       :style="{
+  '--color':findColor(color).color,
+  width:width
+  }"
+       class='split'>
     <div :class="[
         position
     ]"
@@ -42,6 +45,10 @@ const props = defineProps({
   position: {
     type: String,
     default: 'center'
+  },
+  width: {
+    type: String,
+    default: '100%'
   }
 })
 
@@ -75,8 +82,7 @@ export default {
   border-color: @themeColor-bleak;
   margin-bottom: @m-large;
   margin-top: @m-normal;
-  width: 100%;
-  box-sizing: border-box;
+    box-sizing: border-box;
   position: relative;
 
   .text {
