@@ -3,27 +3,31 @@
       type,
   dashed?'dashed':'',
  'customColor'
-  ]" :style="{
-  '--color':findColor(color).color
-  }" class='split'>
+  ]"
+       :style="{
+  '--color':findColor(color).color,
+  width:width
+  }"
+       class='split'>
     <div :class="[
         position
     ]"
          class="text"
     >
-      {{ text }}
+      <slot>{{ text }}</slot>
     </div>
   </div>
 
 </template>
 
 <script setup>
-import {findColor} from "../../utils/tools.js"
+import { findColor } from '../../utils/tools.js'
+import { onMounted, useSlots } from 'vue'
 
-defineProps({
+const props = defineProps({
   type: {
     type: String,
-    default: "landscape"
+    default: 'landscape'
   },
   dashed: {
     type: Boolean,
@@ -31,22 +35,35 @@ defineProps({
   },
   color: {
     type: String,
-    default: ""
+    default: ''
   },
   text: {
     type: String,
-    default: ""
+    default: ''
   },
   // 文字位置
   position: {
     type: String,
-    default: "center"
+    default: 'center'
+  },
+  width: {
+    type: String,
+    default: '100%'
+  }
+})
+
+const $slots = useSlots()
+
+onMounted(() => {
+  if (props.text && $slots.default) {
+    console.warn('Both slot and props.text are present. Only slot content will be displayed.')
   }
 })
 </script>
+
 <script>
 export default {
-  name: "iceSplit"
+  name: 'iceSplit'
 }
 </script>
 <style lang='less' scoped>
@@ -65,8 +82,7 @@ export default {
   border-color: @themeColor-bleak;
   margin-bottom: @m-large;
   margin-top: @m-normal;
-  width: 100%;
-  box-sizing: border-box;
+    box-sizing: border-box;
   position: relative;
 
   .text {

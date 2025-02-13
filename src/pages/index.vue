@@ -3,7 +3,7 @@
     <div class="ice-column flex-align-center">
       <ice-card :border="false">
         <template v-slot:header>
-          <ice-title> icepro</ice-title>
+          <ice-title>icepro,有空写的一个玩具库</ice-title>
         </template>
         <template v-slot:body>
           <ice-avatar :src="imgUrl"></ice-avatar>
