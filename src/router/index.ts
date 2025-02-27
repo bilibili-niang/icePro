@@ -16,6 +16,11 @@ const routes = [
         path: 'randomPixels',
         name: 'randomPixels',
         component: () => import('../pages/thirdComponents/randomPixels/index.vue')
+      },
+      {
+        path: 'rgbDotLoading',
+        name: 'rgbDotLoading',
+        component: () => import('../pages/thirdComponents/rgbDotLoading/index.vue')
       }
     ]
   },

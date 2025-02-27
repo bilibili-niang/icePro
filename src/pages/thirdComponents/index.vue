@@ -22,6 +22,10 @@ const componentList = [
       {
         text: '随机的背景',
         href: '/thirdComponents/randomPixels'
+      },
+      {
+        text: 'rgb点点旋转',
+        href: '/thirdComponents/rgbDotLoading'
       }
     ]
   }
