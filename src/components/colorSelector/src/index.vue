@@ -6,6 +6,7 @@ export default {
 
 <script setup>
 import { ref, onMounted } from 'vue'
+import './index.less'
 
 const emits = defineEmits(['update:modelValue'])
 import colorJson from '../../../assets/colors/colors.json'
@@ -36,9 +37,7 @@ const init = () => {
   props.modelValue ? (componentVal.value = props.modelValue) : changeColor()
 }
 
-onMounted(() => {
-  init()
-})
+onMounted(init)
 
 const colorListFlag = ref(false)
 const changeColorList = () => {
@@ -68,64 +67,9 @@ const changeColorList = () => {
             "
           ></div>
         </template>
-        <ice-text> </ice-text>
+        <ice-text></ice-text>
       </ice-row>
     </div>
   </div>
 </template>
 
-<style lang="less" scoped>
-.colorLim {
-  display: flex;
-  width: 2rem;
-  height: 2rem;
-  border: @borderColor 1px solid;
-  border-radius: @radio-n;
-
-  input {
-    display: flex;
-    width: 100%;
-    height: 100%;
-    border: none;
-  }
-}
-.chineseColors {
-  position: relative;
-
-  .previewBlock {
-    display: flex;
-    width: 1.3rem;
-    height: 1.3rem;
-    border-radius: @radio-n;
-  }
-
-  .colorList {
-    position: absolute;
-    top: 2rem;
-    left: 0;
-    z-index: -9;
-
-    .colorItem {
-      transition-duration: @time-l;
-      height: 0;
-      overflow: hidden;
-    }
-  }
-
-  .colorListShow {
-    position: absolute;
-    top: 2rem;
-    left: 0;
-    z-index: 9;
-    overflow: visible;
-    background: @bac;
-    transition-duration: @time-l;
-
-    .colorItem {
-      transition-duration: @time-l;
-      height: 2rem;
-      overflow: visible;
-    }
-  }
-}
-</style>

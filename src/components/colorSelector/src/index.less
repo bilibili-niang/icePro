@@ -1,0 +1,59 @@
+
+.colorLim {
+  display: flex;
+  width: 2rem;
+  height: 2rem;
+  border: @borderColor 1px solid;
+  border-radius: @radio-n;
+
+  input {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+}
+
+.chineseColors {
+  position: relative;
+
+  .selectedColor {
+    width: fit-content;
+  }
+
+  .previewBlock {
+    display: flex;
+    width: 1.3rem;
+    height: 1.3rem;
+    border-radius: @radio-n;
+  }
+
+  .colorList {
+    position: absolute;
+    top: 2rem;
+    left: 0;
+    z-index: -9;
+
+    .colorItem {
+      transition-duration: @time-l;
+      height: 0;
+      overflow: hidden;
+    }
+  }
+
+  .colorListShow {
+    position: absolute;
+    top: 2rem;
+    left: 0;
+    z-index: 9;
+    overflow: visible;
+    background: @bac;
+    transition-duration: @time-l;
+
+    .colorItem {
+      transition-duration: @time-l;
+      height: 2rem;
+      overflow: visible;
+    }
+  }
+}
