@@ -1,4 +1,4 @@
-import colorSelector from "./src/index.vue"
+import colorSelector from "./src"
 
 export default colorSelector
 
