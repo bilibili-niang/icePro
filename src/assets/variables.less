@@ -1,3 +1,5 @@
+@import './theme.less';
+
 // 颜色参考 http://zhongguose.com/#qianshibai
 // less变量
 // 字体
@@ -44,7 +46,7 @@ em {
 @btn-skyblue-bleak: var(--color-bleak);
 @btn-skyblue-none: rgba(69, 159, 251, 0);
 // 主题颜色
-@themeColor: @btn-skyblue;
+@themeColor: var(--color);
 // 檀紫
 @themeActiveColor: #a7535a;
 @themeActiveColor-bleak: #a7535a;
@@ -113,18 +115,12 @@ em {
 // 字体颜色
 // 主题字体颜色,锌灰
 html.light {
-  --color: rgba(122, 115, 116, 1);
-  --colorHover: rgba(31, 32, 36, 1);
-  --color-bleak: rgba(122, 115, 116, 1);
   --bac: rgb(255, 255, 255);
   --bac-bleak: rgba(255, 255, 255, 0.5);
 }
 
 // 深色模式
 html.dark {
-  --color: rgba(218, 212, 203, 1);
-  --colorHover: rgba(122, 115, 116, 0.9);
-  --color-bleak: rgba(218, 212, 203, 0.6);
   --bac: rgb(31, 32, 36);
   --bac-bleak: rgba(31, 32, 36, 0.5);
 }

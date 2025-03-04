@@ -1,4 +1,4 @@
-import { defineComponent, ref, onMounted } from 'vue'
+import { defineComponent, ref, onMounted, watch } from 'vue'
 import './index.less'
 import purpleTheme from '../../../assets/colors/theme-purple.json'
 
@@ -35,7 +35,7 @@ export default defineComponent({
       }
       selectedTheme.value = theme
       if (theme.variations.length > 0) {
-        handleColorSelect(theme.variations[0].hex)
+        handleColorSelect(theme.variations[theme.variations.length - 1].hex)
       }
     }
 
@@ -49,6 +49,12 @@ export default defineComponent({
     onMounted(() => {
       if (themes.length > 0) {
         handleThemeSelect(themes[0])
+      }
+    })
+
+    watch(() => selectedTheme.value, (newTheme) => {
+      if (newTheme) {
+        handleColorSelect(newTheme.variations[newTheme.variations.length - 1].hex)
       }
     })
 
