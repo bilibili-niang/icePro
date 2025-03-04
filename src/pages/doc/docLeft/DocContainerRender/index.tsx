@@ -1,3 +1,4 @@
+import './index.less'
 import { defineComponent, PropType, computed } from 'vue'
 import router from '../../../../router'
 import logo from '../../../../assets/png/logo.png'
@@ -67,7 +68,7 @@ export default defineComponent({
           {menuItem.href ? (
             <ice-button
               border={false}
-              type={nowPath.value === menuItem.href ? 'danger activeUrl' : 'primary'}
+              type={nowPath.value === menuItem.href ? 'activeUrl' : 'primary'}
               onClick={() => goHref(menuItem.href!)}>
               {menuItem.text}
             </ice-button>

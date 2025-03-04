@@ -6,7 +6,13 @@
 
   <container>
     <div class="exampleContainer">
-      <SimpleBackground :primaryColor="primaryColor" :secondaryColor="secondaryColor" allowClick />
+      <ice-column>
+        <SimpleBackground :primaryColor="primaryColor" :secondaryColor="secondaryColor" allowClick />
+        <ice-text>
+          或者不允许点击切换颜色
+        </ice-text>
+        <SimpleBackground :primaryColor="primaryColor" :secondaryColor="secondaryColor" />
+      </ice-column>
     </div>
   </container>
 

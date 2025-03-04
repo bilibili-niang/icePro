@@ -12,7 +12,7 @@ color-selector 中国传统色
       <ice-text>
         当前选择的颜色: {{ colorValue }}
       </ice-text>
-      <color-selector v-model="colorValue" chinese></color-selector>
+      <colorSelector v-model="colorValue" chinese/>
     </ice-column>
   </container>
 </template>
