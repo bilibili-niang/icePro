@@ -102,8 +102,8 @@ export default defineComponent({
                           class="color-dot" 
                           style={{ backgroundColor: swatch.hex }}
                         />
-                        <span class="color-weight">{swatch.weight}</span>
-                        <span class="color-hex">{swatch.hex}</span>
+                        <ice-text class="color-weight">{swatch.weight}</ice-text>
+                        <ice-text class="color-hex">{swatch.hex}</ice-text>
                       </div>
                     ))}
                   </div>

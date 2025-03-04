@@ -1,13 +1,25 @@
 // 主题色系定义
 // 红色主题
 html[data-theme='red'] {
-  --primary: #F44336;
-  --primary-light: #FFCDD2;
-  --primary-dark: #E53935;
-  --accent: #FFC107;
-  --color: #F44336;
-  --color-bleak: rgba(244, 67, 54, 0.6);
-  --colorHover: rgba(244, 67, 54, 0.9);
+  &.light {
+    --primary: #F44336;
+    --primary-light: #FFCDD2;
+    --primary-dark: #E53935;
+    --accent: #FFC107;
+    --color: #F44336;
+    --color-bleak: rgba(244, 67, 54, 0.6);
+    --colorHover: rgba(244, 67, 54, 0.9);
+  }
+
+  &.dark {
+    --primary: #EF9A9A;
+    --primary-light: #FFCDD2;
+    --primary-dark: #E57373;
+    --accent: #FF8A80;
+    --color: #EF9A9A;
+    --color-bleak: rgba(239, 154, 154, 0.6);
+    --colorHover: rgba(239, 154, 154, 0.9);
+  }
   
   --color-red-50: #FFEBEE;
   --color-red-100: #FFCDD2;
@@ -18,7 +30,7 @@ html[data-theme='red'] {
   --color-red-600: #E53935;
   --color-red-700: #D32F2F;
   --color-red-800: #C62828;
-  --color-red-900: #C62828;
+  --color-red-900: #B71C1C;
 
   --color-pink-50: #FCE4EC;
   --color-pink-100: #F8BBD0;
@@ -52,64 +64,25 @@ html[data-theme='red'] {
 
 // 粉色主题
 html[data-theme='pink'] {
-  --primary: #E91E63;
-  --primary-light: #F8BBD0;
-  --primary-dark: #D81B60;
-  --accent: #FF4081;
-  --color: #E91E63;
-  --color-bleak: rgba(233, 30, 99, 0.6);
-  --colorHover: rgba(233, 30, 99, 0.9);
-  
-  --color-red-50: #FFEBEE;
-  --color-red-100: #FFCDD2;
-  --color-red-200: #EF9A9A;
-  --color-red-300: #E57373;
-  --color-red-400: #EF5350;
-  --color-red-500: #F44336;
-  --color-red-600: #E53935;
-  --color-red-700: #D32F2F;
-  --color-red-800: #C62828;
-  --color-red-900: #B71C1C;
+  &.light {
+    --primary: #E91E63;
+    --primary-light: #F8BBD0;
+    --primary-dark: #D81B60;
+    --accent: #FF4081;
+    --color: #E91E63;
+    --color-bleak: rgba(233, 30, 99, 0.6);
+    --colorHover: rgba(233, 30, 99, 0.9);
+  }
 
-  --color-pink-50: #FCE4EC;
-  --color-pink-100: #F8BBD0;
-  --color-pink-200: #F48FB1;
-  --color-pink-300: #F06292;
-  --color-pink-400: #EC407A;
-  --color-pink-500: #E91E63;
-  --color-pink-600: #D81B60;
-  --color-pink-700: #C2185B;
-  --color-pink-800: #AD1457;
-  --color-pink-900: #AD1457;
-
-  --color-purple-50: #F3E5F5;
-  --color-purple-100: #E1BEE7;
-  --color-purple-200: #CE93D8;
-  --color-purple-300: #BA68C8;
-  --color-purple-400: #AB47BC;
-  --color-purple-500: #9C27B0;
-  --color-purple-600: #8E24AA;
-  --color-purple-700: #7B1FA2;
-  --color-purple-800: #6A1B9A;
-  --color-purple-900: #4A148C;
-
-  --color-deep-purple-50: #EDE7F6;
-  --color-deep-purple-100: #D1C4E9;
-  --color-deep-purple-200: #B39DDB;
-  --color-deep-purple-300: #9575CD;
-  --color-deep-purple-400: #7E57C2;
-  --color-deep-purple-500: #673AB7;
-}
-
-// 紫色主题
-html[data-theme='purple'] {
-  --primary: #9C27B0;
-  --primary-light: #E1BEE7;
-  --primary-dark: #7B1FA2;
-  --accent: #7E57C2;
-  --color: #9C27B0;
-  --color-bleak: rgba(156, 39, 176, 0.6);
-  --colorHover: rgba(156, 39, 176, 0.9);
+  &.dark {
+    --primary: #F48FB1;
+    --primary-light: #F8BBD0;
+    --primary-dark: #F06292;
+    --accent: #FF80AB;
+    --color: #F48FB1;
+    --color-bleak: rgba(244, 143, 177, 0.6);
+    --colorHover: rgba(244, 143, 177, 0.9);
+  }
   
   --color-red-50: #FFEBEE;
   --color-red-100: #FFCDD2;
@@ -142,7 +115,70 @@ html[data-theme='purple'] {
   --color-purple-600: #8E24AA;
   --color-purple-700: #7B1FA2;
   --color-purple-800: #6A1B9A;
-  --color-purple-900: #6A1B9A;
+  --color-purple-900: #4A148C;
+
+  --color-deep-purple-50: #EDE7F6;
+  --color-deep-purple-100: #D1C4E9;
+  --color-deep-purple-200: #B39DDB;
+  --color-deep-purple-300: #9575CD;
+  --color-deep-purple-400: #7E57C2;
+  --color-deep-purple-500: #673AB7;
+}
+
+// 紫色主题
+html[data-theme='purple'] {
+  &.light {
+    --primary: #9C27B0;
+    --primary-light: #CE93D8;
+    --primary-dark: #8E24AA;
+    --accent: #E040FB;
+    --color: #9C27B0;
+    --color-bleak: rgba(156, 39, 176, 0.6);
+    --colorHover: rgba(156, 39, 176, 0.9);
+  }
+
+  &.dark {
+    --primary: #CE93D8;
+    --primary-light: #E1BEE7;
+    --primary-dark: #BA68C8;
+    --accent: #EA80FC;
+    --color: #CE93D8;
+    --color-bleak: rgba(206, 147, 216, 0.6);
+    --colorHover: rgba(206, 147, 216, 0.9);
+  }
+  
+  --color-red-50: #FFEBEE;
+  --color-red-100: #FFCDD2;
+  --color-red-200: #EF9A9A;
+  --color-red-300: #E57373;
+  --color-red-400: #EF5350;
+  --color-red-500: #F44336;
+  --color-red-600: #E53935;
+  --color-red-700: #D32F2F;
+  --color-red-800: #C62828;
+  --color-red-900: #B71C1C;
+
+  --color-pink-50: #FCE4EC;
+  --color-pink-100: #F8BBD0;
+  --color-pink-200: #F48FB1;
+  --color-pink-300: #F06292;
+  --color-pink-400: #EC407A;
+  --color-pink-500: #E91E63;
+  --color-pink-600: #D81B60;
+  --color-pink-700: #C2185B;
+  --color-pink-800: #AD1457;
+  --color-pink-900: #880E4F;
+
+  --color-purple-50: #F3E5F5;
+  --color-purple-100: #E1BEE7;
+  --color-purple-200: #CE93D8;
+  --color-purple-300: #BA68C8;
+  --color-purple-400: #AB47BC;
+  --color-purple-500: #9C27B0;
+  --color-purple-600: #8E24AA;
+  --color-purple-700: #7B1FA2;
+  --color-purple-800: #6A1B9A;
+  --color-purple-900: #4A148C;
 
   --color-deep-purple-50: #EDE7F6;
   --color-deep-purple-100: #D1C4E9;
@@ -154,13 +190,25 @@ html[data-theme='purple'] {
 
 // 深紫色主题
 html[data-theme='deep-purple'] {
-  --primary: #673AB7;
-  --primary-light: #D1C4E9;
-  --primary-dark: #4527A0;
-  --accent: #B388FF;
-  --color: #673AB7;
-  --color-bleak: rgba(103, 58, 183, 0.6);
-  --colorHover: rgba(103, 58, 183, 0.9);
+  &.light {
+    --primary: #673AB7;
+    --primary-light: #B39DDB;
+    --primary-dark: #5E35B1;
+    --accent: #7C4DFF;
+    --color: #673AB7;
+    --color-bleak: rgba(103, 58, 183, 0.6);
+    --colorHover: rgba(103, 58, 183, 0.9);
+  }
+
+  &.dark {
+    --primary: #B39DDB;
+    --primary-light: #D1C4E9;
+    --primary-dark: #9575CD;
+    --accent: #B388FF;
+    --color: #B39DDB;
+    --color-bleak: rgba(179, 157, 219, 0.6);
+    --colorHover: rgba(179, 157, 219, 0.9);
+  }
   
   --color-red-50: #FFEBEE;
   --color-red-100: #FFCDD2;
@@ -206,49 +254,109 @@ html[data-theme='deep-purple'] {
 
 // 蓝色主题
 html[data-theme='blue'] {
-  --primary: #2196F3;
-  --primary-light: #BBDEFB;
-  --primary-dark: #1976D2;
-  --accent: #448AFF;
-  --color: #2196F3;
-  --color-bleak: rgba(33, 150, 243, 0.6);
-  --colorHover: rgba(33, 150, 243, 0.9);
+  &.light {
+    --primary: #2196F3;
+    --primary-light: #90CAF9;
+    --primary-dark: #1E88E5;
+    --accent: #448AFF;
+    --color: #2196F3;
+    --color-bleak: rgba(33, 150, 243, 0.6);
+    --colorHover: rgba(33, 150, 243, 0.9);
+  }
+
+  &.dark {
+    --primary: #90CAF9;
+    --primary-light: #BBDEFB;
+    --primary-dark: #64B5F6;
+    --accent: #82B1FF;
+    --color: #90CAF9;
+    --color-bleak: rgba(144, 202, 249, 0.6);
+    --colorHover: rgba(144, 202, 249, 0.9);
+  }
+  
   --color-blue-900: #1E88E5;
 }
 
 // 绿色主题
 html[data-theme='green'] {
-  --primary: #4CAF50;
-  --primary-light: #C8E6C9;
-  --primary-dark: #388E3C;
-  --accent: #69F0AE;
-  --color: #4CAF50;
-  --color-bleak: rgba(76, 175, 80, 0.6);
-  --colorHover: rgba(76, 175, 80, 0.9);
+  &.light {
+    --primary: #4CAF50;
+    --primary-light: #A5D6A7;
+    --primary-dark: #43A047;
+    --accent: #69F0AE;
+    --color: #4CAF50;
+    --color-bleak: rgba(76, 175, 80, 0.6);
+    --colorHover: rgba(76, 175, 80, 0.9);
+  }
+
+  &.dark {
+    --primary: #A5D6A7;
+    --primary-light: #C8E6C9;
+    --primary-dark: #81C784;
+    --accent: #B9F6CA;
+    --color: #A5D6A7;
+    --color-bleak: rgba(165, 214, 167, 0.6);
+    --colorHover: rgba(165, 214, 167, 0.9);
+  }
+  
   --color-green-900: #2E7D32;
 }
 
 // 橙色主题
 html[data-theme='orange'] {
-  --primary: #FF9800;
-  --primary-light: #FFE0B2;
-  --primary-dark: #F57C00;
-  --accent: #FFD740;
-  --color: #FF9800;
-  --color-bleak: rgba(255, 152, 0, 0.6);
-  --colorHover: rgba(255, 152, 0, 0.9);
+  &.light {
+    --primary: #FF9800;
+    --primary-light: #FFB74D;
+    --primary-dark: #FB8C00;
+    --accent: #FFAB40;
+    --color: #FF9800;
+    --color-bleak: rgba(255, 152, 0, 0.6);
+    --colorHover: rgba(255, 152, 0, 0.9);
+  }
+
+  &.dark {
+    --primary: #FFB74D;
+    --primary-light: #FFE0B2;
+    --primary-dark: #FFA726;
+    --accent: #FFD180;
+    --color: #FFB74D;
+    --color-bleak: rgba(255, 183, 77, 0.6);
+    --colorHover: rgba(255, 183, 77, 0.9);
+  }
+  
   --color-orange-900: #FB8C00;
 }
 
 // 白色主题
 html[data-theme='white'] {
-  --primary: #FFFFFF;
-  --primary-light: #F5F5F5;
-  --primary-dark: #E0E0E0;
-  --accent: #BDBDBD;
-  --color: #FFFFFF;
-  --color-bleak: rgba(255, 255, 255, 0.6);
-  --colorHover: rgba(255, 255, 255, 0.9);
+  &.light {
+    --primary: #FFFFFF;
+    --primary-light: #FFFFFF;
+    --primary-dark: #F5F5F5;
+    --accent: #E0E0E0;
+    --color: #212121;
+    --color-bleak: rgba(33, 33, 33, 0.6);
+    --colorHover: rgba(33, 33, 33, 0.9);
+
+
+    --bac: rgb(255, 255, 255,.8);
+    --bac-inversion: rgba(31, 32, 36,1);
+    --bac-bleak: rgba(255, 255, 255, 0.5);
+  }
+
+  &.dark {
+    --primary: #F5F5F5;
+    --primary-light: #FFFFFF;
+    --primary-dark: #E0E0E0;
+    --accent: #BDBDBD;
+    --color: #FFFFFF;
+    --color-bleak: rgba(255, 255, 255, 0.6);
+    --colorHover: rgba(255, 255, 255, 0.9);
+
+    --bac: rgb(31, 32, 36);
+    --bac-inversion: rgba(251,242,227,1);
+    --bac-bleak: rgba(31, 32, 36, 0.5);
+  }
   
   --color-white-50: #FFFFFF;
   --color-white-100: #F5F5F5;
@@ -264,24 +372,25 @@ html[data-theme='white'] {
 
 // 默认主题色（当主题色为空时使用）
 html:not([data-theme]) {
-  --primary: #673AB7;
-  --primary-light: #9575CD;
-  --primary-dark: #512DA8;
-  --accent: #7C4DFF;
-  --color: #673AB7;
-  --color-bleak: rgba(103, 58, 183, 0.6);
-  --colorHover: rgba(103, 58, 183, 0.9);
-  
-  --color-purple-50: #F3E5F5;
-  --color-purple-100: #E1BEE7;
-  --color-purple-200: #CE93D8;
-  --color-purple-300: #BA68C8;
-  --color-purple-400: #AB47BC;
-  --color-purple-500: #9C27B0;
-  --color-purple-600: #8E24AA;
-  --color-purple-700: #7B1FA2;
-  --color-purple-800: #6A1B9A;
-  --color-purple-900: #6A1B9A;
+  &.light {
+    --primary: #FFFFFF;
+    --primary-light: #FFFFFF;
+    --primary-dark: #F5F5F5;
+    --accent: #E0E0E0;
+    --color: #212121;
+    --color-bleak: rgba(33, 33, 33, 0.6);
+    --colorHover: rgba(33, 33, 33, 0.9);
+  }
+
+  &.dark {
+    --primary: #F5F5F5;
+    --primary-light: #FFFFFF;
+    --primary-dark: #E0E0E0;
+    --accent: #BDBDBD;
+    --color: #FFFFFF;
+    --color-bleak: rgba(255, 255, 255, 0.6);
+    --colorHover: rgba(255, 255, 255, 0.9);
+  }
 }
 
 // 主题通用变量
