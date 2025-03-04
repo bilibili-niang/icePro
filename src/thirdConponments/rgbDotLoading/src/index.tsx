@@ -1,12 +1,19 @@
 // https://codepen.io/jkantner/pen/xbKYrxv
-import { defineComponent } from 'vue'
+import { defineComponent, onMounted } from 'vue'
+import { printAuthorInfo } from '../../../utils/console'
 import './index.css'
 
 export default defineComponent({
   name: 'RgbDotLoading',
-  props: {},
-  emits: [''],
   setup(props, { emit }) {
+    onMounted(() => {
+      printAuthorInfo({
+        title: 'RGB Dot Loading',
+        author: 'jkantner',
+        source: 'https://codepen.io/jkantner/pen/xbKYrxv'
+      })
+    })
+
     return () => {
       return (
         <div class="RgbDotLoading">

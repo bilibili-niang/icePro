@@ -57,13 +57,13 @@ const registerCSSProperties = () => {
         syntax: '<color>',
         inherits: false,
         initialValue: '#ffedcb'
-      });
+      })
       CSS.registerProperty({
         name: '--c2',
         syntax: '<color>',
         inherits: false,
         initialValue: '#ffc145'
-      });
+      })
     } catch (e) {
       // 如果属性已经注册，会抛出错误，可以忽略
     }

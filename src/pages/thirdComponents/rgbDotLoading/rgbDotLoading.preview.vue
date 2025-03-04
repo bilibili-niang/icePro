@@ -13,7 +13,9 @@
 <style lang="less">
 .exampleContainer {
   display: flex;
-  height: 500px;
+  height: 230px;
   width: 100%;
+  justify-content: center;
+  align-items: center;
 }
 </style>
