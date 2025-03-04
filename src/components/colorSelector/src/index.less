@@ -2,7 +2,6 @@
   display: flex;
   width: 2rem;
   height: 2rem;
-  border: @borderColor 1px solid;
   border-radius: @radio-n;
 
   input {
@@ -58,47 +57,216 @@
 }
 
 .color-selector {
-  padding: 16px;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  width: 24px;
+  height: 24px;
 
-  .color-box {
-    background: #fff;
-    border-radius: 8px;
-    padding: 16px;
-    margin-bottom: 24px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  &.expanded {
+    z-index: 1000;
 
-    .color-title {
-      margin: 0 0 16px;
-      font-size: 18px;
-      font-weight: 500;
-    }
+    .expanded-content {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
 
-    .color-row {
-      display: flex;
-      align-items: center;
-      padding: 8px;
-      border-radius: 4px;
-      cursor: pointer;
-      transition: background-color 0.2s;
-
-      &:hover {
-        background-color: rgba(0, 0, 0, 0.04);
+      .theme-list-expanded {
+        opacity: 1;
+        transform: translateY(0);
       }
 
-      .color-dot {
+      .color-box {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  }
+
+  .theme-item {
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .theme-dot {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      transition: transform 0.2s ease-out;
+    }
+
+    &:hover .theme-dot {
+      transform: scale(1.1);
+    }
+
+    &.active .theme-dot {
+      transform: scale(1.1);
+    }
+  }
+
+  .expanded-content {
+    position: absolute;
+    left: 0;
+    top: calc(100% + 8px);
+    display: flex;
+    gap: 24px;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.2s ease-out;
+    pointer-events: none;
+
+    .theme-list-expanded {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      padding: 16px;
+      background: @bac-reversal-bleak;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px @bac-reversal-bleak;
+      opacity: 0;
+      transform: translateY(-10px);
+      transition: all 0.2s ease-out;
+
+      .theme-item {
         width: 24px;
         height: 24px;
-        border-radius: 50%;
-        margin-right: 16px;
-      }
-
-      .color-weight {
-        flex: 1;
-      }
-
-      .color-hex {
-        font-family: monospace;
       }
     }
+
+    .color-box {
+      background: @bac-reversal-bleak;
+      border-radius: 8px;
+      padding: 16px;
+      box-shadow: 0 2px 8px @bac-reversal-bleak;
+      min-width: 200px;
+      opacity: 0;
+      transform: translateY(-10px);
+      transition: all 0.2s ease-out;
+
+      .color-title {
+        margin: 0 0 16px;
+        font-size: 18px;
+        font-weight: 500;
+      }
+
+      .variations-list {
+        .color-row {
+          display: flex;
+          align-items: center;
+          padding: 8px;
+          border-radius: 4px;
+          cursor: pointer;
+          transition: all 0.2s ease-out;
+          opacity: 0;
+          transform: translateY(10px);
+          animation: fadeIn 0.2s ease-out forwards;
+          animation-delay: calc(var(--index) * 0.03s);
+          white-space: nowrap;
+
+          &:hover {
+            background-color: rgba(0, 0, 0, 0.04);
+            transform: translateX(4px);
+          }
+
+          &.active {
+            background-color: rgba(0, 0, 0, 0.08);
+          }
+
+          .color-dot {
+            width: 24px;
+            height: 24px;
+            border-radius: 4px;
+            margin-right: 16px;
+            transition: background-color 0.2s ease-out;
+          }
+
+          .color-weight {
+            flex: 1;
+            font-size: 14px;
+          }
+
+          .color-hex {
+            font-family: monospace;
+            font-size: 14px;
+            opacity: 0.8;
+            transition: opacity 0.2s ease-out;
+            margin-left: 16px;
+          }
+
+          &:hover .color-hex {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}
+
+// 淡入滑动动画
+.fade-slide-enter-active,
+.fade-slide-leave-active {
+  transition: all 0.3s ease;
+}
+
+.fade-slide-enter-from,
+.fade-slide-leave-to {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+// 主题切换动画
+.theme-switch-enter-active,
+.theme-switch-leave-active {
+  transition: all 0.3s ease;
+}
+
+.theme-switch-enter-from {
+  opacity: 0;
+  transform: translateX(30px);
+}
+
+.theme-switch-leave-to {
+  opacity: 0;
+  transform: translateX(-30px);
+}
+
+// 色阶切换动画
+.variations-switch-enter-active,
+.variations-switch-leave-active {
+  transition: all 0.3s ease;
+}
+
+.variations-switch-enter-from {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.variations-switch-leave-to {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
