@@ -6,14 +6,22 @@ theme-selector
     <h3>默认使用方法</h3>
     <ice-text> colorValue: {{ colorValue }}</ice-text>
     <ice-row class="theme-switch" flexWrap>
-      <ice-button @click="changeTheme('red')">红色主题</ice-button>
-      <ice-button @click="changeTheme('pink')">粉色主题</ice-button>
-      <ice-button @click="changeTheme('purple')">紫色主题</ice-button>
-      <ice-button @click="changeTheme('deep-purple')">深紫色主题</ice-button>
-      <ice-button @click="changeTheme('blue')">蓝色主题</ice-button>
-      <ice-button @click="changeTheme('green')">绿色主题</ice-button>
-      <ice-button @click="changeTheme('orange')">橙色主题</ice-button>
-      <ice-button @click="changeTheme('white')">白色主题</ice-button>
+      <ice-button
+        hover
+        type='shadow-r-t'
+        @click="changeTheme('')"
+      >
+        默认主题
+      </ice-button>
+      <ice-button
+        v-for="(theme) in themes"
+        :key="theme.value"
+        hover
+        type='shadow-r-t'
+        @click="changeTheme(theme.value)"
+      >
+        {{ theme.label }}
+      </ice-button>
     </ice-row>
     <ColorSelector v-model:value="colorValue" />
   </div>
@@ -25,6 +33,17 @@ import ColorSelector from '@/components/colorSelector'
 import { themeManager, type ThemeType } from '@/utils/theme'
 
 const colorValue = ref('#D81B60')
+
+const themes = [
+  { value: 'red', label: '红色主题' },
+  { value: 'pink', label: '粉色主题' },
+  { value: 'purple', label: '紫色主题' },
+  { value: 'deep-purple', label: '深紫色主题' },
+  { value: 'blue', label: '蓝色主题' },
+  { value: 'green', label: '绿色主题' },
+  { value: 'orange', label: '橙色主题' },
+  { value: 'white', label: '白色主题' }
+]
 
 const changeTheme = (theme: ThemeType) => {
   themeManager.setTheme(theme)
