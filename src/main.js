@@ -4,7 +4,7 @@ import App from './App.vue'
 import './assets/common.less'
 import route from './router/index'
 import icepro from '../index'
-import { findColor } from './utils/tools.js'
+import { findColor } from './utils'
 import { createPinia } from 'pinia'
 
 const app = createApp(App)

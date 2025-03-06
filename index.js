@@ -28,10 +28,12 @@ import colorSelector from './src/components/colorSelector/index.js'
 import inlineStyle from './src/components/editor/inlineStyle.vue'
 import iceTabs from './src/components/tabs/index.js'
 import iceTabItem from './src/components/tabItem'
-import { findColor } from './src/utils/tools.js'
 import RandomPixels from './src/thirdConponments/randomPixels'
 import SimpleBackground from './src/thirdConponments/simpleBackground'
 import RgbDotLoading from './src/thirdConponments/rgbDotLoading'
+import { themeManager, findColor } from './src/utils'
+
+import themes from './src/assets/colors/theme-purple.json'
 
 findColor.activeColor = '#fba414'
 
@@ -96,7 +98,9 @@ export {
   iceTabItem,
   RandomPixels,
   SimpleBackground,
-  RgbDotLoading
+  RgbDotLoading,
+  themeManager,
+  themes
 }
 
 function install(app) {

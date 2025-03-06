@@ -34,7 +34,7 @@
 
 <script setup>
 import { ref } from 'vue'
-import { findColor } from '../../utils/tools.js'
+import { findColor } from '../../utils'
 import IceLink from '../../components/text/ice-link.vue'
 import IceTitle from '../../components/text/ice-title.vue'
 
