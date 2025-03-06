@@ -1,17 +1,15 @@
 <template>
   <router-view></router-view>
 </template>
-
 <script setup>
-const mode = localStorage.getItem('mode')
+import { themeStore } from './store'
 
-if (mode == 'true') {
-  document.querySelector('html').classList.add('light')
-  document.querySelector('html').classList.remove('dark')
-} else {
-  document.querySelector('html').classList.add('dark')
-  document.querySelector('html').classList.remove('light')
-}
+const { init } = themeStore()
+import { themeManager, themes } from './utils'
+
+init()
+themeManager.setTheme(themes[0].value)
+
 </script>
 <!--项目的css,不能暴露全局-->
 <style lang="less">

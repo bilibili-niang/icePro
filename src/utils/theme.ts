@@ -1,14 +1,14 @@
 // 主题类型
 
 export const themes = [
+  { value: 'white', label: '白色主题' },
   { value: 'red', label: '红色主题' },
   { value: 'pink', label: '粉色主题' },
   { value: 'purple', label: '紫色主题' },
   { value: 'deep-purple', label: '深紫色主题' },
   { value: 'blue', label: '蓝色主题' },
   { value: 'green', label: '绿色主题' },
-  { value: 'orange', label: '橙色主题' },
-  { value: 'white', label: '白色主题' }
+  { value: 'orange', label: '橙色主题' }
 ]
 
 export type ThemeType = 'red' | 'pink' | 'purple' | 'deep-purple' | 'blue' | 'green' | 'orange' | 'white'
