@@ -12,6 +12,7 @@
     "preview": "vite preview",
     "publish": "npm publish"
   },
+  "packageManager": "pnpm@9.15.2",
   "config": {
     "commitizen": {
       "path": "node_modules/cz-git",
