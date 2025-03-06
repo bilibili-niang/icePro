@@ -1,0 +1,36 @@
+@property --x {
+  syntax: '<length-percentage>';
+  initial-value: 50%;
+  inherits: false;
+}
+
+@property --y {
+  syntax: '<length-percentage>';
+  initial-value: 50%;
+  inherits: false;
+}
+
+.WaveDot {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  overflow: hidden;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    --pattern: radial-gradient(circle 0.3px at 0px 0px, #000 50%, transparent) 0 0/1.8px 1.8px repeat;
+    --map: radial-gradient(
+      circle 3vmin at var(--x) var(--y), 
+      rgba(0,0,0,0.7) 0%, 
+      rgba(0,0,0,0.3) 8%, 
+      rgba(0,0,0,0.1) 20%, 
+      transparent 30%
+    );
+    background: var(--pattern), var(--map);
+    background-blend-mode: multiply;
+    filter: contrast(1.2);
+  }
+}

@@ -1,3 +1,4 @@
+import './index.less'
 import { defineComponent, computed } from 'vue'
 
 export default defineComponent({
@@ -8,8 +9,7 @@ export default defineComponent({
       default: 3
     }
   },
-  emits: [''],
-  setup(props, { emit, slots }) {
+  setup(props, { slots }) {
     const BackContainerStyle = computed(() => {
       return {
         filter: `blur(${props.level}px)`

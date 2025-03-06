@@ -6,18 +6,20 @@
   <container>
     <div class="exampleContainer">
       <BackContainer>
-        <RgbDotLoading />
+        <WaveDot level="20"/>
       </BackContainer>
     </div>
   </container>
 </template>
 
 <script setup lang="ts">
-import RandomPixels from '../../../thirdConponments/randomPixels'
+import WaveDot from '../../../thirdConponments/waveDot'
+
 </script>
 
 <style lang="less">
 .exampleContainer {
+  border: var(--color-theme-900) 1px solid;
   display: flex;
   height: 500px;
   width: 100%;
