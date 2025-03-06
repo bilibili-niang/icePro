@@ -66,12 +66,12 @@ export default defineComponent({
       return (
         <li key={menuItem.text}>
           {menuItem.href ? (
-            <ice-button
+            <iceButton
               border={false}
               type={nowPath.value === menuItem.href ? 'activeUrl' : 'primary'}
               onClick={() => goHref(menuItem.href!)}>
               {menuItem.text}
-            </ice-button>
+            </iceButton>
           ) : (
             <ice-title noselect>{menuItem.text}</ice-title>
           )}

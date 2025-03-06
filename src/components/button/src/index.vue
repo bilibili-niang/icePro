@@ -5,7 +5,6 @@
         color?'btn-colors':'',
         fill?fill:'',
         round?'round':'defaultRound',
-        block?'block':'',
         size?`size-${size}`:'size-n',
         disable?'disable':'pointer',
         border?'border':''
@@ -49,10 +48,6 @@ const props = defineProps({
     type: Boolean,
     default: false
   },
-  block: {
-    type: Boolean,
-    default: false
-  },
   disable: {
     type: Boolean,
     default: false
@@ -84,7 +79,7 @@ export default {
 }
 
 .btn {
-  border-radius: @radio-l;
+  border-radius: 0;
   user-select: none;
   flex-grow: 0;
   width: fit-content;
@@ -214,7 +209,6 @@ export default {
 .shadow-inner-lt-rb {
   position: relative;
   transition: @time-n;
-  border-color: var(--color);
   color: var(--color);
 
   &:after, &:before {
@@ -226,7 +220,6 @@ export default {
     top: 0;
     left: 0;
     content: '';
-    border-radius: @radio-l;
   }
 
   &:after {
@@ -257,16 +250,11 @@ export default {
 // round
 // 默认圆角
 .defaultRound {
-  border-radius: @radio-l;
+  border-radius: 0;
 }
 
 .round {
   border-radius: 1.3rem;
-}
-
-// block
-.block {
-  border-radius: 0;
 }
 
 // size

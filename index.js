@@ -1,7 +1,7 @@
 // 导入样式，可以通过 import 'icepro/src/styles' 单独引入
 import './src/styles/index.less'
 
-import iceButton from './src/components/button/index.js'
+import iceButton from './src/components/button'
 import iceText from './src/components/text/ice-text.vue'
 import iceSplit from './src/components/tools/ice-split.vue'
 import iceTag from './src/components/tag/src/ice-tag.vue'
