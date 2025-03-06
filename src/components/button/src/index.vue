@@ -96,12 +96,12 @@ export default {
 
 // primary类型按钮
 .primary {
-  border-color: @themeColor-bleak;
-  color: @themeColor-bleak;
+  color: var(--color);
+  border-color: var(--color-bleak);
 
   &:hover {
-    color: @themeColor;
-    border-color: @themeColor;
+    color: var(--colorHover);
+    border-color: var(--color-bleak);
   }
 }
 
