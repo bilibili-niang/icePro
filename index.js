@@ -32,6 +32,7 @@ import RandomPixels from './src/thirdConponments/randomPixels'
 import SimpleBackground from './src/thirdConponments/simpleBackground'
 import RgbDotLoading from './src/thirdConponments/rgbDotLoading'
 import { themeManager, findColor } from './src/utils'
+import BackContainer from './src/thirdConponments/backContainer'
 
 import themes from './src/assets/colors/theme-purple.json'
 
@@ -66,7 +67,8 @@ const components = {
   iceTabItem,
   RandomPixels,
   SimpleBackground,
-  RgbDotLoading
+  RgbDotLoading,
+  BackContainer
 }
 
 export {
@@ -100,7 +102,8 @@ export {
   SimpleBackground,
   RgbDotLoading,
   themeManager,
-  themes
+  themes,
+  BackContainer
 }
 
 function install(app) {

@@ -6,13 +6,6 @@ theme-selector
     <h3>默认使用方法</h3>
     <ice-text> colorValue: {{ colorValue }}</ice-text>
     <ice-row class="theme-switch" flexWrap>
-      <!--      <ice-button
-              hover
-              type='shadow-r-t'
-              @click="changeTheme('')"
-            >
-              默认主题
-            </ice-button>-->
       <ice-button
         v-for="(theme) in themes"
         :key="theme.value"

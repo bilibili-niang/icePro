@@ -26,7 +26,6 @@
           <ice-tag>css:</ice-tag>
         </div>
         <pre v-if="component.__styleCode" class="language-css" v-html="css" />
-
       </div>
     </template>
   </ice-card>
