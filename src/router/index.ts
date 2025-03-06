@@ -13,6 +13,11 @@ const routes = [
     component: () => import('../pages/thirdComponents/index.vue'),
     children: [
       {
+        path: 'backContainer',
+        name: 'backContainer',
+        component: () => import('../pages/thirdComponents/backContainer/index.vue')
+      },
+      {
         path: 'randomPixels',
         name: 'randomPixels',
         component: () => import('../pages/thirdComponents/randomPixels/index.vue')

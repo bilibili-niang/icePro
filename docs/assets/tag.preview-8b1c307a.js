@@ -1,5 +1,0 @@
-import{_ as f,a as l,o as g,b as _,d as p,f as e,w as o,g as n,F as m}from"./index-a45b4aa7.js";const c=u=>{u.__sourceCodeTitle=" tag ",u.__sourceCode=`<container class="ice-column">\r
-    <ice-tag>default</ice-tag>\r
-    <ice-tag color="pipahuang">default</ice-tag>\r
-    <ice-tag color="wanshoujuhuang">default</ice-tag>\r
-    <ice-tag color="dahong">default</ice-tag>`},s={},x={class:"ice-column"};function w(u,t){const r=l("iceTag"),i=l("ice-text"),a=l("ice-tag"),d=l("container");return g(),_(m,null,[p("div",x,[e(i,null,{default:o(()=>[t[1]||(t[1]=n(" 使用 ")),e(r,null,{default:o(()=>t[0]||(t[0]=[n("color")])),_:1}),t[2]||(t[2]=n(" 来控制颜色类型 "))]),_:1})]),e(d,{class:"ice-column"},{default:o(()=>[e(a,null,{default:o(()=>t[3]||(t[3]=[n("default")])),_:1}),e(a,{color:"pipahuang"},{default:o(()=>t[4]||(t[4]=[n("default")])),_:1}),e(a,{color:"wanshoujuhuang"},{default:o(()=>t[5]||(t[5]=[n("default")])),_:1}),e(a,{color:"dahong"},{default:o(()=>t[6]||(t[6]=[n("default")])),_:1})]),_:1})],64)}typeof c=="function"&&c(s);const k=f(s,[["render",w]]);export{k as t};

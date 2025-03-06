@@ -1,7 +1,7 @@
 // 导入样式，可以通过 import 'icepro/src/styles' 单独引入
 import './src/styles/index.less'
 
-import iceButton from './src/components/button/index.js'
+import iceButton from './src/components/button'
 import iceText from './src/components/text/ice-text.vue'
 import iceSplit from './src/components/tools/ice-split.vue'
 import iceTag from './src/components/tag/src/ice-tag.vue'
@@ -28,10 +28,13 @@ import colorSelector from './src/components/colorSelector/index.js'
 import inlineStyle from './src/components/editor/inlineStyle.vue'
 import iceTabs from './src/components/tabs/index.js'
 import iceTabItem from './src/components/tabItem'
-import { findColor } from './src/utils/tools.js'
 import RandomPixels from './src/thirdConponments/randomPixels'
 import SimpleBackground from './src/thirdConponments/simpleBackground'
 import RgbDotLoading from './src/thirdConponments/rgbDotLoading'
+import { themeManager, findColor } from './src/utils'
+import BackContainer from './src/thirdConponments/backContainer'
+
+import themes from './src/assets/colors/theme-purple.json'
 
 findColor.activeColor = '#fba414'
 
@@ -64,7 +67,8 @@ const components = {
   iceTabItem,
   RandomPixels,
   SimpleBackground,
-  RgbDotLoading
+  RgbDotLoading,
+  BackContainer
 }
 
 export {
@@ -96,7 +100,10 @@ export {
   iceTabItem,
   RandomPixels,
   SimpleBackground,
-  RgbDotLoading
+  RgbDotLoading,
+  themeManager,
+  themes,
+  BackContainer
 }
 
 function install(app) {

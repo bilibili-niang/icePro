@@ -5,7 +5,7 @@ export default {
 </script>
 <script setup>
 import "./index.less"
-import {findColor} from "../../../utils/tools.js"
+import {findColor} from "../../../utils"
 // const props=
 defineProps({
   // 大小

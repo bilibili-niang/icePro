@@ -32,7 +32,7 @@
 
 <script setup lang="ts">
 import { onMounted, reactive, ref, useSlots, watch } from 'vue'
-import { findColor } from '../../utils/tools.js'
+import { findColor } from '../../utils'
 
 defineOptions({
   name: 'iceCard'

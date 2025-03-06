@@ -6,13 +6,6 @@ theme-selector
     <h3>默认使用方法</h3>
     <ice-text> colorValue: {{ colorValue }}</ice-text>
     <ice-row class="theme-switch" flexWrap>
-<!--      <ice-button
-        hover
-        type='shadow-r-t'
-        @click="changeTheme('')"
-      >
-        默认主题
-      </ice-button>-->
       <ice-button
         v-for="(theme) in themes"
         :key="theme.value"
@@ -30,20 +23,10 @@ theme-selector
 <script lang="ts" setup>
 import { ref } from 'vue'
 import ColorSelector from '@/components/colorSelector'
-import { themeManager, type ThemeType } from '@/utils/theme'
+import { themeManager, type ThemeType, themes } from '@/utils/theme'
 
 const colorValue = ref('#D81B60')
 
-const themes = [
-  { value: 'red', label: '红色主题' },
-  { value: 'pink', label: '粉色主题' },
-  { value: 'purple', label: '紫色主题' },
-  { value: 'deep-purple', label: '深紫色主题' },
-  { value: 'blue', label: '蓝色主题' },
-  { value: 'green', label: '绿色主题' },
-  { value: 'orange', label: '橙色主题' },
-  { value: 'white', label: '白色主题' }
-]
 
 const changeTheme = (theme: ThemeType) => {
   themeManager.setTheme(theme)

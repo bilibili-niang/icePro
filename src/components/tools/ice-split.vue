@@ -21,7 +21,7 @@
 </template>
 
 <script setup>
-import { findColor } from '../../utils/tools.js'
+import { findColor } from '../../utils'
 import { onMounted, useSlots } from 'vue'
 
 const props = defineProps({

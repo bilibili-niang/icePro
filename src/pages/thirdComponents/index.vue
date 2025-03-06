@@ -26,6 +26,10 @@ const componentList = [
       {
         text: 'rgb点点旋转',
         href: '/thirdComponents/rgbDotLoading'
+      },
+      {
+        text: 'backContainer',
+        href: '/thirdComponents/backContainer'
       }
     ]
   }

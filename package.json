@@ -28,12 +28,14 @@
   ],
   "dependencies": {
     "normalize.css": "^8.0.1",
+    "three": "^0.174.0",
     "vue-draggable-next": "^2.2.1",
     "vue-draggable-plus": "^0.5.2"
   },
   "author": "iceStone",
   "license": "MIT",
   "devDependencies": {
+    "dat.gui": "^0.7.9",
     "@typescript-eslint/eslint-plugin": "^6.21.0",
     "@typescript-eslint/parser": "^6.21.0",
     "@vicons/utils": "^0.1.4",
