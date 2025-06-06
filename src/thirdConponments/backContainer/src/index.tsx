@@ -1,7 +1,7 @@
 import './index.less'
-import { defineComponent, computed } from 'vue'
+import { defineComponent, computed, PropType } from 'vue'
 
-export default defineComponent({
+const BackContainer = defineComponent({
   name: 'BackContainer',
   props: {
     level: {
@@ -10,21 +10,16 @@ export default defineComponent({
     }
   },
   setup(props, { slots }) {
-    const BackContainerStyle = computed(() => {
-      return {
-        filter: `blur(${props.level}px)`
-      }
-    })
+    const backContainerStyle = computed(() => ({
+      filter: `blur(${props.level}px)`
+    }))
 
-    return () => {
-      return (
-        <div
-          class="BackContainer"
-          style={BackContainerStyle.value}
-        >
-          {slots?.default()}
-        </div>
-      )
-    }
+    return () => (
+      <div class="BackContainer" style={backContainerStyle.value}>
+        {slots.default?.()}
+      </div>
+    )
   }
 })
+
+export default BackContainer

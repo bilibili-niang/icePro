@@ -14,43 +14,22 @@ export default defineComponent({
       })
     })
 
-    return () => {
-      return (
-        <div class="RgbDotLoading">
-          <div class="pl">
-            <div class="pl__dot">
-              <div class="pl__dot-layer"></div>
-              <div class="pl__dot-layer"></div>
-              <div class="pl__dot-layer"></div>
-            </div>
-            <div class="pl__dot">
-              <div class="pl__dot-layer"></div>
-              <div class="pl__dot-layer"></div>
-              <div class="pl__dot-layer"></div>
-            </div>
-            <div class="pl__dot">
-              <div class="pl__dot-layer"></div>
-              <div class="pl__dot-layer"></div>
-              <div class="pl__dot-layer"></div>
-            </div>
-            <div class="pl__dot">
-              <div class="pl__dot-layer"></div>
-              <div class="pl__dot-layer"></div>
-              <div class="pl__dot-layer"></div>
-            </div>
-            <div class="pl__dot">
-              <div class="pl__dot-layer"></div>
-              <div class="pl__dot-layer"></div>
-              <div class="pl__dot-layer"></div>
-            </div>
-            <div class="pl__dot">
-              <div class="pl__dot-layer"></div>
-              <div class="pl__dot-layer"></div>
-              <div class="pl__dot-layer"></div>
-            </div>
-          </div>
+    return () => (
+      <div class="RgbDotLoading">
+        <div class="pl">
+          {Array(6)
+            .fill(null)
+            .map((_, index) => (
+              <div class="pl__dot" key={index}>
+                {Array(3)
+                  .fill(null)
+                  .map((_, layerIndex) => (
+                    <div class="pl__dot-layer" key={layerIndex}></div>
+                  ))}
+              </div>
+            ))}
         </div>
-      )
-    }
+      </div>
+    )
   }
 })
